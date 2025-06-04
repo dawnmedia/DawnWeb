@@ -1,0 +1,64 @@
+{
+  "title": "Simple, Transparent Pricing",
+  "subTitle": "Discount is now available on our 12 month plan, contact us now!",
+  "badge": "Best value",
+  "thirdOption": "Enterprise Solutions?",
+  "btnText": "Get a Custom Quote",
+
+  "starterKit": {
+    "name": "Online Starter Kit",
+    "description": "Perfect for getting started: Ideal for businesses taking their first step online or those needing a quick refresh.",
+    "price": "74",
+    "cents": ".99",
+    "billingFrequency": "USD / monthly",
+    "features": [
+      "Reliable hosting: Your website will be hosted on our secure servers, ensuring it's always up and running.",
+      "Social media boost: We'll help you create engaging social media profiles and get started with 4 eye-catching posts per month.",
+      "Basic search engine optimization (SEO): We'll make sure your website is visible on Google.",
+      "Friendly live support: We're here to answer your questions and help you get started.",
+      "New website creation (add-on): Don't have a website yet? We can build one for you! (Contact us for a custom quote.)"
+    ],
+    "purchaseBtnTitle": "Subscribe Now",
+    "purchaseBtnTitle2": "Annual Plan 20% OFF",
+    "purchaseLink": "#",
+    "purchaseLink2": "#"
+  },
+
+  "professionalToolbox": {
+    "name": "Growth & Marketing Package",
+    "description": "Everything you need to grow: Take your online presence to the next level and attract more customers.",
+    "price": "149",
+    "cents": ".99",
+    "billingFrequency": "USD / monthly",
+    "features": [
+      "All the features of the Online Starter Kit, plus:",
+      "Social media management: We'll manage your Facebook and Instagram presence, creating and sharing 12 posts per month to engage your audience.",
+      "Advanced SEO: We'll optimize your website to rank higher in search results and attract more organic traffic.",
+      "Priority live support (24/7): Get faster responses and expert help whenever you need it.",
+      "20% off on our annual subscription: Take advantage of our annual subscription."
+    ],
+    "purchaseBtnTitle": "Subscribe Now",
+    "purchaseBtnTitle2": "Annual Plan 20% OFF",
+    "purchaseLink": "#",
+    "purchaseLink2": "#"
+  },
+
+  "enterprise": {
+    "name": "Custom Web Solutions",
+    "description": "For businesses with big plans: Tailored solutions for complex needs and ambitious goals.",
+    "price": "224",
+    "cents": ".99",
+    "billingFrequency": "USD / monthly",
+    "features": [
+      "All the features of the Growth & Marketing Package, plus:",
+      "Social media management: We'll manage your social media presence, creating and sharing 20 high-quality posts per month.",
+      "API integrations: Connect your website with other software and tools to streamline your business processes.",
+      "Marketing consulting: Get expert advice and guidance on how to grow your business.",
+      "E-commerce integration: Sell your products or services online with a fully integrated online store."
+    ],
+    "purchaseBtnTitle": "Subscribe Now",
+    "purchaseBtnTitle2": "Annual Plan 20% OFF",
+    "purchaseLink": "#",
+    "purchaseLink2": "#"
+  }
+}

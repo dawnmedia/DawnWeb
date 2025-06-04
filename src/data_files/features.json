@@ -1,0 +1,22 @@
+[
+  {
+    "heading": "Web Development",
+    "content": "We create responsive websites tailored to your business needs.",
+    "svg": "groups"
+  },
+  {
+    "heading": "Hosting and 24/7 Support",
+    "content": "Ensure your website is always accessible and secure with our reliable hosting and 24/7 expert support.",
+    "svg": "verified"
+  },
+  {
+    "heading": "Content Creation & Updates",
+    "content": "Keep your website fresh and up-to-date with our reliable website update services.",
+    "svg": "books"
+  },
+  {
+    "heading": "SEO Optimization",
+    "content": "We'll implement the latest SEO best practices to help your website climb the rankings and attract organic traffic.",
+    "svg": "frame"
+  }
+]

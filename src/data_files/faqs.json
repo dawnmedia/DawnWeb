@@ -1,0 +1,33 @@
+{
+  "subTitle": "Ask us anything about Dawn Web's services and products, and get factual responses.",
+  "faqs": [
+    {
+      "question": "Can you help me with my online marketing efforts?",
+      "answer": "Yes! We offer a range of digital marketing services, including social media management, email marketing, and pay-per-click advertising. We'll work with you to develop a comprehensive strategy to reach your target audience and achieve your business goals."
+    },
+    {
+      "question": "Do you offer ongoing website maintenance and support?",
+      "answer": "Yes, we're here to support you every step of the way. We offer ongoing website maintenance and support plans to ensure your website remains secure, up-to-date, and running smoothly."
+    },
+    {
+      "question": "How do you ensure my website is optimized for search engines?",
+      "answer": "We follow best practices for search engine optimization (SEO), including keyword research, on-page optimization, and technical SEO audits. Our goal is to help your website rank higher in search results and attract more organic traffic."
+    },
+    {
+      "question": "What if I need more than 20 social media posts per month?",
+      "answer": "Need more than 20 posts?  No problem! We can create a custom social media plan that fits your needs. Contact us to discuss options."
+    },
+    {
+      "question": "I'm not sure which package is right for me. Can you help?",
+      "answer": "We're happy to help! To recommend the best package for you, we need to learn more about your business needs.  Please contact us for a free consultation."
+    },
+    {
+      "question": " Is the (Annual Plan 20% OFF) a one-time payment or recurring?",
+      "answer": "The Annual Plan 20% OFF is a recurring subscription with an annual billing cycle. This means you'll be charged once a year to continue enjoying the discounted rate. However, you have the flexibility to cancel your subscription at any time if needed"
+    },
+    {
+      "question": "What Add-ons do you offer?",
+      "answer": "We offer add-ons for various services, including email marketing, social media management, and more. We'll help you build your website and get started with your first project."
+    }
+  ]
+}
