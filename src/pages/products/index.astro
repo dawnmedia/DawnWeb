@@ -14,14 +14,14 @@ import { SITE } from "@data/constants";
 
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => {
-    return id.startsWith("en/");
+  await getCollection("products", (entry: CollectionEntry<"products">) => {
+    return entry.id.startsWith("en/");
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
     a.data.main.id - b.data.main.id
 );
-
+  
 // Define variables for page content
 const title: string = "Products";
 const subTitle: string =

@@ -3,31 +3,31 @@
   "faqs": [
     {
       "question": "Can you help me with my online marketing efforts?",
-      "answer": "Yes! We offer a range of digital marketing services, including social media management, email marketing, and pay-per-click advertising. We'll work with you to develop a comprehensive strategy to reach your target audience and achieve your business goals."
+      "answer": "Yes! We offer a range of digital marketing services including SEO, email marketing, and pay-per-click advertising. We'll work with you to create a strategy tailored to your business goals."
     },
     {
       "question": "Do you offer ongoing website maintenance and support?",
-      "answer": "Yes, we're here to support you every step of the way. We offer ongoing website maintenance and support plans to ensure your website remains secure, up-to-date, and running smoothly."
+      "answer": "Absolutely. All our plans include ongoing support and regular updates to ensure your website stays secure and up-to-date."
     },
     {
       "question": "How do you ensure my website is optimized for search engines?",
-      "answer": "We follow best practices for search engine optimization (SEO), including keyword research, on-page optimization, and technical SEO audits. Our goal is to help your website rank higher in search results and attract more organic traffic."
+      "answer": "We implement the latest SEO best practices, including metadata configuration, keyword optimization, image alt tags, and performance enhancements to help your website rank better in search engines."
     },
     {
-      "question": "What if I need more than 20 social media posts per month?",
-      "answer": "Need more than 20 posts?  No problem! We can create a custom social media plan that fits your needs. Contact us to discuss options."
+      "question": "Can I request more updates or custom features per month?",
+      "answer": "Yes. Each plan includes a set number of monthly updates, but you can always request additional changes as an add-on. Contact us for pricing and turnaround time."
     },
     {
       "question": "I'm not sure which package is right for me. Can you help?",
-      "answer": "We're happy to help! To recommend the best package for you, we need to learn more about your business needs.  Please contact us for a free consultation."
+      "answer": "Definitely! Get in touch with us and we’ll guide you through the best package based on your business goals, technical needs, and budget."
     },
     {
       "question": " Is the (Annual Plan 20% OFF) a one-time payment or recurring?",
-      "answer": "The Annual Plan 20% OFF is a recurring subscription with an annual billing cycle. This means you'll be charged once a year to continue enjoying the discounted rate. However, you have the flexibility to cancel your subscription at any time if needed"
+      "answer": "The annual plan is billed once per year at a discounted rate compared to monthly billing. It's a recurring subscription unless canceled."
     },
     {
       "question": "What Add-ons do you offer?",
-      "answer": "We offer add-ons for various services, including email marketing, social media management, and more. We'll help you build your website and get started with your first project."
+      "answer": "We offer several add-ons including e-commerce setup, advanced analytics, custom integrations, multilingual support, and more. Let us know your needs and we’ll recommend the right add-ons."
     }
   ]
 }

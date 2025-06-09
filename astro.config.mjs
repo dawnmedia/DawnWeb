@@ -29,11 +29,7 @@ export default defineConfig({
         defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
-          ptbr: "ptbr",
           fr: "fr",
-          es: "es",
-          ko: "ko",
-          jp: "jp",
         },
       },
     }),
@@ -52,10 +48,6 @@ export default defineConfig({
         },
         de: { label: "Deutsch", lang: "de" },
         es: { label: "Español", lang: "es" },
-        fa: { label: "Persian", lang: "fa", dir: "rtl" },
-        fr: { label: "Français", lang: "fr" },
-        ja: { label: "日本語", lang: "ja" },
-        "zh-cn": { label: "简体中文", lang: "zh-CN" },
       },
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [

@@ -5,21 +5,15 @@ import NavLink from "@components/ui/links/NavLink.astro";
 import Authentication from "../misc/Authentication.astro";
 import enStrings from "@utils/navigation.ts";
 import frStrings from "@utils/fr/navigation.ts";
-import jpStrings from "@utils/jp/navigation.ts";
-import esStrings from "@utils/es/navigation.ts";
-import koStrings from "@utils/ko/navigation.ts";
+// import esStrings from "@utils/es/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
 
 // Select the correct translation based on the page's lang prop:
 const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
 const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
-const stringsJp = Astro.currentLocale === "jp" ? jpStrings : enStrings;
-const stringsEs = Astro.currentLocale === "es" ? esStrings : enStrings;
-const stringsKo = Astro.currentLocale === "ko" ? koStrings : enStrings;
-const homeUrlJp = Astro.currentLocale === "jp" ? "/jp" : "/";
-const homeUrlEs = Astro.currentLocale === "es" ? "/es" : "/";
-const homeUrlKo = Astro.currentLocale === "ko" ? "/ko" : "/";
+// const stringsEs = Astro.currentLocale === "es" ? esStrings : enStrings;
+// const homeUrlEs = Astro.currentLocale === "es" ? "/es" : "/";
 ---
 
 <!-- Main header component -->

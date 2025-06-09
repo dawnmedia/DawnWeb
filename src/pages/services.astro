@@ -7,15 +7,15 @@ import RightSection from "@components/ui/blocks/RightSection.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
 // Import necessary images
-import blueprints from "@images/blueprints-image.avif";
-import personWorking from "@images/person-working.avif";
-import beforeAfter from "@images/before-after.avif";
-import constructionWorkers from "@images/construction-workers.avif";
-import aerialView from "@images/aerial-view.avif";
-import usingTools from "@images/using-tools.avif";
 import progressBuilding from "@images/progress-building.avif";
 import underConstruction from "@images/under-construction.avif";
 import { SITE } from "@data/constants";
+import webdev from "@images/web-dev.jpg";
+import webdesign from "@images/web-design.jpg";
+import webuild from "@images/webuild.jpg";
+import payments from "@images/payments.jpg";
+import software from "@images/software.jpg";
+import code from "@images/code.jpg";
 
 interface Article {
   isRightSection: boolean;
@@ -36,21 +36,21 @@ interface Article {
 const articles: Article[] = [
   {
     isRightSection: true,
-    title: "Providing Professional Insights",
+    title: "Professional Guidance You Can Trust",
     subTitle:
-      "Embarking on a web development project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled developer, our experts are on hand to offer tailored advice on technology selection, project scope, and compliance with best practices.",
+      "Building a website or software product can feel overwhelming. With our expert consulting services, we help you make smart decisions every step of the way—from choosing the best technology stack to defining your project's scope, usability, and compliance standards.",
         single: false,
-        imgOne: blueprints,
+        imgOne: webdesign,
         imgOneAlt: "Blueprints and digital tablet with web development plans.",
-        imgTwo: personWorking,
+        imgTwo: webdev,
         imgTwoAlt: "Person working in the office",
         },
         {
         isRightSection: false,
-        title: "Transforming Designs into Reality",
+        title: "Transforming Ideas into Functional Products",
         subTitle:
-      "Our skilled developers bring precision and excellence to every web development project. From minor updates to substantial web applications, Dawn Web offers reliable development services to turn your plans into tangible outcomes. We ensure the highest standards of security and performance, utilizing top-quality tools and technologies from our extensive inventory.",
-    img: beforeAfter,
+      "At Dawn Web, our developers combine precision, creativity, and technical skill to bring your digital concepts to life. Whether you're launching a landing page or developing a custom application, we turn your ideas into fast, scalable, and secure software solutions—designed to deliver results.",
+    img: webuild,
     imgAlt: "Website before and after",
     btnExists: true,
     btnTitle: "Learn More",
@@ -58,13 +58,13 @@ const articles: Article[] = [
     },
     {
     isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
+    title: "Guiding Projects with Precision and Clarity",
     subTitle:
-      "Effective project management is at the heart of any successful build. Dawn Web provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
+      "Strong project management is key to successful digital delivery. At Dawn Web, we take charge of planning, milestones, and communication—ensuring your project stays on track and within scope. From initial consultation to final deployment, our team handles the complexity so you can focus on your business goals.",
     single: false,
-    imgOne: constructionWorkers,
+    imgOne: payments,
     imgOneAlt: "",
-    imgTwo: aerialView,
+    imgTwo: software,
     imgTwoAlt: "Aerial view of managed construction",
   },
   {
@@ -72,7 +72,7 @@ const articles: Article[] = [
     title: "Ensuring Long-lasting Performance",
     subTitle:
       "Our commitment to your project doesn't end at completion. Dawn Web offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
-    img: usingTools,
+    img: code,
     imgAlt:
       "Man in orange and black vest wearing white helmet holding yellow and black power tool",
   },
@@ -117,10 +117,10 @@ const pageTitle: string = `Services | ${SITE.title}`;
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
-    title="Uniting Expertise with Your Vision"
-    subTitle="At Dawn Web, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services."
+    title="Uniting Expertise with Your Digital Vision"
+    subTitle="At Dawn Web, we provide comprehensive web and software development solutions designed to bring your digital ideas to life. Our experienced team guides every project from discovery to deployment, ensuring your vision is executed with clarity and care."
     btnExists={true}
-    btnTitle="Schedule a Consultation"
+    btnTitle="Schedule a Free Consultation"
     btnURL="#"
   />
   <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.

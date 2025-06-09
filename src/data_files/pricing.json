@@ -31,6 +31,7 @@
     "cents": ".99",
     "billingFrequency": "USD / monthly",
     "features": [
+      "All the features of the Starter, plus:",
       "Up to 8 custom pages",
       "Advanced SEO setup (technical + on-page)",
      "Ecommerce or subscription platform setup",
@@ -52,10 +53,11 @@
     "billingFrequency": "USD / monthly",
     "features": [
       "All the features of the Growth, plus:",
-      "Custom feature development (dashboards, logins, APIs)",
-      "Ecommerce or subscription platform setup",
-      "Marketing consulting: Get expert advice and guidance on how to grow your business.",
-      "E-commerce integration: Sell your products or services online with a fully integrated online store."
+      "Unlimited pages or components",
+      "API integrations, user portals, booking systems, etc.",
+      "Weekly development check-ins and dedicated account manager",
+      "E-commerce integration: Sell your products or services online with a fully integrated online store.",
+      "Custom feature development (dashboards, logins, APIs)"
     ],
     "purchaseBtnTitle": "Subscribe Now",
     "purchaseBtnTitle2": "Annual Plan 20% OFF",

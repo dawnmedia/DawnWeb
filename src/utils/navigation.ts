@@ -12,17 +12,17 @@ const footerLinks = [
     section: "Ecosystem",
     links: [
       { name: "Documentation", url: "/comingsoon" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Products", url: "/products" },
+      { name: "Services", url: "/services" },
     ],
   },
   {
     section: "Company",
     links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "About us", url: "/comingsoon" },
+      { name: "Blog", url: "/comingsoon" },
+      { name: "Our Team", url: "/comingsoon" },
+      { name: "Careers", url: "/contact" },
     ],
   },
 ];
@@ -31,8 +31,6 @@ const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
   github: "https://github.com/dawnmedia",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
 };
 
 export default {
