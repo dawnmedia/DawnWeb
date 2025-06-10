@@ -3,7 +3,8 @@ const navBarLinks = [
   { name: "Home", url: "/" },
   { name: "Products", url: "/products" },
   { name: "Services", url: "/services" },
- // { name: "Blog", url: "/blog" },
+  { name: "Team", url: "/comingsoon" },,
+  { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
 ];
 // An array of links for footer
@@ -20,7 +21,7 @@ const footerLinks = [
     section: "Company",
     links: [
       { name: "About us", url: "/comingsoon" },
-      { name: "Blog", url: "/comingsoon" },
+      { name: "Blog", url: "/blog" },
       { name: "Our Team", url: "/comingsoon" },
       { name: "Careers", url: "/contact" },
     ],
@@ -29,7 +30,7 @@ const footerLinks = [
 // An object of links for social icons
 const socialLinks = {
   facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
+  x: "https://twitter.com/dawnweb",
   github: "https://github.com/dawnmedia",
 };
 

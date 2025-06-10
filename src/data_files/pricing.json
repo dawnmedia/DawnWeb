@@ -20,8 +20,8 @@
     ],
     "purchaseBtnTitle": "Subscribe Now",
     "purchaseBtnTitle2": "Annual Plan 20% OFF",
-    "purchaseLink": "#",
-    "purchaseLink2": "#"
+    "purchaseLink": "/comingsoon",
+    "purchaseLink2": "/comingsoon"
   },
 
   "professionalToolbox": {
@@ -41,8 +41,8 @@
     ],
     "purchaseBtnTitle": "Subscribe Now",
     "purchaseBtnTitle2": "Annual Plan 20% OFF",
-    "purchaseLink": "#",
-    "purchaseLink2": "#"
+    "purchaseLink": "/comingsoon",
+    "purchaseLink2": "/comingsoon"
   },
 
   "enterprise": {
@@ -61,7 +61,7 @@
     ],
     "purchaseBtnTitle": "Subscribe Now",
     "purchaseBtnTitle2": "Annual Plan 20% OFF",
-    "purchaseLink": "#",
-    "purchaseLink2": "#"
+    "purchaseLink": "/comingsoon",
+    "purchaseLink2": "/comingsoon"
   }
 }
