@@ -5,10 +5,10 @@ author: "Andrew"
 role: "Founder & CEO"
 authorImage: "@/images/blog/brad.avif"
 authorImageAlt: "Avatar of Andrew, Dawn Web founder & CEO"
-pubDate: 2025-06-02
+pubDate: 2025-05-10
 cardImage: "@/images/blog/motorvoyage.jpg"
 cardImageAlt: "A scenic road winding through mountain valleys, shot from above"
-readTime: 4
+readTime: 5
 tags: ["travel", "startups", "projects", "coming soon"]
 contents: [
   "At Dawn Web, we're passionate about building platforms that connect people to possibility. That’s why we’re excited to introduce our newest upcoming project: MotorVoyage — a travel platform designed for those who seek more than just destinations — they seek the journey itself.",

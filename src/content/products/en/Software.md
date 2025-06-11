@@ -50,7 +50,7 @@ specificationsRight:
   - title: "Industries Served"
     subTitle: "Hospitality, Food & Beverage, Retail, Internal Tools, and Custom Enterprise Apps."
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+  first: "@/images/code.jpg"
+  second: "@/images/code.jpg"
 
 ---

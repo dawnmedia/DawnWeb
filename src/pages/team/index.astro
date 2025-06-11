@@ -1,0 +1,31 @@
+---
+type TeamMember = {
+    name: string;
+    role: string;
+    bio: string;
+    avatar: string;
+    skills: string[];
+};
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import Avatar from "@components/ui/avatars/Avatar.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import team from "@/data_files/team.json";
+---
+
+<MainLayout title={`Our Team | ${SITE.title}`}>
+        <div class="team-grid">
+
+    </section>
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</MainLayout>

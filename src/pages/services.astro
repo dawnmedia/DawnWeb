@@ -7,8 +7,6 @@ import RightSection from "@components/ui/blocks/RightSection.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
 // Import necessary images
-import progressBuilding from "@images/progress-building.avif";
-import underConstruction from "@images/under-construction.avif";
 import { SITE } from "@data/constants";
 import webdev from "@images/web-dev.jpg";
 import webdesign from "@images/web-design.jpg";
@@ -16,6 +14,8 @@ import webuild from "@images/webuild.jpg";
 import payments from "@images/payments.jpg";
 import software from "@images/software.jpg";
 import code from "@images/code.jpg";
+import business from "@images/business.jpg";
+import graph from "@images/graph.jpg";
 
 interface Article {
   isRightSection: boolean;
@@ -82,9 +82,9 @@ const articles: Article[] = [
     subTitle:
       "For our larger enterprise clients, Dawn Web offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
     single: false,
-    imgOne: progressBuilding,
+    imgOne: business,
     imgOneAlt: "In progress building structure",
-    imgTwo: underConstruction,
+    imgTwo: graph,
     imgTwoAlt: "Brown and gray building under construction",
     btnExists: true,
     btnTitle: "Read more",
@@ -162,12 +162,12 @@ const pageTitle: string = `Services | ${SITE.title}`;
   <!--FeaturesStats section showcases essential stats valuable to users-->
   <FeaturesStats
     title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At Dawn Web, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    subTitle="At Dawn Web, we pride ourselves on delivering exceptional results for our clients. Here are some key statistics that highlight our commitment to excellence and client satisfaction."
     mainStatTitle="98%"
     mainStatSubTitle="of our clients rate their experience with Dawn Web as exceptional"
     stats={[
       {
-        stat: "99.8%",
+        stat: "99%",
         description: "project completion rate",
       },
       {

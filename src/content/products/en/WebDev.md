@@ -2,7 +2,7 @@
 title: "Web Development"
 description: "Building Modern Websites That Work for You"
 main:
-  id: 2
+  id: 1
   content: |
     At Dawn Web, we specialize in crafting high-performance, secure, and scalable websites tailored to your vision. Whether it's a simple landing page or a fully custom web application, our team delivers reliable, high-quality solutions with the latest technologies and clean, maintainable code. We don’t just build websites—we bring your digital ideas to life.
   imgCard: "@/images/code.jpg"
