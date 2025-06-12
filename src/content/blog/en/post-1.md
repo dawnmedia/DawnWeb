@@ -3,7 +3,7 @@ title: "Introducing NexoED: The Future of Online Learning, Built by Dawn Web"
 description: "Our newest platform is designed to make learning smarter, more engaging, and accessible for everyone"
 author: "Andrew"
 role: "Founder, Dawn Web"
-authorImage: "@/images/blog/brad.avif"
+authorImage: "@/images/blog/andrew.png"
 authorImageAlt: "Avatar of Breno, founder of Dawn Web"
 pubDate: 2025-05-30
 cardImage: "@/images/blog/studying.jpg"

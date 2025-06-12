@@ -3,7 +3,7 @@ title: "Introducing MotorVoyage: Your Next Travel Adventure Starts Here"
 description: "Dawn Web's upcoming platform for curated travel experiences around the globe"
 author: "Andrew"
 role: "Founder & CEO"
-authorImage: "@/images/blog/brad.avif"
+authorImage: "@/images/blog/andrew.png"
 authorImageAlt: "Avatar of Andrew, Dawn Web founder & CEO"
 pubDate: 2025-05-10
 cardImage: "@/images/blog/motorvoyage.jpg"
