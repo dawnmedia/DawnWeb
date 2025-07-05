@@ -5,7 +5,7 @@ export const SITE = {
   tagline: "Build Your Business Online", // Updated tagline 
   description: "Dawn Web crafts stunning websites and provides expert online marketing services to help businesses thrive. Explore our services and contact us to elevate your online presence.", // Updated description
   description_short: "Dawn Web helps businesses succeed online with website design, social media management, and content creation.", // Updated short description
-  url: "https://dawnweb.co", // This is already correct!
+  url: "https://dawnwebs.com", // This is already correct!
   author: "Dawn Web", // Changed to match the website name 
 };
 
