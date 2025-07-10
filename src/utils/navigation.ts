@@ -29,7 +29,7 @@ const footerLinks = [
 // An object of links for social icons
 const socialLinks = {
   facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/dawnweb",
+  x: "https://twitter.com/DawnLabsEN",
   github: "https://github.com/dawnmedia",
 };
 
