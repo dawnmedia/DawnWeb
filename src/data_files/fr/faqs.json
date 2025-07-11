@@ -1,29 +1,33 @@
 {
-  "subTitle": "Posez-nous toutes vos questions sur notre marque et nos produits, et obtenez des réponses factuelles.",
+  "subTitle": "Posez-nous toutes vos questions sur les services et produits Dawn Web et obtenez des réponses claires.",
   "faqs": [
     {
-      "question": "Quels types d'outils sont inclus dans le Kit de Démarrage?",
-      "answer": "Le Kit de Démarrage comprend des outils à main et électriques essentiels pour différents projets de bricolage, notamment des marteaux, des perceuses, des tournevis et une variété de fixations. C'est une sélection soigneusement élaborée pour aider les débutants et les bricoleurs expérimentés à aborder la plupart des tâches d'amélioration de l'habitat."
+      "question": "Pouvez-vous m’aider à développer ma présence en ligne ?",
+      "answer": "Oui, nous proposons une gamme complète de services de marketing digital, incluant le référencement (SEO), l’email marketing et la publicité en ligne. Nous collaborons avec vous pour élaborer une stratégie adaptée à vos objectifs."
     },
     {
-      "question": "Puis-je passer du Kit de Démarrage à la Boîte à Outils Professionnelle?",
-      "answer": "Absolument ! Vous pouvez passer à la Boîte à Outils Professionnelle à tout moment pour accéder à une gamme plus large d'outils de haute qualité, bénéficier d'un support client prioritaire et recevoir un contenu exclusif. Contactez notre équipe de support pour une transition sans problème."
+      "question": "Assurez-vous la maintenance et le support de mon site web ?",
+      "answer": "Bien sûr. Tous nos forfaits incluent un support continu et des mises à jour régulières pour garantir la sécurité et la performance de votre site."
     },
     {
-      "question": "Quels sont les rabais disponibles pour les commandes en gros via le plan Boîte à Outils Professionnelle?",
-      "answer": "Les membres de la Boîte à Outils Professionnelle ont droit à des rabais exclusifs sur les commandes en gros, dont le pourcentage peut varier en fonction du volume de la commande. Contactez-nous pour discuter de vos besoins, et nous vous fournirons une structure de rabais personnalisée."
+      "question": "Comment optimisez-vous mon site pour les moteurs de recherche ?",
+      "answer": "Nous appliquons les meilleures pratiques SEO : configuration des métadonnées, choix des mots-clés, balises alt pour les images et optimisation des performances pour améliorer le classement de votre site."
     },
     {
-      "question": "À quoi puis-je m'attendre en termes de support client?",
-      "answer": "Tous nos clients bénéficient d'un support par e-mail dédié. Avec le Kit de Démarrage, vous recevrez notre support standard, tandis que le plan Boîte à Outils Professionnelle vous mettra à niveau vers un support prioritaire, ce qui signifie des temps de réponse plus rapides et une assistance spécialisée."
+      "question": "Puis-je demander davantage de mises à jour ou de fonctionnalités personnalisées chaque mois ?",
+      "answer": "Oui. Chaque forfait comprend un nombre défini de mises à jour mensuelles, mais vous pouvez toujours demander des modifications supplémentaires en option. Contactez-nous pour connaître les tarifs et délais."
     },
     {
-      "question": "À quelle fréquence sont mises à jour les ressources en ligne et les tutoriels?",
-      "answer": "Nous mettons régulièrement à jour nos ressources en ligne et nos tutoriels pour refléter les dernières tendances en matière de bricolage et de construction, ainsi que les introductions de nouveaux outils et techniques. Notre matériel vise à être complet et convivial pour tous les niveaux de compétence."
+      "question": "Je ne sais pas quel forfait choisir. Pouvez-vous m’orienter ?",
+      "answer": "Absolument ! Contactez-nous et nous vous aiderons à choisir le forfait le plus adapté à vos objectifs, besoins techniques et budget."
     },
     {
-      "question": "ScrewFast propose-t-il des services pour les grands projets de construction?",
-      "answer": "Oui, nos Solutions Entreprise sont conçues pour les grandes entreprises ayant besoin de services complets. Nous fournissons des consultations, de la planification et de l'approvisionnement en outils et matériaux de haute qualité, ainsi que des solutions de personnel pour des besoins de construction importants. Contactez-nous pour un devis personnalisé."
+      "question": "Le plan annuel (-20%) correspond-il à un paiement unique ou récurrent ?",
+      "answer": "Le plan annuel est facturé une fois par an à un tarif préférentiel par rapport à la mensualisation. Il s’agit d’un abonnement récurrent, sauf en cas d’annulation."
+    },
+    {
+      "question": "Quels modules complémentaires proposez-vous ?",
+      "answer": "Nous proposons plusieurs modules complémentaires : e-commerce, analyses avancées, intégrations personnalisées, support multilingue, et bien plus encore. Faites-nous part de vos besoins et nous vous conseillerons les solutions les plus adaptées."
     }
   ]
 }

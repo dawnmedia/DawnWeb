@@ -1,54 +1,67 @@
 {
   "title": "Tarification Simple et Transparente",
-  "subTitle": "Augmentez l'efficacité avec les plans clairs et axés sur la valeur de ScrewFast.",
-  "badge": "Meilleure valeur",
-  "thirdOption": "Solutions Entreprise?",
-  "btnText": "Obtenez un Devis Personnalisé",
+  "subTitle": "Profitez d'une remise sur notre formule 12 mois, contactez-nous dès maintenant !",
+  "badge": "Meilleur rapport qualité-prix",
+  "thirdOption": "Solutions Entreprise ?",
+  "btnText": "Obtenir un devis personnalisé",
 
   "starterKit": {
-    "name": "Kit de Démarrage",
-    "description": "Meilleure option pour les projets de bricolage",
-    "price": "$49",
-    "cents": ".00",
-    "billingFrequency": "USD / mensuel",
+    "name": "Formule Découverte",
+    "description": "Idéal pour : Présence web basique, portfolios ou jeunes entreprises.",
+    "price": "74",
+    "cents": ".99",
+    "billingFrequency": "USD / mois",
     "features": [
-      "Outils matériels essentiels",
-      "Accès aux guides et tutoriels",
-      "Support standard"
+      "Site web responsive de 1 à 4 pages",
+      "Hébergement rapide + SSL",
+      "Maintenance mensuelle du site (mises à jour de sécurité, sauvegardes)",
+      "Intégration Google Analytics",
+      "Support chat + email 24h/24, 5j/7"
     ],
-    "purchaseBtnTitle": "Obtenez le Kit de Démarrage",
-    "purchaseLink": "#"
+    "purchaseBtnTitle": "Souscrire maintenant",
+    "purchaseBtnTitle2": "Formule annuelle -20%",
+    "purchaseLink": "https://buy.stripe.com/bJe3cxcs2aG10AD18ubsc06",
+    "purchaseLink2": "https://buy.stripe.com/14AfZjbnY6pL9795oKbsc09"
   },
 
   "professionalToolbox": {
-    "name": "Boîte à Outils Professionnelle",
-    "description": "Idéale pour les utilisations à grande échelle",
-    "price": "$89",
-    "cents": ".00",
-    "billingFrequency": "USD / mensuel",
+    "name": "Formule Croissance",
+    "description": "Parfait pour les marques souhaitant développer et renforcer leur présence digitale.",
+    "price": "149",
+    "cents": ".99",
+    "billingFrequency": "USD / mois",
     "features": [
-      "Sélection d'outils premium",
-      "Support prioritaire",
-      "Contenu et offres exclusifs",
-      "Remises sur les commandes en gros"
+      "Toutes les fonctionnalités de la Formule Découverte, plus :",
+      "Jusqu'à 8 pages personnalisées",
+      "Configuration SEO avancée (technique + contenu)",
+      "Mise en place d'une boutique en ligne ou d'un système d'abonnement",
+      "Jusqu'à 5 mises à jour par mois",
+      "Hébergement prioritaire avec suivi des performances",
+      "Support 24h/24, 7j/7 (réponse sous 12h)"
     ],
-    "purchaseBtnTitle": "Obtenez la Boîte à Outils Professionnelle",
-    "purchaseLink": "#"
+    "purchaseBtnTitle": "Souscrire maintenant",
+    "purchaseBtnTitle2": "Formule annuelle -20%",
+    "purchaseLink": "https://buy.stripe.com/bJefZjcs29BX9796sObsc07",
+    "purchaseLink2": "https://buy.stripe.com/fZu3cx1No7tPfvx2cybsc0a"
   },
-  
+
   "enterprise": {
-    "name": "Teste",
-    "description": "Best for large scale uses",
-    "price": "89",
-    "cents": ".00",
-    "billingFrequency": "USD / monthly",
+    "name": "Solutions Web Sur-Mesure",
+    "description": "Pour les entreprises ambitieuses : des solutions personnalisées pour des besoins complexes.",
+    "price": "499",
+    "cents": ".99",
+    "billingFrequency": "USD / mois",
     "features": [
-      "Premium tool selection",
-      "Priority support",
-      "Exclusive content & deals",
-      "Bulk order discounts"
+      "Toutes les fonctionnalités de la Formule Croissance, plus :",
+      "Pages ou composants illimités",
+      "Intégrations API, portails utilisateurs, systèmes de réservation, etc.",
+      "Points hebdomadaires de suivi et gestionnaire de compte dédié",
+      "Intégration e-commerce : vendez vos produits ou services en ligne avec une boutique entièrement intégrée.",
+      "Développement de fonctionnalités sur-mesure (tableaux de bord, connexions, APIs)"
     ],
-    "purchaseBtnTitle": "Get the Professional Toolbox",
-    "purchaseLink": "#"
+    "purchaseBtnTitle": "Souscrire maintenant",
+    "purchaseBtnTitle2": "Formule annuelle -20%",
+    "purchaseLink": "https://buy.stripe.com/eVqaEZ4ZAdSd0ADbN8bsc08",
+    "purchaseLink2": "https://buy.stripe.com/4gM4gB3Vw7tPbfh3gCbsc0b"
   }
 }
