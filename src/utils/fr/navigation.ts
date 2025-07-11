@@ -1,38 +1,36 @@
 
 const navBarLinks = [
-  { name: "Accueil", url: "/" },
-  { name: "Produits", url: "/products" },
-  { name: "Services", url: "/services" },
+  { name: "Accueil", url: "/fr" },
+  { name: "Produits", url: "/fr/products" },
+  { name: "Services", url: "/fr/services" },
 //  { name: "Blog", url: "/" },
-  { name: "Contact", url: "/contact" },
+  { name: "Contact", url: "/fr/contact" },
 ];
 
 const footerLinks = [
   {
     section: "Écosystème",
     links: [
-      { name: "Documentation", url: "/" },
-      { name: "Outils et Équipements", url: "/" },
-      { name: "Services de Construction", url: "/" },
+      { name: "Documentation", url: "/comingsoon" },
+      { name: "Products", url: "/fr/products" },
+      { name: "Services", url: "/fr/services" },
     ],
   },
   {
     section: "Société",
     links: [
-      { name: "À propos de nous", url: "#" },
-      { name: "Blog", url: "/" },
-      { name: "Carrières", url: "#" },
-      { name: "Clients", url: "#" },
+      { name: "À propos de nous", url: "/comingsoon" },
+      { name: "Blog", url: "/fr/blog" },
+      { name: "Our Team", url: "/comingsoon" },
+      { name: "Careers", url: "/fr/contact" },
     ],
   },
 ];
 
 const socialLinks = {
-  facebook: "#",
-  x: "#",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "#",
-  slack: "#",
+  facebook: "https://www.facebook.com/",
+  x: "https://twitter.com/DawnLabsEN",
+  github: "https://github.com/dawnmedia",
 };
 
 export default {
