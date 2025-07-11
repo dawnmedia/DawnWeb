@@ -205,6 +205,6 @@ interface PricingSectionProps {
       {pricing.thirdOption}
     </p>
 
-    <SecondaryCTA title={pricing.btnText} url="/contact" />
+    <SecondaryCTA title={pricing.btnText} url={Astro.url.pathname.startsWith('/fr') ? '/fr/contact' : '/contact'} />
   </div>
 </section>
