@@ -1,0 +1,80 @@
+---
+// Import section components
+import MainLayout from "@/layouts/MainLayout.astro";
+import Btn404 from "@components/ui/buttons/Btn404.astro";
+import { SITE } from "@data/constants";
+
+// Define types for translations
+type TranslationKeys = "en" | "fr";
+type Translations = {
+  [key in TranslationKeys]: {
+    pageTitle: string;
+    subTitle: string;
+    content: string;
+    btnTitle: string;
+  };
+};
+
+// Define variables for page content
+const defaultLang: TranslationKeys = "fr";
+const translations: Translations = {
+  en: {
+    pageTitle: `Coming Soon | ${SITE.title}`,
+    subTitle: "Oops, this page is under construction!",
+    content: "We are still building it. Come back soon!",
+    btnTitle: "Go Back",
+  },
+  fr: {
+    pageTitle: `Bientot disponible | ${SITE.title}`,
+    subTitle: "Oops, cette page est en cours de construction!",
+    content: "Nous construisons cette page. Retournez bientot!",
+    btnTitle: "Retourner",
+  },
+};
+
+// Determine language from the URL
+const urlPath = Astro.url.pathname;
+const langCodeMatch = urlPath.match(/^\/(en|fr)\//);
+const lang: TranslationKeys = langCodeMatch
+  ? (langCodeMatch[1] as TranslationKeys)
+  : defaultLang;
+
+const { pageTitle, subTitle, content, btnTitle } = translations[lang];
+---
+
+<MainLayout title={pageTitle}>
+  <section class="grid h-svh place-content-center">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <h1
+          class="text-dark mb-4 text-4xl font-extrabold text-yellow-500 dark:text-yellow-400 lg:text-6xl"
+        >
+          COMING SOON
+        </h1>
+        <p
+          id="subtitle"
+          class="mb-4 text-balance text-3xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 md:text-4xl"
+        >
+          {subTitle}
+        </p>
+        <p
+          id="content"
+          class="mb-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+        >
+          {content}
+        </p>
+        <!-- Display a button that navigates user back to the previous page -->
+        <Btn404 title={btnTitle} id="go-back" />
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<!-- JavaScript code to handle going back to the previous page -->
+<script>
+  const goBackButton = document.getElementById("go-back") as HTMLButtonElement;
+
+  goBackButton.addEventListener("click", () => {
+    history.back();
+  });
+</script>

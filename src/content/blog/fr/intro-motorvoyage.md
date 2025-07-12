@@ -1,24 +1,24 @@
 ---
-title: "Introducing MotorVoyage: Your Next Travel Adventure Starts Here"
-description: "Dawn Web's upcoming platform for curated travel experiences around the globe"
+title: "Présentation de MotorVoyage : votre prochaine aventure commence ici"
+description: "La nouvelle plateforme de Dawn Web pour des expériences de voyage sélectionnées à travers le monde"
 author: "Andrew"
-role: "Founder & CEO"
+role: "Fondateur & PDG"
 authorImage: "@/images/blog/andrew.png"
-authorImageAlt: "Avatar of Andrew, Dawn Web founder & CEO"
+authorImageAlt: "Avatar d'Andrew, fondateur et PDG de Dawn Web"
 pubDate: 2025-05-10
 cardImage: "@/images/blog/motorvoyage.jpg"
-cardImageAlt: "A scenic road winding through mountain valleys, shot from above"
+cardImageAlt: "Une route sinueuse traversant des vallées montagneuses, vue du ciel"
 readTime: 5
-tags: ["travel", "startups", "projects", "coming soon"]
+tags: ["voyage", "startups", "projets", "bientôt disponible"]
 contents: [
-  "At Dawn Web, we're passionate about building platforms that connect people to possibility. That’s why we’re excited to introduce our newest upcoming project: MotorVoyage — a travel platform designed for those who seek more than just destinations — they seek the journey itself.",
+  "Chez Dawn Web, nous sommes passionnés par la création de plateformes qui ouvrent de nouvelles possibilités. C’est pourquoi nous sommes ravis de vous présenter notre prochain projet : MotorVoyage — une plateforme de voyage pensée pour ceux qui recherchent bien plus qu’une destination, mais une véritable aventure.",
   
-  "MotorVoyage is a curated travel experience hub that blends the thrill of discovery with local insight. From self-guided road trips across iconic landscapes to exclusive access to hidden gems, MotorVoyage will empower travelers to take control of their adventures — and love every mile of the way.",
+  "MotorVoyage est un hub d’expériences de voyage soigneusement sélectionnées, alliant le plaisir de la découverte à l’authenticité locale. Des road trips en autonomie à travers des paysages emblématiques à l’accès privilégié à des trésors cachés, MotorVoyage permettra aux voyageurs de prendre le contrôle de leurs aventures — et de savourer chaque kilomètre.",
   
-  Built from the ground up with custom technology by our team at Dawn Web, MotorVoyage combines stunning design, intuitive usability, and powerful backend functionality. Travelers will be able to search, plan, and book travel experiences seamlessly — all within a platform tailored for mobile and desktop alike.",
+  "Conçue de A à Z avec une technologie sur mesure par notre équipe, MotorVoyage associe design soigné, ergonomie intuitive et fonctionnalités puissantes. Les voyageurs pourront rechercher, planifier et réserver leurs expériences en toute simplicité — sur mobile comme sur ordinateur.",
   
-  "Why MotorVoyage? We believe in the transformative power of travel. This platform is our way of making exploration more accessible, more personalized, and more sustainable. Whether you’re chasing sunsets on coastal highways or exploring mountain passes, MotorVoyage will help you do it better.",
+  "Pourquoi MotorVoyage ? Parce que nous croyons au pouvoir transformateur du voyage. Cette plateforme est notre façon de rendre l’exploration plus accessible, plus personnalisée et plus durable. Que vous poursuiviez des couchers de soleil sur les routes côtières ou que vous exploriez des cols de montagne, MotorVoyage vous accompagnera à chaque étape.",
   
-  "Stay tuned — MotorVoyage is launching soon. If you're passionate about travel, storytelling, and building community through experience, this is one journey you’ll want to be part of.",
+  "Restez connectés — MotorVoyage arrive bientôt. Si vous êtes passionné de voyage, de partage d’histoires et de création de liens à travers l’expérience, cette aventure est faite pour vous.",
 ]
 ---

@@ -1,25 +1,24 @@
 ---
-title: "Introducing NexoED: The Future of Online Learning, Built by Dawn Web"
-description: "Our newest platform is designed to make learning smarter, more engaging, and accessible for everyone"
+title: "Présentation de NexoED : l’avenir de l’apprentissage en ligne, conçu par Dawn Web"
+description: "Notre nouvelle plateforme rend l’apprentissage plus intelligent, plus engageant et accessible à tous"
 author: "Andrew"
-role: "Founder, Dawn Web"
+role: "Fondateur, Dawn Web"
 authorImage: "@/images/blog/andrew.png"
-authorImageAlt: "Avatar of Breno, founder of Dawn Web"
+authorImageAlt: "Avatar de Breno, fondateur de Dawn Web"
 pubDate: 2025-05-30
 cardImage: "@/images/blog/studying.jpg"
-cardImageAlt: "Young adult using a laptop in a modern learning environment"
+cardImageAlt: "Jeune adulte utilisant un ordinateur portable dans un environnement d’apprentissage moderne"
 readTime: 4
-tags: ["education", "edtech", "startups", "coming soon"]
+tags: ["éducation", "edtech", "startups", "bientôt disponible"]
 contents: [
-  "Dawn Web is proud to announce NexoED — a cutting-edge education platform built to meet the evolving demands of online learning. With accessibility, engagement, and personalization at its core, NexoED is our contribution to making quality education more reachable and impactful.",
+  "Dawn Web est fier de présenter NexoED — une plateforme éducative innovante, pensée pour répondre aux nouveaux enjeux de l’apprentissage en ligne. Accessibilité, engagement et personnalisation sont au cœur de NexoED, notre contribution pour rendre l’éducation de qualité plus accessible et plus impactante.",
   
-  "NexoED is more than just another learning management system. It's a digital ecosystem where educators can create, share, and manage courses with ease — and where learners can connect with knowledge through immersive, intuitive experiences.",
+  "NexoED n’est pas simplement un système de gestion de l’apprentissage. C’est un véritable écosystème numérique où les enseignants peuvent créer, partager et gérer leurs cours facilement, et où les apprenants accèdent au savoir à travers des expériences immersives et intuitives.",
   
-  "What sets NexoED apart is its focus on simplicity, scalability, and modern UX. Whether you’re a solo tutor, an academy, or a corporate trainer, our platform adapts to your needs. Our backend is built for performance and analytics, giving you the tools to monitor student progress, gather insights, and optimize your teaching approach.",
+  "Ce qui distingue NexoED, c’est son approche axée sur la simplicité, l’évolutivité et une expérience utilisateur moderne. Que vous soyez formateur indépendant, centre de formation ou entreprise, la plateforme s’adapte à vos besoins. Notre infrastructure performante et analytique vous permet de suivre la progression des apprenants, d’obtenir des insights et d’optimiser vos méthodes pédagogiques.",
   
-  "We believe the future of learning should be decentralized, flexible, and inspiring. That’s why NexoED supports multimedia content, real-time assessments, and community-driven learning tools to bring education into the next generation.",
+  "Nous sommes convaincus que l’avenir de l’apprentissage doit être décentralisé, flexible et inspirant. C’est pourquoi NexoED prend en charge les contenus multimédias, les évaluations en temps réel et des outils collaboratifs pour faire entrer l’éducation dans une nouvelle ère.",
   
-  "Stay tuned for the launch — and be among the first to transform how you teach and learn online. If you're an educator, institution, or entrepreneur in the education space, NexoED is made for you."
+  "Restez à l’écoute pour le lancement — et soyez parmi les premiers à transformer votre façon d’enseigner et d’apprendre en ligne. Que vous soyez enseignant, établissement ou entrepreneur dans l’éducation, NexoED est fait pour vous."
 ]
-
 ---
