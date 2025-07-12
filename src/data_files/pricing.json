@@ -20,8 +20,8 @@
     ],
     "purchaseBtnTitle": "Subscribe Now",
     "purchaseBtnTitle2": "Annual Plan 20% OFF",
-    "purchaseLink": "https://buy.stripe.com/bJe3cxcs2aG10AD18ubsc06",
-    "purchaseLink2": "https://buy.stripe.com/14AfZjbnY6pL9795oKbsc09"
+    "purchaseLink": "https://buy.stripe.com/bJe3cxcs2aG10AD18ubsc06?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/14AfZjbnY6pL9795oKbsc09?locale=en"
   },
 
   "professionalToolbox": {
@@ -41,8 +41,8 @@
     ],
     "purchaseBtnTitle": "Subscribe Now",
     "purchaseBtnTitle2": "Annual Plan 20% OFF",
-    "purchaseLink": "https://buy.stripe.com/bJefZjcs29BX9796sObsc07",
-    "purchaseLink2": "https://buy.stripe.com/fZu3cx1No7tPfvx2cybsc0a"
+    "purchaseLink": "https://buy.stripe.com/bJefZjcs29BX9796sObsc07?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/fZu3cx1No7tPfvx2cybsc0a?locale=en"
   },
 
   "enterprise": {
@@ -61,7 +61,7 @@
     ],
     "purchaseBtnTitle": "Subscribe Now",
     "purchaseBtnTitle2": "Annual Plan 20% OFF",
-    "purchaseLink": "https://buy.stripe.com/eVqaEZ4ZAdSd0ADbN8bsc08",
-    "purchaseLink2": "https://buy.stripe.com/4gM4gB3Vw7tPbfh3gCbsc0b"
+    "purchaseLink": "https://buy.stripe.com/eVqaEZ4ZAdSd0ADbN8bsc08?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/4gM4gB3Vw7tPbfh3gCbsc0b?locale=en"
   }
 }
