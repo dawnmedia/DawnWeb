@@ -50,7 +50,7 @@ specificationsRight:
   - title: "Transparent Pricing"
     subTitle: "No surprises. Flat-rate packages, custom quotes, and dev plans that scale with your needs."
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+  first: "@/images/code.jpg"
+  second: "@/images/code.jpg"
 
 ---

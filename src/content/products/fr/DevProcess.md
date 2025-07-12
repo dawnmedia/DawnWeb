@@ -1,56 +1,56 @@
 ---
-title: "How We Build"
-description: "Our Web & Software Development Process"
+title: "Notre Méthode"
+description: "Notre processus de développement web et logiciel"
 main:
   id: 4
   content: |
-    Every great product starts with a solid process. At Dawn Web, we follow a methodical yet flexible approach that blends creativity, collaboration, and technical excellence. Whether you're getting a website, an app, or a fully-managed platform — this is how we build digital experiences that last.
+    Chaque produit d’exception commence par une méthode solide. Chez Dawn Web, nous adoptons une approche à la fois rigoureuse et flexible, qui allie créativité, collaboration et excellence technique. Que vous souhaitiez un site web, une application ou une plateforme complète, voici comment nous créons des expériences numériques durables.
   imgCard: "@/images/webuild.jpg"
   imgMain: "@/images/webuild.jpg"
-  imgAlt: "Illustration of the web development process"
+  imgAlt: "Illustration du processus de développement web"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
-    title: "Overview"
+    title: "Aperçu"
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
-    title: "Our Process"
+    title: "Notre Processus"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Why It Works"
+    title: "Pourquoi ça marche"
 longDescription:
-  title: "We Don’t Just Code. We Craft."
+  title: "Nous ne faisons pas que coder. Nous façonnons."
   subTitle: |
-    At Dawn Web, development isn't just execution — it's co-creation. Our process balances vision with structure, and design with performance. From the first discovery call to long-term support, we treat your product like it's our own.
-  btnTitle: "Let’s Start Your Project"
+    Chez Dawn Web, le développement ne se limite pas à l’exécution — c’est une co-création. Notre méthode équilibre vision et structure, design et performance. De la première prise de contact à l’accompagnement sur le long terme, nous traitons votre projet comme s’il était le nôtre.
+  btnTitle: "Démarrons votre projet"
   btnURL: "#contact"
 descriptionList:
-  - title: "Discovery & Planning"
-    subTitle: "We start by understanding your business, users, and goals. Then we map out a game plan that aligns with your vision and budget."
-  - title: "Design & Prototyping"
-    subTitle: "We build wireframes, UI designs, and interactive prototypes so you can visualize the final product before we code a line."
-  - title: "Development & Testing"
-    subTitle: "Using modern frameworks and best practices, we turn designs into working products with clean, scalable code — thoroughly tested."
+  - title: "Découverte & Planification"
+    subTitle: "Nous commençons par comprendre votre activité, vos utilisateurs et vos objectifs. Ensuite, nous élaborons une feuille de route adaptée à votre vision et à votre budget."
+  - title: "Design & Prototypage"
+    subTitle: "Nous réalisons des wireframes, des maquettes UI et des prototypes interactifs pour que vous puissiez visualiser le produit final avant la moindre ligne de code."
+  - title: "Développement & Tests"
+    subTitle: "Grâce aux frameworks modernes et aux meilleures pratiques, nous transformons les designs en produits fonctionnels, avec un code propre et évolutif — soigneusement testé."
 specificationsLeft:
-  - title: "Tech Stack"
-    subTitle: "React, Next.js, Tailwind CSS, Node.js, Firebase, and more — chosen to fit your project, not the trend."
-  - title: "Responsive by Default"
-    subTitle: "We design and build for mobile, tablet, and desktop — no extra charge, no compromises."
-  - title: "Security First"
-    subTitle: "We follow secure coding practices and can integrate firewalls, backups, and SSL from day one."
-  - title: "Performance Focused"
-    subTitle: "Fast-loading, SEO-friendly, and optimized for both users and search engines."
+  - title: "Stack Technique"
+    subTitle: "React, Next.js, Tailwind CSS, Node.js, Firebase, et bien d’autres — sélectionnés selon les besoins de votre projet, pas selon la mode."
+  - title: "Responsive par Défaut"
+    subTitle: "Nous concevons et développons pour mobile, tablette et desktop — sans surcoût, sans compromis."
+  - title: "Sécurité Prioritaire"
+    subTitle: "Nous appliquons des pratiques de codage sécurisées et pouvons intégrer pare-feu, sauvegardes et SSL dès le départ."
+  - title: "Performance Optimale"
+    subTitle: "Chargement rapide, SEO optimisé, pensé pour les utilisateurs comme pour les moteurs de recherche."
 specificationsRight:
-  - title: "Client Collaboration"
-    subTitle: "Weekly check-ins, demo reviews, and shared task boards — you’re always in the loop."
-  - title: "Launch Support"
-    subTitle: "We’ll guide you through domain setup, deployment, analytics, and hosting — no stress."
-  - title: "Post-Launch Plans"
-    subTitle: "Keep your site secure and evolving with our optional support and maintenance plans."
-  - title: "Transparent Pricing"
-    subTitle: "No surprises. Flat-rate packages, custom quotes, and dev plans that scale with your needs."
+  - title: "Collaboration Client"
+    subTitle: "Points hebdomadaires, démos régulières, tableaux de tâches partagés — vous restez informé à chaque étape."
+  - title: "Accompagnement au Lancement"
+    subTitle: "Nous vous guidons pour la configuration du domaine, le déploiement, l’analytics et l’hébergement — en toute sérénité."
+  - title: "Suivi Post-Lancement"
+    subTitle: "Gardez votre site sécurisé et évolutif grâce à nos offres de support et de maintenance optionnelles."
+  - title: "Tarification Transparente"
+    subTitle: "Aucune surprise. Forfaits fixes, devis personnalisés et plans évolutifs selon vos besoins."
 blueprints:
-  first: "@/images/blueprint-1.avif"
-  second: "@/images/blueprint-2.avif"
+  first: "@/images/code.jpg"
+  second: "@/images/code.jpg"
 
 ---

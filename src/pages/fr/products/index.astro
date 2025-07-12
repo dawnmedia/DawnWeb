@@ -21,18 +21,18 @@ const product: CollectionEntry<"products">[] = (
     a.data.main.id - b.data.main.id
 );
 
-// Define variables for page content
+// Définir les variables pour le contenu de la page
 const title: string = "Produits";
 const subTitle: string =
-  "Explorez la durabilité et la précision des outils ScrewFast, conçus aussi bien pour les professionnels que pour les amateurs. Chacun de nos produits est fabriqué avec précision et conçu pour durer, garantissant que vous disposez du bon outil pour chaque tâche.";
+  "Découvrez l’art et l’impact des créations web de Dawn Web, conçues pour les entreprises de toutes tailles. Chaque site est réalisé avec soin, alliant expérience utilisateur, esthétique et performance pour atteindre vos objectifs professionnels.";
 
-// Testimonial data that will be rendered in the component
+// Données de témoignages à afficher dans le composant
 const testimonials = [
   {
     content:
-      "Depuis que nous avons adopté les outils matériels de ScrewFast, l'efficacité sur nos chantiers de construction a explosé. La durabilité des boulons hexagonaux et la précision des vis machine sont tout simplement inégalées. C'est rafraîchissant de travailler avec une entreprise qui comprend vraiment les exigences quotidiennes de l'industrie.",
-    author: "Jason Clark",
-    role: "Contremaître de chantier | TopBuild",
+      "Nous avions du mal à gérer efficacement notre présence sur les réseaux sociaux. Dawn Web a mis en place une stratégie complète qui a considérablement augmenté notre engagement et notre portée. Leur équipe fournit toujours un contenu de grande qualité, parfaitement adapté à notre image de marque. Nous recommandons vivement leurs services !",
+    author: "Johnathan Miller",
+    role: "Directeur Marketing | Green Bean Coffee Roasters",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Description de l'image",
@@ -40,9 +40,9 @@ const testimonials = [
 
   {
     content:
-      "En tant que designer d'intérieur, je suis toujours à la recherche de matériaux et d'outils de haute qualité qui m'aident à donner vie à mes visions. L'assortiment de vis mixtes de ScrewFast a révolutionné mes projets, offrant le mélange parfait de qualité et de variété. Le support client exceptionnel était la cerise sur le gâteau !",
-    author: "Maria Gonzalez",
-    role: "Designer d'intérieur | Creative Spaces",
+      "Dawn Web a transformé notre site internet vieillissant en une plateforme moderne et intuitive. Depuis la mise en ligne, nous constatons une nette augmentation des demandes et des ventes en ligne. L’équipe a été très professionnelle, réactive et vraiment investie dans notre réussite.",
+    author: "Aisha Khan",
+    role: "Propriétaire | Bloom & Wild Florists",
     avatarSrc:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Description de l'image",
@@ -50,9 +50,9 @@ const testimonials = [
 
   {
     content:
-      "Je suis menuisier professionnel depuis plus de 15 ans, et je peux sincèrement dire que les boulons et écrous à tarauder de ScrewFast sont parmi les meilleurs que j'ai utilisés. Ils adhèrent comme aucun autre, et j'ai une confiance totale dans chaque joint et élément. De plus, le service est impeccable - ils se soucient vraiment du succès de mon projet.",
+      "En tant que nouvelle entreprise, nous avions besoin d’un site qui fasse forte impression dès le départ. Dawn Web a dépassé nos attentes ! Ils ont conçu un site magnifique et fonctionnel, parfaitement fidèle à notre identité. Nous sommes très reconnaissants pour leur expertise et leurs conseils.",
     author: "Richard Kim",
-    role: "Menuisier-Maître | WoodWright",
+    role: "Fondateur | The Cozy Corner Bookstore",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Description de l'image",
@@ -66,17 +66,17 @@ const testimonials = [
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/fr/products",
-    url: "https://screwfast.uk/fr/products",
-    name: "Outils Matériels | ScrewFast",
+    "@id": "https://dawnwebs.com/fr/products",
+    url: "https://dawnwebs.com/fr/products",
+    name: "Nos Produits | Dawn Web",
     description:
       "Explorez la durabilité et la précision des outils ScrewFast, conçus aussi bien pour les professionnels que pour les passionnés.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk/fr",
-      name: "ScrewFast",
+      url: "https://dawnwebs.com/fr",
+      name: "Dawn Web",
       description:
-        "ScrewFast propose des outils matériels de premier ordre et des services de construction experts pour répondre à tous vos besoins de projet.",
+        "Dawn Web est une agence spécialisée dans la création de sites web performants et sur mesure, adaptés aux besoins de chaque entreprise.",
     },
     inLanguage: "fr",
   }}
@@ -100,13 +100,13 @@ const testimonials = [
         }
       </div>
       <PrimaryCTA
-        title="Histoires de clients"
+        title="Témoignages clients"
         url="#testimonials"
         noArrow={true}
       />
     </div>
-    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
-    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
+    <!--Affichage des produits avec styles alternés. Les produits alternatifs utilisent un style de carte différent.-->
+    <!--Parcourt toutes les entrées produits et les affiche avec CardSmall ou CardWide selon leur position.-->
     <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       {
         product.map((product, index) => {
@@ -120,19 +120,19 @@ const testimonials = [
       }
     </section>
   </div>
-  <!--Features statistics section-->
+  <!--Section statistiques et avantages-->
   <FeaturesStatsAlt
-    title="Pourquoi choisir ScrewFast ?"
-    subTitle="Transformez vos idées en résultats tangibles avec les outils ScrewFast. Que vous commenciez par un croquis sur un coin de table ou plongiez dans un projet de construction complet, nos outils sont conçus pour vous aider à construire en toute confiance."
+    title="Pourquoi choisir Dawn Web ?"
+    subTitle="Transformez vos idées en une présence en ligne puissante avec Dawn Web. Que vous soyez une start-up ou une entreprise établie, nous proposons des solutions sur mesure pour atteindre vos objectifs."
     benefits={[
-      "Outils robustes et fiables pour des performances durables.",
-      "Solutions innovantes adaptées aux besoins de construction modernes.",
-      "Support client dédié au succès de votre projet.",
+      "Sites web performants : nous concevons et développons des sites personnalisés, rapides, fiables et optimisés pour convertir vos visiteurs en clients fidèles.",
+      "Solutions évolutives : notre approche couvre tout, des pages d’atterrissage simples aux plateformes intégrées, avec des technologies modernes, prêtes à évoluer et faciles à maintenir.",
+      "Accompagnement durable : de la mise en ligne à la réussite sur le long terme, nous assurons la maintenance, la sécurité et un support expert pour garantir la performance de votre site chaque jour.",
     ]}
   />
-  <!--Testimonials section-->
+  <!--Section témoignages
   <TestimonialsSectionAlt
     title="Ce que disent nos clients"
     testimonials={testimonials}
-  />
+  />-->
 </MainLayout>

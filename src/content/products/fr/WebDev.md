@@ -1,55 +1,54 @@
 ---
-title: "Web Development"
-description: "Building Modern Websites That Work for You"
+title: "Développement Web"
+description: "Des Sites Modernes, Pensés pour Votre Réussite"
 main:
   id: 1
   content: |
-    At Dawn Web, we specialize in crafting high-performance, secure, and scalable websites tailored to your vision. Whether it's a simple landing page or a fully custom web application, our team delivers reliable, high-quality solutions with the latest technologies and clean, maintainable code. We don’t just build websites—we bring your digital ideas to life.
+    Chez Dawn Web, nous concevons des sites performants, sécurisés et évolutifs, entièrement adaptés à votre vision. Qu’il s’agisse d’une simple page d’accueil ou d’une application web sur mesure, notre équipe livre des solutions fiables et de qualité, basées sur les dernières technologies et un code clair et maintenable. Nous ne faisons pas que créer des sites web — nous donnons vie à vos idées digitales.
   imgCard: "@/images/code.jpg"
   imgMain: "@/images/code.jpg"
-  imgAlt: "Web Development Image"
+  imgAlt: "Image de développement web"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
-    title: "Overview"
+    title: "Présentation"
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
-    title: "Features"
+    title: "Fonctionnalités"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Workflow"
+    title: "Méthodologie"
 longDescription:
-  title: "We Build Your Virtual Dreams."
+  title: "Nous Donnons Vie à Vos Projets Numériques"
   subTitle: |
-    Every successful business needs a strong digital foundation. Our web development services are designed to transform your ideas into high-performing digital products. From design to deployment, we take care of every step, ensuring quality, speed, and reliability in every line of code.
-  btnTitle: "Contact Us to Get Started"
+    Toute entreprise ambitieuse a besoin d’une base digitale solide. Nos services de développement web transforment vos idées en produits numériques performants. De la conception au déploiement, nous prenons en charge chaque étape avec rigueur pour garantir qualité, rapidité et fiabilité dans chaque ligne de code.
+  btnTitle: "Contactez-nous pour démarrer"
   btnURL: "#contact"
 descriptionList:
-  - title: "Custom Solutions"
-    subTitle: "We build tailored websites and apps to meet your business goals, not just templates."
-  - title: "Ongoing Support"
-    subTitle: "From updates to troubleshooting, we offer full maintenance to keep your site running smoothly."
-  - title: "Modern Technologies"
-    subTitle: "Our stack includes the latest in web technologies for speed, security, and scalability."
+  - title: "Solutions sur mesure"
+    subTitle: "Nous créons des sites et des applications parfaitement adaptés à vos objectifs — sans passer par des modèles génériques."
+  - title: "Support continu"
+    subTitle: "Mises à jour, assistance, maintenance : nous restons à vos côtés après la mise en ligne."
+  - title: "Technologies modernes"
+    subTitle: "Nous utilisons les dernières technologies pour assurer des performances, une sécurité et une évolutivité optimales."
 specificationsLeft:
-  - title: "Languages & Frameworks"
-    subTitle: "We work with JavaScript, React, Vue, Node.js, Tailwind CSS, and more."
-  - title: "Security Standards"
-    subTitle: "All our builds follow best practices for modern web security, including HTTPS, secure forms, and user data protection."
-  - title: "Performance Optimization"
-    subTitle: "From image compression to lazy loading and SEO, we optimize every part of your site."
-  - title: "Responsive Design"
-    subTitle: "Every website is fully responsive, looking great on all devices—desktop, tablet, or mobile."
+  - title: "Langages & Frameworks"
+    subTitle: "JavaScript, React, Vue, Node.js, Tailwind CSS, et bien plus."
+  - title: "Normes de sécurité"
+    subTitle: "Nos développements intègrent les meilleures pratiques : HTTPS, formulaires sécurisés, protection des données utilisateur."
+  - title: "Optimisation des performances"
+    subTitle: "Compression des images, chargement différé, SEO... chaque détail est pensé pour la vitesse."
+  - title: "Design responsive"
+    subTitle: "Nos sites s’adaptent parfaitement à tous les écrans : ordinateur, tablette ou mobile."
 tableData:
-  - feature: ["Feature", "Details"]
+  - feature: ["Fonctionnalité", "Détails"]
     description:
-      - ["Deployment", "Fast, secure deployment with Git integration and CI/CD pipelines."]
-      - ["CMS Integration", "Seamless WordPress, Sanity, or custom CMS support."]
-      - ["Analytics", "Google Analytics, heatmaps, and user tracking support."]
-      - ["SEO", "Built-in SEO best practices and metadata configuration."]
-      - ["Accessibility", "ADA-compliant, accessible design built in."]
+      - ["Déploiement", "Déploiement rapide et sécurisé avec intégration Git et pipelines CI/CD."]
+      - ["Intégration CMS", "Compatible avec WordPress, Sanity ou CMS sur mesure."]
+      - ["Analytique", "Intégration de Google Analytics, cartes de chaleur et suivi du comportement utilisateur."]
+      - ["SEO", "Optimisation SEO intégrée avec gestion des métadonnées."]
+      - ["Accessibilité", "Design accessible et conforme aux normes d’accessibilité."]
 blueprints:
   first: "@/images/code.jpg"
   second: "@/images/hero-image.png"
-
 ---
