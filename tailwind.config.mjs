@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors';
+import colors, { blue } from 'tailwindcss/colors';
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
@@ -28,7 +28,17 @@ export default {
         400: "#405991",
         500: "#274583",
         600: "#0f3075",
-      }, // Primary colors, used mainly for links, buttons and svg icons
+      },
+      blue: {
+        100: "#ffffff",
+        200: "#ffffff",
+        300: "#596f9e",
+        400: "#405991",
+        500: "#274583",
+        600: "#0f3075",
+      }, // Used mainly for links, buttons and svg icons
+      
+      // Primary colors, used mainly for links, buttons and svg icons
       red: colors.red, // Used for bookmark icon
       zinc: colors.zinc, // Used mainly for box-shadow
     },
