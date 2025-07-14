@@ -54,7 +54,7 @@ const articles: Article[] = [
     imgAlt: "Écran affichant du code de développement",
     btnExists: true,
     btnTitle: "En savoir plus",
-    btnURL: "#",
+    btnURL: "/fr/blog",
     },
     {
     isRightSection: true,
@@ -114,12 +114,14 @@ const articles: Article[] = [
   }}
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
+    <!-- getRelativeLocaleUrl("fr", "/contact") -->
   <MainSection
     title="Alliez expertise et vision numérique"
     subTitle="Chez Dawn Web, nous proposons des solutions complètes de développement web et logiciel pour concrétiser vos idées digitales. Notre équipe expérimentée vous accompagne à chaque étape, de la découverte au déploiement, pour garantir la réussite de votre projet."
     btnExists={true}
     btnTitle="Planifier une consultation"
-    btnURL={getRelativeLocaleUrl("fr", "/contact")}
+    btnURL="https://calendly.com/contact-dawnwebs/30min"
+  
   />
   <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
   They alternate for variety in design.
