@@ -40,7 +40,13 @@ export default {
         700: "#0c1f4b",
         800: "#0a1a3c",
         900: "#08162f",
-      }, // Used mainly for links, buttons and svg icons
+      },
+      
+      cd: {
+        light: "#FFEDD5", // Used for the main background color
+        dark: "#262626", // Used for the main background color in dark mode
+      },
+      // Used mainly for links, buttons and svg icons
       
       // Primary colors, used mainly for links, buttons and svg icons
       red: colors.red, // Used for bookmark icon

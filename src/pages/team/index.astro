@@ -8,21 +8,15 @@ type TeamMember = {
 };
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
+import CardTeam from "@/components/ui/cards/CardTeam.astro";
 ---
+
+
 
 <MainLayout title={`Our Team | ${SITE.title}`}>
         <div class="team-grid">
 
     </section>
-    <style>
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        h1 {
-            text-align: center;
-        }
-    </style>
 </MainLayout>
+
+<CardTeam></CardTeam>
