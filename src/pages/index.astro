@@ -9,12 +9,12 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.png";
+import heroImage from "@images/hero.png";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featuresjpg from "@images/features.jpg";
-import webdev from "@images/web-dev.jpg";
+import software from "@images/software.jpg";
+import webdev from "@images/web-dev.png";
 import payments from "@images/payments.jpg";
 
 const avatarSrcs: Array<string> = [
@@ -73,7 +73,7 @@ const avatarSrcs: Array<string> = [
         content:
           "From hotel PMS systems to restaurant kiosks, we build software solutions that solve real business challenges.",
         svg: "dashboard",
-        src: payments,
+        src: software,
         alt: "A screenshot or graphic representation of the intuitive dashboard",
         second: true,
       },
@@ -82,7 +82,7 @@ const avatarSrcs: Array<string> = [
         content:
           "We go beyond just websites. Dawn Web integrates your online presence with essential tools and platforms to streamline your business.",
         svg: "house",
-        src: featuresjpg,
+        src: payments,
         alt: "Gray metal building frame near tower crane during daytime",
       },
     ]}

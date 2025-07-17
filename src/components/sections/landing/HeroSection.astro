@@ -78,7 +78,8 @@ interface Props {
   </div>
   <!-- Hero Image Section -->
   <div class="flex w-full">
-      <div class="top-12 overflow-hidden">
+      <div class="top-12 relative h-full w-full p-10">
+        <!-- Image Component: This component renders the hero image with specified src and alt attributes -->
 	{src && alt &&
 	<Image
         src={src}
@@ -86,7 +87,7 @@ interface Props {
         class="h-full w-full scale-110 object-cover object-center"
         draggable={"false"}
         loading={"eager"}
-        format={"avif"}
+        format={"png"}
 	 />
 	}
     </div>
