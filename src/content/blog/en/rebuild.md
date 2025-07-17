@@ -3,7 +3,7 @@ title: "5 Signs It’s Time to Rebuild or Redesign Your Website"
 description: "Don’t let an outdated website hold your business back — here are the top signs you need a fresh start."
 author: "Andrew"
 role: "CEO & Founder"
-authorImage: "@/images/blog/andrew.png"
+authorImage: "@/images/blog/Andrew2.png"
 authorImageAlt: "Portrait of Andrew"
 pubDate: 2025-05-31
 cardImage: "@/images/web-dev.jpg"
