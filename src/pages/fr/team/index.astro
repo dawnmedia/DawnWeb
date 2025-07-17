@@ -9,6 +9,7 @@ type TeamMember = {
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 import CardTeamFR from "@/components/ui/cards/CardTeamFR.astro";
+import TeamAlt from "@components/sections/landing/TeamAlt.astro";
 ---
 
 
@@ -20,3 +21,10 @@ import CardTeamFR from "@/components/ui/cards/CardTeamFR.astro";
 </MainLayout>
 
 <CardTeamFR></CardTeamFR>
+
+  <TeamAlt
+    title="Nous recrutons!"
+    subTitle="Rejoignez notre équipe et aidez-nous à créer des produits incroyables."
+    url="/fr/contact"
+  />
+

@@ -1,14 +1,8 @@
 ---
-type TeamMember = {
-    name: string;
-    role: string;
-    bio: string;
-    avatar: string;
-    skills: string[];
-};
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 import CardTeam from "@/components/ui/cards/CardTeam.astro";
+import TeamAlt from "@components/sections/landing/TeamAlt.astro";
 ---
 
 
@@ -20,3 +14,10 @@ import CardTeam from "@/components/ui/cards/CardTeam.astro";
 </MainLayout>
 
 <CardTeam></CardTeam>
+
+
+  <TeamAlt
+    title="We are Hiring!"
+    subTitle="Join our team and help us build amazing products."
+    url="/contact"
+  />
