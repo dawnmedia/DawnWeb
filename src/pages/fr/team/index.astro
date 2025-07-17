@@ -1,0 +1,22 @@
+---
+type TeamMember = {
+    name: string;
+    role: string;
+    bio: string;
+    avatar: string;
+    skills: string[];
+};
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import CardTeamFR from "@/components/ui/cards/CardTeamFR.astro";
+---
+
+
+
+<MainLayout title={`Our Team | ${SITE.title}`}>
+        <div class="team-grid">
+
+    </section>
+</MainLayout>
+
+<CardTeamFR></CardTeamFR>
