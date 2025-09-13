@@ -6,12 +6,16 @@ import MegaMenuLink from "@components/ui/links/MegaMenuLink.astro";
 import Authentication from "../misc/Authentication.astro";
 import enStrings from "@utils/navigation.ts";
 import frStrings from "@utils/fr/navigation.ts";
+import brStrings from "@utils/br/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
 
 // Select the correct translation based on the page's lang prop:
 const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
 const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
+const homeUrlBr = Astro.currentLocale === "br" ? "/br" : "/";
+const stringsBr = Astro.currentLocale === "br" ? brStrings : enStrings;
+
 ---
 
 <!-- Main header component -->
