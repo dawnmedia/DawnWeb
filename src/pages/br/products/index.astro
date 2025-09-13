@@ -1,0 +1,138 @@
+---
+// Importing necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import CardWide from "@components/ui/cards/CardWide.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) => {
+    return id.startsWith("fr/");
+  })
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id
+);
+
+// Définir les variables pour le contenu de la page
+const title: string = "Produits";
+const subTitle: string =
+  "Découvrez l’art et l’impact des créations web de Dawn Web, conçues pour les entreprises de toutes tailles. Chaque site est réalisé avec soin, alliant expérience utilisateur, esthétique et performance pour atteindre vos objectifs professionnels.";
+
+// Données de témoignages à afficher dans le composant
+const testimonials = [
+  {
+    content:
+      "Nous avions du mal à gérer efficacement notre présence sur les réseaux sociaux. Dawn Web a mis en place une stratégie complète qui a considérablement augmenté notre engagement et notre portée. Leur équipe fournit toujours un contenu de grande qualité, parfaitement adapté à notre image de marque. Nous recommandons vivement leurs services !",
+    author: "Johnathan Miller",
+    role: "Directeur Marketing | Green Bean Coffee Roasters",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Description de l'image",
+  },
+
+  {
+    content:
+      "Dawn Web a transformé notre site internet vieillissant en une plateforme moderne et intuitive. Depuis la mise en ligne, nous constatons une nette augmentation des demandes et des ventes en ligne. L’équipe a été très professionnelle, réactive et vraiment investie dans notre réussite.",
+    author: "Aisha Khan",
+    role: "Propriétaire | Bloom & Wild Florists",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Description de l'image",
+  },
+
+  {
+    content:
+      "En tant que nouvelle entreprise, nous avions besoin d’un site qui fasse forte impression dès le départ. Dawn Web a dépassé nos attentes ! Ils ont conçu un site magnifique et fonctionnel, parfaitement fidèle à notre identité. Nous sommes très reconnaissants pour leur expertise et leurs conseils.",
+    author: "Richard Kim",
+    role: "Fondateur | The Cozy Corner Bookstore",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Description de l'image",
+  },
+];
+---
+
+<MainLayout
+  title="Produits | Dawn Web"
+  lang="fr"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://dawnwebs.com/fr/products",
+    url: "https://dawnwebs.com/fr/products",
+    name: "Nos Produits | Dawn Web",
+    description:
+      "Explorez la durabilité et la précision des outils Dawn Web, conçus aussi bien pour les professionnels que pour les passionnés.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://dawnwebs.com/fr",
+      name: "Dawn Web",
+      description:
+        "Dawn Web est une agence spécialisée dans la création de sites web performants et sur mesure, adaptés aux besoins de chaque entreprise.",
+    },
+    inLanguage: "fr",
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+      <div class="flex items-center gap-12">
+        <h1
+          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          {title}
+        </h1>
+        {
+          subTitle && (
+            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
+              {subTitle}
+            </p>
+          )
+        }
+      </div>
+      <PrimaryCTA
+        title="Témoignages clients"
+        url="#testimonials"
+        noArrow={true}
+      />
+    </div>
+    <!--Affichage des produits avec styles alternés. Les produits alternatifs utilisent un style de carte différent.-->
+    <!--Parcourt toutes les entrées produits et les affiche avec CardSmall ou CardWide selon leur position.-->
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      {
+        product.map((product, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardSmall product={product} productLocale="fr" />;
+          } else {
+            return <CardWide product={product} productLocale="fr" />;
+          }
+        })
+      }
+    </section>
+  </div>
+  <!--Section statistiques et avantages-->
+  <FeaturesStatsAlt
+    title="Pourquoi choisir Dawn Web ?"
+    subTitle="Transformez vos idées en une présence en ligne puissante avec Dawn Web. Que vous soyez une start-up ou une entreprise établie, nous proposons des solutions sur mesure pour atteindre vos objectifs."
+    benefits={[
+      "Sites web performants : nous concevons et développons des sites personnalisés, rapides, fiables et optimisés pour convertir vos visiteurs en clients fidèles.",
+      "Solutions évolutives : notre approche couvre tout, des pages d’atterrissage simples aux plateformes intégrées, avec des technologies modernes, prêtes à évoluer et faciles à maintenir.",
+      "Accompagnement durable : de la mise en ligne à la réussite sur le long terme, nous assurons la maintenance, la sécurité et un support expert pour garantir la performance de votre site chaque jour.",
+    ]}
+  />
+  <!--Section témoignages
+  <TestimonialsSectionAlt
+    title="Ce que disent nos clients"
+    testimonials={testimonials}
+  />-->
+</MainLayout>

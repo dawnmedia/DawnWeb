@@ -13,7 +13,7 @@ export default defineConfig({
   },
   // i18n: {
   //   defaultLocale: "en",
-  //   locales: ["en", "fr"],
+  //   locales: ["en", "fr", "br"],
   //   fallback: {
   //     fr: "en",
   //   },
@@ -29,7 +29,9 @@ export default defineConfig({
         defaultLocale: "en", // All urls that don't contain `fr` after `https://dawnwebs.com/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
+          br: "br",
           fr: "fr",
+
         },
       },
     }),
@@ -49,6 +51,7 @@ export default defineConfig({
         de: { label: "Deutsch", lang: "de" },
         es: { label: "Español", lang: "es" },
         fr: { label: "Français", lang: "fr" },
+        br: { label: "Português (BR)", lang: "br" },
       },
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [
@@ -56,6 +59,7 @@ export default defineConfig({
           label: "Quick Start Guides",
           translations: {
             de: "Schnellstartanleitungen",
+            br: "Guias de Início Rápido",
             es: "Guías de Inicio Rápido",
             fa: "راهنمای شروع سریع",
             fr: "Guides de Démarrage Rapide",
