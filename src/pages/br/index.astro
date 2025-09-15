@@ -1,5 +1,4 @@
 ---
-// Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
@@ -28,74 +27,74 @@ const avatarSrcs: Array<string> = [
 <MainLayout>
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Suivez notre Instagram"
+    btnTitle="Siga nosso Instagram"
     url="https://www.instagram.com/dawnweb_en"
   />
 
   <HeroSection
-    title={`Élevez votre présence en ligne avec <span class="text-blue-600 dark:text-blue-300">Dawn Web</span>`}
-    subTitle="Création de sites web sur mesure & solutions digitales pour la croissance de votre entreprise."
-    primaryBtn="Planifier une consultation gratuite"
+    title={`Eleve sua presença online com <span class="text-blue-600 dark:text-blue-300">Dawn Web</span>`}
+    subTitle="Criação de sites personalizados e soluções digitais para impulsionar o crescimento do seu negócio."
+    primaryBtn="Agendar uma consulta gratuita"
     primaryBtnURL="https://calendly.com/contact-dawnwebs/30min"
-    secondaryBtn="Voir Nos Projets"
-    secondaryBtnURL="/fr/products"
+    secondaryBtn="Veja Nossos Projetos"
+    secondaryBtnURL="/br/products"
     withReview={false}
     avatars={avatarSrcs}
     rating={`<span class="font-bold">4.8</span> / 5`}
     starCount={4}
-    reviews={`Basé sur plus de <span class="font-bold">12,8k</span> avis`}
+    reviews={`Baseado em mais de <span class="font-bold">12,8k</span> avaliações`}
     src={heroImage}
-    alt="Image principale montrant une équipe travaillant ensemble sur un projet"
+    alt="Imagem principal mostrando uma equipe trabalhando junta em um projeto"
   />
 
   <FeaturesGeneral
-    title="Développez votre activité en ligne"
-    subTitle="Collaborez avec Dawn Web pour des sites web remarquables, du SEO et des stratégies marketing qui apportent des résultats."
-    alt="Image des fonctionnalités de Dawn Web"
+    title="Expanda seu negócio online"
+    subTitle="Colabore com a Dawn Web para criar sites incríveis, SEO e estratégias de marketing que geram resultados."
+    alt="Imagem das funcionalidades da Dawn Web"
     features={features}
   />
 
   <FeaturesNavs
-    title={`Des offres <span class="text-blue-500 dark:text-blue-400">Dawn Web</span> sur mesure pour répondre parfaitement aux besoins de votre entreprise.`}
+    title={`Soluções <span class="text-blue-500 dark:text-blue-400">Dawn Web</span> sob medida para atender perfeitamente às necessidades do seu negócio.`}
     tabs={[
       {
-        heading: "Développement Web",
+        heading: "Desenvolvimento Web",
         content:
-          "Nous créons des sites web responsives adaptés aux besoins de votre entreprise.",
+          "Criamos sites responsivos adaptados às necessidades da sua empresa.",
         svg: "tools",
         src: webdev,
-        alt: "Engins de chantier jaunes et noirs sur un terrain herbeux brun",
+        alt: "Máquinas de construção amarelas e pretas em um terreno gramado marrom",
         first: true,
       },
       {
-        heading: "Logiciels & Applications sur mesure",
+        heading: "Softwares & Aplicativos Personalizados",
         content:
-          "Des PMS hôteliers aux bornes de restaurant, nous développons des solutions logicielles qui répondent à de vrais défis métier.",
+          "De PMS hoteleiros a totens de restaurante, desenvolvemos soluções de software que resolvem desafios reais do seu negócio.",
         svg: "dashboard",
         src: payments,
-        alt: "Capture d'écran ou représentation graphique du tableau de bord intuitif",
+        alt: "Captura de tela ou representação gráfica de um painel intuitivo",
         second: true,
       },
       {
-        heading: "Fonctionnalités robustes",
+        heading: "Funcionalidades robustas",
         content:
-          "Nous allons au-delà des sites web. Dawn Web intègre votre présence en ligne avec des outils et plateformes essentiels pour optimiser votre activité.",
+          "Vamos além dos sites. A Dawn Web integra sua presença online com ferramentas e plataformas essenciais para otimizar seu negócio.",
         svg: "house",
         src: featuresjpg,
-        alt: "Structure métallique grise près d'une grue de chantier en journée",
+        alt: "Estrutura metálica cinza próxima a um guindaste em um canteiro de obras durante o dia",
       },
     ]}
   />
 
   <TestimonialsSection
-    title="Lancez votre entreprise en ligne"
-    subTitle="Chez Dawn Web, nous assurons un démarrage en douceur grâce à une intégration et une configuration complètes. Découvrez la simplicité de construire votre présence en ligne avec notre accompagnement expert."
+    title="Lance seu negócio online"
+    subTitle="Na Dawn Web, garantimos um início tranquilo com integração e configuração completas. Descubra como é simples construir sua presença online com nosso suporte especializado."
     testimonials={[
       {
         content:
-          "Dawn Web a considérablement amélioré notre présence en ligne. Leur équipe a été incroyablement serviable et réactive, et les résultats sont phénoménaux. Un vrai changement pour notre entreprise !",
+          "A Dawn Web melhorou significativamente nossa presença online. A equipe foi extremamente prestativa e ágil, e os resultados são fenomenais. Uma verdadeira transformação para nossa empresa!",
         author: "Sabrina D.",
-        role: "Directrice des opérations | Labmid Inc.",
+        role: "Diretora de Operações | Labmid Inc.",
         avatarSrc:
           "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
       },
@@ -103,31 +102,31 @@ const avatarSrcs: Array<string> = [
     statistics={[
       {
         count: "221+",
-        description: "Clients satisfaits des services de Dawn Web",
+        description: "Clientes satisfeitos com os serviços da Dawn Web",
       },
       {
         count: "200%",
         description:
-          "Réduction des coûts par rapport à l'achat de services individuels.",
+          "Redução de custos em relação à contratação de serviços individuais.",
       },
       {
         count: "75%",
-        description: "Flux de travail plus efficace",
+        description: "Fluxo de trabalho mais eficiente",
       },
       {
         count: "2x",
-        description: "Mise sur le marché deux fois plus rapide",
+        description: "Tempo de lançamento duas vezes mais rápido",
       },
     ]}
   />
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+  <FAQ title="Perguntas<br />frequentes" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Commencez dès aujourd'hui"
-    subTitle="Notre équipe est dédiée à vous aider à atteindre vos objectifs grâce à une présence en ligne puissante."
-    url="/fr/contact"
+    title="Comece hoje mesmo"
+    subTitle="Nossa equipe está pronta para ajudar você a alcançar seus objetivos com uma presença online poderosa."
+    url="/br/contact"
   />
 </MainLayout>
