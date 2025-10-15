@@ -7,6 +7,11 @@ interface Props {
   url: string;
   name: string;
 }
+
+// Build the href using the configured base so links work when the site is served from a subpath
+const BASE = import.meta.env.BASE_URL || "/";
+const href = `${BASE}${url.replace(/^\//, "")}`;
+const id = url === "/" ? "home" : url.replace(/^\//, "");
 ---
 
 <!--
@@ -16,8 +21,8 @@ We assign an ID matching the URL for easy reference in our script.
 If URL is '/' (home page), assign ID as 'home' 
 -->
 <a
-  id={url === "/" ? "home" : url.replace("/", "")}
-  href={url}
+  id={id}
+  href={href}
   data-astro-prefetch
   class="rounded-lg text-base font-medium text-neutral-600 outline-none ring-zinc-500 hover:text-neutral-500 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-500 dark:focus:outline-none md:py-3 md:text-sm 2xl:text-base"
 >
@@ -26,27 +31,39 @@ If URL is '/' (home page), assign ID as 'home'
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    let url = window.location.pathname;
-    let urlSegments = url.split("/");
-    let navId;
-
-    if (url === "/") {
-      navId = "home";
-    } else {
-      navId = url.replace("/", "");
+    // Normalize a pathname by ensuring leading slash and removing trailing slash
+  function normalizePath(p: string) {
+      if (!p) return "/";
+      try {
+        // If p is an absolute URL, create URL and use pathname
+        const u = new URL(p, window.location.origin);
+        p = u.pathname;
+      } catch (e) {
+        // keep p as-is
+      }
+      if (!p.startsWith("/")) p = "/" + p;
+      if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
+      return p;
     }
 
-    let nav = document.getElementById(navId);
+    const current = normalizePath(window.location.pathname || "/");
 
-    if (nav) {
-      nav.classList.remove(
-        "text-neutral-600",
-        "dark:text-neutral-400",
-        "hover:text-neutral-500",
-        "dark:hover:text-neutral-500"
-      );
-      nav.classList.add("text-blue-400", "dark:text-blue-300");
-      nav.setAttribute("aria-current", "page");
+    // Look for a nav anchor whose normalized pathname matches current
+    const anchors = document.querySelectorAll("a[data-astro-prefetch]");
+    for (const el of anchors) {
+      const a = el as HTMLAnchorElement;
+      const aPath = normalizePath(a.getAttribute("href") || a.href || "");
+      if (aPath === current) {
+        a.classList.remove(
+          "text-neutral-600",
+          "dark:text-neutral-400",
+          "hover:text-neutral-500",
+          "dark:hover:text-neutral-500"
+        );
+        a.classList.add("text-blue-400", "dark:text-blue-300");
+        a.setAttribute("aria-current", "page");
+        break;
+      }
     }
   });
 </script>
