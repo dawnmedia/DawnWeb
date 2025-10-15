@@ -3,7 +3,7 @@ title: "Présentation de NexoED : l’avenir de l’apprentissage en ligne, con�
 description: "Notre nouvelle plateforme rend l’apprentissage plus intelligent, plus engageant et accessible à tous"
 author: "Andrew"
 role: "Fondateur, Dawn Web"
-authorImage: "@/images/blog/andrew.png"
+authorImage: "@/images/blog/Andrew.png"
 authorImageAlt: "Avatar de Breno, fondateur de Dawn Web"
 pubDate: 2025-05-30
 cardImage: "@/images/blog/studying.jpg"

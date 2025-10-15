@@ -3,7 +3,7 @@ title: "5 signes qu’il est temps de reconstruire ou de refondre votre site web
 description: "Ne laissez pas un site dépassé freiner votre activité — voici les principaux signes qu’il est temps de repartir sur de bonnes bases."
 author: "Andrew"
 role: "PDG & Fondateur"
-authorImage: "@/images/blog/andrew.png"
+authorImage: "@/images/blog/Andrew.png"
 authorImageAlt: "Portrait d’Andrew"
 pubDate: 2025-05-31
 cardImage: "@/images/web-dev.jpg"

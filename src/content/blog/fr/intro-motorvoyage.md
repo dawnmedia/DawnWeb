@@ -3,7 +3,7 @@ title: "Présentation de MotorVoyage : votre prochaine aventure commence ici"
 description: "La nouvelle plateforme de Dawn Web pour des expériences de voyage sélectionnées à travers le monde"
 author: "Andrew"
 role: "Fondateur & PDG"
-authorImage: "@/images/blog/andrew.png"
+authorImage: "@/images/blog/Andrew.png"
 authorImageAlt: "Avatar d'Andrew, fondateur et PDG de Dawn Web"
 pubDate: 2025-05-10
 cardImage: "@/images/blog/motorvoyage.jpg"
