@@ -7,8 +7,11 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://dawnmedia.github.io/DawnWeb",
-  base: "/DawnWeb/",
+  // Use your custom domain as the site URL and serve from the root path.
+  // When using a custom domain (dawnwebs.com) GitHub Pages serves at the root,
+  // so `base` should be "/" to avoid broken asset and link paths.
+  site: "https://dawnwebs.com",
+  base: "/",
 
   image: {
     domains: ["images.unsplash.com"],
