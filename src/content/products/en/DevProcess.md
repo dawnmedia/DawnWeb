@@ -2,7 +2,7 @@
 title: "How We Build"
 description: "Our Web & Software Development Process"
 main:
-  id: 4
+  id: 1
   content: |
     Every great product starts with a solid process. At Dawn Web, we follow a methodical yet flexible approach that blends creativity, collaboration, and technical excellence. Whether you're getting a website, an app, or a fully-managed platform — this is how we build digital experiences that last.
   imgCard: "@/images/webuild.jpg"
