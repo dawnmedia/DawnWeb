@@ -1,56 +1,56 @@
 ---
-title: "How We Build"
-description: "Our Web & Software Development Process"
+title: "Triplut"
+description: "Redefining Travel Planning with AI – Seamless, Personalized, and Truly Modern"
 main:
   id: 1
   content: |
-    Every great product starts with a solid process. At Dawn Web, we follow a methodical yet flexible approach that blends creativity, collaboration, and technical excellence. Whether you're getting a website, an app, or a fully-managed platform — this is how we build digital experiences that last.
-  imgCard: "@/images/webuild.jpg"
-  imgMain: "@/images/webuild.jpg"
-  imgAlt: "Illustration of the web development process"
+    Triplut is your next-generation travel planning platform, powered by artificial intelligence and built for real humans craving smarter, simpler, and more inspiring journeys. Whether your dream trip is across Brazil or the world, Triplut brings all transport types, local expertise, and intuitive technology together so you can plan, book, and experience your adventure with absolute confidence.
+  imgCard: "@/images/triplut6.jpg"
+  imgMain: "@/images/triplut5.jpg"
+  imgAlt: "Illustration of Triplut AI travel platform"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
     title: "Overview"
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
-    title: "Our Process"
+    title: "How It Works"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Why It Works"
+    title: "AI and the Future of Travel"
 longDescription:
-  title: "We Don’t Just Code. We Craft."
+  title: "The Smarter Way to Plan, Book, and Travel"
   subTitle: |
-    At Dawn Web, development isn't just execution — it's co-creation. Our process balances vision with structure, and design with performance. From the first discovery call to long-term support, we treat your product like it's our own.
-  btnTitle: "Let’s Start Your Project"
-  btnURL: "#contact"
+    Triplut isn’t just a booking site or another route aggregator. It’s an intelligent travel partner that listens, learns, and crafts trips around YOU. Powered by our AI assistant Luna, Triplut finds the best options for transport, lodging, experiences, and even food—while adapting everything to your preferences, budget, and desired comfort. With Triplut, you finally travel your way—worry-free and full of discovery.
+  btnTitle: "Plan Your Journey Now"
+  btnURL: "/comingsoon"
 descriptionList:
-  - title: "Discovery & Planning"
-    subTitle: "We start by understanding your business, users, and goals. Then we map out a game plan that aligns with your vision and budget."
-  - title: "Design & Prototyping"
-    subTitle: "We build wireframes, UI designs, and interactive prototypes so you can visualize the final product before we code a line."
-  - title: "Development & Testing"
-    subTitle: "Using modern frameworks and best practices, we turn designs into working products with clean, scalable code — thoroughly tested."
+  - title: "Plan Everything In One Place"
+    subTitle: "From buses and trains to flights and motorcycle rentals, compare and combine every major transport option in Brazil and beyond."
+  - title: "AI Itineraries – Instantly Customized"
+    subTitle: "Luna, your Triplut AI assistant, minimizes the hassle and maximizes the joy. Get a ready-to-go schedule based on your style, time, and budget—with real-time updates if your plans change."
+  - title: "Book with Confidence"
+    subTitle: "Triplut partners only with verified service providers. See clear prices, book securely, and manage reservations in seconds."
 specificationsLeft:
-  - title: "Tech Stack"
-    subTitle: "React, Next.js, Tailwind CSS, Node.js, Firebase, and more — chosen to fit your project, not the trend."
-  - title: "Responsive by Default"
-    subTitle: "We design and build for mobile, tablet, and desktop — no extra charge, no compromises."
-  - title: "Security First"
-    subTitle: "We follow secure coding practices and can integrate firewalls, backups, and SSL from day one."
-  - title: "Performance Focused"
-    subTitle: "Fast-loading, SEO-friendly, and optimized for both users and search engines."
+  - title: "All-in-One Tech Stack"
+    subTitle: "Modern cloud-based platform with the latest AI, mapping, and payment integrations."
+  - title: "Mobile & Web First"
+    subTitle: "Triplut is designed for all devices and will soon have a companion mobile app for travelers on the go."
+  - title: "Multilingual Support"
+    subTitle: "Navigate in Portuguese, Spanish, English, and more. Triplut welcomes travelers from around the globe."
+  - title: "Smart Budget Tracking"
+    subTitle: "See your estimated costs for transport, food, lodging, and activities upfront—no surprises."
 specificationsRight:
-  - title: "Client Collaboration"
-    subTitle: "Weekly check-ins, demo reviews, and shared task boards — you’re always in the loop."
-  - title: "Launch Support"
-    subTitle: "We’ll guide you through domain setup, deployment, analytics, and hosting — no stress."
-  - title: "Post-Launch Plans"
-    subTitle: "Keep your site secure and evolving with our optional support and maintenance plans."
+  - title: "Real-Time Collaboration"
+    subTitle: "Invite friends or family to plan together. Share itineraries, split costs, and adjust details collaboratively."
+  - title: "Personal AI Recommendations"
+    subTitle: "Your assistant Luna learns your travel habits and suggests new destinations, experiences, or hidden gems just for you."
+  - title: "Seamless Booking & Support"
+    subTitle: "24/7 assistance from AI and real humans. Manage everything in your dashboard, and get help anytime, anywhere."
   - title: "Transparent Pricing"
-    subTitle: "No surprises. Flat-rate packages, custom quotes, and dev plans that scale with your needs."
+    subTitle: "Flat service fees, no hidden charges. You always know what you pay for."
 blueprints:
-  first: "@/images/code.jpg"
-  second: "@/images/code.jpg"
+  first: "@/images/triplut5.jpg"
+  second: "@/images/triplut2.jpg"
 
 ---

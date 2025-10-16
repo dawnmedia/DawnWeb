@@ -6,8 +6,8 @@ main:
   content: |
     Moto Viagens is more than just a travel agency — it’s a tailored experience for riders seeking freedom, adventure, and connection with Brazil’s most scenic roads. 
     Built as a self-rider platform, Moto Viagens lets users plan their own motorcycle trips with ease, offering rental bikes, custom routes, trusted hotels, and curated attractions for every kind of rider.
-  imgCard: "@/images/blog/motoviagens.jpg"
-  imgMain: "@/images/blog/motoviagens.jpg"
+  imgCard: "@/images/motoviagens3.jpg"
+  imgMain: "@/images/motoviagens3.jpg"
   imgAlt: "Moto Viagens Brazilian motorcycle routes and tours"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -51,7 +51,7 @@ specificationsRight:
   - title: "Next Steps"
     subTitle: "Add live filtering, social media integration, and community route sharing in upcoming updates."
 blueprints:
-  first: "@/images/blog/motoviagens2.jpg"
-  second: "@/images/blog/motoviagens1.jpg"
+  first: "@/images/motoviagens2.jpg"
+  second: "@/images/motoviagens1.jpg"
 
 ---
