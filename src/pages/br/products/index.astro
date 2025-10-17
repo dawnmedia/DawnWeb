@@ -14,7 +14,7 @@ import type { CollectionEntry } from "astro:content";
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
   await getCollection("products", ({ id }) => {
-    return id.startsWith("fr/");
+    return id.startsWith("br/");
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
@@ -22,9 +22,9 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Définir les variables pour le contenu de la page
-const title: string = "Produits";
+const title: string = "Nossos Projetos";
 const subTitle: string =
-  "Découvrez l’art et l’impact des créations web de Dawn Web, conçues pour les entreprises de toutes tailles. Chaque site est réalisé avec soin, alliant expérience utilisateur, esthétique et performance pour atteindre vos objectifs professionnels.";
+  "Descubra a arte e o impacto das criações web da Dawn Web, desenvolvidas para empresas de todos os tamanhos. Cada site é cuidadosamente elaborado, combinando experiência do usuário, estética e performance para alcançar seus objetivos profissionais.";
 
 // Données de témoignages à afficher dans le composant
 const testimonials = [
@@ -61,19 +61,19 @@ const testimonials = [
 ---
 
 <MainLayout
-  title="Produits | Dawn Web"
+  title="Projetos | Dawn Web"
   lang="fr"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://dawnwebs.com/fr/products",
-    url: "https://dawnwebs.com/fr/products",
-    name: "Nos Produits | Dawn Web",
+    "@id": "https://dawnwebs.com/br/products",
+    url: "https://dawnwebs.com/br/products",
+    name: "Nossos Projetos | Dawn Web",
     description:
       "Explorez la durabilité et la précision des outils Dawn Web, conçus aussi bien pour les professionnels que pour les passionnés.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://dawnwebs.com/fr",
+      url: "https://dawnwebs.com/br",
       name: "Dawn Web",
       description:
         "Dawn Web est une agence spécialisée dans la création de sites web performants et sur mesure, adaptés aux besoins de chaque entreprise.",
@@ -100,9 +100,9 @@ const testimonials = [
         }
       </div>
       <PrimaryCTA
-        title="Témoignages clients"
-        url="#testimonials"
-        noArrow={true}
+        title="Contate-Nos"
+        url="/br/contact"
+        noArrow={false}
       />
     </div>
     <!--Affichage des produits avec styles alternés. Les produits alternatifs utilisent un style de carte différent.-->
@@ -122,14 +122,14 @@ const testimonials = [
   </div>
   <!--Section statistiques et avantages-->
   <FeaturesStatsAlt
-    title="Pourquoi choisir Dawn Web ?"
-    subTitle="Transformez vos idées en une présence en ligne puissante avec Dawn Web. Que vous soyez une start-up ou une entreprise établie, nous proposons des solutions sur mesure pour atteindre vos objectifs."
-    benefits={[
-      "Sites web performants : nous concevons et développons des sites personnalisés, rapides, fiables et optimisés pour convertir vos visiteurs en clients fidèles.",
-      "Solutions évolutives : notre approche couvre tout, des pages d’atterrissage simples aux plateformes intégrées, avec des technologies modernes, prêtes à évoluer et faciles à maintenir.",
-      "Accompagnement durable : de la mise en ligne à la réussite sur le long terme, nous assurons la maintenance, la sécurité et un support expert pour garantir la performance de votre site chaque jour.",
-    ]}
-  />
+  title="Por que escolher a Dawn Web?"
+  subTitle="Transforme suas ideias em uma presença online poderosa com a Dawn Web. Seja você uma startup ou uma empresa estabelecida, oferecemos soluções sob medida para alcançar seus objetivos."
+  benefits={[
+    "Sites de alta performance: projetamos e desenvolvemos sites personalizados, rápidos, confiáveis e otimizados para converter seus visitantes em clientes fiéis.",
+    "Soluções escaláveis: nossa abordagem abrange tudo, desde simples landing pages até plataformas integradas, com tecnologias modernas, prontas para evoluir e de fácil manutenção.",
+    "Acompanhamento duradouro: do lançamento ao sucesso a longo prazo, garantimos a manutenção, segurança e suporte especializado para assegurar a performance do seu site todos os dias.",
+  ]}
+/>
   <!--Section témoignages
   <TestimonialsSectionAlt
     title="Ce que disent nos clients"
