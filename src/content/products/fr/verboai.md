@@ -37,7 +37,7 @@ specificationsLeft:
   - title: "Authentification Firebase Sécurisée"
     subTitle: "L'inscription et la connexion sécurisées garantissent que tous les progrès, séries de victoires et historiques d'apprentissage de l'utilisateur sont sauvegardés individuellement et de manière persistante."
   - title: "Expertise Linguistique Ciblée"
-    subTitle: "Instructions système spécialisées pour les langues complexes comme le **coréen (Hangeul/Postpositions)** et le **japonais (Kanji/Particules)**."
+    subTitle: "Instructions système spécialisées pour les langues complexes comme le coréen (Hangeul) et le japonais (Kanji)."
   - title: "Interface Moderne Sombre (Dark Mode)"
     subTitle: "Une interface claire, sans distraction, avec un thème sombre pour maintenir l'utilisateur concentré sur la conversation."
 specificationsRight:

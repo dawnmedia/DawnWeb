@@ -37,7 +37,7 @@ specificationsLeft:
   - title: "Autenticação Firebase"
     subTitle: "O cadastro e o login seguros garantem que todo o progresso, sequência de dias e histórico de aprendizado do usuário sejam salvos individualmente e de forma persistente."
   - title: "Foco Linguístico Especializado"
-    subTitle: "Instruções de sistema especializadas para idiomas complexos como **coreano (Hangul/Posposições)** e **japonês (Kanji/Partículas)**."
+    subTitle: "Instruções de sistema especializadas para idiomas complexos como coreano (Hangul) e japonês (Kanji)."
   - title: "UI Moderna em Dark Mode"
     subTitle: "Interface limpa e livre de distrações com um tema escuro (Dark Mode) para manter o usuário focado na conversação."
 specificationsRight:

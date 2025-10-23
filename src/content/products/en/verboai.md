@@ -37,7 +37,7 @@ specificationsLeft:
   - title: "Firebase Authentication"
     subTitle: "Secure sign-up and sign-in ensures all user progress, streak count, and learning history are individually and persistently saved."
   - title: "Expert Language Focus"
-    subTitle: "Specialized system instructions for complex languages like **Korean (Hangul/Postpositions)** and **Japanese (Kanji/Particles)**."
+    subTitle: "Specialized system instructions for complex languages like Korean (Hangul) and Japanese (Kanji)."
   - title: "Modern Dark Mode UI"
     subTitle: "Clean, distraction-free interface with a Dark Mode theme to keep the user focused on the conversation."
 specificationsRight:
