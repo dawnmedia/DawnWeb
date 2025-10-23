@@ -6,7 +6,7 @@ main:
   content: |
     Verbo is the next-generation language learning coach, powered by Gemini AI and built to finally solve the hardest parts of fluency: accurate grammar and natural pronunciation. Built with a modern, cross-platform architecture, Verbo offers a personalized, conversational experience available on iOS, Android, and Web, making language mastery truly accessible.
   imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/verbo_app_main.jpg"
+  imgMain: "@/images/lunaai.png"
   imgAlt: "Illustration of Verbo AI language chat interface"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -51,6 +51,6 @@ specificationsRight:
     subTitle: "Robust state architecture (Provider/Bloc/Context) ensures accurate authentication, routing, and instant language switching."
 blueprints:
   first: "@/images/verboapp.png"
-  second: "@/images/lunaai.png"
+  second: "@/images/verbodesktop.png"
 
 ---
