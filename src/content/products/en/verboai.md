@@ -50,7 +50,7 @@ specificationsRight:
   - title: "Global State Management"
     subTitle: "Robust state architecture (Provider/Bloc/Context) ensures accurate authentication, routing, and instant language switching."
 blueprints:
-  first: "@/images/verbo_app_main.jpg"
-  second: "@/images/verbo_app_main.jpg"
+  first: "@/images/verboapp.png"
+  second: "@/images/lunaai.png"
 
 ---
