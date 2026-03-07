@@ -1,55 +1,56 @@
 ---
 title: "Verbo"
-description: "Domine Qualquer Idioma com IA: O Coach Moderno para Gramática e Pronúncia"
+description: "Aprenda Qualquer Idioma com IA: Seu Coach Pessoal para a Fluência"
 main:
   id: 3
   content: |
-    Verbo é o coach de aprendizado de idiomas da próxima geração. Alimentado pela Gemini AI, ele foi construído para resolver as partes mais difíceis da fluência: a gramática precisa e a pronúncia natural. Com uma arquitetura moderna e multiplataforma, o Verbo oferece uma experiência personalizada e conversacional disponível para iOS, Android e Web, tornando a maestria do idioma verdadeiramente acessível.
+    O Verbo é uma plataforma de aprendizado de idiomas de próxima geração que combina coaching baseado em IA com repetição espaçada cientificamente comprovada. Aprenda de forma natural através de conversas com Luna, nossa coach de idiomas com IA, e reforce cada lição com flashcards inteligentes que se adaptam ao seu progresso — tudo no Web, iOS e Android.
+    Com sequências gamificadas, jornadas de aprendizado estruturadas, pronúncia com áudio nativo e acesso multiplataforma, o Verbo transforma o aprendizado de idiomas em um hábito que você realmente quer manter.
   imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/verbo_app_main.jpg"
-  imgAlt: "Ilustração da interface de chat de idiomas Verbo AI"
+  imgMain: "@/images/lunaai.png"
+  imgAlt: "Interface da plataforma de aprendizado de idiomas Verbo AI"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
     title: "Visão Geral"
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
-    title: "Recursos de Coaching"
+    title: "Recursos Principais"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Tecnologia e Monetização"
+    title: "Tecnologia & Status"
 longDescription:
-  title: "De Erros de Partícula à Fluência Perfeita"
+  title: "Das Primeiras Palavras à Fluência Completa"
   subTitle: |
-    Verbo não é apenas mais um aplicativo de vocabulário; é um parceiro inteligente focado em profundidade, não em quantidade. Nosso coach usa a Gemini Live API para conversação em tempo real, detectando instantaneamente erros em estruturas complexas como partículas coreanas e acentuação tônica japonesa. Seja digitando ou falando, Verbo fornece o feedback direcionado necessário para superar erros de iniciante e falar com confiança nativa.
-  btnTitle: "Inicie Sua Sessão de Coaching Gratuita"
-  btnURL: "/cadastro"
+    O Verbo não é apenas mais um aplicativo de flashcards — é um parceiro inteligente de idiomas. Luna, nossa coach de IA, conduz conversas reais, corrige gramática em contexto e guia você por jornadas de aprendizado selecionadas. Apoiado pelo algoritmo de repetição espaçada FSRS e pronúncia com áudio nativo, cada sessão é otimizada para aproximá-lo da fluência mais rapidamente.
+  btnTitle: "Comece a Aprender Grátis"
+  btnURL: "https://learnverbo.app"
 descriptionList:
-  - title: "Domínio da Gramática em Contexto"
-    subTitle: "Receba explicações instantâneas e detalhadas para cada erro, ajudando você a entender o 'porquê' da correção em vez de apenas memorizar a solução."
-  - title: "Feedback de Pronúncia ao Vivo"
-    subTitle: "Use o Modo de Voz Live opcional para praticar a fala. A IA analisa seu áudio e fornece dicas precisas sobre nuances fonéticas e entonação."
-  - title: "Sistema de Revisão Adaptativo (Pro)"
-    subTitle: "O Verbo gera automaticamente questionários direcionados com base em seus erros passados, garantindo que você nunca repita o mesmo erro gramatical."
+  - title: "Coach de IA Luna"
+    subTitle: "Converse com Luna, nossa coach de IA, para correções gramaticais em tempo real, explicações contextuais e prática de conversção natural em qualquer idioma."
+  - title: "Flashcards Inteligentes e Repetição Espaçada"
+    subTitle: "Impulsionado pelo algoritmo FSRS v5 baseado em ciência, o sistema de flashcards do Verbo agenda revisões no momento ideal — para que você retenha vocabulário a longo prazo com mínima repetição."
+  - title: "Jornadas de Aprendizado Estruturadas"
+    subTitle: "Siga trilhas estruturadas do iniciante ao avançado, com cenários, exercícios e marcos. Ganhe XP, mantenha sequências diárias e desbloqueie conquistas que mantêm sua motivação."
 specificationsLeft:
-  - title: "Entrega Multiplataforma Completa"
-    subTitle: "Construído com um código-base único (ex: Flutter) para uma experiência consistente e de alto desempenho em navegadores, iOS e Android."
-  - title: "Autenticação Firebase"
-    subTitle: "O cadastro e o login seguros garantem que todo o progresso, sequência de dias e histórico de aprendizado do usuário sejam salvos individualmente e de forma persistente."
-  - title: "Foco Linguístico Especializado"
-    subTitle: "Instruções de sistema especializadas para idiomas complexos como coreano (Hangul) e japonês (Kanji)."
-  - title: "UI Moderna em Dark Mode"
-    subTitle: "Interface limpa e livre de distrações com um tema escuro (Dark Mode) para manter o usuário focado na conversação."
+  - title: "Objetivos do Verbo"
+    subTitle: "Construir uma plataforma de aprendizado de idiomas que seja pessoal, inteligente e eficaz — combinando coaching de IA, repetição espaçada e gamificação para tornar a fluência alcançável para todos."
+  - title: "Público-Alvo"
+    subTitle: "Aprendizes de idiomas de todos os níveis — de iniciantes curiosos a estudantes dedicados em busca de uma alternativa mais inteligente e focada em IA aos aplicativos tradicionais."
+  - title: "Desenvolvido Com"
+    subTitle: "Next.js 15, React 19, TypeScript, Firebase, Tailwind CSS, Capacitor (iOS & Android), Stripe e nossa Luna IA."
+  - title: "Status"
+    subTitle: "Beta v0.9.0 — disponível em learnverbo.app com os recursos principais completos. Submissões para app stores em andamento."
 specificationsRight:
-  - title: "Modos de Comunicação Duplos"
-    subTitle: "Alterne perfeitamente entre o chat de texto e o Modo de Voz Live (baixa latência) dentro da mesma interface."
-  - title: "Recursos com Restrição de Assinatura"
-    subTitle: "Os recursos principais (Explicações Gramaticais, Revisão Adaptativa) são reservados para assinantes Verbo Pro para garantir qualidade premium."
-  - title: "Backend em Nuvem Escalável"
-    subTitle: "Aproveitando o Firebase Cloud Firestore para sincronização de dados escalável e em tempo real em todos os dispositivos do usuário."
-  - title: "Gerenciamento de Estado Global"
-    subTitle: "Arquitetura robusta de gerenciamento de estado (Provider/Bloc/Context) garante autenticação precisa, roteamento confiável e troca instantânea de idioma."
+  - title: "Destaques"
+    subTitle: "Conversas com Luna IA, repetição espaçada FSRS, Modo Jornada com XP e conquistas, pronúncia TTS com áudio nativo, Deep Chat com traduções ao passar o mouse e suporte a PWA."
+  - title: "Experiência"
+    subTitle: "Interface limpa, com design focado no modo escuro — com animações suaves, layout mobile responsivo e um fluxo de aprendizado imersivo do onboarding às sessões avançadas."
+  - title: "Monetização"
+    subTitle: "Três planos — Free, Pro e Max — com assinaturas via Stripe. Coaching avançado de IA, jornadas ilimitadas e análises detalhadas são reservados para os planos premium."
+  - title: "Próximos Passos"
+    subTitle: "Submissões para App Store iOS e Android, integração com analytics PostHog e suporte expandido a idiomas com personalização de IA mais aprofundada."
 blueprints:
-  first: "@/images/verbo_app_main.jpg"
-  second: "@/images/verbo_app_main.jpg"
+  first: "@/images/verboapp.png"
+  second: "@/images/verbodesktop.png"
 ---

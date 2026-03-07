@@ -1,56 +1,56 @@
 ---
 title: "Verbo"
-description: "Master Any Language with AI: The Modern Coach for Grammar and Pronunciation"
+description: "Learn Any Language with AI: Your Personal Coach for Fluency"
 main:
   id: 3
   content: |
-    Verbo is the next-generation language learning coach, powered by Gemini AI and built to finally solve the hardest parts of fluency: accurate grammar and natural pronunciation. Built with a modern, cross-platform architecture, Verbo offers a personalized, conversational experience available on iOS, Android, and Web, making language mastery truly accessible.
+    Verbo is a next-generation language learning platform that combines AI-powered coaching with scientifically-proven spaced repetition. Learn naturally through conversations with Luna, our AI language coach, and reinforce every lesson with smart flashcards that adapt to your progress — all on Web, iOS, and Android.
+    With gamified streaks, structured learning journeys, native audio pronunciation, and seamless cross-platform access, Verbo turns language learning into a habit you actually want to keep.
   imgCard: "@/images/verbo_app_card.jpg"
   imgMain: "@/images/lunaai.png"
-  imgAlt: "Illustration of Verbo AI language chat interface"
+  imgAlt: "Verbo AI language learning platform interface"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
     title: "Overview"
   - id: "tabs-with-card-item-2"
     dataTab: "#tabs-with-card-2"
-    title: "Coaching Features"
+    title: "Core Features"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "Tech & Monetization"
+    title: "Tech & Status"
 longDescription:
-  title: "From Particle Mistakes to Pitch Perfect Fluency"
+  title: "From First Words to Full Fluency"
   subTitle: |
-    Verbo isn’t just a vocabulary app; it’s an intelligent partner that focuses on depth over breadth. Our coach uses Gemini Live API for real-time conversation, instantly spotting errors in complex structures like Korean particles and Japanese pitch accent. Whether you're texting or speaking, Verbo provides the targeted feedback necessary to move beyond beginner mistakes and speak with native confidence.
-  btnTitle: "Start Your Free Coaching Session"
-  btnURL: "/signup"
+    Verbo isn't just another flashcard app — it's an intelligent language partner. Luna, our AI coach, holds real conversations, corrects grammar in context, and guides you through curated learning journeys. Backed by the FSRS spaced repetition algorithm and native audio pronunciation, every session is optimized to move you closer to fluency faster.
+  btnTitle: "Start Learning for Free"
+  btnURL: "https://learnverbo.app"
 descriptionList:
-  - title: "Master Grammar in Context"
-    subTitle: "Get instant, detailed explanations for every single mistake, helping you understand the 'why' behind the correction instead of just memorizing the fix."
-  - title: "Live Pronunciation Feedback"
-    subTitle: "Use the optional Live Voice Mode to practice speaking. The AI analyzes your audio and gives precise tips on phonetic nuances and intonation."
-  - title: "Adaptive Review System (Pro)"
-    subTitle: "Verbo automatically generates targeted quizzes based on your past mistakes, ensuring you never repeat the same grammar error twice."
+  - title: "Luna AI Coach"
+    subTitle: "Converse with Luna, our AI language coach, for real-time grammar corrections, context-aware explanations, and natural conversation practice across any language."
+  - title: "Smart Flashcards & Spaced Repetition"
+    subTitle: "Powered by the science-backed FSRS v5 algorithm, Verbo's flashcard system schedules reviews at the optimal moment — so you retain vocabulary long-term with minimal repetition."
+  - title: "Structured Learning Journeys"
+    subTitle: "Follow curated paths from beginner to advanced, with scenarios, exercises, and milestones. Earn XP, maintain daily streaks, and unlock achievements that keep you motivated."
 specificationsLeft:
-  - title: "Full Cross-Platform Delivery"
-    subTitle: "Built with a single codebase (e.g., Flutter) for a consistent, high-performance experience on iOS, Android, and Web browsers."
-  - title: "Firebase Authentication"
-    subTitle: "Secure sign-up and sign-in ensures all user progress, streak count, and learning history are individually and persistently saved."
-  - title: "Expert Language Focus"
-    subTitle: "Specialized system instructions for complex languages like Korean (Hangul) and Japanese (Kanji)."
-  - title: "Modern Dark Mode UI"
-    subTitle: "Clean, distraction-free interface with a Dark Mode theme to keep the user focused on the conversation."
+  - title: "Verbo Goals"
+    subTitle: "Build a language learning platform that feels personal, intelligent, and effective — combining AI coaching, spaced repetition, and gamification to make fluency achievable for everyone."
+  - title: "Target Audience"
+    subTitle: "Language learners of all levels — from curious beginners to dedicated students looking for a smarter, AI-first alternative to traditional apps."
+  - title: "Built With"
+    subTitle: "Next.js 15, React 19, TypeScript, Firebase, Tailwind CSS, Capacitor (iOS & Android), Stripe, and our in-house Luna AI."
+  - title: "Status"
+    subTitle: "Beta v0.9.0 — live at learnverbo.app with core features complete. Mobile app store submissions in progress."
 specificationsRight:
-  - title: "Dual Communication Modes"
-    subTitle: "Seamlessly switch between text chat and the low-latency Live Voice Conversation Mode within the same interface."
-  - title: "Subscription Gated Features"
-    subTitle: "Core features (Grammar Explanations, Adaptive Review) are reserved for Verbo Pro subscribers to ensure premium quality."
-  - title: "Scalable Cloud Backend"
-    subTitle: "Leveraging Firebase Cloud Firestore for scalable, real-time data synchronization across all user devices."
-  - title: "Global State Management"
-    subTitle: "Robust state architecture (Provider/Bloc/Context) ensures accurate authentication, routing, and instant language switching."
+  - title: "Highlights"
+    subTitle: "Luna AI conversations, FSRS spaced repetition, Journey Mode with XP & achievements, native audio TTS pronunciation, Deep Chat with hover translations, and PWA support."
+  - title: "Experience"
+    subTitle: "A clean, dark-mode-first interface designed for focus — with smooth animations, responsive mobile layout, and an immersive learning flow from onboarding to advanced sessions."
+  - title: "Monetization"
+    subTitle: "Three tiers — Free, Pro, and Max — with Stripe-powered subscriptions. Advanced AI coaching, unlimited journeys, and deep analytics are reserved for premium tiers."
+  - title: "What's Next"
+    subTitle: "iOS and Android App Store submissions, PostHog analytics integration, and expanded language support with deeper AI personalization."
 blueprints:
   first: "@/images/verboapp.png"
   second: "@/images/verbodesktop.png"
-
 ---
