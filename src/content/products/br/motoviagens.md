@@ -1,11 +1,11 @@
 ---
 title: "Moto Viagens"
-description: "Uma Agência de Viagens Focada em Motociclistas"
+description: "A Plataforma de Mototurismo de Próximo Nível do Brasil"
 main:
   id: 2
   content: |
-    A Moto Viagens é mais do que apenas uma agência de viagens — é uma experiência personalizada para pilotos que buscam liberdade, aventura e conexão com as estradas mais cênicas do Brasil.
-    Construída como uma plataforma para pilotos autônomos, a Moto Viagens permite que os usuários planejem suas próprias viagens de moto com facilidade, oferecendo aluguel de motos, rotas personalizadas, hotéis de confiança e atrações selecionadas para todo tipo de motociclista.
+    A Moto Viagens é mais do que uma agência de viagens — é uma plataforma completa de mototurismo criada para quem vive pelas estradas. Disponível em motoviagens.com.br, a plataforma conecta motociclistas a tours selecionados, acomodações de confiança e eventos pelo Brasil e além.
+    Com o suporte da nossa assistente de IA Luna, a Moto Viagens ajuda cada motociclista a encontrar a jornada perfeita — desde a descoberta de rotas e reserva de acomodações até a compra de ingressos para eventos, tudo em uma experiência fluida e otimizada para mobile.
   imgCard: "@/images/motoviagens3.jpg"
   imgMain: "@/images/motoviagens3.jpg"
   imgAlt: "Moto Viagens: rotas e passeios de moto no Brasil"
@@ -22,34 +22,34 @@ tabs:
 longDescription:
   title: "Alimentando Aventuras Digitais"
   subTitle: |
-    Na Dawn Web, projetamos a Moto Viagens para fortalecer a crescente comunidade de mototurismo no Brasil. O projeto combina visuais impactantes, ferramentas de reserva práticas e integrações inteligentes para tornar o planejamento de rotas mais fluido, rápido e pessoal.
-  btnTitle: "Ver Projeto Completo"
+    Na Dawn Web, construímos a Moto Viagens para elevar a experiência do mototurismo no Brasil. A plataforma combina ferramentas de reserva poderosas, assistência de IA inteligente e visuais impressionantes para tornar o planejamento de cada viagem mais rápido, inteligente e pessoal.
+  btnTitle: "Visitar Plataforma"
   btnURL: "https://motoviagens.com.br"
 descriptionList:
-  - title: "Aluguel de Motos"
-    subTitle: "Um sistema de aluguel simplificado que permite aos motociclistas escolherem a moto ideal para a viagem — desde motos de aventura para longas distâncias até modelos leves e econômicos."
-  - title: "Planejamento de Rotas"
-    subTitle: "Ferramenta de mapa interativo com rotas pré-definidas e destaques por paisagens brasileiras como a Serra do Rio do Rastro, a Chapada dos Veadeiros e o Pantanal."
-  - title: "Reserva de Hotéis"
-    subTitle: "Agregador de acomodações integrado com hotéis parceiros que oferecem estacionamento seguro e comodidades para motociclistas."
+  - title: "Tours Selecionados"
+    subTitle: "Navegue e reserve tours de moto cuidadosamente selecionados pelas rotas mais icônicas do Brasil — da Serra do Rio do Rastro ao Pantanal — com detalhes completos de itinerário e suporte de reserva."
+  - title: "Acomodações"
+    subTitle: "Busca de acomodações integrada com hotéis e pousadas amigáveis para motociclistas, mantidos atualizados via Google Places, com estacionamento seguro e comodidades focadas no motociclista."
+  - title: "Ingressos para Eventos"
+    subTitle: "Compre ingressos para eventos de moto, rallies e experiências diretamente pela plataforma, tudo gerenciado em um fluxo de reserva unificado e intuitivo."
 specificationsLeft:
   - title: "Objetivos da Moto Viagens"
-    subTitle: "Criar uma plataforma de viagens intuitiva que ajuda motociclistas a explorarem as rotas mais icônicas do Brasil com liberdade, conveniência e autenticidade local."
+    subTitle: "Oferecer uma plataforma completa de mototurismo que permite aos motociclistas descobrir, planejar e reservar sua aventura ideal pelo Brasil — com liberdade, autenticidade local e orientação inteligente via IA."
   - title: "Público-Alvo"
-    subTitle: "Motociclistas, viajantes solo e aventureiros que desejam soluções de turismo organizadas, porém flexíveis."
+    subTitle: "Motociclistas, viajantes solo e aventureiros em busca de soluções de tours selecionados e flexíveis pelo Brasil."
   - title: "Desenvolvido Com"
-    subTitle: "Next.js, Tailwind CSS, Contentful CMS e módulos responsivos de planejamento de rotas via API."
+    subTitle: "Next.js 15, Firebase, TypeScript, Tailwind CSS, Leaflet, Google Maps e nossa Luna IA — com suporte completo a múltiplos idiomas em 5 línguas."
   - title: "Status"
-    subTitle: "Frontend concluído — integração da API do back-end em andamento."
+    subTitle: "No ar em motoviagens.com.br — totalmente operacional com tours, acomodações, ingressos, blog e assistente de IA."
 specificationsRight:
   - title: "Destaques"
-    subTitle: "Gerenciamento de conteúdo dinâmico, interface de aluguel de motos, avaliações de usuários e visualizações de rotas integradas."
+    subTitle: "Recomendações de viagem pela Luna IA, mapas de rotas interativos, suporte a múltiplos idiomas (PT, EN, ES, FR, DE), tema claro/escuro e sistema de autenticação completo."
   - title: "Experiência"
-    subTitle: "O site combina narrativas de viagem com ferramentas de reserva funcionais, criando um companheiro digital perfeito para o motociclista."
+    subTitle: "A plataforma combina narrativas de aventura com ferramentas de reserva funcionais e assistência de IA, criando o companheiro digital definitivo para o motociclista brasileiro."
   - title: "Sistema de Design"
-    subTitle: "UI minimalista, compatível com modo escuro, focada em mapas limpos, imagens marcantes e cards intuitivos."
+    subTitle: "UI marcante, mobile-first, com modo claro/escuro, mapas interativos Leaflet, imagens imersivas e componentes limpos em Radix UI."
   - title: "Próximos Passos"
-    subTitle: "Adicionar filtros em tempo real, integração com redes sociais e compartilhamento de rotas pela comunidade nas próximas atualizações."
+    subTitle: "Expansão da cobertura de tours, adição de compartilhamento de rotas pela comunidade e aprimoramento da Luna IA com recomendações de viagens mais personalizadas."
 blueprints:
   first: "@/images/motoviagens2.jpg"
   second: "@/images/motoviagens1.jpg"

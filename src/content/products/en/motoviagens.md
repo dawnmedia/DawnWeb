@@ -1,11 +1,11 @@
 ---
 title: "Moto Viagens"
-description: "A Motorcycle-Focused Travel Agency"
+description: "Brazil's Next-Level Motorcycle Travel Platform"
 main:
   id: 2
   content: |
-    Moto Viagens is more than just a travel agency — it’s a tailored experience for riders seeking freedom, adventure, and connection with Brazil’s most scenic roads. 
-    Built as a self-rider platform, Moto Viagens lets users plan their own motorcycle trips with ease, offering rental bikes, custom routes, trusted hotels, and curated attractions for every kind of rider.
+    Moto Viagens is more than just a travel agency — it's a full-featured motorcycle travel platform built for riders who live for the road. Live at motoviagens.com.br, the platform connects riders to curated tours, trusted accommodations, and events across Brazil and beyond.
+    Powered by our in-house Luna AI assistant, Moto Viagens helps every rider find the perfect journey — from route discovery and accommodation booking to event ticket purchases, all in a seamless, mobile-first experience.
   imgCard: "@/images/motoviagens3.jpg"
   imgMain: "@/images/motoviagens3.jpg"
   imgAlt: "Moto Viagens Brazilian motorcycle routes and tours"
@@ -18,40 +18,39 @@ tabs:
     title: "Project Details"
   - id: "tabs-with-card-item-3"
     dataTab: "#tabs-with-card-3"
-    title: "What’s Next"
+    title: "What's Next"
 longDescription:
   title: "Fueling Digital Adventures"
   subTitle: |
-    At Dawn Web, we’ve designed Moto Viagens to empower the rising motorcycle tourism community in Brazil. The project combines strong visuals, practical booking tools, and smart integrations to make road planning smoother, faster, and more personal.
-  btnTitle: "See Full Project"
+    At Dawn Web, we built Moto Viagens to elevate the motorcycle tourism experience in Brazil. The platform combines powerful booking tools, smart AI assistance, and stunning visuals to make every road trip planning session faster, smarter, and more personal.
+  btnTitle: "Visit Live Platform"
   btnURL: "https://motoviagens.com.br"
 descriptionList:
-  - title: "Bike Rental"
-    subTitle: "A simplified rental system that lets riders choose their ideal motorcycle for the journey — from long-distance adventure bikes to light, economic models."
-  - title: "Route Planning"
-    subTitle: "Interactive map tool with pre-built routes and highlights across Brazilian landscapes like the Serra do Rio do Rastro, Chapada dos Veadeiros, and Pantanal."
-  - title: "Hotel Booking"
-    subTitle: "Integrated accommodation aggregator with partner hotels offering secure parking and biker-friendly features."
+  - title: "Curated Tours"
+    subTitle: "Browse and book handpicked motorcycle tours across Brazil's most iconic routes — from the Serra do Rio do Rastro to the Pantanal — with full itinerary details and booking support."
+  - title: "Accommodations"
+    subTitle: "Integrated accommodation search with biker-friendly hotels and lodges sourced and kept up to date via Google Places, with secure parking and rider-focused amenities."
+  - title: "Event Tickets"
+    subTitle: "Purchase tickets for motorcycle events, rallies, and experiences directly through the platform, all managed within a unified and intuitive booking flow."
 specificationsLeft:
   - title: "Moto Viagens Goals"
-    subTitle: "Create an intuitive travel platform that helps bikers explore Brazil’s most iconic routes with freedom, convenience, and local authenticity."
+    subTitle: "Deliver a complete motorcycle travel platform that empowers riders to discover, plan, and book their ideal Brazilian adventure — with freedom, local authenticity, and smart AI guidance."
   - title: "Target Audience"
-    subTitle: "Motorcyclists, solo travelers, and adventurers wanting organized yet flexible tour solutions."
+    subTitle: "Motorcyclists, solo road-trippers, and adventure travelers looking for curated yet flexible tour solutions across Brazil."
   - title: "Built With"
-    subTitle: "Next.js, Tailwind CSS, Contentful CMS, and responsive API-driven route planning modules."
+    subTitle: "Next.js 15, Firebase, TypeScript, Tailwind CSS, Leaflet, Google Maps, and our in-house Luna AI — with full multi-language support across 5 languages."
   - title: "Status"
-    subTitle: "Frontend completed — back-end API integration underway."
+    subTitle: "Live at motoviagens.com.br — fully operational with tours, accommodations, tickets, blog, and AI assistant."
 specificationsRight:
   - title: "Highlights"
-    subTitle: "Dynamic content management, motorcycle rental interface, user-generated reviews, and integrated route visualizations."
+    subTitle: "Luna AI-powered travel recommendations, interactive route maps, multi-language support (PT, EN, ES, FR, DE), dark/light theme, and a full authentication system."
   - title: "Experience"
-    subTitle: "The site blends travel storytelling with functional booking tools, creating a seamless biker’s digital companion."
+    subTitle: "The platform blends adventure storytelling with functional booking tools and AI assistance, creating the ultimate digital companion for Brazilian motorcycle travelers."
   - title: "Design System"
-    subTitle: "Minimal, dark-mode friendly UI focused on clean maps, bold imagery, and intuitive cards."
-  - title: "Next Steps"
-    subTitle: "Add live filtering, social media integration, and community route sharing in upcoming updates."
+    subTitle: "Bold, mobile-first UI with dark/light mode, interactive Leaflet maps, immersive imagery, and clean Radix UI components."
+  - title: "What's Next"
+    subTitle: "Expanding tour coverage, adding community route sharing, and enhancing Luna AI with deeper personalized travel recommendations."
 blueprints:
   first: "@/images/motoviagens2.jpg"
   second: "@/images/motoviagens1.jpg"
-
 ---
