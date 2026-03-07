@@ -1,24 +1,24 @@
 ---
-title: "Introducing MotorVoyage: Your Next Travel Adventure Starts Here"
-description: "Dawn Web's upcoming platform for curated travel experiences around the globe"
+title: "Apresentando o Moto Viagens: A Agência de Motociclismo de Próximo Nível Já Está no Ar"
+description: "A Dawn Web construiu o Moto Viagens — uma plataforma completa para agência de viagens de moto, disponível em motoviagens.com.br"
 author: "Andrew"
-role: "Founder & CEO"
+role: "Fundador & CEO"
 authorImage: "@/images/blog/Andrew2.png"
-authorImageAlt: "Avatar of Andrew, Dawn Web founder & CEO"
+authorImageAlt: "Avatar de Andrew, fundador e CEO da Dawn Web"
 pubDate: 2025-05-10
 cardImage: "@/images/blog/motorvoyage.jpg"
-cardImageAlt: "A scenic road winding through mountain valleys, shot from above"
+cardImageAlt: "Uma estrada cênica serpenteando por vales montanhosos, fotografada de cima"
 readTime: 5
-tags: ["travel", "startups", "projects", "coming soon"]
+tags: ["viagem", "motos", "projetos", "lançamento"]
 contents: [
-  "At Dawn Web, we're passionate about building platforms that connect people to possibility. That’s why we’re excited to introduce our newest upcoming project: MotorVoyage — a travel platform designed for those who seek more than just destinations — they seek the journey itself.",
-  
-  "MotorVoyage is a curated travel experience hub that blends the thrill of discovery with local insight. From self-guided road trips across iconic landscapes to exclusive access to hidden gems, MotorVoyage will empower travelers to take control of their adventures — and love every mile of the way.",
-  
-  Built from the ground up with custom technology by our team at Dawn Web, MotorVoyage combines stunning design, intuitive usability, and powerful backend functionality. Travelers will be able to search, plan, and book travel experiences seamlessly — all within a platform tailored for mobile and desktop alike.",
-  
-  "Why MotorVoyage? We believe in the transformative power of travel. This platform is our way of making exploration more accessible, more personalized, and more sustainable. Whether you’re chasing sunsets on coastal highways or exploring mountain passes, MotorVoyage will help you do it better.",
-  
-  "Stay tuned — MotorVoyage is launching soon. If you're passionate about travel, storytelling, and building community through experience, this is one journey you’ll want to be part of.",
+  "Temos o prazer de compartilhar que o Moto Viagens — um dos projetos mais importantes da Dawn Web — já está no ar em motoviagens.com.br. Desenvolvido do zero como uma plataforma de próximo nível para agência de motociclismo, o Moto Viagens conecta motociclistas a tours personalizados, acomodações e experiências pelo Brasil e além.",
+
+  "A plataforma foi construída com Next.js 15, Firebase e TypeScript — com um assistente de IA totalmente integrado, alimentado pelo Google Genkit, para ajudar os viajantes a encontrar a jornada de moto perfeita. Desde a navegação por pacotes de tours e reserva de acomodações até a compra de ingressos para eventos, tudo é gerenciado de forma fluida dentro de uma interface moderna e responsiva para dispositivos móveis.",
+
+  "O Moto Viagens conta com um rico conjunto de ferramentas: mapas de rotas interativos com Leaflet e Google Maps, um blog integrado com editor de texto rico, suporte a múltiplos idiomas via next-intl, tema claro/escuro e um sistema de autenticação completo. A plataforma é otimizada para desempenho com Vercel Analytics e Speed Insights integrados desde o início.",
+
+  "Como projeto da Dawn Web, o Moto Viagens demonstra o que é possível quando o desenvolvimento web especializado se une a uma paixão real. O projeto evidencia nossa capacidade de construir plataformas full-stack complexas — da arquitetura de dados no Firebase e Firestore até integrações dinâmicas de IA e sistemas de reservas escaláveis.",
+
+  "Pronto para rodar? Acesse motoviagens.com.br e explore os tours, acomodações e aventuras que esperam por você. Seja você um motociclista experiente ou planejando sua primeira viagem de moto, o Moto Viagens é o seu ponto de partida.",
 ]
 ---
