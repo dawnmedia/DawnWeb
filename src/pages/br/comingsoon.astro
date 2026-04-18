@@ -19,28 +19,28 @@ type Translations = {
 const defaultLang: TranslationKeys = "br";
 const translations: Translations = {
   en: {
-    pageTitle: `Coming Soon | ${SITE.title}`,
-    subTitle: "Oops, this page is under construction!",
-    content: "We are still building it. Come back soon!",
-    btnTitle: "Go Back",
+    pageTitle: `Em breve | ${SITE.title}`,
+    subTitle: "Ops, esta página está em construção.",
+    content: "Ainda estamos preparando esta área. Volte em breve.",
+    btnTitle: "Voltar",
   },
   fr: {
-    pageTitle: `Bientot disponible | ${SITE.title}`,
-    subTitle: "Oops, cette page est en cours de construction!",
-    content: "Nous construisons cette page. Retournez bientot!",
-    btnTitle: "Retourner",
+    pageTitle: `Em breve | ${SITE.title}`,
+    subTitle: "Ops, esta página está em construção.",
+    content: "Ainda estamos preparando esta área. Volte em breve.",
+    btnTitle: "Voltar",
   },
   br: {
-    pageTitle: `Em Breve | ${SITE.title}`,
-    subTitle: "Ops, esta página está em construção!",
-    content: "Ainda estamos construindo. Volte em breve!",
+    pageTitle: `Em breve | ${SITE.title}`,
+    subTitle: "Ops, esta página está em construção.",
+    content: "Ainda estamos preparando esta área. Volte em breve.",
     btnTitle: "Voltar",
   },
 };
 
 // Determine language from the URL
 const urlPath = Astro.url.pathname;
-const langCodeMatch = urlPath.match(/^\/(en|fr)\//);
+const langCodeMatch = urlPath.match(/^\/(en|fr|br)\//);
 const lang: TranslationKeys = langCodeMatch
   ? (langCodeMatch[1] as TranslationKeys)
   : defaultLang;
@@ -48,14 +48,14 @@ const lang: TranslationKeys = langCodeMatch
 const { pageTitle, subTitle, content, btnTitle } = translations[lang];
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout title={pageTitle} lang="pt-BR">
   <section class="grid h-svh place-content-center">
     <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
       <div class="mx-auto max-w-screen-sm text-center">
         <h1
           class="text-dark mb-4 text-4xl font-extrabold text-blue-500 dark:text-blue-300 lg:text-6xl"
         >
-          EM BREVE
+          Em breve
         </h1>
         <p
           id="subtitle"

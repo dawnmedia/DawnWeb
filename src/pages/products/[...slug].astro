@@ -6,22 +6,29 @@ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
+import {
+  collectionIdStartsWithLocale,
+  getContentSlug,
+  stripLocaleFromSlug,
+  type Locale,
+} from "@utils/locale";
 
 // Global declaration for gsap animation library
 declare global {
   interface Window {
-    gsap: any;
+    gsap: unknown;
   }
 }
 
 // This gets the static paths for all the unique products
 
 export async function getStaticPaths() {
+  const routeLocale: Locale = "en";
   const productEntries = await getCollection("products", ({ id }) =>
-    id.startsWith("en/")
+    collectionIdStartsWithLocale(id, routeLocale)
   );
   return productEntries.map((product) => {
-    const slugWithoutLang = product.slug.replace(/^en\//, ""); // Remove the "en/" prefix
+    const slugWithoutLang = stripLocaleFromSlug(getContentSlug(product), routeLocale);
     return {
       params: { slug: slugWithoutLang },
       props: { product },
@@ -34,7 +41,7 @@ const { product } = Astro.props;
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout title={pageTitle} meta={product.data.description} socialImage={product.data.main.imgCard}>
   <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
   </div>
 
@@ -312,7 +319,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    function setButtonInactive(btn: any, activeButton: any) {
+    function setButtonInactive(btn: Element, activeButton: Element) {
       if (btn !== activeButton) {
         btn.classList.remove(
           "active",
@@ -337,7 +344,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
       }
     }
 
-    function activateButton(button: any) {
+    function activateButton(button: Element) {
       button.classList.add(
         "active",
         "bg-neutral-100",
@@ -361,9 +368,9 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
     }
 
     function changeHeadingStyle(
-      button: any,
-      addClasses: any,
-      removeClasses: any
+      button: Element,
+      addClasses: string[],
+      removeClasses: string[]
     ) {
       let heading = button.querySelector("span");
       if (heading) {

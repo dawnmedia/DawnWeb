@@ -4,7 +4,7 @@ import icon from "@images/icon.png";
 import maskableIcon from "@images/icon-maskable.png";
 
 interface Favicon {
-  purpose: 'any' | 'maskable' | 'monochrome';
+  purpose: "any" | "maskable" | "monochrome";
   src: ImageMetadata;
   sizes: number[];
 }
@@ -12,15 +12,15 @@ interface Favicon {
 const sizes = [192, 512];
 const favicons: Favicon[] = [
   {
-    purpose: 'any',
+    purpose: "any",
     src: icon,
     sizes,
   },
   {
-    purpose: 'maskable',
+    purpose: "maskable",
     src: maskableIcon,
     sizes,
-   },
+  },
 ];
 
 export const GET: APIRoute = async () => {
@@ -46,13 +46,19 @@ export const GET: APIRoute = async () => {
   const manifest = {
     short_name: "Dawn Web",
     name: "DawnWeb",
+    description:
+      "Dawn Web helps businesses succeed online with website design, social media management, and content creation.",
     icons,
-    display: "minimal-ui",
+    display: "standalone",
     id: "/",
     start_url: "/",
     theme_color: "#FFEDD5",
     background_color: "#262626",
   };
 
-  return new Response(JSON.stringify(manifest));
+  return new Response(JSON.stringify(manifest), {
+    headers: {
+      "Content-Type": "application/manifest+json; charset=utf-8",
+    },
+  });
 };

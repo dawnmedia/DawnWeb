@@ -23,7 +23,7 @@ longDescription:
   subTitle: |
     Triplut isn’t just a booking site or another route aggregator. It’s an intelligent travel partner that listens, learns, and crafts trips around YOU. Powered by our AI assistant Luna, Triplut finds the best options for transport, lodging, experiences, and even food—while adapting everything to your preferences, budget, and desired comfort. With Triplut, you finally travel your way—worry-free and full of discovery.
   btnTitle: "Plan Your Journey Now"
-  btnURL: "/comingsoon"
+  btnURL: "/contact"
 descriptionList:
   - title: "Plan Everything In One Place"
     subTitle: "From buses and trains to flights and motorcycle rentals, compare and combine every major transport option in Brazil and beyond."

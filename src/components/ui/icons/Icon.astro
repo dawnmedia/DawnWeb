@@ -6,17 +6,37 @@ interface Path {
   class?: string;
 }
 
-const { name } = Astro.props;
+interface Props {
+  name: string;
+  class?: string;
+}
 
-let icon = (Icons as any)[name] || {};
+interface IconDefinition {
+  paths?: Path[];
+  class?: string;
+  height?: number;
+  width?: number;
+  viewBox?: string;
+  fill?: string;
+  clipRule?: "inherit" | "evenodd" | "nonzero";
+  fillRule?: "inherit" | "evenodd" | "nonzero";
+  stroke?: string;
+  strokeWidth?: string | number;
+  strokeLinecap?: "round" | "butt" | "square" | "inherit";
+  strokeLinejoin?: "round" | "bevel" | "miter" | "inherit";
+  title?: string;
+}
 
-let paths: Path[] = icon.paths || [];
+const { name, class: className } = Astro.props;
+const icon = (Icons as unknown as Record<string, IconDefinition>)[name];
+
+const paths: Path[] = icon?.paths || [];
 ---
 
 {
   icon ? (
     <svg
-      class={icon.class}
+      class={className ?? icon.class}
       height={icon.height}
       viewBox={icon.viewBox}
       width={icon.width}

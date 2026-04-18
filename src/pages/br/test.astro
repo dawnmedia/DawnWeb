@@ -5,7 +5,7 @@ import Btn404 from "@components/ui/buttons/Btn404.astro";
 import { SITE } from "@data/constants";
 
 // Define types for translations
-type TranslationKeys = "en" | "fr" | "es" | "ko" | "jp";
+type TranslationKeys = "br";
 type Translations = {
   [key in TranslationKeys]: {
     pageTitle: string;
@@ -16,43 +16,19 @@ type Translations = {
 };
 
 // Define variables for page content
-const defaultLang: TranslationKeys = "fr";
+const defaultLang: TranslationKeys = "br";
 const translations: Translations = {
-  en: {
-    pageTitle: `Coming Soon | ${SITE.title}`,
-    subTitle: "Oops, this page is under construction!",
-    content: "We are still building it. Come back soon!",
-    btnTitle: "Go Back",
-  },
-  fr: {
-    pageTitle: `Bientot disponible | ${SITE.title}`,
-    subTitle: "Oops, cette page est en cours de construction!",
-    content: "Nous construisons cette page. Retournez bientot!",
-    btnTitle: "Retourner",
-  },
-  es: {
-    pageTitle: `Proximamente | ${SITE.title}`,
-    subTitle: "Oops, esta página está en construcción!",
-    content: "Estamos construyendo esta página. ¡Vuelva pronto!",
-    btnTitle: "Volver",
-  },
-  ko: {
-    pageTitle: `커뮤니티 | ${SITE.title}`,
-    subTitle: "Oops, 이번을 만들 수도도!",
-    content: "커뮤니티 중...",
-    btnTitle: "보기",
-  },
-  jp: {
-    pageTitle: `コミュニティ | ${SITE.title}`,
-    subTitle: "Oops, このページは作成中!",
-    content: "コミュニティ中...",
-    btnTitle: "見る",
+  br: {
+    pageTitle: `Em breve | ${SITE.title}`,
+    subTitle: "Ops, esta página está em construção.",
+    content: "Ainda estamos preparando esta área. Volte em breve.",
+    btnTitle: "Voltar",
   },
 };
 
 // Determine language from the URL
 const urlPath = Astro.url.pathname;
-const langCodeMatch = urlPath.match(/^\/(en|fr|es|ko|jp)\//);
+const langCodeMatch = urlPath.match(/^\/(br)\//);
 const lang: TranslationKeys = langCodeMatch
   ? (langCodeMatch[1] as TranslationKeys)
   : defaultLang;
@@ -60,14 +36,14 @@ const lang: TranslationKeys = langCodeMatch
 const { pageTitle, subTitle, content, btnTitle } = translations[lang];
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout title={pageTitle} lang="pt-BR">
   <section class="grid h-svh place-content-center">
     <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
       <div class="mx-auto max-w-screen-sm text-center">
         <h1
-          class="text-dark text-blue-500 dark:text-blue-600 mb-4 text-4xl font-extrabold text-blue-500 lg:text-6xl"
+          class="text-dark mb-4 text-4xl font-extrabold text-blue-500 dark:text-blue-300 lg:text-6xl"
         >
-          COMING SOON
+          Em breve
         </h1>
         <p
           id="subtitle"

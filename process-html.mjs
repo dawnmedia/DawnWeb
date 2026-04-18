@@ -2,8 +2,8 @@ import fs from 'node:fs/promises'
 import { globby } from 'globby'
 import { minify } from 'html-minifier-terser'
 
-// Get all HTML files from the output directory
-const path = './.vercel/output/static'
+// Get all HTML files from the Astro static output directory used by GitHub Pages.
+const path = './dist'
 const files = await globby(`${path}/**/*.html`)
 
 await Promise.all(

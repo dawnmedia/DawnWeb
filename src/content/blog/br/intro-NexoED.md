@@ -1,25 +1,25 @@
 ---
-title: "Introducing NexoED: The Future of Online Learning, Built by Dawn Web"
-description: "Our newest platform is designed to make learning smarter, more engaging, and accessible for everyone"
+title: "Apresentando o NexoED: o futuro do aprendizado online, criado pela Dawn Web"
+description: "Nossa nova plataforma foi pensada para tornar o aprendizado mais inteligente, envolvente e acessível."
 author: "Andrew"
-role: "Founder, Dawn Web"
+role: "Fundador, Dawn Web"
 authorImage: "@/images/blog/Andrew2.png"
-authorImageAlt: "Avatar of Breno, founder of Dawn Web"
+authorImageAlt: "Avatar de Andrew, fundador da Dawn Web"
 pubDate: 2025-05-30
 cardImage: "@/images/blog/studying.jpg"
-cardImageAlt: "Young adult using a laptop in a modern learning environment"
+cardImageAlt: "Pessoa jovem usando um notebook em um ambiente moderno de aprendizado"
 readTime: 4
-tags: ["education", "edtech", "startups", "coming soon"]
+tags: ["educação", "edtech", "startups", "em breve"]
 contents: [
-  "Dawn Web is proud to announce NexoED — a cutting-edge education platform built to meet the evolving demands of online learning. With accessibility, engagement, and personalization at its core, NexoED is our contribution to making quality education more reachable and impactful.",
-  
-  "NexoED is more than just another learning management system. It's a digital ecosystem where educators can create, share, and manage courses with ease — and where learners can connect with knowledge through immersive, intuitive experiences.",
-  
-  "What sets NexoED apart is its focus on simplicity, scalability, and modern UX. Whether you’re a solo tutor, an academy, or a corporate trainer, our platform adapts to your needs. Our backend is built for performance and analytics, giving you the tools to monitor student progress, gather insights, and optimize your teaching approach.",
-  
-  "We believe the future of learning should be decentralized, flexible, and inspiring. That’s why NexoED supports multimedia content, real-time assessments, and community-driven learning tools to bring education into the next generation.",
-  
-  "Stay tuned for the launch — and be among the first to transform how you teach and learn online. If you're an educator, institution, or entrepreneur in the education space, NexoED is made for you."
+  "A Dawn Web tem orgulho de apresentar o NexoED, uma plataforma educacional moderna criada para acompanhar as novas demandas do ensino online. Com acessibilidade, engajamento e personalização no centro da experiência, o NexoED nasce para tornar a educação de qualidade mais próxima e efetiva.",
+
+  "O NexoED é mais do que um sistema de cursos. Ele funciona como um ecossistema digital onde educadores podem criar, compartilhar e gerenciar conteúdos com facilidade, enquanto alunos encontram conhecimento em uma experiência intuitiva e envolvente.",
+
+  "O diferencial do NexoED está na combinação de simplicidade, escalabilidade e boa experiência de uso. Seja para um professor independente, uma escola ou uma equipe de treinamento corporativo, a plataforma se adapta a diferentes necessidades. A base técnica foi pensada para performance e análise de dados, ajudando educadores a acompanhar progresso, entender comportamento e melhorar suas aulas.",
+
+  "Acreditamos que o futuro do aprendizado deve ser flexível, descentralizado e inspirador. Por isso, o NexoED foi planejado para suportar conteúdo multimídia, avaliações em tempo real e recursos de comunidade que aproximam alunos e educadores.",
+
+  "Acompanhe as próximas novidades e esteja entre os primeiros a transformar a forma de ensinar e aprender online. Se você atua com educação, treinamento ou produtos digitais, o NexoED foi criado pensando em você."
 ]
 
 ---

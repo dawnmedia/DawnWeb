@@ -11,11 +11,14 @@ import TestimonialsSectionAlt from "@components/sections/testimonials/Testimonia
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+
+const locale: Locale = "en";
 
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
   await getCollection("products", (entry: CollectionEntry<"products">) => {
-    return entry.id.startsWith("en/");
+    return collectionIdStartsWithLocale(entry.id, locale);
   })
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>

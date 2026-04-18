@@ -1,30 +1,31 @@
 ---
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSection from "@components/sections/fr/ContactSection_fr.astro";
+import ContactSectionBR from "@components/sections/misc/ContactSectionBR.astro";
 ---
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
 <MainLayout
-  title="Contact | Dawn Web"
-  lang="br"
+  title="Contato | Dawn Web"
+  meta="Fale com a Dawn Web para planejar seu site, produto digital, automação ou solução personalizada."
+  lang="pt-BR"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://dawnwebs.com/br/contact",
     url: "https://dawnwebs.com/br/contact",
-    name: "Nous Contacter | Dawn Web",
+    name: "Contato | Dawn Web",
     description:
-      "Des questions ou un projet à discuter ? Contactez-nous et créons ensemble la solution idéale grâce à nos services.",
+      "Fale com a Dawn Web para planejar seu site, produto digital, automação ou solução personalizada.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://dawnwebs.com/br/",
       name: "Dawn Web",
       description:
-        "Dawn Web crée des sites web remarquables et propose des services experts en marketing en ligne pour aider les entreprises à prospérer. Découvrez nos services et contactez-nous pour booster votre présence en ligne.",
+        "A Dawn Web cria sites, produtos digitais e soluções personalizadas para empresas que querem crescer online.",
     },
-    inLanguage: "br",
+    inLanguage: "pt-BR",
   }}
 >
-  <ContactSection />
+  <ContactSectionBR />
 </MainLayout>

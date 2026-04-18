@@ -16,22 +16,32 @@ import software from "@images/software.jpg";
 import code from "@images/code.jpg";
 import business from "@images/business.jpg";
 import graph from "@images/graph.jpg";
+import type { ImageMetadata } from "astro";
 
-interface Article {
-  isRightSection: boolean;
+interface BaseArticle {
   title: string;
   subTitle: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
+}
+
+interface RightArticle extends BaseArticle {
+  isRightSection: true;
   single?: boolean;
-  img?: any;
-  imgAlt?: string;
-  imgOne?: any;
-  imgOneAlt?: string;
-  imgTwo?: any;
+  imgOne: ImageMetadata;
+  imgOneAlt: string;
+  imgTwo?: ImageMetadata;
   imgTwoAlt?: string;
 }
+
+interface LeftArticle extends BaseArticle {
+  isRightSection: false;
+  img: ImageMetadata;
+  imgAlt: string;
+}
+
+type Article = RightArticle | LeftArticle;
 
 const articles: Article[] = [
   {
@@ -73,8 +83,7 @@ const articles: Article[] = [
     subTitle:
       "Notre engagement ne s’arrête pas à la livraison. Dawn Web assure la maintenance et le support pour garantir la fiabilité et la pérennité de vos solutions. Contrôles réguliers, assistance rapide : comptez sur nous pour un accompagnement durable.",
     img: code,
-    imgAlt:
-      "Homme en gilet orange et noir portant un casque blanc tenant un outil électrique jaune et noir",
+    imgAlt: "Écran affichant du code",
     },
     {
     isRightSection: true,
@@ -83,9 +92,9 @@ const articles: Article[] = [
       "Pour les entreprises aux besoins spécifiques, Dawn Web conçoit des solutions personnalisées. Nous analysons vos enjeux pour élaborer des stratégies qui optimisent vos opérations, renforcent votre efficacité et soutiennent votre croissance.",
     single: false,
     imgOne: business,
-    imgOneAlt: "Structure de bâtiment en cours de construction",
+    imgOneAlt: "Espace de planification business",
     imgTwo: graph,
-    imgTwoAlt: "Bâtiment marron et gris en construction",
+    imgTwoAlt: "Graphique de croissance digitale",
     btnExists: true,
     btnTitle: "Lire la suite",
     btnURL: "/fr/blog",

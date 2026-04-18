@@ -16,22 +16,32 @@ import software from "@images/software.jpg";
 import code from "@images/code.jpg";
 import business from "@images/business.jpg";
 import graph from "@images/graph.jpg";
+import type { ImageMetadata } from "astro";
 
-interface Article {
-  isRightSection: boolean;
+interface BaseArticle {
   title: string;
   subTitle: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
+}
+
+interface RightArticle extends BaseArticle {
+  isRightSection: true;
   single?: boolean;
-  img?: any;
-  imgAlt?: string;
-  imgOne?: any;
-  imgOneAlt?: string;
-  imgTwo?: any;
+  imgOne: ImageMetadata;
+  imgOneAlt: string;
+  imgTwo?: ImageMetadata;
   imgTwoAlt?: string;
 }
+
+interface LeftArticle extends BaseArticle {
+  isRightSection: false;
+  img: ImageMetadata;
+  imgAlt: string;
+}
+
+type Article = RightArticle | LeftArticle;
 
 const articles: Article[] = [
   {
@@ -71,10 +81,9 @@ const articles: Article[] = [
     isRightSection: false,
     title: "Ensuring Long-lasting Performance",
     subTitle:
-      "Our commitment to your project doesn't end at completion. Dawn Web offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
+      "Our commitment to your project doesn't end at launch. Dawn Web offers ongoing maintenance and support services to keep your website secure, current, and ready for future growth.",
     img: code,
-    imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+    imgAlt: "Code on a computer screen",
   },
   {
     isRightSection: true,
@@ -83,9 +92,9 @@ const articles: Article[] = [
       "For our larger enterprise clients, Dawn Web offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
     single: false,
     imgOne: business,
-    imgOneAlt: "In progress building structure",
+    imgOneAlt: "Business planning workspace",
     imgTwo: graph,
-    imgTwoAlt: "Brown and gray building under construction",
+    imgTwoAlt: "Digital growth chart",
     btnExists: true,
     btnTitle: "Read more",
     btnURL: "/blog",
@@ -104,13 +113,13 @@ const pageTitle: string = `Services | ${SITE.title}`;
     url: "https://dawnwebs.com/services",
     name: "Expert Consultation Services | Dawn Web",
     description:
-      "Uniting expertise with your vision, Dawn Web provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+      "Uniting expertise with your vision, Dawn Web provides web development, digital strategy, and custom software solutions from consultation to launch.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://dawnwebs.com",
       name: "Dawn Web",
       description:
-        "Dawn Web offers top-tier Web Development and expert construction services to meet all your project needs.",
+        "Dawn Web offers web development, digital strategy, and custom software services to meet your project needs.",
     },
     inLanguage: "en-US",
   }}

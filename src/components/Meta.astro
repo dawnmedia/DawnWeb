@@ -3,63 +3,85 @@ import { getImage } from "astro:assets";
 import { OG, SEO, SITE } from "@data/constants";
 import faviconSvgSrc from "@images/icon.svg";
 import faviconSrc from "@images/icon.png";
+import {
+  createAlternateLinks,
+  getLocaleFromPath,
+  LOCALE_LANGUAGE_TAGS,
+  localizePath,
+  OPEN_GRAPH_LOCALES,
+} from "@utils/locale";
+import type { ImageMetadata } from "astro";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
-// 'structuredData' defines default structured data in JSON-LD format to enhance search engine understanding of the page (for SEO purposes).
+// 'structuredData' defines optional JSON-LD data to enhance search engine understanding of the page.
 const defaultProps = {
   meta: SITE.description,
-  structuredData: SEO.structuredData,
 };
 
 // Extract props with default values assigned from defaultProps. Values can be overridden when the component is used.
 // For example:
 // <MainLayout title="Custom Title" meta="Custom description." />
 const {
+  title,
   meta = defaultProps.meta,
-  structuredData = defaultProps.structuredData,
+  structuredData: structuredDataProp,
+  socialImage: socialImageProp = OG.image,
 } = Astro.props;
 
-// Define the metadata for your website and individual pages
-const URL = `${Astro.site}`; // Set the website URL in astro.config.mjs
-const author = SITE.author;
-const canonical = Astro.url.href;
-const basePath = Astro.url.pathname;
-const ogTitle = OG.title;
-const ogDescription = OG.description;
-const socialImageRes = await getImage({
-  src: OG.image,
-  width: 1200,
-  height: 600,
-});
-const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
-
-const languages: { [key: string]: string } = {
-  en: "",
-  br: "br",
-  fr: "fr",
-};
-
-function createHref(lang: string, prefix: string, path: string): string {
-  const hasPrefix = path.startsWith(`/${prefix}/`);
-
-  const basePath = hasPrefix ? path : `/${prefix}${path}`;
-  const normalizedBasePath = basePath.replace(/\/\/+/g, "/");
-  return `${URL.slice(0, -1)}${normalizedBasePath}`;
+interface Props {
+  title?: string;
+  meta?: string;
+  structuredData?: object;
+  socialImage?: ImageMetadata | string;
 }
 
+// Define the metadata for your website and individual pages
+const siteUrl = `${Astro.site ?? SITE.url}`.replace(/\/$/, ""); // Set the website URL in astro.config.mjs
+const author = SITE.author;
 const fullPath: string = Astro.url.pathname;
+const currentLocale = getLocaleFromPath(fullPath);
+const canonical = `${siteUrl}${fullPath}`;
+const ogTitle = title ?? OG.title;
+const ogDescription = meta ?? OG.description;
+const socialImage =
+  typeof socialImageProp === "string"
+    ? new globalThis.URL(socialImageProp, siteUrl).toString()
+    : `${siteUrl}${(await getImage({
+        src: socialImageProp,
+        width: 1200,
+        height: 600,
+      })).src}`;
+const socialImageType = socialImage.endsWith(".avif")
+  ? "image/avif"
+  : socialImage.endsWith(".webp")
+    ? "image/webp"
+    : socialImage.endsWith(".svg")
+      ? "image/svg+xml"
+      : socialImage.endsWith(".jpg") || socialImage.endsWith(".jpeg")
+        ? "image/jpeg"
+        : "image/png";
+const twitterDomain = new globalThis.URL(siteUrl).hostname;
+const structuredData = structuredDataProp ?? {
+  ...SEO.structuredData,
+  "@id": canonical,
+  url: canonical,
+  name: ogTitle,
+  description: ogDescription,
+  inLanguage: LOCALE_LANGUAGE_TAGS[currentLocale],
+  isPartOf: {
+    ...SEO.structuredData.isPartOf,
+    url: siteUrl,
+  },
+};
 
-const alternateLanguageLinks: string = Object.entries(languages)
-  .map(([lang, prefix]: [string, string]) => {
-    const basePath: string =
-      lang === "en" ? fullPath.replace(/^\/fr\//, "/") : fullPath;
-
-    const href: string = createHref(lang, prefix, basePath);
-
-    return `<link rel="alternate" hreflang="${lang}" href="${href}" />`;
-  })
-  .join("\n");
+const alternateLanguageLinks: string = [
+  ...createAlternateLinks(fullPath, siteUrl).map(
+    ({ hreflang, href }) =>
+      `<link rel="alternate" hreflang="${hreflang}" href="${href}" />`,
+  ),
+  `<link rel="alternate" hreflang="x-default" href="${siteUrl}${localizePath(fullPath, "en")}" />`,
+].join("\n");
 
 // Generate and optimize the favicon images
 const faviconSvg = await getImage({
@@ -79,6 +101,7 @@ const appleTouchIcon = await getImage({
      https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data -->{
   structuredData && (
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify(structuredData)}
     />
@@ -97,8 +120,8 @@ const appleTouchIcon = await getImage({
 <Fragment set:html={alternateLanguageLinks} />
 
 <!-- Facebook Meta Tags -->
-<meta property="og:locale" content="en_US" />
-<meta property="og:url" content={URL} />
+<meta property="og:locale" content={OPEN_GRAPH_LOCALES[currentLocale]} />
+<meta property="og:url" content={canonical} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:site_name" content={SITE.title} />
@@ -106,12 +129,12 @@ const appleTouchIcon = await getImage({
 <meta property="og:image" content={socialImage} />
 <meta content="1200" property="og:image:width" />
 <meta content="600" property="og:image:height" />
-<meta content="image/png" property="og:image:type" />
+<meta content={socialImageType} property="og:image:type" />
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:domain" content={URL} />
-<meta property="twitter:url" content={URL} />
+<meta property="twitter:domain" content={twitterDomain} />
+<meta property="twitter:url" content={canonical} />
 <meta name="twitter:title" content={ogTitle} />
 <meta name="twitter:description" content={ogDescription} />
 <meta name="twitter:image" content={socialImage} />

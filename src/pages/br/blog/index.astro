@@ -7,55 +7,58 @@ import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
 
-// Get all blogs post in French and sort them based on publish date
+const locale: Locale = "br";
 
-const frenchBlogEntries = await getCollection("blog", ({ id }) => {
-  return id.startsWith("fr/");
+// Get all Brazilian Portuguese blog posts and sort them based on publish date
+
+const portugueseBlogEntries = await getCollection("blog", ({ id }) => {
+  return collectionIdStartsWithLocale(id, locale);
 });
 
-const frenchInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("fr/");
+const portugueseInsightsEntries = await getCollection("insights", ({ id }) => {
+  return collectionIdStartsWithLocale(id, locale);
 });
 
-const blogPosts: CollectionEntry<"blog">[] = frenchBlogEntries.sort(
+const blogPosts: CollectionEntry<"blog">[] = portugueseBlogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 // Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] = frenchInsightsEntries;
+const insightPosts: CollectionEntry<"insights">[] = portugueseInsightsEntries;
 
 // Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
-const title: string = "Découvrez l’univers de Dawn Web";
+const title: string = "Conheça o universo da Dawn Web";
 const subTitle: string =
-  "Suivez nos dernières actualités, mises à jour et analyses sur le développement web. Notre blog est votre source de référence pour des conseils d’experts, les tendances du secteur et les nouveautés de l’entreprise.";
-const secondTitle: string = "Analyses";
+  "Acompanhe novidades, atualizações e análises sobre desenvolvimento web. Nosso blog reúne conselhos práticos, tendências do setor e notícias da Dawn Web.";
+const secondTitle: string = "Insights";
 const secondSubTitle: string =
-  "Plongez dans notre section analyses pour bénéficier d’expertises et de points de vue éclairés sur le secteur du développement. Des tendances du marché aux solutions innovantes, nos analyses vous offrent des perspectives précieuses pour évoluer dans un environnement en constante mutation.";
+  "Explore perspectivas sobre estratégia digital, tecnologia e crescimento online para tomar decisões mais claras em um mercado em constante mudança.";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 ---
 
-<MainLayout lang="fr"
+<MainLayout lang="pt-BR"
   title={pageTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://dawnwebs.com/fr/blog",
-    "url": "https://dawnwebs.com/fr/blog",
+    "@id": "https://dawnwebs.com/br/blog",
+    "url": "https://dawnwebs.com/br/blog",
     "name": "Blog | Dawn Web",
-    "description": "Dawn Web propose des services de développement web de premier ordre et des solutions expertes pour répondre à tous vos besoins de projet.",
+    "description": "A Dawn Web oferece desenvolvimento web e soluções digitais para empresas que querem crescer online.",
     "isPartOf": {
       "@type": "WebSite",
-      "url": "https://dawnwebs.com/fr",
+      "url": "https://dawnwebs.com/br",
       "name": "Dawn Web",
-      "description": "Dawn Web propose des services de développement web de premier ordre et des solutions expertes pour répondre à tous vos besoins de projet.",
+      "description": "A Dawn Web cria sites e soluções digitais sob medida para empresas.",
     },
-    "inLanguage": "fr"
+    "inLanguage": "pt-BR"
   }}
 >
   <section
@@ -82,14 +85,14 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   >
     <!--Blog posts grid-->
     <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale="fr"/>)}
+      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale={locale}/>)}
     </div>
   </section>
   <!--Most recent blog post-->
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale="fr" />
+    <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale={locale} />
   </section>
   <!--Insights section-->
   <section
@@ -108,7 +111,7 @@ const pageTitle: string = `Blog | ${SITE.title}`;
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} insightLocale="fr" />
+          <CardInsight insightEntry={insightEntry} insightLocale={locale} label="Ler mais" />
         ))
       }
     </div>

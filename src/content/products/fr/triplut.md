@@ -23,7 +23,7 @@ longDescription:
   subTitle: |
     Triplut n'est pas seulement un site de réservation ou un autre agrégateur d'itinéraires. C'est un partenaire de voyage intelligent qui écoute, apprend et conçoit des voyages autour de VOUS. Propulsé par notre assistante IA Luna, Triplut trouve les meilleures options de transport, d'hébergement, d'expériences et même de nourriture, tout en adaptant chaque détail à vos préférences, votre budget et le confort souhaité. Avec Triplut, vous voyagez enfin à votre façon, sans souci et riche en découvertes.
   btnTitle: "Planifiez Votre Voyage Maintenant"
-  btnURL: "/comingsoon"
+  btnURL: "/fr/contact"
 descriptionList:
   - title: "Planifiez Tout en un Seul Endroit"
     subTitle: "Des bus et trains aux vols et locations de motos, comparez et combinez toutes les principales options de transport au Brésil et au-delà."

@@ -12,6 +12,32 @@ export default defineConfig({
   // so `base` should be "/" to avoid broken asset and link paths.
   site: "https://dawnwebs.com",
   base: "/",
+  redirects: {
+    "/tools/tool-guides/": "/guides/intro/",
+    "/tools/equipment-care/": "/advanced/technical-specifications/",
+    "/construction/project-planning/": "/guides/first-project-checklist/",
+    "/construction/safety/": "/advanced/technical-specifications/",
+    "/de/welcome-to-docs/": "/welcome-to-docs/",
+    "/de/guides/intro/": "/guides/intro/",
+    "/de/guides/getting-started/": "/guides/getting-started/",
+    "/de/guides/first-project-checklist/": "/guides/first-project-checklist/",
+    "/es/welcome-to-docs/": "/welcome-to-docs/",
+    "/es/guides/intro/": "/guides/intro/",
+    "/es/guides/getting-started/": "/guides/getting-started/",
+    "/es/guides/first-project-checklist/": "/guides/first-project-checklist/",
+    "/fa/welcome-to-docs/": "/welcome-to-docs/",
+    "/fa/guides/intro/": "/guides/intro/",
+    "/fa/guides/getting-started/": "/guides/getting-started/",
+    "/fa/guides/first-project-checklist/": "/guides/first-project-checklist/",
+    "/ja/welcome-to-docs/": "/welcome-to-docs/",
+    "/ja/guides/intro/": "/guides/intro/",
+    "/ja/guides/getting-started/": "/guides/getting-started/",
+    "/ja/guides/first-project-checklist/": "/guides/first-project-checklist/",
+    "/zh-cn/welcome-to-docs/": "/welcome-to-docs/",
+    "/zh-cn/guides/intro/": "/guides/intro/",
+    "/zh-cn/guides/getting-started/": "/guides/getting-started/",
+    "/zh-cn/guides/first-project-checklist/": "/guides/first-project-checklist/",
+  },
 
   image: {
     domains: ["images.unsplash.com"],
@@ -53,45 +79,60 @@ export default defineConfig({
           label: "English",
           lang: "en",
         },
-        de: { label: "Deutsch", lang: "de" },
-        es: { label: "Español", lang: "es" },
         fr: { label: "Français", lang: "fr" },
-        br: { label: "Português (BR)", lang: "br" },
+        br: { label: "Português (BR)", lang: "pt-BR" },
       },
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [
         {
-          label: "Quick Start Guides",
+          label: "Dawn Web Guides",
           translations: {
-            de: "Schnellstartanleitungen",
-            br: "Guias de Início Rápido",
-            es: "Guías de Inicio Rápido",
-            fa: "راهنمای شروع سریع",
-            fr: "Guides de Démarrage Rapide",
-            ja: "クイックスタートガイド",
-            "zh-cn": "快速入门指南",
+            "pt-BR": "Guias da Dawn Web",
+            fr: "Guides Dawn Web",
           },
           autogenerate: { directory: "guides" },
         },
         {
-          label: "Tools & Equipment",
+          label: "Services",
+          translations: {
+            "pt-BR": "Serviços",
+            fr: "Services",
+          },
           items: [
-            { label: "Tool Guides", link: "tools/tool-guides/" },
-            { label: "Equipment Care", link: "tools/equipment-care/" },
+            {
+              label: "Web Development",
+              translations: {
+                "pt-BR": "Desenvolvimento web",
+                fr: "Développement web",
+              },
+              link: "construction/service-overview/",
+            },
+            {
+              label: "Custom Solutions",
+              translations: {
+                "pt-BR": "Soluções sob medida",
+                fr: "Solutions sur mesure",
+              },
+              link: "construction/custom-solutions/",
+            },
           ],
         },
         {
-          label: "Construction Services",
-          autogenerate: { directory: "construction" },
-        },
-        {
-          label: "Advanced Topics",
+          label: "Technical Notes",
+          translations: {
+            "pt-BR": "Notas técnicas",
+            fr: "Notes techniques",
+          },
           autogenerate: { directory: "advanced" },
         },
       ],
-      social: {
-        github: "https://github.com/dawnweb_en",
-      },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/dawnweb_en",
+        },
+      ],
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
       favicon: "/favicon.ico",
@@ -106,14 +147,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://dawnwebs.com" + "/social.webp",
+            content: "https://dawnwebs.com" + "/social.png",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://dawnwebs.com" + "/social.webp",
+            content: "https://dawnwebs.com" + "/social.png",
           },
         },
       ],
@@ -126,6 +167,5 @@ export default defineConfig({
   output: "static",
   experimental: {
     clientPrerender: true,
-    directRenderScript: true,
   },
 });

@@ -4,9 +4,16 @@ import Meta from "@components/Meta.astro";
 import Navbar from "@components/sections/navbar&footer/Navbar.astro";
 import FooterSection from "@components/sections/navbar&footer/FooterSection.astro";
 import { SITE } from "@data/constants";
+import type { ImageMetadata } from "astro";
 
 // Setting expected props
-const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
+const {
+  title = SITE.title,
+  meta,
+  structuredData,
+  lang = "en",
+  socialImage,
+} = Astro.props;
 
 // Interface to type-check the properties
 interface Props {
@@ -14,6 +21,7 @@ interface Props {
   meta?: string;
   structuredData?: object;
   lang?: string;
+  socialImage?: ImageMetadata | string;
 }
 ---
 
@@ -24,7 +32,12 @@ We set the language of the page to English and add classes for scrollbar and scr
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
   <head>
     <!-- Adding metadata to the HTML document -->
-    <Meta meta={meta} structuredData={structuredData} />
+    <Meta
+      title={title}
+      meta={meta}
+      structuredData={structuredData}
+      socialImage={socialImage}
+    />
     <!-- Define the title of the page -->
     <title>{title}</title>
     <script is:inline>

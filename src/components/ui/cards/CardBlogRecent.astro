@@ -4,12 +4,28 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import {
+  DEFAULT_LOCALE,
+  getContentSlug,
+  localizePath,
+  stripLocaleFromSlug,
+  type Locale,
+} from "@utils/locale";
 
-const { blogEntry, recentBlogLocale = "" } = Astro.props;
+const { blogEntry, recentBlogLocale = DEFAULT_LOCALE } = Astro.props;
+const href = localizePath(
+  `/blog/${stripLocaleFromSlug(getContentSlug(blogEntry), recentBlogLocale)}/`,
+  recentBlogLocale,
+);
+const readMoreLabel = {
+  en: "Read More",
+  fr: "Lire la suite",
+  br: "Ler mais",
+}[recentBlogLocale];
 
 interface Props {
   blogEntry: CollectionEntry<"blog">;
-  recentBlogLocale?: string;
+  recentBlogLocale?: Locale;
 }
 ---
 
@@ -28,7 +44,7 @@ interface Props {
       />
     </div>
   </div>
-  <!-- Container for the blog post's heading, author avatar, author's role, and read more button -->
+  <!-- Container for the blog post heading, author avatar, role, and CTA -->
   <div class="sm:order-1">
     <!-- Blog title which is also a hyperlink to the blog detail page  -->
     <h2
@@ -36,7 +52,7 @@ interface Props {
     >
       <a
         class="outline-none ring-zinc-500 transition duration-300 hover:text-blue-400 focus-visible:ring dark:text-neutral-300 dark:ring-zinc-200 dark:hover:text-neutral-50 dark:focus:outline-none"
-        href={recentBlogLocale && recentBlogLocale !== "en" ? `/${recentBlogLocale}/blog/${blogEntry.slug.replace(/^fr\//, '')}/` : `/blog/${blogEntry.slug.replace(/^en\//, '')}/`}
+        href={href}
       >
         {blogEntry.data.description}
       </a>
@@ -54,11 +70,11 @@ interface Props {
         </p>
       </div>
     </div>
-    <!-- Read More button which is a link to the blog post detailed page -->
+    <!-- CTA linking to the full blog post -->
     <div class="mt-5">
       <PrimaryCTA
-        url={recentBlogLocale && recentBlogLocale !== "en" ? `/${recentBlogLocale}/blog/${blogEntry.slug.replace(/^fr\//, '')}/` : `/blog/${blogEntry.slug.replace(/^en\//, '')}/`}
-        title="Read More"
+        url={href}
+        title={readMoreLabel}
         data-astro-prefetch
       />
     </div>

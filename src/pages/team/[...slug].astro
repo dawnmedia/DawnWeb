@@ -3,15 +3,22 @@
 import { SITE } from "@data/constants";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
+import {
+  collectionIdStartsWithLocale,
+  getContentSlug,
+  stripLocaleFromSlug,
+  type Locale,
+} from "@utils/locale";
 
 // Use `getStaticPaths` to generate static routes for generated pages on build
 export async function getStaticPaths() {
+  const routeLocale: Locale = "en";
   const insightPosts = await getCollection("insights", ({ id }) =>
-    id.startsWith("en/")
+    collectionIdStartsWithLocale(id, routeLocale)
   );
   return insightPosts.map((post) => {
-    const slugWithoutLang = post.slug.replace(/^en\//, ""); // Remove the "fr/" prefix
+    const slugWithoutLang = stripLocaleFromSlug(getContentSlug(post), routeLocale);
     return {
       params: { slug: slugWithoutLang },
       props: { post },
@@ -22,7 +29,7 @@ export async function getStaticPaths() {
 // Get the props for this page that define a specific insight post
 const { post } = Astro.props;
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 ---

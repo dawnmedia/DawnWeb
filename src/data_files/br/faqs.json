@@ -1,33 +1,33 @@
 {
-  "subTitle": "Posez-nous toutes vos questions sur les services et produits Dawn Web et obtenez des réponses claires.",
+  "subTitle": "Tire suas dúvidas sobre os serviços, produtos e planos da Dawn Web.",
   "faqs": [
     {
-      "question": "Pouvez-vous m’aider à développer ma présence en ligne ?",
-      "answer": "Oui, nous proposons une gamme complète de services de marketing digital, incluant le référencement (SEO), l’email marketing et la publicité en ligne. Nous collaborons avec vous pour élaborer une stratégie adaptée à vos objectifs."
+      "question": "Vocês podem ajudar minha empresa a crescer online?",
+      "answer": "Sim. Apoiamos sua presença digital com desenvolvimento de sites, SEO, conteúdo, integrações e estratégias sob medida para os objetivos do seu negócio."
     },
     {
-      "question": "Assurez-vous la maintenance et le support de mon site web ?",
-      "answer": "Bien sûr. Tous nos forfaits incluent un support continu et des mises à jour régulières pour garantir la sécurité et la performance de votre site."
+      "question": "Vocês fazem manutenção e suporte depois do lançamento?",
+      "answer": "Sim. Nossos planos incluem acompanhamento contínuo, atualizações, backups e melhorias para manter seu site seguro, rápido e funcionando bem."
     },
     {
-      "question": "Comment optimisez-vous mon site pour les moteurs de recherche ?",
-      "answer": "Nous appliquons les meilleures pratiques SEO : configuration des métadonnées, choix des mots-clés, balises alt pour les images et optimisation des performances pour améliorer le classement de votre site."
+      "question": "Como a Dawn Web melhora o SEO do meu site?",
+      "answer": "Aplicamos boas práticas técnicas e de conteúdo: metadados, estrutura de páginas, performance, textos alternativos em imagens e organização clara para mecanismos de busca."
     },
     {
-      "question": "Puis-je demander davantage de mises à jour ou de fonctionnalités personnalisées chaque mois ?",
-      "answer": "Oui. Chaque forfait comprend un nombre défini de mises à jour mensuelles, mais vous pouvez toujours demander des modifications supplémentaires en option. Contactez-nous pour connaître les tarifs et délais."
+      "question": "Posso pedir atualizações ou funcionalidades extras durante o mês?",
+      "answer": "Pode. Cada plano inclui uma quantidade definida de atualizações mensais, e também podemos avaliar demandas extras com prazo e orçamento separados."
     },
     {
-      "question": "Je ne sais pas quel forfait choisir. Pouvez-vous m’orienter ?",
-      "answer": "Absolument ! Contactez-nous et nous vous aiderons à choisir le forfait le plus adapté à vos objectifs, besoins techniques et budget."
+      "question": "Não sei qual plano escolher. Vocês ajudam nessa decisão?",
+      "answer": "Claro. Podemos entender suas metas, prazo, orçamento e necessidades técnicas para indicar o plano mais adequado."
     },
     {
-      "question": "Le plan annuel (-20%) correspond-il à un paiement unique ou récurrent ?",
-      "answer": "Le plan annuel est facturé une fois par an à un tarif préférentiel par rapport à la mensualisation. Il s’agit d’un abonnement récurrent, sauf en cas d’annulation."
+      "question": "O plano anual com desconto é pagamento único ou recorrente?",
+      "answer": "O plano anual é cobrado uma vez por ano com desconto em relação ao valor mensal. Ele é recorrente até ser cancelado."
     },
     {
-      "question": "Quels modules complémentaires proposez-vous ?",
-      "answer": "Nous proposons plusieurs modules complémentaires : e-commerce, analyses avancées, intégrations personnalisées, support multilingue, et bien plus encore. Faites-nous part de vos besoins et nous vous conseillerons les solutions les plus adaptées."
+      "question": "Quais serviços adicionais vocês oferecem?",
+      "answer": "Podemos incluir e-commerce, analytics avançado, integrações personalizadas, suporte multilíngue, automações, páginas extras e outros recursos conforme a necessidade do projeto."
     }
   ]
 }

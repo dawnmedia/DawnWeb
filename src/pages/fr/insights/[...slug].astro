@@ -3,15 +3,24 @@
 import { SITE } from "@data/constants";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
+import {
+  collectionIdStartsWithLocale,
+  getContentSlug,
+  stripLocaleFromSlug,
+  type Locale,
+} from "@utils/locale";
 
 // Use `getStaticPaths` to generate static routes for generated pages on build
 export async function getStaticPaths() {
-  const insightPosts = await getCollection("insights", ({ id }) => id.startsWith("fr/"));
+  const routeLocale: Locale = "fr";
+  const insightPosts = await getCollection("insights", ({ id }) =>
+    collectionIdStartsWithLocale(id, routeLocale)
+  );
   return insightPosts.map((post) => {
-    const slugWithoutLang = post.slug.replace(/^fr\//, ''); // Remove the "fr/" prefix
+    const slugWithoutLang = stripLocaleFromSlug(getContentSlug(post), routeLocale);
     return {
-      params: { lang: 'fr', slug: slugWithoutLang },
+      params: { slug: slugWithoutLang },
       props: { post },
     };
   });
@@ -20,12 +29,12 @@ export async function getStaticPaths() {
 // Get the props for this page that define a specific insight post
 const { post } = Astro.props;
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout title={pageTitle} lang="fr" meta={post.data.description} socialImage={post.data.cardImage}>
   <section class="py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-2 lg:gap-12">

@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
+import type { ImageMetadata } from "astro";
 
 // Define props from Astro
 const {
@@ -35,7 +36,7 @@ interface Props {
   starCount?: number;
   rating?: string;
   reviews?: string;
-  src?: any;
+  src?: ImageMetadata;
   alt?: string;
 }
 ---

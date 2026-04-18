@@ -7,15 +7,18 @@ import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+
+const locale: Locale = "fr";
 
 // Get all blogs post in French and sort them based on publish date
 
 const frenchBlogEntries = await getCollection("blog", ({ id }) => {
-  return id.startsWith("fr/");
+  return collectionIdStartsWithLocale(id, locale);
 });
 
 const frenchInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("fr/");
+  return collectionIdStartsWithLocale(id, locale);
 });
 
 const blogPosts: CollectionEntry<"blog">[] = frenchBlogEntries.sort(
@@ -82,14 +85,14 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   >
     <!--Blog posts grid-->
     <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale="fr"/>)}
+      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale={locale}/>)}
     </div>
   </section>
   <!--Most recent blog post-->
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale="fr" />
+    <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale={locale} />
   </section>
   <!--Insights section-->
   <section
@@ -108,7 +111,7 @@ const pageTitle: string = `Blog | ${SITE.title}`;
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} insightLocale="fr" />
+          <CardInsight insightEntry={insightEntry} insightLocale={locale} />
         ))
       }
     </div>

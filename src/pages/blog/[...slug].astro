@@ -11,14 +11,23 @@ import { capitalize, formatDate } from "@utils/utils";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import {
+  collectionIdStartsWithLocale,
+  getContentSlug,
+  stripLocaleFromSlug,
+  type Locale,
+} from "@utils/locale";
+
+const locale: Locale = "en";
 
 // Update getStaticPaths for English posts
 export async function getStaticPaths() {
+  const routeLocale: Locale = "en";
   const blogPosts = await getCollection("blog", ({ id }) =>
-    id.startsWith("en/")
+    collectionIdStartsWithLocale(id, routeLocale)
   );
   return blogPosts.map((post) => {
-    const slugWithoutLang = post.slug.replace(/^en\//, ""); // Remove the "en/" prefix
+    const slugWithoutLang = stripLocaleFromSlug(getContentSlug(post), routeLocale);
     return {
       params: { slug: slugWithoutLang },
       props: { post },
@@ -31,21 +40,27 @@ const { post } = Astro.props;
 
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
-  ({ id }) => id.startsWith("en/")
+  ({ id }) => collectionIdStartsWithLocale(id, locale)
 );
 
-// Filter out the current post to get related posts
-// Note: This is a very basic way of choosing related posts, just for the purpose of the example.
-// In a production site, you might want to implement a more robust algorithm, choosing related posts based on tags, categories, dates, authors, or keywords.
-// See example: https://blog.codybrunner.com/2024/adding-related-articles-with-astro-content-collections/
-const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
-  (blogEntry) => blogEntry.slug !== post.slug
-);
+const currentTags = new Set(post.data.tags ?? []);
+const relatedPosts: CollectionEntry<"blog">[] = blogPosts
+  .filter((blogEntry) => blogEntry.id !== post.id)
+  .sort((a, b) => {
+    const aScore = (a.data.tags ?? []).filter((tag) =>
+      currentTags.has(tag)
+    ).length;
+    const bScore = (b.data.tags ?? []).filter((tag) =>
+      currentTags.has(tag)
+    ).length;
+    return bScore - aScore || b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+  })
+  .slice(0, 3);
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout title={pageTitle} meta={post.data.description} socialImage={post.data.cardImage}>
   <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
@@ -84,7 +99,7 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
       <!--Blog post contents-->
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
         {
-          post.data.contents.map((content: string, index: any) =>
+          post.data.contents.map((content: string, index: number) =>
             index === 1 ? (
               <>
                 <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">

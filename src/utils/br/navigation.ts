@@ -12,7 +12,7 @@ const footerLinks = [
   {
     section: "Ecosystem",
     links: [
-      { name: "Documentação", url: "/br/comingsoon" },
+      { name: "Documentação", url: "/br/guides/intro/" },
       { name: "Produtos", url: "/br/products" },
       { name: "Serviços", url: "/br/services" },
     ],
@@ -20,7 +20,7 @@ const footerLinks = [
   {
     section: "Company",
     links: [
-      { name: "Sobre Nós", url: "/br/comingsoon" },
+      { name: "Sobre Nós", url: "/br/team" },
       { name: "Blog", url: "/br/blog" },
       { name: "Nossa Equipe", url: "/br/team" },
       { name: "Trabalhe Conosco", url: "/br/contact" },

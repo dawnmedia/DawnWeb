@@ -2,6 +2,7 @@
 // Import the required modules
 import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import type { ImageMetadata } from "astro";
 // Extract properties from Astro.props
 const {
   title,
@@ -23,10 +24,10 @@ interface Props {
   btnTitle?: string;
   btnURL?: string;
   single?: boolean;
-  imgOne?: any;
-  imgOneAlt?: any;
-  imgTwo?: any;
-  imgTwoAlt?: any;
+  imgOne: ImageMetadata;
+  imgOneAlt: string;
+  imgTwo?: ImageMetadata;
+  imgTwoAlt?: string;
 }
 ---
 <!-- Root section of the component -->
@@ -72,13 +73,17 @@ interface Props {
           format={"avif"}
         />
         <!-- Second image in a two-image layout -->
-        <Image
-          class="mt-4 w-full rounded-xl lg:mt-10"
-          src={imgTwo}
-          alt={imgTwoAlt}
-          draggable={"false"}
-          format={"avif"}
-        />
+        {
+          imgTwo && imgTwoAlt && (
+            <Image
+              class="mt-4 w-full rounded-xl lg:mt-10"
+              src={imgTwo}
+              alt={imgTwoAlt}
+              draggable={"false"}
+              format={"avif"}
+            />
+          )
+        }
       </div>
     )
   }

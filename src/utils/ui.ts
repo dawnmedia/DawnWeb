@@ -1,4 +1,1 @@
-export const languages = {
-    en: "English (US)",
-    fr: "Français (FR)",
-};
+export { LOCALE_LABELS as languages } from "./locale";

@@ -16,85 +16,95 @@ import software from "@images/software.jpg";
 import code from "@images/code.jpg";
 import business from "@images/business.jpg";
 import graph from "@images/graph.jpg";
+import type { ImageMetadata } from "astro";
 
-interface Article {
-  isRightSection: boolean;
+interface BaseArticle {
   title: string;
   subTitle: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
+}
+
+interface RightArticle extends BaseArticle {
+  isRightSection: true;
   single?: boolean;
-  img?: any;
-  imgAlt?: string;
-  imgOne?: any;
-  imgOneAlt?: string;
-  imgTwo?: any;
+  imgOne: ImageMetadata;
+  imgOneAlt: string;
+  imgTwo?: ImageMetadata;
   imgTwoAlt?: string;
 }
+
+interface LeftArticle extends BaseArticle {
+  isRightSection: false;
+  img: ImageMetadata;
+  imgAlt: string;
+}
+
+type Article = RightArticle | LeftArticle;
 
 const articles: Article[] = [
   {
     isRightSection: true,
-    title: "Conseils professionnels de confiance",
+    title: "Consultoria digital clara e confiável",
     subTitle:
-      "Créer un site web ou un produit logiciel peut sembler complexe. Avec nos services de conseil, nous vous guidons à chaque étape : choix technologiques, définition du périmètre, expérience utilisateur et conformité. Profitez d’un accompagnement sur mesure pour réussir votre projet.",
+      "Criar um site, produto digital ou sistema sob medida envolve muitas decisões. A Dawn Web ajuda você a definir escopo, tecnologia, experiência do usuário e prioridades para avançar com segurança.",
     single: false,
     imgOne: webdesign,
-    imgOneAlt: "Personne concevant un site web sur un ordinateur portable",
+    imgOneAlt: "Pessoa planejando a interface de um site em um notebook",
     imgTwo: webdev,
-    imgTwoAlt: "Personne codant un site web",
-    },
-    {
+    imgTwoAlt: "Pessoa desenvolvendo código em um computador",
+  },
+  {
     isRightSection: false,
-    title: "Transformer vos idées en solutions concrètes",
+    title: "Ideias transformadas em soluções reais",
     subTitle:
-      "Chez Dawn Web, nos développeurs allient créativité et expertise pour donner vie à vos projets numériques. Que ce soit pour une page d’accueil ou une application sur mesure, nous réalisons des solutions rapides, fiables et évolutives, pensées pour vos objectifs.",
+      "Nossa equipe combina estratégia, design e desenvolvimento para entregar landing pages, sites institucionais, aplicações e integrações que resolvem necessidades reais do negócio.",
     img: webuild,
-    imgAlt: "Écran affichant du code de développement",
+    imgAlt: "Tela com código de desenvolvimento web",
     btnExists: true,
-    btnTitle: "En savoir plus",
-    btnURL: "/fr/blog",
-    },
-    {
+    btnTitle: "Ver ideias no blog",
+    btnURL: "/br/blog",
+  },
+  {
     isRightSection: true,
-    title: "Piloter vos projets avec rigueur et transparence",
+    title: "Projetos conduzidos com organização",
     subTitle:
-      "Une gestion de projet efficace est la clé du succès. Nous assurons la planification, le suivi des étapes et la communication, pour que votre projet avance sereinement et dans les délais. De la première réunion au lancement, nous gérons la complexité pour vous.",
+      "Da primeira conversa ao lançamento, organizamos etapas, alinhamentos e entregas para que você saiba o que está acontecendo, o que vem depois e como cada decisão impacta o resultado.",
     single: false,
     imgOne: payments,
-    imgOneAlt: "Personne effectuant un paiement dans un magasin",
+    imgOneAlt: "Pessoa usando uma solução de pagamento digital",
     imgTwo: software,
-    imgTwoAlt: "Réceptionniste d’hôtel utilisant un téléphone fixe",
-    },
-    {
+    imgTwoAlt: "Profissional usando um sistema de atendimento",
+  },
+  {
     isRightSection: false,
-    title: "Garantir la performance sur le long terme",
+    title: "Performance e suporte no longo prazo",
     subTitle:
-      "Notre engagement ne s’arrête pas à la livraison. Dawn Web assure la maintenance et le support pour garantir la fiabilité et la pérennité de vos solutions. Contrôles réguliers, assistance rapide : comptez sur nous pour un accompagnement durable.",
+      "A entrega não termina no lançamento. Mantemos seu projeto seguro, rápido e atualizado com suporte contínuo, melhorias planejadas e atenção à estabilidade.",
     img: code,
-    imgAlt:
-      "Homme en gilet orange et noir portant un casque blanc tenant un outil électrique jaune et noir",
-    },
-    {
+    imgAlt: "Tela exibindo código",
+  },
+  {
     isRightSection: true,
-    title: "Des stratégies sur mesure pour chaque défi",
+    title: "Estratégias sob medida para cada desafio",
     subTitle:
-      "Pour les entreprises aux besoins spécifiques, Dawn Web conçoit des solutions personnalisées. Nous analysons vos enjeux pour élaborer des stratégies qui optimisent vos opérations, renforcent votre efficacité et soutiennent votre croissance.",
+      "Quando a empresa precisa ir além de um site padrão, desenhamos soluções personalizadas para integrar processos, automatizar tarefas e apoiar o crescimento.",
     single: false,
     imgOne: business,
-    imgOneAlt: "Structure de bâtiment en cours de construction",
+    imgOneAlt: "Espaço de planejamento de negócios",
     imgTwo: graph,
-    imgTwoAlt: "Bâtiment marron et gris en construction",
+    imgTwoAlt: "Gráfico de crescimento digital",
     btnExists: true,
-    btnTitle: "Lire la suite",
-    btnURL: "/fr/blog",
+    btnTitle: "Ler mais",
+    btnURL: "/br/blog",
   },
 ];
 ---
 <MainLayout
-  title="Services | Dawn Web"
-  lang="fr"
+  title="Serviços | Dawn Web"
+  meta="Serviços de desenvolvimento web, consultoria digital, automações e soluções sob medida para empresas no Brasil."
+  lang="pt-BR"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -102,24 +112,24 @@ const articles: Article[] = [
     url: "https://dawnwebs.com/br/services",
     name: "Serviços | Dawn Web",
     description:
-      "Alliez expertise et vision : Dawn Web vous accompagne avec des services sur mesure et des solutions complètes, de la conception à la réalisation de vos projets numériques.",
+      "Serviços de desenvolvimento web, consultoria digital, automações e soluções sob medida para empresas no Brasil.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://dawnwebs.com/br",
       name: "Dawn Web",
       description:
-        "Dawn Web propose des services de développement web et de conseil de haut niveau pour répondre à tous vos besoins numériques.",
+        "A Dawn Web cria sites, produtos digitais e soluções personalizadas para empresas que querem crescer online.",
     },
-    inLanguage: "fr",
+    inLanguage: "pt-BR",
   }}
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
     <!-- getRelativeLocaleUrl("fr", "/contact") -->
   <MainSection
-    title="Alliez expertise et vision numérique"
-    subTitle="Chez Dawn Web, nous proposons des solutions complètes de développement web et logiciel pour concrétiser vos idées digitales. Notre équipe expérimentée vous accompagne à chaque étape, de la découverte au déploiement, pour garantir la réussite de votre projet."
+    title="Una estratégia, design e tecnologia"
+    subTitle="A Dawn Web cria sites, produtos digitais e soluções de software para transformar ideias em experiências rápidas, claras e prontas para crescer. Acompanhamos cada etapa, da descoberta ao lançamento."
     btnExists={true}
-    btnTitle="Planifier une consultation"
+    btnTitle="Agendar uma consulta"
     btnURL="https://calendly.com/contact-dawnwebs/30min"
   
   />
@@ -161,22 +171,22 @@ const articles: Article[] = [
   }
   <!--FeaturesStats section showcases essential stats valuable to users-->
   <FeaturesStats
-    title="En chiffres"
-    subTitle="Chez Dawn Web, nous sommes fiers d’offrir des résultats exceptionnels à nos clients. Voici quelques statistiques clés qui illustrent notre engagement envers l’excellence et la satisfaction client."
+    title="Em números"
+    subTitle="A Dawn Web trabalha para entregar projetos claros, confiáveis e fáceis de evoluir. Estes números mostram o cuidado que colocamos em cada parceria."
     mainStatTitle="98 %"
-    mainStatSubTitle="de nos clients estiment que leur expérience avec Dawn Web est exceptionnelle"
+    mainStatSubTitle="dos clientes consideram a experiência com a Dawn Web excelente"
     stats={[
       {
         stat: "99 %",
-        description: "de projets menés à terme",
+        description: "dos projetos conduzidos até a entrega",
       },
       {
         stat: "1 000+",
-        description: "installations réussies",
+        description: "horas dedicadas a criação, suporte e melhoria",
       },
       {
         stat: "85 %",
-        description: "de croissance annuelle chez nos clients",
+        description: "de crescimento anual observado em canais digitais de clientes",
       },
     ]}
   />

@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 import IconBlock from "@components/ui/blocks/IconBlock.astro";
 import Icon from "@components/ui/icons/Icon.astro";
+import type { ImageMetadata } from "astro";
 
 interface Feature {
   heading: string;
@@ -14,7 +15,7 @@ interface Props {
   title?: string;
   subTitle?: string;
   features?: Feature[];
-  src?: any;
+  src?: ImageMetadata;
   alt?: string;
 }
 // Define props from Astro

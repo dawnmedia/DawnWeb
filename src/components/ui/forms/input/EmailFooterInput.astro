@@ -1,7 +1,28 @@
 ---
+import { getLocaleFromPath } from "@utils/locale";
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const localizedCopy = {
+  en: {
+    label: "Search",
+    title: "Subscribe",
+    placeholder: "Enter your email",
+  },
+  fr: {
+    label: "Recherche",
+    title: "S'abonner",
+    placeholder: "Entrez votre email",
+  },
+  br: {
+    label: "Email",
+    title: "Assinar",
+    placeholder: "Digite seu email",
+  },
+}[locale];
+
 const {
-  label = "Search",
-  title = Astro.currentLocale === "fr" ? "S'abonner" : "Subscribe",
+  label = localizedCopy.label,
+  title = localizedCopy.title,
   id = "footer-input",
 } = Astro.props;
 
@@ -10,8 +31,6 @@ interface Props {
   title?: string;
   id?: string;
 }
-
-const placeholder = Astro.currentLocale === "fr" ? "Entrez votre email" : "Enter your email";
 ---
 
 <div
@@ -24,7 +43,7 @@ const placeholder = Astro.currentLocale === "fr" ? "Entrez votre email" : "Enter
       id={id}
       name="footer-input"
       class="block w-full rounded-lg border-transparent bg-neutral-100 px-4 py-3 text-sm text-neutral-600 focus:border-blue-400 focus:ring-blue-400 disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-neutral-700 dark:text-gray-300 dark:placeholder:text-neutral-300 caret-blue-400"
-      placeholder={placeholder}
+      placeholder={localizedCopy.placeholder}
     />
   </div>
   <a
