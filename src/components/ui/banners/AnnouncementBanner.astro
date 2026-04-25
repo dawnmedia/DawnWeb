@@ -1,36 +1,76 @@
 ---
-const { title, btnId, btnTitle, url } = Astro.props;
+const {
+  title,
+  description,
+  badge,
+  btnId,
+  btnTitle,
+  url,
+  storageKey = "dawnweb-audit-banner-dismissed",
+  ariaLabel = "Website audit banner",
+} = Astro.props;
 
 interface Props {
   title?: string;
+  description?: string;
+  badge?: string;
   btnId: string;
   btnTitle: string;
   url: string;
+  storageKey?: string;
+  ariaLabel?: string;
 }
+
+const isExternalUrl = /^https?:\/\//.test(url);
 ---
 
-<astro-banner btnId={btnId}>
+<astro-banner btn-id={btnId} storage-key={storageKey}>
   <div
-    class="fixed bottom-0 start-1/2 z-50 mx-auto w-full -translate-x-1/2 transform p-6 sm:max-w-4xl"
+    class="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:px-6 lg:pb-6"
     role="region"
-    aria-label="Informational Banner"
+    aria-label={ariaLabel}
   >
     <div
-      class="rounded-xl bg-neutral-800 bg-[url('/banner-pattern.svg')] bg-cover bg-center bg-no-repeat p-4 text-center shadow-sm dark:bg-neutral-200"
+      class="pointer-events-auto relative mx-auto max-w-5xl overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50/95 p-4 shadow-lg ring-1 ring-black/5 backdrop-blur dark:border-neutral-700 dark:bg-neutral-900/95 dark:ring-white/10 sm:p-5"
     >
-      <div class="flex items-center justify-center">
-        <div class="ml-auto">
-          {title &&
-          <p
-            class="me-2 inline-block font-medium text-neutral-50 dark:text-neutral-700"
-          >
-            {title}
-          </p>
+      <div
+        class="pointer-events-none absolute inset-y-0 left-0 w-32 bg-[url('/banner-pattern.svg')] bg-cover bg-left opacity-10 dark:opacity-15"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-yellow-400"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="relative flex flex-col gap-4 pr-12 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pr-0">
+        <div class="min-w-0">
+          {
+            badge && (
+              <p class="mb-1 inline-flex rounded-full border border-yellow-400/40 bg-yellow-100 px-2.5 py-1 text-xs font-bold uppercase tracking-normal text-blue-700 dark:border-yellow-400/30 dark:bg-yellow-400/10 dark:text-yellow-100">
+                {badge}
+              </p>
+            )
           }
+          {title &&
+            <p class="text-base font-bold text-neutral-900 dark:text-neutral-50 sm:text-lg">
+              {title}
+            </p>
+          }
+          {description &&
+            <p class="mt-1 max-w-2xl text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+              {description}
+            </p>
+          }
+        </div>
+
+        <div class="flex shrink-0 items-center gap-4">
           <a
-            class="group inline-flex items-center gap-x-2 rounded-full border-2 border-neutral-50 backdrop-brightness-75 sm:backdrop-brightness-100 px-3 py-2 text-sm font-semibold text-neutral-50 transition duration-300 hover:border-neutral-100/70 hover:text-neutral-50/70 disabled:pointer-events-none disabled:opacity-50 dark:backdrop-brightness-100 dark:border-neutral-700 dark:text-neutral-700 dark:hover:border-neutral-700/70 dark:hover:text-neutral-800/70 dark:focus:outline-none"
+            class="group inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-500 px-4 py-3 text-sm font-bold text-white outline-none transition duration-300 hover:bg-blue-600 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:bg-blue-400 dark:text-white dark:hover:bg-blue-500 dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-neutral-900 sm:w-auto"
             href={url}
-            target="_blank"
+            target={isExternalUrl ? "_blank" : undefined}
+            rel={isExternalUrl ? "noopener noreferrer" : undefined}
           >
             {btnTitle}
             <svg
@@ -45,13 +85,36 @@ interface Props {
               stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg
             >
           </a>
+          <button
+            type="button"
+            class="hidden size-9 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-700 transition duration-300 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:hover:text-white sm:inline-flex"
+            id={`${btnId}-desktop`}
+            data-banner-dismiss
+            aria-label="Dismiss website audit banner"
+          >
+            <span class="sr-only">Dismiss website audit banner</span>
+            <svg
+              class="size-5 flex-shrink-0"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+            >
+          </button>
         </div>
         <button
           type="button"
-          class="ml-auto inline-flex items-center gap-x-2 rounded-full border border-transparent bg-gray-100 p-2 text-sm font-semibold text-gray-800 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-50 dark:hover:bg-neutral-700/80 dark:hover:text-neutral-50 dark:focus:outline-none"
+          class="absolute right-0 top-0 inline-flex size-9 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-700 transition duration-300 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:hover:text-white sm:hidden"
           id={btnId}
+          data-banner-dismiss
+          aria-label="Dismiss website audit banner"
         >
-          <span class="sr-only">Dismiss</span>
+          <span class="sr-only">Dismiss website audit banner</span>
           <svg
             class="size-5 flex-shrink-0"
             width="24"
@@ -72,13 +135,39 @@ interface Props {
 <script>
   class AstroBanner extends HTMLElement {
     connectedCallback() {
-      const btnId = this.getAttribute("btnId");
-      const button = this.querySelector(`#${btnId}`);
-      if (button != null) {
-        button.addEventListener("click", () => this.remove());
+      const btnId =
+        this.getAttribute("btn-id") ||
+        this.getAttribute("btnid") ||
+        this.getAttribute("btnId");
+      const storageKey =
+        this.getAttribute("storage-key") || "dawnweb-audit-banner-dismissed";
+
+      try {
+        if (localStorage.getItem(storageKey) === "true") {
+          this.remove();
+          return;
+        }
+      } catch {
+        // Keep the banner visible when browser storage is unavailable.
       }
+
+      const buttons = this.querySelectorAll(
+        `[data-banner-dismiss], #${btnId}, #${btnId}-desktop`,
+      );
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          try {
+            localStorage.setItem(storageKey, "true");
+          } catch {
+            // Dismiss for this page view even when browser storage is unavailable.
+          }
+          this.remove();
+        });
+      });
     }
   }
 
-  customElements.define("astro-banner", AstroBanner);
+  if (!customElements.get("astro-banner")) {
+    customElements.define("astro-banner", AstroBanner);
+  }
 </script>

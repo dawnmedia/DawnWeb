@@ -1,133 +1,30 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import TeamPage from "@components/sections/team/TeamPage.astro";
 import { SITE } from "@data/constants";
+import { teamMembersByLocale, teamPageContent } from "@data/team";
+import { LOCALE_LANGUAGE_TAGS } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
 
-const team = [
-  {
-    name: "Andrew Henrice",
-    title: "CEO e desenvolvedor full stack",
-    bio: "Andrew lidera a Dawn Web com foco em criar experiências digitais que ajudam empresas a crescer com clareza, velocidade e tecnologia bem aplicada.",
-    instagram: "https://instagram.com/brenoandrew",
-    github: "https://www.github.com/brenoandrew",
-    portfolio: "https://www.andrewhenrice.com",
-    image: `${import.meta.env.BASE_URL || "/"}Team/Andrew.png`,
-  },
-  {
-    name: "Daniel Moraes",
-    title: "CTO e desenvolvedor back-end",
-    bio: "Daniel constrói sistemas robustos, estáveis e preparados para escalar, cuidando da base técnica que mantém as plataformas confiáveis.",
-    instagram: "https://www.instagram.com/daniel.h.moraes/",
-    github: "https://www.github.com/",
-    portfolio: "https://www.instagram.com/daniel.h.moraes/",
-    image: `${import.meta.env.BASE_URL || "/"}Team/DanielMoraes.png`,
-  },
-  {
-    name: "Mada",
-    title: "Designer UX e artista visual",
-    bio: "Mada cria interfaces elegantes, intuitivas e centradas no usuário, conectando identidade visual, experiência e clareza.",
-    instagram: "https://www.instagram.com/madalena_bf/",
-    github: "https://www.github.com/",
-    portfolio: "https://www.instagram.com/madalena_bf/",
-    image: `${import.meta.env.BASE_URL || "/"}Team/mada.png`,
-  },
-];
+const locale = "br";
+const content = teamPageContent[locale];
 ---
 
 <MainLayout
-  title={`Equipe | ${SITE.title}`}
-  meta="Conheça a equipe por trás da Dawn Web no Brasil."
-  lang="pt-BR"
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/br/team",
-    url: "https://dawnwebs.com/br/team",
-    name: "Equipe | Dawn Web",
-    description: "Conheça a equipe por trás da Dawn Web no Brasil.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://dawnwebs.com/br",
-      name: "Dawn Web",
-      description:
-        "A Dawn Web cria sites, produtos digitais e soluções personalizadas para empresas que querem crescer online.",
-    },
-    inLanguage: "pt-BR",
-  }}
+  title={content.seoTitle}
+  meta={content.seoDescription}
+  lang={LOCALE_LANGUAGE_TAGS[locale]}
+  structuredData={buildWebPageSchema({
+    title: content.seoTitle,
+    description: content.seoDescription,
+    pathname: "/br/team",
+    locale,
+    siteUrl: SITE.url,
+  })}
 >
-  <section class="bg-stone-100 dark:bg-slate-800">
-    <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
-      <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-          Conheça nossa equipe
-        </h1>
-        <p class="font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16">
-          As mentes criativas e técnicas por trás da Dawn Web, trabalhando para transformar ideias em produtos digitais bem acabados.
-        </p>
-      </div>
-
-      <div class="mb-6 grid gap-8 md:grid-cols-2 lg:mb-16">
-        {
-          team.map((member) => (
-            <article class="flex flex-col items-center overflow-hidden rounded-lg bg-gray-50 shadow dark:border-gray-700 dark:bg-black md:flex-row">
-              <img
-                class="h-64 w-full object-cover md:h-full md:w-48"
-                src={member.image}
-                alt={`Foto de ${member.name}`}
-              />
-              <div class="flex flex-col justify-between p-5">
-                <div>
-                  <h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href={member.portfolio} rel="noopener noreferrer" target="_blank">{member.name}</a>
-                  </h2>
-                  <span class="mb-2 block text-gray-500 dark:text-gray-400">
-                    {member.title}
-                  </span>
-                  <p class="mb-4 font-light text-gray-500 dark:text-gray-400">
-                    {member.bio}
-                  </p>
-                </div>
-                <ul class="mt-auto flex gap-4">
-                  <li>
-                    <a
-                      href={member.instagram}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      class="text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200"
-                    >
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={member.github}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      class="text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200"
-                    >
-                      GitHub
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-[85rem] px-4 py-16 text-center sm:px-6 lg:px-8">
-    <h2 class="text-balance text-3xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl">
-      Quer trabalhar com a Dawn Web?
-    </h2>
-    <p class="mx-auto mt-4 max-w-2xl text-pretty text-neutral-600 dark:text-neutral-400">
-      Estamos sempre abertos a conversar com pessoas criativas, técnicas e curiosas que queiram construir produtos digitais de qualidade.
-    </p>
-    <a
-      href="/br/contact"
-      class="mt-8 inline-flex items-center justify-center rounded-lg bg-blue-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-600 focus:outline-none focus-visible:ring focus-visible:ring-blue-500"
-    >
-      Falar com a equipe
-    </a>
-  </section>
+  <TeamPage
+    locale={locale}
+    content={content}
+    members={teamMembersByLocale[locale]}
+  />
 </MainLayout>

@@ -1,15 +1,19 @@
 ---
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSection from "@components/sections/misc/ContactSection.astro";
+import ContactGateway from "@components/sections/contact/ContactGateway.astro";
 import { SITE } from "@data/constants";
-import {
-  SEO_DESCRIPTIONS,
-  SEO_TITLES,
-  buildWebPageSchema,
-} from "@utils/seo";
+import { SEO_DESCRIPTIONS, SEO_TITLES, buildWebPageSchema } from "@utils/seo";
 
 const pageTitle: string = SEO_TITLES.contact;
+const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const budgetRanges = [
+  "Under $1,000",
+  "$1,000-$3,000",
+  "$3,000-$7,000",
+  "$7,000-$15,000",
+  "$15,000+",
+];
 ---
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
@@ -24,5 +28,93 @@ const pageTitle: string = SEO_TITLES.contact;
     siteUrl: SITE.url,
   })}
 >
-  <ContactSection />
+  <ContactGateway
+    eyebrow="Free website consultation"
+    title="Let's build the next version of your online presence"
+    subtitle="Tell us what you are building, fixing, or trying to clarify. We will help you choose a practical next step for your website, redesign, SEO-ready build, or custom web app."
+    primaryCta="Schedule a free consultation"
+    secondaryCta="Send a project brief"
+    calendlyUrl={calendlyUrl}
+    proofPoints={[
+      "Free consultation",
+      "1-2 business day reply",
+      "Clear next steps",
+    ]}
+    imageAlt="A Dawn Web strategist planning a website project"
+    bookingTitle="For teams ready to talk through the path"
+    bookingText="Use the call to map your goals, timeline, and best-fit service without pressure."
+    bookingBullets={[
+      "Review your current website or idea",
+      "Identify the fastest route to launch",
+      "Leave with clear recommendations",
+    ]}
+    formTitle="Send a project brief"
+    formSubtitle="Prefer to write first?"
+    fieldLabels={{
+      firstName: "First name",
+      lastName: "Last name",
+      email: "Email",
+      phone: "Phone number",
+      company: "Company or current website",
+      details: "Tell us what you're trying to improve, build, or clarify.",
+    }}
+    projectTypeTitle="What are you looking for?"
+    projectTypes={[
+      { label: "New website", value: "New website" },
+      { label: "Website redesign", value: "Website redesign" },
+      { label: "SEO-ready build", value: "SEO-ready build" },
+      { label: "Custom web app", value: "Custom web app" },
+      { label: "Not sure yet", value: "Not sure yet" },
+    ]}
+    budgetTitle="Estimated budget"
+    budgetSubtitle="A range is enough. We will help refine scope together."
+    budgetRanges={budgetRanges}
+    submitLabel="Send message"
+    responseNote="We will get back to you in 1-2 business days."
+    nextStepsTitle="What happens next?"
+    nextSteps={[
+      {
+        title: "We review your goals",
+        text: "We look at your notes, current website, and the type of help you need.",
+      },
+      {
+        title: "We reply with direction",
+        text: "You get clarifying questions, a recommended next step, or a call link if that is best.",
+      },
+      {
+        title: "We plan the right path",
+        text: "Together we shape the scope, timeline, and proposal path before any build begins.",
+      },
+    ]}
+    linkCards={[
+      {
+        title: "Book a consultation",
+        text: "Pick a time and talk through the project with us directly.",
+        href: calendlyUrl,
+        action: "Open calendar",
+        icon: "chatBubble",
+      },
+      {
+        title: "Explore services",
+        text: "Compare website design, redesign, SEO-ready builds, and custom apps.",
+        href: "/services",
+        action: "View services",
+        icon: "tools",
+      },
+      {
+        title: "Ask by email",
+        text: "Send a quick note if you are not ready for a full project brief.",
+        href: "mailto:contact@dawnwebs.com",
+        action: "contact@dawnwebs.com",
+        icon: "envelopeOpen",
+      },
+      {
+        title: "Read insights and FAQ",
+        text: "Learn how we think about websites, growth, performance, and next steps.",
+        href: "/blog",
+        action: "Visit blog",
+        icon: "question",
+      },
+    ]}
+  />
 </MainLayout>

@@ -1,30 +1,129 @@
 ---
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSection from "@components/sections/fr/ContactSection_fr.astro";
+import ContactGateway from "@components/sections/contact/ContactGateway.astro";
+
+const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const budgetRanges = [
+  "Under $1,000",
+  "$1,000-$3,000",
+  "$3,000-$7,000",
+  "$7,000-$15,000",
+  "$15,000+",
+];
 ---
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
 <MainLayout
   title="Contact | Dawn Web"
+  meta="Contactez Dawn Web pour planifier un site web, une refonte, un site optimisé SEO ou une application web personnalisée."
   lang="fr"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://dawnwebs.com//fr/contact",
+    "@id": "https://dawnwebs.com/fr/contact",
     url: "https://dawnwebs.com/fr/contact",
     name: "Nous Contacter | Dawn Web",
     description:
-      "Des questions ou un projet à discuter ? Contactez-nous et créons ensemble la solution idéale grâce à nos services.",
+      "Contactez Dawn Web pour planifier un site web, une refonte, un site optimisé SEO ou une application web personnalisée.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://dawnwebs.com/fr/",
       name: "Dawn Web",
       description:
-        "Dawn Web crée des sites web remarquables et propose des services experts en marketing en ligne pour aider les entreprises à prospérer. Découvrez nos services et contactez-nous pour booster votre présence en ligne.",
+        "Dawn Web crée des sites web remarquables et propose des services experts en marketing en ligne pour aider les entreprises à prospérer.",
     },
     inLanguage: "fr",
   }}
 >
-  <ContactSection />
+  <ContactGateway
+    eyebrow="Consultation web gratuite"
+    title="Construisons la prochaine version de votre présence en ligne"
+    subtitle="Dites-nous ce que vous voulez créer, améliorer ou clarifier. Nous vous aiderons à choisir la prochaine étape la plus utile pour votre site, votre refonte, votre SEO ou votre application web."
+    primaryCta="Planifier une consultation gratuite"
+    secondaryCta="Envoyer un brief projet"
+    calendlyUrl={calendlyUrl}
+    proofPoints={[
+      "Consultation gratuite",
+      "Réponse sous 1 à 2 jours ouvrables",
+      "Prochaines étapes claires",
+    ]}
+    imageAlt="Un stratège Dawn Web planifie un projet de site web"
+    bookingTitle="Pour les équipes prêtes à discuter du meilleur chemin"
+    bookingText="Utilisez l'appel pour clarifier vos objectifs, votre calendrier et le service le plus adapté, sans pression."
+    bookingBullets={[
+      "Analyser votre site actuel ou votre idée",
+      "Identifier le chemin le plus rapide vers le lancement",
+      "Repartir avec des recommandations claires",
+    ]}
+    formTitle="Envoyer un brief projet"
+    formSubtitle="Vous préférez écrire d'abord ?"
+    fieldLabels={{
+      firstName: "Prénom",
+      lastName: "Nom",
+      email: "E-mail",
+      phone: "Numéro de téléphone",
+      company: "Entreprise ou site actuel",
+      details:
+        "Dites-nous ce que vous essayez d'améliorer, de créer ou de clarifier.",
+    }}
+    projectTypeTitle="Que recherchez-vous ?"
+    projectTypes={[
+      { label: "Nouveau site web", value: "New website" },
+      { label: "Refonte de site", value: "Website redesign" },
+      { label: "Site optimisé SEO", value: "SEO-ready build" },
+      { label: "Application web personnalisée", value: "Custom web app" },
+      { label: "Je ne suis pas encore sûr", value: "Not sure yet" },
+    ]}
+    budgetTitle="Budget estimé"
+    budgetSubtitle="Une fourchette suffit. Nous affinerons le périmètre ensemble."
+    budgetRanges={budgetRanges}
+    submitLabel="Envoyer le message"
+    responseNote="Nous vous répondrons sous 1 à 2 jours ouvrables."
+    nextStepsTitle="Que se passe-t-il ensuite ?"
+    nextSteps={[
+      {
+        title: "Nous examinons vos objectifs",
+        text: "Nous regardons vos notes, votre site actuel et le type d'aide dont vous avez besoin.",
+      },
+      {
+        title: "Nous répondons avec une direction",
+        text: "Vous recevez des questions utiles, une prochaine étape recommandée ou un lien d'appel si c'est préférable.",
+      },
+      {
+        title: "Nous planifions le bon chemin",
+        text: "Nous cadrons ensemble le périmètre, le calendrier et la suite avant de commencer la réalisation.",
+      },
+    ]}
+    linkCards={[
+      {
+        title: "Planifier une consultation",
+        text: "Choisissez un créneau pour discuter directement du projet avec nous.",
+        href: calendlyUrl,
+        action: "Ouvrir le calendrier",
+        icon: "chatBubble",
+      },
+      {
+        title: "Explorer les services",
+        text: "Comparez création de site, refonte, SEO et applications web personnalisées.",
+        href: "/fr/services",
+        action: "Voir les services",
+        icon: "tools",
+      },
+      {
+        title: "Écrire par e-mail",
+        text: "Envoyez une question rapide si vous n'êtes pas prêt pour un brief complet.",
+        href: "mailto:contact@dawnwebs.com",
+        action: "contact@dawnwebs.com",
+        icon: "envelopeOpen",
+      },
+      {
+        title: "Lire le blog et la FAQ",
+        text: "Découvrez notre façon de penser les sites, la croissance et les prochaines étapes.",
+        href: "/fr/blog",
+        action: "Visiter le blog",
+        icon: "question",
+      },
+    ]}
+  />
 </MainLayout>

@@ -1,7 +1,16 @@
 ---
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSectionBR from "@components/sections/misc/ContactSectionBR.astro";
+import ContactGateway from "@components/sections/contact/ContactGateway.astro";
+
+const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const budgetRanges = [
+  "Under $1,000",
+  "$1,000-$3,000",
+  "$3,000-$7,000",
+  "$7,000-$15,000",
+  "$15,000+",
+];
 ---
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
@@ -27,5 +36,93 @@ import ContactSectionBR from "@components/sections/misc/ContactSectionBR.astro";
     inLanguage: "pt-BR",
   }}
 >
-  <ContactSectionBR />
+  <ContactGateway
+    eyebrow="Consultoria gratuita para seu site"
+    title="Vamos construir a próxima versão da sua presença online"
+    subtitle="Conte o que você quer criar, melhorar ou esclarecer. Vamos ajudar você a escolher o melhor próximo passo para seu site, redesign, projeto com SEO ou aplicativo web personalizado."
+    primaryCta="Agendar consultoria gratuita"
+    secondaryCta="Enviar briefing do projeto"
+    calendlyUrl={calendlyUrl}
+    proofPoints={[
+      "Consultoria gratuita",
+      "Resposta em 1 a 2 dias úteis",
+      "Próximos passos claros",
+    ]}
+    imageAlt="Um estrategista da Dawn Web planejando um projeto de site"
+    bookingTitle="Para equipes prontas para conversar sobre o caminho"
+    bookingText="Use a chamada para mapear seus objetivos, prazo e o serviço mais adequado, sem pressão."
+    bookingBullets={[
+      "Revisar seu site atual ou ideia",
+      "Identificar o caminho mais rápido para lançar",
+      "Sair com recomendações claras",
+    ]}
+    formTitle="Enviar briefing do projeto"
+    formSubtitle="Prefere escrever primeiro?"
+    fieldLabels={{
+      firstName: "Nome",
+      lastName: "Sobrenome",
+      email: "Email",
+      phone: "Telefone",
+      company: "Empresa ou site atual",
+      details: "Conte o que você está tentando melhorar, criar ou esclarecer.",
+    }}
+    projectTypeTitle="O que você está procurando?"
+    projectTypes={[
+      { label: "Novo site", value: "New website" },
+      { label: "Redesign de site", value: "Website redesign" },
+      { label: "Site pronto para SEO", value: "SEO-ready build" },
+      { label: "Aplicativo web personalizado", value: "Custom web app" },
+      { label: "Ainda não tenho certeza", value: "Not sure yet" },
+    ]}
+    budgetTitle="Orçamento estimado"
+    budgetSubtitle="Uma faixa já é suficiente. Vamos ajustar o escopo juntos."
+    budgetRanges={budgetRanges}
+    submitLabel="Enviar mensagem"
+    responseNote="Responderemos em 1 a 2 dias úteis."
+    nextStepsTitle="O que acontece depois?"
+    nextSteps={[
+      {
+        title: "Revisamos seus objetivos",
+        text: "Analisamos suas informações, seu site atual e o tipo de ajuda que você precisa.",
+      },
+      {
+        title: "Respondemos com direção",
+        text: "Você recebe perguntas úteis, uma próxima etapa recomendada ou um link de chamada se for o melhor caminho.",
+      },
+      {
+        title: "Planejamos o caminho certo",
+        text: "Definimos escopo, prazo e caminho de proposta antes de qualquer desenvolvimento começar.",
+      },
+    ]}
+    linkCards={[
+      {
+        title: "Agendar uma consultoria",
+        text: "Escolha um horário para conversar diretamente sobre o projeto.",
+        href: calendlyUrl,
+        action: "Abrir calendário",
+        icon: "chatBubble",
+      },
+      {
+        title: "Explorar serviços",
+        text: "Compare criação de sites, redesign, SEO e aplicativos web personalizados.",
+        href: "/br/services",
+        action: "Ver serviços",
+        icon: "tools",
+      },
+      {
+        title: "Perguntar por email",
+        text: "Envie uma pergunta rápida se ainda não quiser preencher um briefing completo.",
+        href: "mailto:contact@dawnwebs.com",
+        action: "contact@dawnwebs.com",
+        icon: "envelopeOpen",
+      },
+      {
+        title: "Ler blog e FAQ",
+        text: "Veja como pensamos sobre sites, crescimento, performance e próximos passos.",
+        href: "/br/blog",
+        action: "Visitar blog",
+        icon: "question",
+      },
+    ]}
+  />
 </MainLayout>
