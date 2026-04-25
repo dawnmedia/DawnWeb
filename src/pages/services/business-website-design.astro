@@ -1,0 +1,69 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDesign from "@images/web-design.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "Business Website Design for Growing Companies";
+const description =
+  "Dawn Web designs custom business websites that explain your offer clearly, build trust quickly, and guide visitors toward a consultation or contact form.";
+const pathname = "/services/business-website-design";
+const relatedServices = [
+  {
+    title: "Website Redesign",
+    href: "/services/website-redesign",
+    description: "Refresh an outdated site with better UX, messaging, and performance.",
+  },
+  {
+    title: "SEO-Ready Websites",
+    href: "/services/seo-ready-websites",
+    description: "Launch with the technical search foundations already in place.",
+  },
+  {
+    title: "Custom Web Apps",
+    href: "/services/custom-web-apps",
+    description: "Build tailored workflows, portals, and tools beyond a brochure site.",
+  },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  structuredData={[
+    buildWebPageSchema({
+      title: `${title} | Dawn Web`,
+      description,
+      pathname,
+      locale: "en",
+      siteUrl: SITE.url,
+    }),
+    buildServiceSchema({
+      name: title,
+      description,
+      pathname,
+      serviceType: "Business website design",
+      siteUrl: SITE.url,
+    }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Business website design"
+    title={title}
+    description={description}
+    image={webDesign}
+    imageAlt="Designer planning a business website interface"
+    benefits={[
+      "Clear homepage messaging for who you help, what you offer, and why visitors should trust you.",
+      "Responsive layouts that work across desktop, tablet, and mobile without burying your calls to action.",
+      "Conversion-focused service sections, proof points, FAQs, and contact paths built around real buyer questions.",
+    ]}
+    process={[
+      "Map your offer, audience, core pages, and consultation goals.",
+      "Design the page structure, copy hierarchy, and visual direction.",
+      "Build, optimize, launch, and review the site against your lead-generation goals.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

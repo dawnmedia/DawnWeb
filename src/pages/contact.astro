@@ -3,30 +3,26 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
 import { SITE } from "@data/constants";
+import {
+  SEO_DESCRIPTIONS,
+  SEO_TITLES,
+  buildWebPageSchema,
+} from "@utils/seo";
 
-const pageTitle: string = `Contact | ${SITE.title}`;
+const pageTitle: string = SEO_TITLES.contact;
 ---
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
 <MainLayout
   title={pageTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/contact",
-    url: "https://dawnwebs.com/contact",
-    name: "Contact Us | Dawn Web",
-    description:
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our services.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://dawnwebs.com",
-      name: "Dawn Web",
-      description:
-        "Dawn Web crafts stunning websites and provides expert online marketing services to help businesses thrive. Explore our services and contact us to elevate your online presence.",
-    },
-    inLanguage: "en-US",
-  }}
+  meta={SEO_DESCRIPTIONS.contact}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: SEO_DESCRIPTIONS.contact,
+    pathname: "/contact",
+    locale: "en",
+    siteUrl: SITE.url,
+  })}
 >
   <ContactSection />
 </MainLayout>

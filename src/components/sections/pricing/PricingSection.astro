@@ -5,35 +5,7 @@ import Icon from "@components/ui/icons/Icon.astro";
 
 // Define props from Astro
 const { pricing } = Astro.props;
-
-// Define TypeScript type for products.
-type Product = {
-  name: string;
-  description: string;
-  price: string;
-  cents: string;
-  billingFrequency: string;
-  features: Array<string>;
-  purchaseBtnTitle: string;
-  purchaseBtnTitle2: string;
-  purchaseLink: string;
-  purchaseLink2: string;
-};
-
-interface PricingSectionProps {
-  title: string;
-  subTitle: string;
-  badge: string;
-  thirdOption: string;
-  btnText: string;
-  pricing: {
-    title: string;
-    subTitle: string;
-    starterKit: Product;
-    professionalToolbox: Product;
-    enterprise: Product;
-  };
-}
+const isEnglishPage = !Astro.url.pathname.startsWith("/fr") && !Astro.url.pathname.startsWith("/br");
 ---
 
 <section
@@ -207,4 +179,25 @@ interface PricingSectionProps {
 
     <SecondaryCTA title={pricing.btnText} url={Astro.url.pathname.startsWith('/fr') ? '/fr/contact' : '/contact'} />
   </div>
+  {
+    isEnglishPage && (
+      <p class="mt-4 text-center text-sm text-neutral-600 dark:text-neutral-400">
+        Comparing options? Start with our{" "}
+        <a
+          href="/services/business-website-design"
+          class="font-medium text-blue-500 underline-offset-4 hover:underline"
+        >
+          business website design service
+        </a>
+        {" "}or plan a{" "}
+        <a
+          href="/services/website-redesign"
+          class="font-medium text-blue-500 underline-offset-4 hover:underline"
+        >
+          website redesign
+        </a>
+        .
+      </p>
+    )
+  }
 </section>

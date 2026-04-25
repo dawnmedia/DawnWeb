@@ -3,21 +3,28 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 import CardTeam from "@/components/ui/cards/CardTeam.astro";
 import TeamAlt from "@components/sections/landing/TeamAlt.astro";
+import {
+  SEO_DESCRIPTIONS,
+  SEO_TITLES,
+  buildWebPageSchema,
+} from "@utils/seo";
 ---
 
-
-
-<MainLayout title={`Our Team | ${SITE.title}`}>
-        <div class="team-grid">
-
-    </section>
-</MainLayout>
-
-<CardTeam></CardTeam>
-
-
+<MainLayout
+  title={SEO_TITLES.team}
+  meta={SEO_DESCRIPTIONS.team}
+  structuredData={buildWebPageSchema({
+    title: SEO_TITLES.team,
+    description: SEO_DESCRIPTIONS.team,
+    pathname: "/team",
+    locale: "en",
+    siteUrl: SITE.url,
+  })}
+>
+  <CardTeam />
   <TeamAlt
     title="We are Hiring!"
     subTitle="Join our team and help us build amazing products."
     url="/contact"
   />
+</MainLayout>

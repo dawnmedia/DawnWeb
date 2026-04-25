@@ -2,11 +2,12 @@
 // Import necessary components and utilities
 import MainLayout from "@/layouts/MainLayout.astro";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
+import BlogContent from "@components/ui/blocks/BlogContent.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
 import Bookmark from "@components/ui/buttons/Bookmark.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
 import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
-import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
 import { capitalize, formatDate } from "@utils/utils";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -17,6 +18,7 @@ import {
   stripLocaleFromSlug,
   type Locale,
 } from "@utils/locale";
+import { buildArticleSchema } from "@utils/seo";
 
 const locale: Locale = "fr";
 
@@ -57,9 +59,28 @@ const relatedPosts: CollectionEntry<"blog">[] = blogPosts
   .slice(0, 3);
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
+const articleImage = `${SITE.url}${(await getImage({
+  src: post.data.cardImage,
+  width: 1200,
+  height: 630,
+})).src}`;
 ---
 
-<MainLayout title={pageTitle} lang="fr" meta={post.data.description} socialImage={post.data.cardImage}>
+<MainLayout
+  title={pageTitle}
+  lang="fr"
+  meta={post.data.description}
+  socialImage={post.data.cardImage}
+  structuredData={buildArticleSchema({
+    title: post.data.title,
+    description: post.data.description,
+    pathname: Astro.url.pathname,
+    image: articleImage,
+    author: post.data.author,
+    datePublished: post.data.pubDate,
+    siteUrl: SITE.url,
+  })}
+>
   <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
@@ -96,36 +117,17 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
         </div>
       </div>
       <!--Blog post title-->
-      <h2
+      <h1
         class="mb-3 text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-3xl"
       >
         {post.data.title}
-      </h2>
+      </h1>
       <!--Blog post contents-->
-      <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
-        {
-          post.data.contents.map((content: string, index: number) =>
-            index === 1 ? (
-              <>
-                <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
-                  {content}
-                </p>
-                <Image
-                  class="w-full rounded-xl object-cover"
-                  src={post.data.cardImage}
-                  alt={post.data.cardImageAlt}
-                  draggable={"false"}
-                  format={"avif"}
-                />
-              </>
-            ) : (
-              <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
-                {content}
-              </p>
-            )
-          )
-        }
-      </div>
+      <BlogContent
+        contents={post.data.contents}
+        cardImage={post.data.cardImage}
+        cardImageAlt={post.data.cardImageAlt}
+      />
       <div
         class="mx-auto grid max-w-screen-lg gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
       >
@@ -134,7 +136,7 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
           class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
         >
           {
-            post.data.tags?.map((tag: string, index) => (
+            post.data.tags?.map((tag: string) => (
               <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-none focus:outline-none focus-visible:outline-none focus-visible:ring dark:bg-neutral-700/60 dark:text-neutral-300">
                 {capitalize(tag)}
               </span>

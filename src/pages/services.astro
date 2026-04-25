@@ -17,6 +17,12 @@ import code from "@images/code.jpg";
 import business from "@images/business.jpg";
 import graph from "@images/graph.jpg";
 import type { ImageMetadata } from "astro";
+import {
+  SEO_DESCRIPTIONS,
+  SEO_TITLES,
+  buildServiceSchema,
+  buildWebPageSchema,
+} from "@utils/seo";
 
 interface BaseArticle {
   title: string;
@@ -101,28 +107,28 @@ const articles: Article[] = [
   },
 ];
 
-const pageTitle: string = `Services | ${SITE.title}`;
+const pageTitle: string = SEO_TITLES.services;
 ---
 
 <MainLayout
   title={pageTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/services",
-    url: "https://dawnwebs.com/services",
-    name: "Expert Consultation Services | Dawn Web",
-    description:
-      "Uniting expertise with your vision, Dawn Web provides web development, digital strategy, and custom software solutions from consultation to launch.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://dawnwebs.com",
-      name: "Dawn Web",
-      description:
-        "Dawn Web offers web development, digital strategy, and custom software services to meet your project needs.",
-    },
-    inLanguage: "en-US",
-  }}
+  meta={SEO_DESCRIPTIONS.services}
+  structuredData={[
+    buildWebPageSchema({
+      title: pageTitle,
+      description: SEO_DESCRIPTIONS.services,
+      pathname: "/services",
+      locale: "en",
+      siteUrl: SITE.url,
+    }),
+    buildServiceSchema({
+      name: "Business Website Design Services",
+      description: SEO_DESCRIPTIONS.services,
+      pathname: "/services",
+      serviceType: "Web design and web development",
+      siteUrl: SITE.url,
+    }),
+  ]}
 >
   <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
@@ -132,6 +138,48 @@ const pageTitle: string = `Services | ${SITE.title}`;
     btnTitle="Schedule a Free Consultation"
     btnURL="https://calendly.com/contact-dawnwebs/30min"
   />
+  <section
+    class="mx-auto max-w-[85rem] px-4 pb-4 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    <div class="grid gap-4 md:grid-cols-4">
+      {
+        [
+          {
+            title: "Business Website Design",
+            href: "/services/business-website-design",
+            description: "Custom websites built to present your offer clearly and convert visitors into leads.",
+          },
+          {
+            title: "Website Redesign",
+            href: "/services/website-redesign",
+            description: "Modernize an outdated website with clearer messaging, faster pages, and better UX.",
+          },
+          {
+            title: "SEO-Ready Websites",
+            href: "/services/seo-ready-websites",
+            description: "Technical SEO foundations, page structure, and launch details handled from day one.",
+          },
+          {
+            title: "Custom Web Apps",
+            href: "/services/custom-web-apps",
+            description: "Purpose-built web applications for workflows, portals, bookings, and business tools.",
+          },
+        ].map((service) => (
+          <a
+            href={service.href}
+            class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+          >
+            <h2 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+              {service.title}
+            </h2>
+            <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+              {service.description}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
   <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
   They alternate for variety in design.
   The 'btnExists' property is used to toggle the display of a button in these sections.

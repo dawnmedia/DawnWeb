@@ -1,15 +1,20 @@
 ---
 import { getImage } from "astro:assets";
-import { OG, SEO, SITE } from "@data/constants";
+import { OG, SITE } from "@data/constants";
 import faviconSvgSrc from "@images/icon.svg";
 import faviconSrc from "@images/icon.png";
 import {
   createAlternateLinks,
   getLocaleFromPath,
-  LOCALE_LANGUAGE_TAGS,
   localizePath,
   OPEN_GRAPH_LOCALES,
 } from "@utils/locale";
+import {
+  absoluteUrl,
+  buildOrganizationSchema,
+  buildWebPageSchema,
+  normalizePath,
+} from "@utils/seo";
 import type { ImageMetadata } from "astro";
 
 // Default properties for the Meta component. These values are used if props are not provided.
@@ -27,21 +32,25 @@ const {
   meta = defaultProps.meta,
   structuredData: structuredDataProp,
   socialImage: socialImageProp = OG.image,
+  canonicalPath,
+  noindex = false,
 } = Astro.props;
 
 interface Props {
   title?: string;
   meta?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
   socialImage?: ImageMetadata | string;
+  canonicalPath?: string;
+  noindex?: boolean;
 }
 
 // Define the metadata for your website and individual pages
 const siteUrl = `${Astro.site ?? SITE.url}`.replace(/\/$/, ""); // Set the website URL in astro.config.mjs
 const author = SITE.author;
-const fullPath: string = Astro.url.pathname;
+const fullPath: string = normalizePath(canonicalPath ?? Astro.url.pathname);
 const currentLocale = getLocaleFromPath(fullPath);
-const canonical = `${siteUrl}${fullPath}`;
+const canonical = absoluteUrl(fullPath, siteUrl);
 const ogTitle = title ?? OG.title;
 const ogDescription = meta ?? OG.description;
 const socialImage =
@@ -62,25 +71,26 @@ const socialImageType = socialImage.endsWith(".avif")
         ? "image/jpeg"
         : "image/png";
 const twitterDomain = new globalThis.URL(siteUrl).hostname;
-const structuredData = structuredDataProp ?? {
-  ...SEO.structuredData,
-  "@id": canonical,
-  url: canonical,
-  name: ogTitle,
+const defaultStructuredData = buildWebPageSchema({
+  title: ogTitle,
   description: ogDescription,
-  inLanguage: LOCALE_LANGUAGE_TAGS[currentLocale],
-  isPartOf: {
-    ...SEO.structuredData.isPartOf,
-    url: siteUrl,
-  },
-};
+  pathname: fullPath,
+  locale: currentLocale,
+  siteUrl,
+});
+const pageStructuredData = structuredDataProp
+  ? Array.isArray(structuredDataProp)
+    ? structuredDataProp
+    : [structuredDataProp]
+  : [defaultStructuredData];
+const structuredData = [buildOrganizationSchema(siteUrl), ...pageStructuredData];
 
 const alternateLanguageLinks: string = [
   ...createAlternateLinks(fullPath, siteUrl).map(
     ({ hreflang, href }) =>
       `<link rel="alternate" hreflang="${hreflang}" href="${href}" />`,
   ),
-  `<link rel="alternate" hreflang="x-default" href="${siteUrl}${localizePath(fullPath, "en")}" />`,
+  `<link rel="alternate" hreflang="x-default" href="${absoluteUrl(localizePath(fullPath, "en"), siteUrl)}" />`,
 ].join("\n");
 
 // Generate and optimize the favicon images
@@ -99,17 +109,18 @@ const appleTouchIcon = await getImage({
 
 <!-- Inject structured data into the page if provided. This data is formatted as JSON-LD, a method recommended by Google for structured data pass:
      https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data -->{
-  structuredData && (
+  structuredData.map((schema) => (
     <script
       is:inline
       type="application/ld+json"
-      set:html={JSON.stringify(structuredData)}
+      set:html={JSON.stringify(schema)}
     />
-  )
+  ))
 }
 <!-- Define the character set, description, author, and viewport settings -->
 <meta charset="utf-8" />
 <meta content={meta} name="description" />
+{noindex && <meta name="robots" content="noindex,follow" />}
 <meta name="web_author" content={author} />
 <meta
   name="viewport"

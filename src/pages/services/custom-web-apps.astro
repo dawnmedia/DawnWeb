@@ -1,0 +1,69 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import software from "@images/software.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "Custom Web Apps for Business Workflows";
+const description =
+  "Dawn Web builds custom web apps, portals, booking tools, dashboards, and integrations that help businesses move beyond a static website.";
+const pathname = "/services/custom-web-apps";
+const relatedServices = [
+  {
+    title: "Business Website Design",
+    href: "/services/business-website-design",
+    description: "Start with a clear business website that presents your offer.",
+  },
+  {
+    title: "Website Redesign",
+    href: "/services/website-redesign",
+    description: "Improve the website experience before adding custom functionality.",
+  },
+  {
+    title: "SEO-Ready Websites",
+    href: "/services/seo-ready-websites",
+    description: "Keep technical SEO foundations strong across content and app surfaces.",
+  },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  structuredData={[
+    buildWebPageSchema({
+      title: `${title} | Dawn Web`,
+      description,
+      pathname,
+      locale: "en",
+      siteUrl: SITE.url,
+    }),
+    buildServiceSchema({
+      name: title,
+      description,
+      pathname,
+      serviceType: "Custom web application development",
+      siteUrl: SITE.url,
+    }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Custom web apps"
+    title={title}
+    description={description}
+    image={software}
+    imageAlt="Business software interface and workflow planning"
+    benefits={[
+      "Custom dashboards, portals, booking flows, content tools, and admin experiences.",
+      "Integrations with payments, CRM, analytics, email, scheduling, and business systems.",
+      "Scalable architecture planned around how your team will use and maintain the product.",
+    ]}
+    process={[
+      "Document the workflow, users, permissions, data, and operational goal.",
+      "Prototype the core experience and technical approach before full build.",
+      "Ship the application with testing, deployment, monitoring, and maintenance planning.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

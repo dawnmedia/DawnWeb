@@ -1,0 +1,69 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDev from "@images/web-dev.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "Website Redesign Services That Turn More Visitors Into Leads";
+const description =
+  "Dawn Web rebuilds outdated business websites with sharper messaging, modern UX, faster pages, and cleaner paths from search traffic to inquiry.";
+const pathname = "/services/website-redesign";
+const relatedServices = [
+  {
+    title: "Business Website Design",
+    href: "/services/business-website-design",
+    description: "Create a new website built around trust, clarity, and conversion.",
+  },
+  {
+    title: "SEO-Ready Websites",
+    href: "/services/seo-ready-websites",
+    description: "Keep technical SEO, metadata, and page structure aligned during launch.",
+  },
+  {
+    title: "Custom Web Apps",
+    href: "/services/custom-web-apps",
+    description: "Add custom functionality when your site needs to support operations.",
+  },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  structuredData={[
+    buildWebPageSchema({
+      title: `${title} | Dawn Web`,
+      description,
+      pathname,
+      locale: "en",
+      siteUrl: SITE.url,
+    }),
+    buildServiceSchema({
+      name: title,
+      description,
+      pathname,
+      serviceType: "Website redesign",
+      siteUrl: SITE.url,
+    }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Website redesign"
+    title={title}
+    description={description}
+    image={webDev}
+    imageAlt="Team collaborating around a website redesign"
+    benefits={[
+      "A clearer information architecture so visitors understand your services without extra effort.",
+      "Updated design patterns, mobile layouts, and page performance for a more credible first impression.",
+      "Migration-aware planning for page titles, descriptions, redirects, and internal links.",
+    ]}
+    process={[
+      "Audit the current site, content, rankings, conversion paths, and technical risks.",
+      "Restructure priority pages around the services and questions that matter most.",
+      "Launch the redesign with metadata, schema, sitemap, and post-launch checks in place.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

@@ -1,12 +1,12 @@
 # Dawn Web Official Website
 
-The Dawn Web website is a static Astro site for the Dawn Web brand, services, projects, blog, product pages, insights, and documentation.
+The Dawn Web website is a static Astro site for the Dawn Web brand, services, projects, blog, product pages, and insights.
 
 ## Tech Stack
 
 - Astro 6
 - Tailwind CSS
-- Astro content collections for blog, products, insights, and docs
+- Astro content collections for blog, products, and insights
 - GitHub Pages deployment with the custom domain `dawnwebs.com`
 
 ## Getting Started
@@ -32,9 +32,8 @@ npm run preview
 - `src/content/blog`: localized blog posts under `en`, `fr`, and `br`
 - `src/content/products`: localized product/project content
 - `src/content/insights`: localized insight articles
-- `src/content/docs`: Starlight documentation content
 - `src/components`: shared Astro UI components
-- `src/assets/styles`: global and Starlight styles
+- `src/assets/styles`: global styles
 - `src/images`: optimized local image assets
 - `public`: static files served as-is, including `CNAME`
 

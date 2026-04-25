@@ -13,15 +13,19 @@ const {
   structuredData,
   lang = "en",
   socialImage,
+  canonicalPath,
+  noindex,
 } = Astro.props;
 
 // Interface to type-check the properties
 interface Props {
   title?: string;
   meta?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
   lang?: string;
   socialImage?: ImageMetadata | string;
+  canonicalPath?: string;
+  noindex?: boolean;
 }
 ---
 
@@ -37,6 +41,8 @@ We set the language of the page to English and add classes for scrollbar and scr
       meta={meta}
       structuredData={structuredData}
       socialImage={socialImage}
+      canonicalPath={canonicalPath}
+      noindex={noindex}
     />
     <!-- Define the title of the page -->
     <title>{title}</title>

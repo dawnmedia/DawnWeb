@@ -45,9 +45,11 @@ const navigation: Record<Locale, NavigationStrings> = {
       {
         section: "Ecosystem",
         links: [
-          { name: "Documentation", url: "/guides/intro/" },
-          { name: "Products", url: "/products" },
-          { name: "Services", url: "/services" },
+          { name: "Website Design", url: "/services/business-website-design" },
+          { name: "Website Redesign", url: "/services/website-redesign" },
+          { name: "SEO-Ready Websites", url: "/services/seo-ready-websites" },
+          { name: "Custom Web Apps", url: "/services/custom-web-apps" },
+          { name: "Project Portfolio", url: "/products" },
         ],
       },
       {
@@ -81,7 +83,6 @@ const navigation: Record<Locale, NavigationStrings> = {
       {
         section: "Écosystème",
         links: [
-          { name: "Documentation", url: "/fr/guides/intro/" },
           { name: "Produits", url: "/fr/products" },
           { name: "Services", url: "/fr/services" },
         ],
@@ -117,7 +118,6 @@ const navigation: Record<Locale, NavigationStrings> = {
       {
         section: "Ecossistema",
         links: [
-          { name: "Documentação", url: "/br/guides/intro/" },
           { name: "Produtos", url: "/br/products" },
           { name: "Serviços", url: "/br/services" },
         ],

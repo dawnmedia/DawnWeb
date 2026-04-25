@@ -16,6 +16,14 @@ import pricing from "@data/pricing.json";
 import software from "@images/software.jpg";
 import webdev from "@images/web-dev.png";
 import payments from "@images/payments.jpg";
+import { SITE } from "@data/constants";
+import {
+  SEO_DESCRIPTIONS,
+  SEO_TITLES,
+  buildFaqSchema,
+  buildWebPageSchema,
+  buildWebSiteSchema,
+} from "@utils/seo";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -25,7 +33,21 @@ const avatarSrcs: Array<string> = [
 ];
 ---
 
-<MainLayout>
+<MainLayout
+  title={SEO_TITLES.home}
+  meta={SEO_DESCRIPTIONS.home}
+  structuredData={[
+    buildWebSiteSchema(SITE.url),
+    buildWebPageSchema({
+      title: SEO_TITLES.home,
+      description: SEO_DESCRIPTIONS.home,
+      pathname: "/",
+      locale: "en",
+      siteUrl: SITE.url,
+    }),
+    buildFaqSchema({ faqs: faqs.faqs }),
+  ]}
+>
   <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Follow Our Instagram"
@@ -33,18 +55,15 @@ const avatarSrcs: Array<string> = [
   />
 
   <HeroSection
-    title=`Elevate Your Online Presence with <span
+    title=`Business Website Design & Web Development with <span
         class="text-blue-600 dark:text-blue-300">Dawn Web</span>`
-    subTitle="Crafting Custom Websites & Digital Solutions for Business Growth."
+    subTitle="SEO-ready websites, redesigns, and custom web development for growing companies."
     primaryBtn="Schedule a Free Consultation"
     primaryBtnURL="https://calendly.com/contact-dawnwebs/30min"
-    secondaryBtn="View Projects"
-    secondaryBtnURL="/products"
+    secondaryBtn="Explore Website Services"
+    secondaryBtnURL="/services/business-website-design"
     withReview={false}
     avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
     src={heroImage}
     alt="Hero Image showing a team working together on a project"
   />

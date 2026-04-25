@@ -2,13 +2,13 @@
 import Icon from "./icons/Icon.astro";
 import {
   LOCALE_LABELS,
-  SUPPORTED_LOCALES,
+  getAvailableLocalesForPath,
   getLocaleFromPath,
   localizePath,
 } from "@utils/locale";
 
 const currentLocale = getLocaleFromPath(Astro.url.pathname);
-const languageOptions = SUPPORTED_LOCALES.map((locale) => ({
+const languageOptions = getAvailableLocalesForPath(Astro.url.pathname).map((locale) => ({
   locale,
   label: LOCALE_LABELS[locale],
   href: localizePath(Astro.url.pathname, locale),

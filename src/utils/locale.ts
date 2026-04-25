@@ -27,6 +27,13 @@ export const OPEN_GRAPH_LOCALES: Record<Locale, string> = {
   br: "pt_BR",
 };
 
+const ENGLISH_ONLY_PATHS = new Set([
+  "/services/business-website-design",
+  "/services/website-redesign",
+  "/services/seo-ready-websites",
+  "/services/custom-web-apps",
+]);
+
 export function isLocale(value: string): value is Locale {
   return SUPPORTED_LOCALES.includes(value as Locale);
 }
@@ -70,12 +77,33 @@ export function getContentSlug(entry: { id: string }): string {
   return entry.id.replace(/\.(md|mdx)$/, "");
 }
 
-export function createAlternateLinks(pathname: string, siteUrl: string) {
-  const baseUrl = siteUrl.replace(/\/$/, "");
+export function getAvailableLocalesForPath(pathname: string): Locale[] {
+  const basePath = stripLocalePrefix(pathname);
 
-  return SUPPORTED_LOCALES.map((locale) => ({
+  if (ENGLISH_ONLY_PATHS.has(basePath)) {
+    return ["en"];
+  }
+
+  return [...SUPPORTED_LOCALES];
+}
+
+export function createAlternateLinks(
+  pathname: string,
+  siteUrl: string,
+  locales: Locale[] = getAvailableLocalesForPath(pathname),
+) {
+  const baseUrl = siteUrl.replace(/\/$/, "");
+  const normalizeAlternatePath = (path: string) => {
+    if (path === "/") {
+      return "/";
+    }
+
+    return `${path.replace(/\/$/, "")}/`;
+  };
+
+  return locales.map((locale) => ({
     locale,
     hreflang: LOCALE_LANGUAGE_TAGS[locale],
-    href: `${baseUrl}${localizePath(pathname, locale)}`,
+    href: `${baseUrl}${normalizeAlternatePath(localizePath(pathname, locale))}`,
   }));
 }

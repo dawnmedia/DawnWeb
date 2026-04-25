@@ -2,7 +2,6 @@
 //Import relevant dependencies
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
-import Authentication from "../misc/Authentication.astro";
 import { getNavigation } from "@utils/navigation.ts";
 import { getLocaleFromPath, localizePath } from "@utils/locale";
 import BrandLogo from "@components/BrandLogo.astro";
@@ -89,7 +88,6 @@ const BASE = import.meta.env.BASE_URL || "/";
           ))
         }
 
-        <!-- <Authentication /> -->
         <LanguagePicker />
 
         <!-- Desktop Theme Toggle -->
@@ -180,5 +178,4 @@ const BASE = import.meta.env.BASE_URL || "/";
 
 <script>
   import "@preline/collapse/index.js";
-  import "@preline/overlay/index.js";
 </script>

@@ -1,0 +1,128 @@
+---
+import { Image } from "astro:assets";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import type { ImageMetadata } from "astro";
+
+const {
+  eyebrow,
+  title,
+  description,
+  image,
+  imageAlt,
+  benefits,
+  process,
+  relatedServices,
+} = Astro.props;
+
+interface LinkItem {
+  title: string;
+  href: string;
+  description: string;
+}
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  benefits: string[];
+  process: string[];
+  relatedServices: LinkItem[];
+}
+---
+
+<section
+  class="mx-auto grid max-w-[85rem] gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center lg:px-8 2xl:max-w-full"
+>
+  <div>
+    <p class="text-sm font-semibold uppercase text-blue-500">{eyebrow}</p>
+    <h1
+      class="mt-3 text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl"
+    >
+      {title}
+    </h1>
+    <p class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-400">
+      {description}
+    </p>
+    <div class="mt-8 grid gap-3 sm:inline-flex">
+      <PrimaryCTA
+        title="Schedule a Free Consultation"
+        url="https://calendly.com/contact-dawnwebs/30min"
+      />
+      <SecondaryCTA title="See Projects" url="/products" />
+    </div>
+  </div>
+  <Image
+    src={image}
+    alt={imageAlt}
+    class="h-full min-h-[320px] w-full rounded-lg object-cover"
+    format="avif"
+    loading="eager"
+  />
+</section>
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-full"
+>
+  <div class="grid gap-8 md:grid-cols-2">
+    <div>
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        What we build into the service
+      </h2>
+      <ul class="mt-5 space-y-3 text-neutral-700 dark:text-neutral-300">
+        {
+          benefits.map((benefit) => (
+            <li class="rounded-lg border border-neutral-300 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800">
+              {benefit}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        How the project moves
+      </h2>
+      <ol class="mt-5 space-y-3 text-neutral-700 dark:text-neutral-300">
+        {
+          process.map((step, index) => (
+            <li class="rounded-lg border border-neutral-300 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800">
+              <span class="font-bold text-blue-500">{index + 1}. </span>
+              {step}
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-full"
+>
+  <div class="mb-6 flex items-end justify-between gap-4">
+    <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+      Related services
+    </h2>
+    <SecondaryCTA title="View all services" url="/services" />
+  </div>
+  <div class="grid gap-4 md:grid-cols-3">
+    {
+      relatedServices.map((service) => (
+        <a
+          href={service.href}
+          class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400"
+        >
+          <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+            {service.title}
+          </h3>
+          <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+            {service.description}
+          </p>
+        </a>
+      ))
+    }
+  </div>
+</section>

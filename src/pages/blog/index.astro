@@ -8,6 +8,11 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import {
+  SEO_DESCRIPTIONS,
+  SEO_TITLES,
+  buildWebPageSchema,
+} from "@utils/seo";
 
 const locale: Locale = "en";
 
@@ -35,33 +40,24 @@ const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 // Define variables for page content
 const title: string = "Meet Dawn Web's Universe";
 const subTitle: string =
-  "Keep up with our latest releases, updates, and insights into the world of web development. Our blog is your go-to source for expert advice, industry trends, and company news.";
+  "Read practical guidance on business website design, website redesigns, SEO-ready development, UX, and digital growth.";
 const secondTitle: string = "Insights";
 const secondSubTitle: string =
   "Explore our insights section for expert analysis and thought leadership in the development sector. From market trends to innovative solutions, our insights provide valuable perspectives to help you navigate the ever-evolving landscape of web development.";
 
-const pageTitle: string = `Blog | ${SITE.title}`;
+const pageTitle: string = SEO_TITLES.blog;
 ---
 
 <MainLayout
   title={pageTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/blog",
-    url: "https://dawnwebs.com/blog",
-    name: "Blog | Dawn Web",
-    description:
-      "Dawn Web offers top-notch web development services solutions to meet all your project needs.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://dawnwebs.com/",
-      name: "Dawn Web",
-      description:
-        "Dawn Web offers top-notch web development services and expert solutions to meet all your project needs.",
-    },
-    inLanguage: "en-US",
-  }}
+  meta={SEO_DESCRIPTIONS.blog}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: SEO_DESCRIPTIONS.blog,
+    pathname: "/blog",
+    locale: "en",
+    siteUrl: SITE.url,
+  })}
 >
   <section
     class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"

@@ -1,9 +1,7 @@
 // https://docs.astro.build/en/guides/content-collections/
 
-import { defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
-import { z } from "astro:schema";
-import { docsSchema } from "@astrojs/starlight/schema";
 
 const productsCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/products" }),
@@ -97,10 +95,6 @@ const insightsCollection = defineCollection({
 });
 
 export const collections = {
-  docs: defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/docs" }),
-    schema: docsSchema(),
-  }),
   products: productsCollection,
   blog: blogCollection,
   insights: insightsCollection,
