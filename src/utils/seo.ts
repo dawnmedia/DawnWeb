@@ -5,7 +5,7 @@ import { LOCALE_LANGUAGE_TAGS } from "./locale";
 type JsonLd = Record<string, unknown>;
 
 export const SEO_TITLES = {
-  home: "Business Website Design & Web Development | Dawn Web",
+  home: "Websites That Stop Losing Good Leads | Dawn Web",
   services: "Business Website Design Services | Dawn Web",
   products: "Website Design Portfolio & Digital Projects | Dawn Web",
   blog: "Web Design & Business Website Insights | Dawn Web",
@@ -15,7 +15,7 @@ export const SEO_TITLES = {
 
 export const SEO_DESCRIPTIONS = {
   home:
-    "Dawn Web designs SEO-ready business websites and custom web development solutions for US companies. Schedule a free consultation to plan your next website.",
+    "Dawn Web fixes unclear websites, redesigns underperforming pages, and builds custom web apps for growing service businesses that need more qualified inquiries.",
   services:
     "Explore Dawn Web's business website design, website redesign, SEO-ready development, and custom app services for growing US companies.",
   products:

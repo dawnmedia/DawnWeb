@@ -1,136 +1,400 @@
 ---
-// Import the necessary components
+import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
-import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
-import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
-import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
-import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import heroImage from "@images/hero.png";
+import motoViagens from "@images/motoviagens3.jpg";
+import verbo from "@images/verbo_app_card.jpg";
+import triplut from "@images/triplut6.jpg";
+import luna from "@images/lunaai.png";
 import faqs from "@data/fr/faqs.json";
-import features from "@data/fr/features.json";
-import pricing from "@data/fr/pricing.json";
-import featuresjpg from "@images/features.jpg";
-import webdev from "@images/web-dev.png";
-import payments from "@images/payments.jpg";
+import { SITE } from "@data/constants";
+import {
+  buildFaqSchema,
+  buildWebPageSchema,
+  buildWebSiteSchema,
+} from "@utils/seo";
 
-const avatarSrcs: Array<string> = [
-  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
-  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const primaryCta = "Planifier une consultation gratuite";
+const pageTitle = "Des sites qui arrêtent de faire perdre de bons prospects | Dawn Web";
+const pageDescription =
+  "Dawn Web clarifie les sites qui ne convertissent pas, refond les pages qui freinent les demandes et développe des applications web sur mesure pour les entreprises de services en croissance.";
+
+const proofPoints = [
+  "Vous parlez directement avec celui qui construit",
+  "Un périmètre clair avant de dépenser inutilement",
+  "Pensé pour expliquer, charger vite et convertir",
+];
+
+const services = [
+  {
+    title: "Un nouveau site qui clarifie votre offre",
+    href: "/fr/services",
+    description:
+      "Quand un prospect ne comprend pas votre valeur en quelques secondes, il part. Obtenez un site clair qui rend votre offre évidente et mène vers la prise de contact.",
+  },
+  {
+    title: "Réparer un site daté ou qui ne convertit pas",
+    href: "/fr/services",
+    description:
+      "Si votre site paraît dépassé, confus ou silencieux, retravaillez le message et le parcours pour que les visiteurs sachent pourquoi vous faire confiance et quoi faire ensuite.",
+  },
+  {
+    title: "Les bases SEO avant la mise en ligne",
+    href: "/fr/services",
+    description:
+      "Un bon site ne devrait pas être lancé avec les bases de recherche manquantes. Structure, métadonnées, schéma, sitemap et contenu explorable sont intégrés dès le départ.",
+  },
+  {
+    title: "Des applications web pour remplacer les tâches manuelles",
+    href: "/fr/services",
+    description:
+      "Quand les tableurs, formulaires et outils déconnectés ralentissent l'équipe, créez un portail, tableau de bord, système de réservation ou outil interne adapté à votre façon de travailler.",
+  },
+];
+
+const founderAdvantages = [
+  "Vos retours arrivent directement à la personne qui décide",
+  "Le message, la structure et le code restent alignés",
+  "Moins de réunions pour réexpliquer la même chose",
+  "Des arbitrages pratiques avant le design et le développement",
+];
+
+const projects = [
+  {
+    title: "Moto Viagens",
+    href: "/fr/products/motoviagens",
+    image: motoViagens,
+    imageAlt: "Routes et voyages moto au Brésil avec Moto Viagens",
+    description:
+      "Une plateforme de voyage à moto en ligne pour les motards qui organisent itinéraires, circuits et séjours au Brésil.",
+    context:
+      "Dawn Web a développé l'expérience orientée réservation avec pages de circuits, recherche d'hébergements, contenus d'événements, navigation par routes, support multilingue et exploration assistée par IA.",
+  },
+  {
+    title: "Verbo",
+    href: "/fr/products/verboai",
+    image: verbo,
+    imageAlt: "Interface de la plateforme d'apprentissage des langues Verbo",
+    description:
+      "Un produit d'apprentissage des langues avec IA, pensé pour la pratique, la mémorisation et l'habitude d'étude quotidienne.",
+    context:
+      "La plateforme réunit conversation, cartes adaptatives, parcours d'apprentissage, abonnements et support mobile dans une expérience ciblée.",
+  },
+  {
+    title: "Triplut",
+    href: "/fr/products/triplut",
+    image: triplut,
+    imageAlt: "Illustration de la plateforme de voyage IA Triplut",
+    description:
+      "Un concept de produit de planification de voyage pour organiser trajets, budgets et détails pratiques au même endroit.",
+    context:
+      "Le travail explore comment le transport, l'hébergement, les expériences, le budget et l'aide par IA peuvent devenir un parcours de planification plus clair.",
+  },
+  {
+    title: "Luna AI",
+    href: "/fr/products/luna",
+    image: luna,
+    imageAlt: "Mascotte et assistant digital Luna AI de Dawn Web",
+    description:
+      "Le concept d'assistant interne de Dawn Web, pensé pour mieux guider les utilisateurs dans les produits digitaux.",
+    context:
+      "Luna est développé comme une couche d'aide pratique pour la navigation produit, l'assistance contextuelle et des parcours plus personnalisés.",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Découverte",
+    description:
+      "Nous identifions où les visiteurs se perdent, ce que votre entreprise attend du site et ce qui rendrait le projet vraiment utile.",
+  },
+  {
+    title: "Proposition",
+    description:
+      "Vous recevez un périmètre clair, une approche recommandée, un calendrier et un budget avant le début du design ou du développement.",
+  },
+  {
+    title: "Développement",
+    description:
+      "Le site ou l'application est écrit, conçu et développé avec des points réguliers et des décisions directes, sans relais inutiles.",
+  },
+  {
+    title: "Livraison",
+    description:
+      "Votre projet est lancé, vérifié et livré avec les bases nécessaires pour comprendre ce qui a changé et quoi améliorer ensuite.",
+  },
 ];
 ---
 
-<MainLayout>
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="fr"
+  structuredData={[
+    buildWebSiteSchema(SITE.url),
+    buildWebPageSchema({
+      title: pageTitle,
+      description: pageDescription,
+      pathname: "/fr",
+      locale: "fr",
+      siteUrl: SITE.url,
+    }),
+    buildFaqSchema({ faqs: faqs.faqs }),
+  ]}
+>
   <AnnouncementBanner
     btnId="dismiss-button"
-    badge="Audit gratuit"
-    title="Audit gratuit de site web pour les entreprises en croissance"
-    description="Recevez un aperçu rapide de la vitesse, du SEO et des opportunités de conversion de votre site."
-    btnTitle="Demander un audit"
-    url="/fr/contact"
+    badge="Audit clarté gratuit"
+    title="Repérez ce qui peut faire perdre des prospects à votre site"
+    description="Recevez un avis rapide sur ce qui freine vos visiteurs avant de refaire le site, de le refondre ou de payer plus de trafic."
+    btnTitle={primaryCta}
+    url={calendlyUrl}
   />
 
   <HeroSection
-    title={`Élevez votre présence en ligne avec <span class="text-blue-600 dark:text-blue-300">Dawn Web</span>`}
-    subTitle="Création de sites web sur mesure & solutions digitales pour la croissance de votre entreprise."
-    primaryBtn="Planifier une consultation gratuite"
-    primaryBtnURL="https://calendly.com/contact-dawnwebs/30min"
-    secondaryBtn="Voir Nos Projets"
-    secondaryBtnURL="/fr/products"
+    title={`Votre site devrait générer des <span class="text-blue-600 dark:text-blue-300">prospects qualifiés</span>, pas laisser de bons visiteurs dans le doute`}
+    subTitle="Si votre site paraît correct mais n'explique pas clairement votre offre, ne crée pas assez de confiance ou cache l'étape suivante, vous perdez probablement des demandes. Dawn Web corrige le message, la structure et le développement pour que les bons clients sachent pourquoi vous contacter."
+    primaryBtn={primaryCta}
+    primaryBtnURL={calendlyUrl}
     withReview={false}
-    avatars={avatarSrcs}
-    rating={`<span class="font-bold">4.8</span> / 5`}
-    starCount={4}
-    reviews={`Basé sur plus de <span class="font-bold">12,8k</span> avis`}
     src={heroImage}
-    alt="Image principale montrant une équipe travaillant ensemble sur un projet"
+    alt="Espace de travail Dawn Web pour la création de sites et le développement web"
   />
 
-  <FeaturesGeneral
-    title="Développez votre activité en ligne"
-    subTitle="Collaborez avec Dawn Web pour des sites web remarquables, du SEO et des stratégies marketing qui apportent des résultats."
-    alt="Image des fonctionnalités de Dawn Web"
-    features={features}
-  />
+  <section
+    class="mx-auto max-w-[85rem] px-4 pb-8 sm:px-6 lg:px-8 2xl:max-w-full"
+    aria-label="Points de confiance Dawn Web"
+  >
+    <div class="grid gap-3 md:grid-cols-3">
+      {
+        proofPoints.map((point) => (
+          <div class="rounded-lg border border-neutral-300 bg-neutral-100 px-4 py-3 text-sm font-bold text-neutral-800 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
+            {point}
+          </div>
+        ))
+      }
+    </div>
+  </section>
 
-  <FeaturesNavs
-    title={`Des offres <span class="text-blue-500 dark:text-blue-400">Dawn Web</span> sur mesure pour répondre parfaitement aux besoins de votre entreprise.`}
-    tabs={[
-      {
-        heading: "Développement Web",
-        content:
-          "Nous créons des sites web responsives adaptés aux besoins de votre entreprise.",
-        svg: "tools",
-        src: webdev,
-        alt: "Engins de chantier jaunes et noirs sur un terrain herbeux brun",
-        first: true,
-      },
-      {
-        heading: "Logiciels & Applications sur mesure",
-        content:
-          "Des PMS hôteliers aux bornes de restaurant, nous développons des solutions logicielles qui répondent à de vrais défis métier.",
-        svg: "dashboard",
-        src: payments,
-        alt: "Capture d'écran ou représentation graphique du tableau de bord intuitif",
-        second: true,
-      },
-      {
-        heading: "Fonctionnalités robustes",
-        content:
-          "Nous allons au-delà des sites web. Dawn Web intègre votre présence en ligne avec des outils et plateformes essentiels pour optimiser votre activité.",
-        svg: "house",
-        src: featuresjpg,
-        alt: "Structure métallique grise près d'une grue de chantier en journée",
-      },
-    ]}
-  />
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="max-w-3xl">
+      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+        Services
+      </p>
+      <h2
+        class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        Corrigez les parties de votre site qui font perdre des prospects
+      </h2>
+      <p class="mt-3 text-pretty text-neutral-700 dark:text-neutral-400">
+        Chaque service part du vrai problème : des visiteurs hésitent, les pages
+        semblent datées, les bases SEO sont fragiles ou les tâches manuelles
+        ralentissent votre activité.
+      </p>
+    </div>
 
-  <TestimonialsSection
-    title="Lancez votre entreprise en ligne"
-    subTitle="Chez Dawn Web, nous assurons un démarrage en douceur grâce à une intégration et une configuration complètes. Découvrez la simplicité de construire votre présence en ligne avec notre accompagnement expert."
-    testimonials={[
+    <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {
-        content:
-          "Dawn Web a considérablement amélioré notre présence en ligne. Leur équipe a été incroyablement serviable et réactive, et les résultats sont phénoménaux. Un vrai changement pour notre entreprise !",
-        author: "Sabrina D.",
-        role: "Directrice des opérations | Labmid Inc.",
-        avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-      },
-    ]}
-    statistics={[
-      {
-        count: "221+",
-        description: "Clients satisfaits des services de Dawn Web",
-      },
-      {
-        count: "200%",
-        description:
-          "Réduction des coûts par rapport à l'achat de services individuels.",
-      },
-      {
-        count: "75%",
-        description: "Flux de travail plus efficace",
-      },
-      {
-        count: "2x",
-        description: "Mise sur le marché deux fois plus rapide",
-      },
-    ]}
-  />
+        services.map((service) => (
+          <a
+            href={service.href}
+            class="group flex h-full flex-col rounded-lg border border-neutral-300 bg-neutral-100 p-5 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+          >
+            <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+              {service.title}
+            </h3>
+            <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+              {service.description}
+            </p>
+            <p class="mt-auto pt-5 text-sm font-bold text-blue-600 transition group-hover:translate-x-1 dark:text-blue-300">
+              En savoir plus
+            </p>
+          </a>
+        ))
+      }
+    </div>
 
-  <PricingSection pricing={pricing} />
+    <div class="mt-8">
+      <PrimaryCTA title={primaryCta} url={calendlyUrl} />
+    </div>
+  </section>
 
-  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="grid gap-8 border-y border-neutral-300 py-10 dark:border-neutral-700 md:grid-cols-2 lg:py-14">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          Piloté par le fondateur, sans brouillard d'agence
+        </p>
+        <h2
+          class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          Pas de relais inutiles. Pas de filtre commercial. Des décisions claires.
+        </h2>
+      </div>
+      <div>
+        <p class="text-pretty text-neutral-700 dark:text-neutral-300">
+          Beaucoup de projets d'agence ralentissent parce que la personne qui
+          écoute vos objectifs n'est pas celle qui façonne le travail. Avec Dawn
+          Web, vous travaillez directement avec Andrew Henrice, le développeur
+          full-stack qui pilote la stratégie, l'architecture et la livraison.
+        </p>
+        <p class="mt-4 text-pretty text-neutral-700 dark:text-neutral-300">
+          Résultat : moins de pertes d'information, des décisions plus rapides
+          et un site ou une application construit autour du résultat attendu,
+          pas d'un forfait générique.
+        </p>
+        <div class="mt-6 grid gap-x-6 gap-y-4 sm:grid-cols-2">
+          {
+            founderAdvantages.map((advantage) => (
+              <div class="border-t border-neutral-300 pt-4 text-sm font-bold text-neutral-800 dark:border-neutral-700 dark:text-neutral-200">
+                {advantage}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <HeroSectionAlt
-    title="Commencez dès aujourd'hui"
-    subTitle="Notre équipe est dédiée à vous aider à atteindre vos objectifs grâce à une présence en ligne puissante."
-    url="/fr/contact"
-  />
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          Portfolio
+        </p>
+        <h2
+          class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          Des produits réels avec des cas d'usage clairs
+        </h2>
+        <p class="mt-3 text-pretty text-neutral-700 dark:text-neutral-400">
+          Un aperçu concret de ce qui a été construit, pour qui, et du problème
+          que le produit devait résoudre.
+        </p>
+      </div>
+      <PrimaryCTA title={primaryCta} url={calendlyUrl} />
+    </div>
+
+    <div class="mt-8 grid gap-5 md:grid-cols-2">
+      {
+        projects.map((project) => (
+          <a
+            href={project.href}
+            class="group overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+          >
+            <div class="aspect-[16/9] overflow-hidden bg-neutral-300 dark:bg-neutral-900">
+              <Image
+                src={project.image}
+                alt={project.imageAlt}
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-5">
+              <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+                {project.title}
+              </h3>
+              <p class="mt-3 text-sm font-bold leading-6 text-neutral-800 dark:text-neutral-200">
+                {project.description}
+              </p>
+              <p class="mt-2 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+                {project.context}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="max-w-3xl">
+      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+        Processus
+      </p>
+      <h2
+        class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        Un processus simple qui enlève le flou
+      </h2>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-4">
+      {
+        processSteps.map((step, index) => (
+          <div class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
+            <p class="text-sm font-bold text-blue-600 dark:text-blue-300">
+              0{index + 1}
+            </p>
+            <h3 class="mt-3 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+              {step.title}
+            </h3>
+            <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+              {step.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+        Confiance
+      </p>
+      <h2
+        class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        Beaucoup de sites ont l'air corrects. Le problème, c'est ce qu'ils ne disent pas.
+      </h2>
+      <p class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+        Un site peut sembler professionnel et perdre quand même des prospects.
+        Cela arrive quand l'offre est floue, les preuves sont faibles, le CTA
+        est caché ou la page répond aux mauvaises questions.
+      </p>
+      <p class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+        Dawn Web construit d'abord autour de la clarté d'achat. Copywriting, UX,
+        SEO, performance et fonctionnalités sur mesure ont le même rôle : aider
+        le bon visiteur à se sentir compris et prêt à engager la conversation.
+      </p>
+    </div>
+  </section>
+
+  <FAQ title="Questions<br />fréquentes" faqs={faqs} />
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 pb-24 pt-10 sm:px-6 lg:px-8 lg:pt-14"
+  >
+    <div class="bg-neutral-900 px-6 py-12 text-center dark:bg-neutral-100 md:px-10 md:py-16">
+      <h2
+        class="mx-auto max-w-3xl text-balance text-3xl font-bold tracking-tight text-neutral-50 dark:text-neutral-900 md:text-5xl"
+      >
+        Ne laissez plus des pages floues faire partir de bons visiteurs.
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-pretty text-neutral-300 dark:text-neutral-700">
+        Planifiez une consultation gratuite et repartez avec une prochaine étape
+        concrète pour votre site, votre refonte, votre build SEO-ready ou votre
+        application web sur mesure.
+      </p>
+      <div class="mt-8">
+        <PrimaryCTA title={primaryCta} url={calendlyUrl} />
+      </div>
+    </div>
+  </section>
 </MainLayout>

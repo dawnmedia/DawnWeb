@@ -1,12 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "Dawn Web",  // This is already correct!
-  tagline: "Build Your Business Online", // Updated tagline 
-  description: "Dawn Web designs SEO-ready business websites and custom web development solutions for companies that want more leads online.", // Updated description
-  description_short: "Dawn Web helps businesses grow with website design, redesigns, SEO-ready development, and custom web apps.", // Updated short description
-  url: "https://dawnwebs.com", // This is already correct!
-  author: "Dawn Web", // Changed to match the website name 
+  title: "Dawn Web",
+  tagline: "Websites that stop losing good leads",
+  description: "Dawn Web fixes unclear websites, redesigns underperforming pages, and builds custom web apps for growing service businesses that need more qualified inquiries.",
+  description_short: "Founder-led website design, redesigns, SEO-ready builds, and custom web apps for service businesses that need clearer leads.",
+  url: "https://dawnwebs.com",
+  author: "Dawn Web",
 };
 
 export const SEO = {
@@ -30,10 +30,10 @@ export const SEO = {
 };
 
 export const OG = {
-  locale: "en_US", // This is fine as is
-  type: "website", // This is fine as is
-  url: SITE.url, // This is fine as is
-  title: `${SITE.title}: Business Website Design & Web Development`, // Updated title
-  description: SITE.description, // Updated description
-  image: ogImageSrc, // This is fine as is
+  locale: "en_US",
+  type: "website",
+  url: SITE.url,
+  title: `${SITE.title}: Websites that stop losing good leads`,
+  description: SITE.description,
+  image: ogImageSrc,
 };

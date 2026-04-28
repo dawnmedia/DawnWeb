@@ -7,7 +7,7 @@ main:
     Verbo is a next-generation language learning platform that combines AI-powered coaching with scientifically-proven spaced repetition. Learn naturally through conversations with Luna, our AI language coach, and reinforce every lesson with smart flashcards that adapt to your progress — all on Web, iOS, and Android.
     With gamified streaks, structured learning journeys, native audio pronunciation, and seamless cross-platform access, Verbo turns language learning into a habit you actually want to keep.
   imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/lunaai.png"
+  imgMain: "@/images/verbo_app_card.jpg"
   imgAlt: "Verbo AI language learning platform interface"
 tabs:
   - id: "tabs-with-card-item-1"

@@ -1,33 +1,25 @@
 {
-  "subTitle": "Posez-nous toutes vos questions sur les services et produits Dawn Web et obtenez des réponses claires.",
+  "subTitle": "Des réponses claires avant de planifier un appel.",
   "faqs": [
     {
-      "question": "Pouvez-vous m’aider à développer ma présence en ligne ?",
-      "answer": "Oui, nous proposons une gamme complète de services de marketing digital, incluant le référencement (SEO), l’email marketing et la publicité en ligne. Nous collaborons avec vous pour élaborer une stratégie adaptée à vos objectifs."
+      "question": "Construisez-vous uniquement des sites web ?",
+      "answer": "Non. Dawn Web crée des sites professionnels, refond des sites confus ou peu performants, construit des pages prêtes pour le SEO et développe des applications web sur mesure comme des tableaux de bord, systèmes de réservation, portails et workflows métier."
     },
     {
-      "question": "Assurez-vous la maintenance et le support de mon site web ?",
-      "answer": "Bien sûr. Tous nos forfaits incluent un support continu et des mises à jour régulières pour garantir la sécurité et la performance de votre site."
+      "question": "Pouvez-vous améliorer mon site existant ?",
+      "answer": "Oui. Si votre site semble correct mais n'explique pas clairement votre offre, ne crée pas assez de confiance ou ne génère pas assez de demandes, nous pouvons améliorer le message, la structure, l'UX, la performance et les bases techniques."
     },
     {
-      "question": "Comment optimisez-vous mon site pour les moteurs de recherche ?",
-      "answer": "Nous appliquons les meilleures pratiques SEO : configuration des métadonnées, choix des mots-clés, balises alt pour les images et optimisation des performances pour améliorer le classement de votre site."
+      "question": "Mon site sera-t-il prêt pour le SEO ?",
+      "answer": "Oui. Les builds SEO-ready incluent les bases techniques faciles à oublier : métadonnées, structure des pages, liens explorables, balisage schema, sitemap et développement axé sur la performance."
     },
     {
-      "question": "Puis-je demander davantage de mises à jour ou de fonctionnalités personnalisées chaque mois ?",
-      "answer": "Oui. Chaque forfait comprend un nombre défini de mises à jour mensuelles, mais vous pouvez toujours demander des modifications supplémentaires en option. Contactez-nous pour connaître les tarifs et délais."
+      "question": "Avec qui vais-je communiquer ?",
+      "answer": "Vous communiquez directement avec le fondateur pendant la planification et la livraison, donc vos retours ne sont pas filtrés par plusieurs couches de gestion de compte."
     },
     {
-      "question": "Je ne sais pas quel forfait choisir. Pouvez-vous m’orienter ?",
-      "answer": "Absolument ! Contactez-nous et nous vous aiderons à choisir le forfait le plus adapté à vos objectifs, besoins techniques et budget."
-    },
-    {
-      "question": "Le plan annuel (-20%) correspond-il à un paiement unique ou récurrent ?",
-      "answer": "Le plan annuel est facturé une fois par an à un tarif préférentiel par rapport à la mensualisation. Il s’agit d’un abonnement récurrent, sauf en cas d’annulation."
-    },
-    {
-      "question": "Quels modules complémentaires proposez-vous ?",
-      "answer": "Nous proposons plusieurs modules complémentaires : e-commerce, analyses avancées, intégrations personnalisées, support multilingue, et bien plus encore. Faites-nous part de vos besoins et nous vous conseillerons les solutions les plus adaptées."
+      "question": "Que se passe-t-il après la consultation gratuite ?",
+      "answer": "Nous examinons vos objectifs, votre site actuel ou votre idée, votre calendrier et la meilleure prochaine étape. S'il y a une bonne adéquation, vous recevez une proposition claire avant le début du projet."
     }
   ]
 }

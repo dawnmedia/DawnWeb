@@ -1,33 +1,25 @@
 {
-  "subTitle": "Tire suas dúvidas sobre os serviços, produtos e planos da Dawn Web.",
+  "subTitle": "Respostas claras antes de você marcar uma conversa.",
   "faqs": [
     {
-      "question": "Vocês podem ajudar minha empresa a crescer online?",
-      "answer": "Sim. Apoiamos sua presença digital com desenvolvimento de sites, SEO, conteúdo, integrações e estratégias sob medida para os objetivos do seu negócio."
+      "question": "Vocês constroem apenas sites?",
+      "answer": "Não. A Dawn Web cria sites profissionais, redesenha sites confusos ou com baixa conversão, constrói páginas prontas para SEO e desenvolve aplicações web sob medida, como dashboards, sistemas de reserva, portais e fluxos de trabalho."
     },
     {
-      "question": "Vocês fazem manutenção e suporte depois do lançamento?",
-      "answer": "Sim. Nossos planos incluem acompanhamento contínuo, atualizações, backups e melhorias para manter seu site seguro, rápido e funcionando bem."
+      "question": "Vocês podem melhorar meu site atual?",
+      "answer": "Sim. Se o seu site parece bom, mas não explica sua oferta, não gera confiança ou não traz contatos suficientes, podemos melhorar copy, estrutura, UX, performance e base técnica."
     },
     {
-      "question": "Como a Dawn Web melhora o SEO do meu site?",
-      "answer": "Aplicamos boas práticas técnicas e de conteúdo: metadados, estrutura de páginas, performance, textos alternativos em imagens e organização clara para mecanismos de busca."
+      "question": "Meu site será pronto para SEO?",
+      "answer": "Sim. Projetos prontos para SEO incluem o básico técnico que muita gente esquece: metadados, estrutura de páginas, links rastreáveis, schema, sitemap e desenvolvimento com foco em performance."
     },
     {
-      "question": "Posso pedir atualizações ou funcionalidades extras durante o mês?",
-      "answer": "Pode. Cada plano inclui uma quantidade definida de atualizações mensais, e também podemos avaliar demandas extras com prazo e orçamento separados."
+      "question": "Com quem vou me comunicar?",
+      "answer": "Você fala diretamente com o fundador durante o planejamento e a entrega, então seu feedback não passa por camadas de gerenciamento de conta."
     },
     {
-      "question": "Não sei qual plano escolher. Vocês ajudam nessa decisão?",
-      "answer": "Claro. Podemos entender suas metas, prazo, orçamento e necessidades técnicas para indicar o plano mais adequado."
-    },
-    {
-      "question": "O plano anual com desconto é pagamento único ou recorrente?",
-      "answer": "O plano anual é cobrado uma vez por ano com desconto em relação ao valor mensal. Ele é recorrente até ser cancelado."
-    },
-    {
-      "question": "Quais serviços adicionais vocês oferecem?",
-      "answer": "Podemos incluir e-commerce, analytics avançado, integrações personalizadas, suporte multilíngue, automações, páginas extras e outros recursos conforme a necessidade do projeto."
+      "question": "O que acontece depois da consulta gratuita?",
+      "answer": "Nós analisamos seus objetivos, site atual ou ideia, prazo e o melhor próximo passo. Se fizer sentido, você recebe uma proposta clara antes de qualquer desenvolvimento começar."
     }
   ]
 }
