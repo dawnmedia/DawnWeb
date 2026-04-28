@@ -88,7 +88,7 @@ const defaultBudgetIndex = Math.min(2, budgetRanges.length - 1);
 const defaultProjectType = projectTypes[projectTypes.length - 1]?.value;
 ---
 
-<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+<section class="mx-auto max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
   <div
     class="overflow-hidden rounded-[1.75rem] border border-neutral-300/70 bg-neutral-100 shadow-xl shadow-zinc-300/40 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-black/20"
   >
@@ -110,17 +110,17 @@ const defaultProjectType = projectTypes[projectTypes.length - 1]?.value;
           {subtitle}
         </p>
 
-        <div class="mt-8 grid gap-3 sm:flex">
+        <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
           <a
             href={calendlyUrl}
-            class="group inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:bg-blue-400 dark:text-white dark:hover:bg-blue-300"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:bg-blue-400 dark:text-white dark:hover:bg-blue-300"
           >
             {primaryCta}
             <Icon name="arrowRight" />
           </a>
           <a
             href="#project-brief"
-            class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 py-3 text-sm font-bold text-neutral-800 transition hover:border-blue-300 hover:text-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-blue-400 dark:hover:text-blue-300"
+            class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 py-3 text-center text-sm font-bold text-neutral-800 transition hover:border-blue-300 hover:text-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-blue-400 dark:hover:text-blue-300"
           >
             {secondaryCta}
           </a>
@@ -138,12 +138,12 @@ const defaultProjectType = projectTypes[projectTypes.length - 1]?.value;
       </div>
 
       <div
-        class="relative min-h-[22rem] overflow-hidden bg-blue-900 dark:bg-neutral-950"
+        class="relative min-h-[28rem] overflow-hidden bg-blue-900 dark:bg-neutral-950 lg:min-h-0"
       >
         <Image
           src={personWorking}
           alt={imageAlt}
-          class="h-full min-h-[22rem] w-full object-cover"
+          class="absolute inset-0 h-full w-full object-cover"
           loading="eager"
         />
         <div
@@ -183,7 +183,7 @@ const defaultProjectType = projectTypes[projectTypes.length - 1]?.value;
 
 <section
   id="project-brief"
-  class="mx-auto grid max-w-[85rem] gap-6 px-4 pb-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:pb-14"
+  class="mx-auto grid max-w-[85rem] scroll-mt-28 gap-6 px-4 pb-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8 lg:pb-14"
 >
   <aside class="space-y-6">
     <div

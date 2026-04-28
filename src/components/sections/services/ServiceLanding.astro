@@ -43,7 +43,9 @@ interface Props {
     >
       {title}
     </h1>
-    <p class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-400">
+    <p
+      class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-400"
+    >
       {description}
     </p>
     <div class="mt-8 grid gap-3 sm:inline-flex">
@@ -57,7 +59,7 @@ interface Props {
   <Image
     src={image}
     alt={imageAlt}
-    class="h-full min-h-[320px] w-full rounded-lg object-cover"
+    class="h-80 w-full rounded-lg object-cover md:h-full md:min-h-[320px]"
     format="avif"
     loading="eager"
   />
@@ -66,63 +68,70 @@ interface Props {
 <section
   class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-full"
 >
-  <div class="grid gap-8 md:grid-cols-2">
-    <div>
-      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-        What we build into the service
-      </h2>
-      <ul class="mt-5 space-y-3 text-neutral-700 dark:text-neutral-300">
-        {
-          benefits.map((benefit) => (
-            <li class="rounded-lg border border-neutral-300 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800">
-              {benefit}
-            </li>
-          ))
-        }
-      </ul>
+  <div class="grid gap-8 lg:grid-cols-3 lg:items-start">
+    <div class="space-y-10 lg:col-span-2">
+      <div>
+        <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+          What we build into the service
+        </h2>
+        <ul
+          class="mt-5 grid gap-4 text-neutral-700 dark:text-neutral-300 md:grid-cols-3"
+        >
+          {
+            benefits.map((benefit) => (
+              <li class="flex min-h-40 rounded-lg border border-neutral-300 bg-neutral-100 p-5 leading-7 dark:border-neutral-700 dark:bg-neutral-800">
+                {benefit}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="border-t border-neutral-300 pt-8 dark:border-neutral-700">
+        <div
+          class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+        >
+          <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+            Related services
+          </h2>
+          <SecondaryCTA title="View all services" url="/services" />
+        </div>
+        <div class="mt-5 grid gap-4 md:grid-cols-3">
+          {
+            relatedServices.map((service) => (
+              <a
+                href={service.href}
+                class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+              >
+                <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+                  {service.title}
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                  {service.description}
+                </p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
     </div>
-    <div>
+
+    <aside class="lg:sticky lg:top-24">
       <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
         How the project moves
       </h2>
-      <ol class="mt-5 space-y-3 text-neutral-700 dark:text-neutral-300">
+      <ol class="mt-5 space-y-4 text-neutral-700 dark:text-neutral-300">
         {
           process.map((step, index) => (
-            <li class="rounded-lg border border-neutral-300 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800">
-              <span class="font-bold text-blue-500">{index + 1}. </span>
-              {step}
+            <li class="grid grid-cols-[2.5rem_1fr] gap-4 rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
+              <span class="flex size-10 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-neutral-50">
+                {index + 1}
+              </span>
+              <span class="pt-1 leading-7">{step}</span>
             </li>
           ))
         }
       </ol>
-    </div>
-  </div>
-</section>
-
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-full"
->
-  <div class="mb-6 flex items-end justify-between gap-4">
-    <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-      Related services
-    </h2>
-    <SecondaryCTA title="View all services" url="/services" />
-  </div>
-  <div class="grid gap-4 md:grid-cols-3">
-    {
-      relatedServices.map((service) => (
-        <a
-          href={service.href}
-          class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400"
-        >
-          <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-            {service.title}
-          </h3>
-          <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
-            {service.description}
-          </p>
-        </a>
-      ))
-    }
+    </aside>
   </div>
 </section>
