@@ -8,6 +8,39 @@ main:
   imgCard: "@/images/triplut6.jpg"
   imgMain: "@/images/triplut5.jpg"
   imgAlt: "Illustration de la plateforme de voyage IA Triplut"
+showcase:
+  eyebrow: "Planification de voyage IA"
+  audience: "Voyageurs qui planifient des trajets flexibles"
+  status: "Concept produit"
+  platforms:
+    - "Application web"
+    - "Mobile responsive"
+    - "Assistant IA"
+  stack:
+    - "Plateforme cloud"
+    - "Planification IA"
+    - "Cartes"
+    - "Paiements"
+  primaryAction:
+    label: "Planifiez Votre Voyage Maintenant"
+    url: "/fr/contact"
+  secondaryAction:
+    label: "Discuter d'un produit voyage"
+    url: "/fr/contact"
+  metrics:
+    - value: "IA"
+      label: "Coeur de planification"
+    - value: "4+"
+      label: "Modes de transport"
+    - value: "24/7"
+      label: "Support assistant"
+  screenshots:
+    - image: "@/images/triplut5.jpg"
+      alt: "Apercu de la planification de destination Triplut"
+      label: "Experience de decouverte et de planification"
+    - image: "@/images/triplut2.jpg"
+      alt: "Visuel de route et d'experience Triplut"
+      label: "Narration produit orientee aventure"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

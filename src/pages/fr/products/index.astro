@@ -1,103 +1,61 @@
 ---
-// Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
-import CardSmall from "@components/ui/cards/CardSmall.astro";
-import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
-
-// Importing necessary functions from Astro
+import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "fr";
 
-// Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => {
-    return collectionIdStartsWithLocale(id, locale);
-  })
+const products: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) =>
+    collectionIdStartsWithLocale(id, locale),
+  )
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id
+    a.data.main.id - b.data.main.id,
 );
 
-// Définir les variables pour le contenu de la page
-const title: string = "Produits";
-const subTitle: string =
-  "Découvrez l’art et l’impact des créations web de Dawn Web, conçues pour les entreprises de toutes tailles. Chaque site est réalisé avec soin, alliant expérience utilisateur, esthétique et performance pour atteindre vos objectifs professionnels.";
-
+const pageTitle = "Produits logiciels & projets digitaux | Dawn Web";
+const pageDescription =
+  "Explorez les produits logiciels, plateformes web et concepts IA de Dawn Web avec captures, statut, public cible et choix techniques.";
 ---
 
 <MainLayout
-  title="Produits | Dawn Web"
+  title={pageTitle}
+  meta={pageDescription}
   lang="fr"
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/fr/products",
-    url: "https://dawnwebs.com/fr/products",
-    name: "Nos Produits | Dawn Web",
-    description:
-      "Explorez la durabilité et la précision des outils Dawn Web, conçus aussi bien pour les professionnels que pour les passionnés.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://dawnwebs.com/fr",
-      name: "Dawn Web",
-      description:
-        "Dawn Web est une agence spécialisée dans la création de sites web performants et sur mesure, adaptés aux besoins de chaque entreprise.",
-    },
-    inLanguage: "fr",
-  }}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/fr/products",
+    locale,
+    siteUrl: SITE.url,
+  })}
 >
-  <div
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-      <div class="flex items-center gap-12">
-        <h1
-          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-        >
-          {title}
-        </h1>
-        {
-          subTitle && (
-            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
-              {subTitle}
-            </p>
-          )
-        }
-      </div>
-      <PrimaryCTA
-        title="Contactez-nous"
-        url="/fr/contact"
-        noArrow={false}
-      />
-    </div>
-    <!--Affichage des produits avec styles alternés. Les produits alternatifs utilisent un style de carte différent.-->
-    <!--Parcourt toutes les entrées produits et les affiche avec CardSmall ou CardWide selon leur position.-->
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-      {
-        product.map((product, index) => {
-          const position = index % 4;
-          if (position === 0 || position === 3) {
-            return <CardSmall product={product} productLocale={locale} />;
-          } else {
-            return <CardWide product={product} productLocale={locale} />;
-          }
-        })
-      }
-    </section>
-  </div>
-  <!--Section statistiques et avantages-->
-  <FeaturesStatsAlt
-    title="Pourquoi choisir Dawn Web ?"
-    subTitle="Transformez vos idées en une présence en ligne puissante avec Dawn Web. Que vous soyez une start-up ou une entreprise établie, nous proposons des solutions sur mesure pour atteindre vos objectifs."
-    benefits={[
-      "Sites web performants : nous concevons et développons des sites personnalisés, rapides, fiables et optimisés pour convertir vos visiteurs en clients fidèles.",
-      "Solutions évolutives : notre approche couvre tout, des pages d’atterrissage simples aux plateformes intégrées, avec des technologies modernes, prêtes à évoluer et faciles à maintenir.",
-      "Accompagnement durable : de la mise en ligne à la réussite sur le long terme, nous assurons la maintenance, la sécurité et un support expert pour garantir la performance de votre site chaque jour.",
-    ]}
+  <ProductShowcaseIndex
+    products={products}
+    locale={locale}
+    eyebrow="Portfolio produits"
+    title="Des produits logiciels clairs des le premier regard"
+    subTitle="Decouvrez les applications web, concepts IA et plateformes digitales de Dawn Web a travers leur positionnement, leur statut, leurs captures et leurs choix techniques."
+    ctaLabel="Planifier un produit"
+    ctaUrl="/fr/contact"
+    viewLabel="Voir le produit"
   />
+
+  <div class="opacity-95">
+    <FeaturesStatsAlt
+      title="Pourquoi choisir Dawn Web ?"
+      subTitle="Transformez vos idees en une presence en ligne puissante avec Dawn Web. Que vous soyez une start-up ou une entreprise etablie, nous proposons des solutions sur mesure pour atteindre vos objectifs."
+      benefits={[
+        "Sites web performants : nous concevons et developpons des sites personnalises, rapides, fiables et optimises pour convertir vos visiteurs en clients fideles.",
+        "Solutions evolutives : notre approche couvre tout, des pages d'atterrissage simples aux plateformes integrees, avec des technologies modernes, pretes a evoluer et faciles a maintenir.",
+        "Accompagnement durable : de la mise en ligne a la reussite sur le long terme, nous assurons la maintenance, la securite et un support expert.",
+      ]}
+    />
+  </div>
 </MainLayout>

@@ -1,24 +1,26 @@
 ---
-title: "Présentation de NexoED : l’avenir de l’apprentissage en ligne, conçu par Dawn Web"
-description: "Notre nouvelle plateforme rend l’apprentissage plus intelligent, plus engageant et accessible à tous"
+title: "Quand un site web doit devenir une application web"
+description: "Comment les plateformes educatives, portails, tableaux de bord et outils de flux montrent qu'une entreprise a depasse le simple site statique."
 author: "Andrew"
 role: "Fondateur, Dawn Web"
 authorImage: "@/images/blog/Andrew.png"
-authorImageAlt: "Avatar de Breno, fondateur de Dawn Web"
+authorImageAlt: "Avatar d'Andrew, fondateur de Dawn Web"
 pubDate: 2025-05-30
 cardImage: "@/images/blog/studying.jpg"
-cardImageAlt: "Jeune adulte utilisant un ordinateur portable dans un environnement d’apprentissage moderne"
+cardImageAlt: "Jeune adulte utilisant un ordinateur portable dans un environnement d'apprentissage moderne"
 readTime: 4
-tags: ["éducation", "edtech", "startups", "bientôt disponible"]
+tags: ["applications web", "education", "logiciel", "services"]
 contents: [
-  "Dawn Web est fier de présenter NexoED — une plateforme éducative innovante, pensée pour répondre aux nouveaux enjeux de l’apprentissage en ligne. Accessibilité, engagement et personnalisation sont au cœur de NexoED, notre contribution pour rendre l’éducation de qualité plus accessible et plus impactante.",
-  
-  "NexoED n’est pas simplement un système de gestion de l’apprentissage. C’est un véritable écosystème numérique où les enseignants peuvent créer, partager et gérer leurs cours facilement, et où les apprenants accèdent au savoir à travers des expériences immersives et intuitives.",
-  
-  "Ce qui distingue NexoED, c’est son approche axée sur la simplicité, l’évolutivité et une expérience utilisateur moderne. Que vous soyez formateur indépendant, centre de formation ou entreprise, la plateforme s’adapte à vos besoins. Notre infrastructure performante et analytique vous permet de suivre la progression des apprenants, d’obtenir des insights et d’optimiser vos méthodes pédagogiques.",
-  
-  "Nous sommes convaincus que l’avenir de l’apprentissage doit être décentralisé, flexible et inspirant. C’est pourquoi NexoED prend en charge les contenus multimédias, les évaluations en temps réel et des outils collaboratifs pour faire entrer l’éducation dans une nouvelle ère.",
-  
-  "Restez à l’écoute pour le lancement — et soyez parmi les premiers à transformer votre façon d’enseigner et d’apprendre en ligne. Que vous soyez enseignant, établissement ou entrepreneur dans l’éducation, NexoED est fait pour vous."
+  "Un site marketing est le bon outil quand l'objectif principal est d'expliquer une offre et de generer des demandes. Mais certaines entreprises ont besoin de plus : comptes utilisateurs, tableaux de bord, parcours de formation, reservations, paiements, outils admin, gestion de contenu, analytics ou experiences personnalisees.",
+
+  "Les plateformes educatives rendent ce changement facile a comprendre. Un site simple peut decrire un cours. Une application web peut gerer les lecons, suivre la progression, diffuser du contenu multimedia, proposer des evaluations et aider les formateurs a comprendre les besoins des apprenants.",
+
+  "C'est la limite que Dawn Web cherche quand nous planifions des applications web sur mesure. Si votre equipe utilise des feuilles de calcul, emails manuels, formulaires disperses ou taches admin repetitives pour livrer le service, l'entreprise n'a peut-etre pas besoin d'une page de plus. Elle a peut-etre besoin d'un outil clair.",
+
+  "Une application utile commence par la clarte du flux. Qui l'utilise ? Que doivent-ils faire ? Quelles donnees comptent ? Quelles permissions sont necessaires ? Qu'est-ce qui doit etre automatise et qu'est-ce qui doit rester humain ? Repondre tot evite une complexite couteuse plus tard.",
+
+  "Le meilleur logiciel sur mesure ne semble pas surdimensionne. Il donne a chaque utilisateur un chemin plus clair : les clients peuvent envoyer, reserver, apprendre ou suivre leur progression ; l'equipe peut gerer les demandes ; les dirigeants peuvent voir ce qui se passe sans fouiller dans des outils deconnectes.",
+
+  "Dawn Web cree des applications web, portails, tableaux de bord, outils de reservation et integrations pour les entreprises qui ont depasse les pages statiques. L'objectif est un logiciel pratique : clair a utiliser, stable a faire confiance et concu autour du vrai flux de travail."
 ]
 ---

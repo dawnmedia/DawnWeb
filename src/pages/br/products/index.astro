@@ -1,103 +1,61 @@
 ---
-// Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
-import CardSmall from "@components/ui/cards/CardSmall.astro";
-import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
-
-// Importing necessary functions from Astro
+import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "br";
 
-// Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => {
-    return collectionIdStartsWithLocale(id, locale);
-  })
+const products: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) =>
+    collectionIdStartsWithLocale(id, locale),
+  )
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id
+    a.data.main.id - b.data.main.id,
 );
 
-// Define page content
-const title: string = "Nossos Projetos";
-const subTitle: string =
-  "Descubra a arte e o impacto das criações web da Dawn Web, desenvolvidas para empresas de todos os tamanhos. Cada site é cuidadosamente elaborado, combinando experiência do usuário, estética e performance para alcançar seus objetivos profissionais.";
-
+const pageTitle = "Produtos de software & projetos digitais | Dawn Web";
+const pageDescription =
+  "Conheca produtos de software, plataformas web e conceitos de IA da Dawn Web com capturas, status, publico-alvo e escolhas tecnicas.";
 ---
 
 <MainLayout
-  title="Projetos | Dawn Web"
-  meta="Conheça projetos digitais da Dawn Web criados para empresas que querem melhorar sua presença online."
+  title={pageTitle}
+  meta={pageDescription}
   lang="pt-BR"
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/br/products",
-    url: "https://dawnwebs.com/br/products",
-    name: "Nossos Projetos | Dawn Web",
-    description:
-      "Conheça projetos digitais da Dawn Web criados para empresas que querem melhorar sua presença online.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://dawnwebs.com/br",
-      name: "Dawn Web",
-      description:
-        "A Dawn Web cria sites e soluções digitais sob medida para empresas.",
-    },
-    inLanguage: "pt-BR",
-  }}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/br/products",
+    locale,
+    siteUrl: SITE.url,
+  })}
 >
-  <div
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-      <div class="flex items-center gap-12">
-        <h1
-          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-        >
-          {title}
-        </h1>
-        {
-          subTitle && (
-            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
-              {subTitle}
-            </p>
-          )
-        }
-      </div>
-      <PrimaryCTA
-        title="Fale conosco"
-        url="/br/contact"
-        noArrow={false}
-      />
-    </div>
-    <!-- Exibe projetos com estilos alternados para criar variedade visual. -->
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-      {
-        product.map((product, index) => {
-          const position = index % 4;
-          if (position === 0 || position === 3) {
-            return <CardSmall product={product} productLocale={locale} />;
-          } else {
-            return <CardWide product={product} productLocale={locale} />;
-          }
-        })
-      }
-    </section>
+  <ProductShowcaseIndex
+    products={products}
+    locale={locale}
+    eyebrow="Portfolio de produtos"
+    title="Produtos de software claros desde o primeiro olhar"
+    subTitle="Explore os apps web, conceitos de IA e plataformas digitais da Dawn Web por posicionamento, status, capturas de tela e escolhas tecnicas."
+    ctaLabel="Planejar um produto"
+    ctaUrl="/br/contact"
+    viewLabel="Ver produto"
+  />
+
+  <div class="opacity-95">
+    <FeaturesStatsAlt
+      title="Por que escolher a Dawn Web?"
+      subTitle="Transforme suas ideias em uma presenca online poderosa com a Dawn Web. Seja voce uma startup ou uma empresa estabelecida, oferecemos solucoes sob medida para alcancar seus objetivos."
+      benefits={[
+        "Sites de alta performance: projetamos e desenvolvemos sites personalizados, rapidos, confiaveis e otimizados para converter visitantes em clientes fieis.",
+        "Solucoes escalaveis: nossa abordagem abrange desde landing pages simples ate plataformas integradas, com tecnologias modernas e faceis de manter.",
+        "Acompanhamento duradouro: do lancamento ao sucesso a longo prazo, garantimos manutencao, seguranca e suporte especializado.",
+      ]}
+    />
   </div>
-  <!--Section statistiques et avantages-->
-  <FeaturesStatsAlt
-  title="Por que escolher a Dawn Web?"
-  subTitle="Transforme suas ideias em uma presença online poderosa com a Dawn Web. Seja você uma startup ou uma empresa estabelecida, oferecemos soluções sob medida para alcançar seus objetivos."
-  benefits={[
-    "Sites de alta performance: projetamos e desenvolvemos sites personalizados, rápidos, confiáveis e otimizados para converter seus visitantes em clientes fiéis.",
-    "Soluções escaláveis: nossa abordagem abrange tudo, desde simples landing pages até plataformas integradas, com tecnologias modernas, prontas para evoluir e de fácil manutenção.",
-    "Acompanhamento duradouro: do lançamento ao sucesso a longo prazo, garantimos a manutenção, segurança e suporte especializado para assegurar a performance do seu site todos os dias.",
-  ]}
-/>
 </MainLayout>

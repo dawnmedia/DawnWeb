@@ -9,6 +9,45 @@ main:
   imgCard: "@/images/verbo_app_card.jpg"
   imgMain: "@/images/lunaai.png"
   imgAlt: "Interface da plataforma de aprendizado de idiomas Verbo AI"
+showcase:
+  eyebrow: "Aprendizado de idiomas com IA"
+  audience: "Estudantes de idiomas do iniciante ao avancado"
+  status: "Beta v0.9.0"
+  platforms:
+    - "Aplicativo web"
+    - "iOS"
+    - "Android"
+    - "PWA"
+  stack:
+    - "Next.js 15"
+    - "React 19"
+    - "TypeScript"
+    - "Firebase"
+    - "Capacitor"
+    - "Stripe"
+  primaryAction:
+    label: "Comece a Aprender Grátis"
+    url: "https://learnverbo.app"
+  secondaryAction:
+    label: "Falar com a Dawn Web"
+    url: "/br/contact"
+  metrics:
+    - value: "v0.9"
+      label: "Versao beta"
+    - value: "3"
+      label: "Planos de aprendizado"
+    - value: "FSRS"
+      label: "Repeticao espacada"
+  screenshots:
+    - image: "@/images/verbo_app_card.jpg"
+      alt: "Painel Verbo para aprendizado de idiomas com IA"
+      label: "Painel de aprendizado com IA"
+    - image: "@/images/verboapp.png"
+      alt: "Interface mobile do Verbo para idiomas"
+      label: "Fluxo de aprendizado mobile"
+    - image: "@/images/verbodesktop.png"
+      alt: "Interface desktop do Verbo para idiomas"
+      label: "Experiencia de estudo desktop"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

@@ -9,6 +9,44 @@ main:
   imgCard: "@/images/motoviagens3.jpg"
   imgMain: "@/images/motoviagens3.jpg"
   imgAlt: "Moto Viagens Brazilian motorcycle routes and tours"
+showcase:
+  eyebrow: "Motorcycle travel platform"
+  audience: "Riders, road-trippers, and adventure travelers"
+  status: "Live platform"
+  platforms:
+    - "Web app"
+    - "Mobile first"
+    - "Multilingual"
+  stack:
+    - "Next.js 15"
+    - "Firebase"
+    - "TypeScript"
+    - "Leaflet"
+    - "Google Maps"
+    - "Luna AI"
+  primaryAction:
+    label: "Visit Live Platform"
+    url: "https://motoviagens.com.br"
+  secondaryAction:
+    label: "Build a Travel Platform"
+    url: "/contact"
+  metrics:
+    - value: "Live"
+      label: "Operational platform"
+    - value: "5"
+      label: "Supported languages"
+    - value: "AI"
+      label: "Travel guidance"
+  screenshots:
+    - image: "@/images/motoviagens3.jpg"
+      alt: "Moto Viagens motorcycle travel platform hero visual"
+      label: "Live motorcycle tourism platform"
+    - image: "@/images/motoviagens2.jpg"
+      alt: "Moto Viagens route and destination imagery"
+      label: "Route discovery and destination content"
+    - image: "@/images/motoviagens1.jpg"
+      alt: "Moto Viagens adventure booking visual"
+      label: "Tour and accommodation booking flow"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

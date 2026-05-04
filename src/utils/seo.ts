@@ -14,16 +14,13 @@ export const SEO_TITLES = {
 };
 
 export const SEO_DESCRIPTIONS = {
-  home:
-    "Dawn Web fixes unclear websites, redesigns underperforming pages, and builds custom web apps for growing service businesses that need more qualified inquiries.",
+  home: "Dawn Web fixes unclear websites, redesigns underperforming pages, and builds custom web apps for growing service businesses that need more qualified inquiries.",
   services:
     "Explore Dawn Web's business website design, website redesign, SEO-ready development, and custom app services for growing US companies.",
   products:
     "See Dawn Web website design projects, digital products, and custom web development work built to help businesses grow online.",
-  blog:
-    "Read Dawn Web insights on business website design, website redesigns, SEO-ready development, UX, and digital growth strategy.",
-  team:
-    "Meet the Dawn Web team behind custom business websites, web development, UX design, and digital strategy for growing companies.",
+  blog: "Read Dawn Web insights on business website design, website redesigns, SEO-ready development, UX, and digital growth strategy.",
+  team: "Meet the Dawn Web team behind custom business websites, web development, UX design, and digital strategy for growing companies.",
   contact:
     "Contact Dawn Web to plan a business website, redesign, SEO-ready build, or custom web app. Start with a free consultation.",
 };
@@ -162,6 +159,8 @@ interface ArticleSchemaInput {
   image: string;
   author: string;
   datePublished?: Date;
+  dateModified?: Date;
+  locale?: Locale;
   siteUrl?: string;
 }
 
@@ -172,6 +171,8 @@ export function buildArticleSchema({
   image,
   author,
   datePublished,
+  dateModified,
+  locale = "en",
   siteUrl = SITE.url,
 }: ArticleSchemaInput): JsonLd {
   const root = siteUrl.replace(/\/$/, "");
@@ -191,6 +192,8 @@ export function buildArticleSchema({
       "@id": `${root}/#organization`,
     },
     datePublished: datePublished?.toISOString(),
+    dateModified: (dateModified ?? datePublished)?.toISOString(),
+    inLanguage: LOCALE_LANGUAGE_TAGS[locale],
     mainEntityOfPage: absoluteUrl(pathname, siteUrl),
   };
 }

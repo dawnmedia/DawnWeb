@@ -1,5 +1,6 @@
 import type { APIRoute, ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
+import { SITE } from "@data/constants";
 import icon from "@images/icon.png";
 import maskableIcon from "@images/icon-maskable.png";
 
@@ -45,15 +46,14 @@ export const GET: APIRoute = async () => {
 
   const manifest = {
     short_name: "Dawn Web",
-    name: "DawnWeb",
-    description:
-      "Dawn Web helps businesses succeed online with website design, social media management, and content creation.",
+    name: SITE.title,
+    description: SITE.description_short,
     icons,
     display: "standalone",
     id: "/",
     start_url: "/",
-    theme_color: "#FFEDD5",
-    background_color: "#262626",
+    theme_color: "#facc15",
+    background_color: "#171717",
   };
 
   return new Response(JSON.stringify(manifest), {

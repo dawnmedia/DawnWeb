@@ -8,6 +8,39 @@ main:
   imgCard: "@/images/triplut6.jpg"
   imgMain: "@/images/triplut5.jpg"
   imgAlt: "Illustration of Triplut AI travel platform"
+showcase:
+  eyebrow: "AI travel planning"
+  audience: "Travelers planning flexible, multi-stop trips"
+  status: "Concept build"
+  platforms:
+    - "Web app"
+    - "Mobile responsive"
+    - "AI assistant"
+  stack:
+    - "Cloud platform"
+    - "AI planning"
+    - "Maps"
+    - "Payments"
+  primaryAction:
+    label: "Plan Your Journey Now"
+    url: "/contact"
+  secondaryAction:
+    label: "Discuss a Travel Product"
+    url: "/contact"
+  metrics:
+    - value: "AI"
+      label: "Trip planning core"
+    - value: "4+"
+      label: "Transport modes"
+    - value: "24/7"
+      label: "Assistant support"
+  screenshots:
+    - image: "@/images/triplut5.jpg"
+      alt: "Triplut travel platform destination planning preview"
+      label: "Trip discovery and planning experience"
+    - image: "@/images/triplut2.jpg"
+      alt: "Triplut travel route and experience visual"
+      label: "Adventure-focused product storytelling"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

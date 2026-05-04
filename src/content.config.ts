@@ -16,6 +16,36 @@ const productsCollection = defineCollection({
         imgMain: image(),
         imgAlt: z.string(),
       }),
+      showcase: z.object({
+        eyebrow: z.string(),
+        audience: z.string(),
+        status: z.string(),
+        platforms: z.array(z.string()),
+        stack: z.array(z.string()),
+        primaryAction: z.object({
+          label: z.string(),
+          url: z.string(),
+        }),
+        secondaryAction: z
+          .object({
+            label: z.string(),
+            url: z.string(),
+          })
+          .optional(),
+        metrics: z.array(
+          z.object({
+            value: z.string(),
+            label: z.string(),
+          }),
+        ),
+        screenshots: z.array(
+          z.object({
+            image: image(),
+            alt: z.string(),
+            label: z.string(),
+          }),
+        ),
+      }),
       tabs: z.array(
         z.object({
           id: z.string(),

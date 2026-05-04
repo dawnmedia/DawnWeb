@@ -8,6 +8,42 @@ main:
   imgCard: "@/images/lunaai.png"
   imgMain: "@/images/lunaai.png"
   imgAlt: "Luna AI mascot and digital assistant for Dawn Web"
+showcase:
+  eyebrow: "AI assistant ecosystem"
+  audience: "Dawn Web products and their users"
+  status: "Phased rollout"
+  platforms:
+    - "Web apps"
+    - "Business tools"
+    - "Creative apps"
+  stack:
+    - "Luna AI"
+    - "Project data"
+    - "Brand voice"
+    - "Assisted workflows"
+  primaryAction:
+    label: "Explore Dawn Web"
+    url: "https://dawnwebs.com"
+  secondaryAction:
+    label: "Discuss an AI Layer"
+    url: "/contact"
+  metrics:
+    - value: "1"
+      label: "Unified assistant"
+    - value: "Multi"
+      label: "Product integrations"
+    - value: "AI"
+      label: "Guidance layer"
+  screenshots:
+    - image: "@/images/lunaai.png"
+      alt: "Luna AI assistant mascot and product identity"
+      label: "Friendly AI identity for Dawn Web products"
+    - image: "@/images/lunaverbo.png"
+      alt: "Luna assistant concept for Verbo"
+      label: "AI coaching layer for learning products"
+    - image: "@/images/lunaweb.png"
+      alt: "Luna assistant concept for web products"
+      label: "Assistant experience across web interfaces"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

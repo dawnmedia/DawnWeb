@@ -26,10 +26,13 @@ const locale: Locale = "fr";
 export async function getStaticPaths() {
   const routeLocale: Locale = "fr";
   const blogPosts = await getCollection("blog", ({ id }) =>
-    collectionIdStartsWithLocale(id, routeLocale)
+    collectionIdStartsWithLocale(id, routeLocale),
   );
   return blogPosts.map((post) => {
-    const slugWithoutLang = stripLocaleFromSlug(getContentSlug(post), routeLocale);
+    const slugWithoutLang = stripLocaleFromSlug(
+      getContentSlug(post),
+      routeLocale,
+    );
     return {
       params: { slug: slugWithoutLang },
       props: { post },
@@ -42,28 +45,34 @@ const { post } = Astro.props;
 // Fetch related posts
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
-  ({ id }) => collectionIdStartsWithLocale(id, locale)
+  ({ id }) => collectionIdStartsWithLocale(id, locale),
 );
 const currentTags = new Set(post.data.tags ?? []);
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts
   .filter((blogEntry) => blogEntry.id !== post.id)
   .sort((a, b) => {
     const aScore = (a.data.tags ?? []).filter((tag) =>
-      currentTags.has(tag)
+      currentTags.has(tag),
     ).length;
     const bScore = (b.data.tags ?? []).filter((tag) =>
-      currentTags.has(tag)
+      currentTags.has(tag),
     ).length;
-    return bScore - aScore || b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    return (
+      bScore - aScore || b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
   })
   .slice(0, 3);
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
-const articleImage = `${SITE.url}${(await getImage({
-  src: post.data.cardImage,
-  width: 1200,
-  height: 630,
-})).src}`;
+const articleImage = `${SITE.url}${
+  (
+    await getImage({
+      src: post.data.cardImage,
+      width: 1200,
+      height: 630,
+    })
+  ).src
+}`;
 ---
 
 <MainLayout
@@ -71,6 +80,7 @@ const articleImage = `${SITE.url}${(await getImage({
   lang="fr"
   meta={post.data.description}
   socialImage={post.data.cardImage}
+  ogType="article"
   structuredData={buildArticleSchema({
     title: post.data.title,
     description: post.data.description,
@@ -78,6 +88,7 @@ const articleImage = `${SITE.url}${(await getImage({
     image: articleImage,
     author: post.data.author,
     datePublished: post.data.pubDate,
+    locale,
     siteUrl: SITE.url,
   })}
 >

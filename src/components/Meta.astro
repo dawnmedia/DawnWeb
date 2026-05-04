@@ -33,6 +33,7 @@ const {
   structuredData: structuredDataProp,
   socialImage: socialImageProp = OG.image,
   canonicalPath,
+  ogType = "website",
   noindex = false,
 } = Astro.props;
 
@@ -42,6 +43,7 @@ interface Props {
   structuredData?: object | object[];
   socialImage?: ImageMetadata | string;
   canonicalPath?: string;
+  ogType?: "website" | "article";
   noindex?: boolean;
 }
 
@@ -56,11 +58,15 @@ const ogDescription = meta ?? OG.description;
 const socialImage =
   typeof socialImageProp === "string"
     ? new globalThis.URL(socialImageProp, siteUrl).toString()
-    : `${siteUrl}${(await getImage({
-        src: socialImageProp,
-        width: 1200,
-        height: 600,
-      })).src}`;
+    : `${siteUrl}${
+        (
+          await getImage({
+            src: socialImageProp,
+            width: 1200,
+            height: 600,
+          })
+        ).src
+      }`;
 const socialImageType = socialImage.endsWith(".avif")
   ? "image/avif"
   : socialImage.endsWith(".webp")
@@ -83,7 +89,10 @@ const pageStructuredData = structuredDataProp
     ? structuredDataProp
     : [structuredDataProp]
   : [defaultStructuredData];
-const structuredData = [buildOrganizationSchema(siteUrl), ...pageStructuredData];
+const structuredData = [
+  buildOrganizationSchema(siteUrl),
+  ...pageStructuredData,
+];
 
 const alternateLanguageLinks: string = [
   ...createAlternateLinks(fullPath, siteUrl).map(
@@ -133,7 +142,7 @@ const appleTouchIcon = await getImage({
 <!-- Facebook Meta Tags -->
 <meta property="og:locale" content={OPEN_GRAPH_LOCALES[currentLocale]} />
 <meta property="og:url" content={canonical} />
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:site_name" content={SITE.title} />
 <meta property="og:description" content={ogDescription} />

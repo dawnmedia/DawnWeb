@@ -1,6 +1,6 @@
 ---
-title: "5 Signs It’s Time to Rebuild or Redesign Your Website"
-description: "Don’t let an outdated website hold your business back — here are the top signs you need a fresh start."
+title: "5 Signs Your Website Is Losing Good Leads"
+description: "A practical guide to deciding whether your site needs clearer messaging, a focused redesign, SEO-ready foundations, or a full rebuild."
 author: "Andrew"
 role: "CEO & Founder"
 authorImage: "@/images/blog/Andrew2.png"
@@ -9,20 +9,20 @@ pubDate: 2025-05-31
 cardImage: "@/images/web-dev.jpg"
 cardImageAlt: "Team collaborating around laptop"
 readTime: 7
-tags: ["web design", "website redesign", "UX", "business growth"]
+tags: ["web design", "website redesign", "UX", "services"]
 contents: [
-"Your website is often the first impression customers get of your brand. But if it’s outdated or underperforming, it might be hurting more than helping. At Dawn Web, we’ve seen firsthand how a strategic redesign can reignite a business’s online presence and drive results.",
+"A business website does not need to be flashy to work. It needs to make the offer clear, earn trust quickly, load without friction, and make the next step obvious. When those basics break down, good visitors leave before they ever contact you.",
 
-"1. It Looks Outdated\nIf your site hasn’t changed in years, visitors can tell. Web design trends evolve quickly—what looked modern in 2018 can feel obsolete today. A clean, updated interface builds trust and keeps people engaged.",
+"1. Visitors cannot tell what you do in a few seconds\nIf your homepage opens with vague language, scattered services, or a design that hides the real offer, visitors have to work too hard. A focused business website design should make who you help, what you do, and why it matters obvious without extra explanation.",
 
-"2. It’s Not Mobile-Friendly\nMore than 60% of web traffic now comes from mobile devices. If your website doesn’t adapt well to phones and tablets, you’re losing potential customers before they even get started.",
+"2. The site looks fine but does not create inquiries\nA site can look polished and still fail. If people visit but do not book, call, or submit a form, the issue may be the structure: weak proof, unclear service sections, buried calls to action, or missing answers to buyer questions.",
 
-"3. It’s Hard to Update or Manage\nStruggling to update content, fix layout issues, or add features? A modern CMS and modular build make content changes fast and stress-free—something we prioritize in all Dawn Web builds.",
+"3. Mobile visitors get a weaker experience\nMany prospects check your site from a phone first. If buttons wrap badly, pages feel cramped, forms are awkward, or important details disappear on mobile, you are asking serious leads to be patient at the exact moment they are deciding whether to trust you.",
 
-"4. You’re Not Getting the Results You Want\nHigh bounce rates, low conversions, slow performance—these are all red flags. A redesign isn’t just about looks; it’s about improving how your website performs for your business goals.",
+"4. Search foundations were added too late or not at all\nSEO-ready websites are planned before launch. Clean titles, descriptions, headings, internal links, image alt text, structured data, sitemap setup, and crawlable navigation should be part of the build, not a panic task after publishing.",
 
-"5. Your Brand Has Grown, But Your Site Hasn’t\nBusinesses evolve. Maybe you’ve launched new products, shifted your focus, or expanded your audience. If your site no longer reflects who you are or what you offer, it’s time to align your digital presence with your current vision.",
+"5. Your business has changed, but the site still tells the old story\nNew services, a sharper audience, better proof, or a different sales process can all make an old site feel misaligned. A redesign should protect what still works while rebuilding the message and flow around where the business is now.",
 
-"At Dawn Web, we help growing businesses build websites that match their ambition. Whether it’s a full rebuild or a strategic refresh, we make sure your site works for you—not against you."
+"Dawn Web helps service businesses choose the right level of change: a new website, a focused redesign, SEO-ready development, or custom web app functionality. The first step is a clear conversation about what is confusing visitors and what would make the project worth doing."
 ]
 ---

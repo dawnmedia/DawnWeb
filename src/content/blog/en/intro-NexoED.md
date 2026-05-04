@@ -1,25 +1,26 @@
 ---
-title: "Introducing NexoED: The Future of Online Learning, Built by Dawn Web"
-description: "Our newest platform is designed to make learning smarter, more engaging, and accessible for everyone"
+title: "When a Website Needs to Become a Web App"
+description: "How education platforms, portals, dashboards, and workflow tools show when a business has outgrown a static website."
 author: "Andrew"
 role: "Founder, Dawn Web"
 authorImage: "@/images/blog/Andrew2.png"
-authorImageAlt: "Avatar of Breno, founder of Dawn Web"
+authorImageAlt: "Avatar of Andrew, founder of Dawn Web"
 pubDate: 2025-05-30
 cardImage: "@/images/blog/studying.jpg"
 cardImageAlt: "Young adult using a laptop in a modern learning environment"
 readTime: 4
-tags: ["education", "edtech", "startups", "coming soon"]
+tags: ["web apps", "education", "software", "services"]
 contents: [
-  "Dawn Web is proud to announce NexoED — a cutting-edge education platform built to meet the evolving demands of online learning. With accessibility, engagement, and personalization at its core, NexoED is our contribution to making quality education more reachable and impactful.",
-  
-  "NexoED is more than just another learning management system. It's a digital ecosystem where educators can create, share, and manage courses with ease — and where learners can connect with knowledge through immersive, intuitive experiences.",
-  
-  "What sets NexoED apart is its focus on simplicity, scalability, and modern UX. Whether you’re a solo tutor, an academy, or a corporate trainer, our platform adapts to your needs. Our backend is built for performance and analytics, giving you the tools to monitor student progress, gather insights, and optimize your teaching approach.",
-  
-  "We believe the future of learning should be decentralized, flexible, and inspiring. That’s why NexoED supports multimedia content, real-time assessments, and community-driven learning tools to bring education into the next generation.",
-  
-  "Stay tuned for the launch — and be among the first to transform how you teach and learn online. If you're an educator, institution, or entrepreneur in the education space, NexoED is made for you."
-]
+  "A marketing website is the right tool when the main job is to explain an offer and generate inquiries. But some businesses eventually need more: user accounts, dashboards, course flows, bookings, payments, admin tools, content management, analytics, or personalized experiences.",
 
+  "Education platforms make that shift easy to understand. A simple site can describe a course. A web app can manage lessons, track progress, serve multimedia content, support assessments, and give educators a clearer view of what learners need next.",
+
+  "That is the line Dawn Web looks for when planning custom web apps. If your team is using spreadsheets, manual emails, disconnected forms, or repeated admin work to deliver the service, the business may not need another page. It may need a focused tool.",
+
+  "A useful app starts with workflow clarity. Who uses it? What do they need to do? What data matters? Which permissions are required? What should be automated, and what should stay human? Answering those questions early prevents expensive complexity later.",
+
+  "The best custom software does not feel oversized. It gives each user a clearer path: clients can submit, book, learn, or track progress; staff can manage requests; owners can see what is happening without digging through disconnected tools.",
+
+  "Dawn Web builds custom web apps, portals, dashboards, booking tools, and integrations for businesses that have outgrown static pages. The goal is practical software: clear enough to use, stable enough to trust, and shaped around the real workflow."
+]
 ---

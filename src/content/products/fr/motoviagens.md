@@ -9,6 +9,44 @@ main:
   imgCard: "@/images/motoviagens3.jpg"
   imgMain: "@/images/motoviagens3.jpg"
   imgAlt: "Moto Viagens itinéraires et circuits à moto au Brésil"
+showcase:
+  eyebrow: "Plateforme de tourisme moto"
+  audience: "Motards, road-trippers et voyageurs d'aventure"
+  status: "Plateforme en ligne"
+  platforms:
+    - "Application web"
+    - "Mobile first"
+    - "Multilingue"
+  stack:
+    - "Next.js 15"
+    - "Firebase"
+    - "TypeScript"
+    - "Leaflet"
+    - "Google Maps"
+    - "Luna IA"
+  primaryAction:
+    label: "Visiter la Plateforme"
+    url: "https://motoviagens.com.br"
+  secondaryAction:
+    label: "Creer une plateforme voyage"
+    url: "/fr/contact"
+  metrics:
+    - value: "Live"
+      label: "Plateforme operationnelle"
+    - value: "5"
+      label: "Langues prises en charge"
+    - value: "IA"
+      label: "Guidance voyage"
+  screenshots:
+    - image: "@/images/motoviagens3.jpg"
+      alt: "Visuel principal de la plateforme Moto Viagens"
+      label: "Plateforme de tourisme moto en ligne"
+    - image: "@/images/motoviagens2.jpg"
+      alt: "Imagerie de route et destination Moto Viagens"
+      label: "Decouverte de routes et contenus destinations"
+    - image: "@/images/motoviagens1.jpg"
+      alt: "Visuel de reservation aventure Moto Viagens"
+      label: "Parcours de reservation tours et hebergements"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

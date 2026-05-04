@@ -1,0 +1,326 @@
+---
+import { Image } from "astro:assets";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import type { CollectionEntry } from "astro:content";
+import {
+  DEFAULT_LOCALE,
+  localizePath,
+  type Locale,
+} from "@utils/locale";
+
+const { product, productLocale = DEFAULT_LOCALE } = Astro.props;
+const showcase = product.data.showcase;
+const primaryScreenshot = showcase.screenshots[0] ?? {
+  image: product.data.main.imgMain,
+  alt: product.data.main.imgAlt,
+  label: product.data.title,
+};
+const specs = [
+  ...product.data.specificationsLeft,
+  ...(product.data.specificationsRight ?? []),
+];
+
+const labels = {
+  en: {
+    back: "Products",
+    builtFor: "Built for",
+    status: "Status",
+    platforms: "Platforms",
+    stack: "Stack",
+    metrics: "Product signals",
+    capabilities: "Core capabilities",
+    gallery: "Product experience",
+    snapshot: "Technical snapshot",
+    finalTitle: "Ready to build a product this clear?",
+    finalText:
+      "Bring Dawn Web your product idea, existing platform, or rough workflow. We will help shape it into a focused software experience.",
+    secondary: "Talk to Dawn Web",
+  },
+  fr: {
+    back: "Produits",
+    builtFor: "Concu pour",
+    status: "Statut",
+    platforms: "Plateformes",
+    stack: "Stack",
+    metrics: "Signaux produit",
+    capabilities: "Fonctionnalites cles",
+    gallery: "Experience produit",
+    snapshot: "Apercu technique",
+    finalTitle: "Pret a creer un produit aussi clair ?",
+    finalText:
+      "Apportez votre idee, votre plateforme existante ou votre flux de travail. Dawn Web vous aide a le transformer en experience logicielle ciblee.",
+    secondary: "Parler a Dawn Web",
+  },
+  br: {
+    back: "Produtos",
+    builtFor: "Criado para",
+    status: "Status",
+    platforms: "Plataformas",
+    stack: "Tecnologias",
+    metrics: "Sinais do produto",
+    capabilities: "Recursos principais",
+    gallery: "Experiencia do produto",
+    snapshot: "Resumo tecnico",
+    finalTitle: "Pronto para criar um produto tao claro?",
+    finalText:
+      "Traga sua ideia, plataforma existente ou fluxo de trabalho. A Dawn Web ajuda a transformar isso em uma experiencia de software focada.",
+    secondary: "Falar com a Dawn Web",
+  },
+}[productLocale];
+
+interface Props {
+  product: CollectionEntry<"products">;
+  productLocale?: Locale;
+}
+---
+
+<article>
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <a
+      href={localizePath("/products", productLocale)}
+      class="inline-flex items-center rounded-lg text-sm font-bold text-blue-600 outline-none ring-zinc-500 transition hover:text-blue-500 focus-visible:ring dark:text-blue-300 dark:ring-zinc-200"
+    >
+      {labels.back}
+    </a>
+
+    <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          {showcase.eyebrow}
+        </p>
+        <h1
+          class="mt-3 text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-6xl"
+        >
+          {product.data.title}
+        </h1>
+        <p class="mt-4 text-pretty text-xl leading-8 text-neutral-700 dark:text-neutral-300">
+          {product.data.description}
+        </p>
+        <p class="mt-5 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
+          {product.data.main.content}
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span
+            class="rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-bold text-neutral-700 dark:border-neutral-700 dark:text-neutral-300"
+          >
+            {labels.builtFor}: {showcase.audience}
+          </span>
+          <span
+            class="rounded-full bg-blue-600 px-3 py-1.5 text-sm font-bold text-white dark:bg-blue-400 dark:text-neutral-950"
+          >
+            {labels.status}: {showcase.status}
+          </span>
+        </div>
+
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <PrimaryCTA
+            title={showcase.primaryAction.label}
+            url={showcase.primaryAction.url}
+          />
+          {
+            showcase.secondaryAction && (
+              <SecondaryCTA
+                title={showcase.secondaryAction.label}
+                url={showcase.secondaryAction.url}
+              />
+            )
+          }
+        </div>
+      </div>
+
+      <div
+        class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 p-2 shadow-xl shadow-neutral-300/40 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-950/30"
+      >
+        <div class="flex gap-1.5 border-b border-neutral-300 px-2 py-2 dark:border-neutral-700">
+          <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-blue-400"></span>
+        </div>
+        <div class="aspect-[16/10] bg-neutral-200 dark:bg-neutral-800">
+          <Image
+            src={primaryScreenshot.image}
+            alt={primaryScreenshot.alt}
+            class="h-full w-full object-contain"
+            format="avif"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    <div class="grid gap-4 rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800 md:grid-cols-3">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
+          {labels.platforms}
+        </p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {
+            showcase.platforms.map((platform) => (
+              <span class="rounded-full bg-neutral-200 px-3 py-1 text-sm font-bold text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+                {platform}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
+          {labels.stack}
+        </p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {
+            showcase.stack.map((item) => (
+              <span class="rounded-full bg-neutral-200 px-3 py-1 text-sm font-bold text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+                {item}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
+          {labels.metrics}
+        </p>
+        <div class="mt-3 grid grid-cols-2 gap-3">
+          {
+            showcase.metrics.slice(0, 2).map((metric) => (
+              <div>
+                <p class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+                  {metric.value}
+                </p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  {metric.label}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          {labels.capabilities}
+        </p>
+        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
+          {product.data.longDescription.title}
+        </h2>
+        <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
+          {product.data.longDescription.subTitle}
+        </p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        {
+          product.data.descriptionList.map((item) => (
+            <div class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
+              <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+                {item.title}
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+                {item.subTitle}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="flex items-end justify-between gap-6">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          {labels.gallery}
+        </p>
+        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
+          {primaryScreenshot.label}
+        </h2>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-5 lg:grid-cols-2">
+      {
+        showcase.screenshots.map((screenshot) => (
+          <figure class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
+            <div class="aspect-[16/10] bg-neutral-200 dark:bg-neutral-900">
+              <Image
+                src={screenshot.image}
+                alt={screenshot.alt}
+                class="h-full w-full object-contain"
+                format="avif"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="border-t border-neutral-300 px-5 py-4 text-sm font-bold text-neutral-700 dark:border-neutral-700 dark:text-neutral-300">
+              {screenshot.label}
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+      {labels.snapshot}
+    </p>
+    <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {
+        specs.slice(0, 8).map((spec) => (
+          <div class="border-t border-neutral-300 pt-5 dark:border-neutral-700">
+            <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+              {spec.title}
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+              {spec.subTitle}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="rounded-lg bg-neutral-900 p-6 text-neutral-50 dark:bg-neutral-950 md:p-10">
+      <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+        <div>
+          <h2 class="text-balance text-3xl font-bold md:text-4xl">
+            {labels.finalTitle}
+          </h2>
+          <p class="mt-3 max-w-3xl text-pretty text-neutral-300">
+            {labels.finalText}
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row md:justify-end">
+          <PrimaryCTA
+            title={showcase.primaryAction.label}
+            url={showcase.primaryAction.url}
+          />
+          <SecondaryCTA
+            title={labels.secondary}
+            url={localizePath("/contact", productLocale)}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</article>

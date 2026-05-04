@@ -1,0 +1,63 @@
+---
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import ProductShowcaseCard from "./ProductShowcaseCard.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Locale } from "@utils/locale";
+
+const {
+  products,
+  locale,
+  eyebrow,
+  title,
+  subTitle,
+  ctaLabel,
+  ctaUrl,
+  viewLabel,
+} = Astro.props;
+
+interface Props {
+  products: CollectionEntry<"products">[];
+  locale: Locale;
+  eyebrow: string;
+  title: string;
+  subTitle: string;
+  ctaLabel: string;
+  ctaUrl: string;
+  viewLabel: string;
+}
+---
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
+    <div class="max-w-4xl">
+      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+        {eyebrow}
+      </p>
+      <h1
+        class="mt-3 text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-6xl"
+      >
+        {title}
+      </h1>
+      <p class="mt-4 max-w-3xl text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+        {subTitle}
+      </p>
+    </div>
+    <div class="lg:justify-self-end">
+      <PrimaryCTA title={ctaLabel} url={ctaUrl} />
+    </div>
+  </div>
+
+  <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+    {
+      products.map((product) => (
+        <ProductShowcaseCard
+          product={product}
+          productLocale={locale}
+          viewLabel={viewLabel}
+        />
+      ))
+    }
+  </div>
+</section>

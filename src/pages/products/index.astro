@@ -1,12 +1,7 @@
 ---
-// Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
-import CardSmall from "@components/ui/cards/CardSmall.astro";
-import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
-
-// Importing necessary functions from Astro
+import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
@@ -19,22 +14,16 @@ import {
 
 const locale: Locale = "en";
 
-// Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products", (entry: CollectionEntry<"products">) => {
-    return collectionIdStartsWithLocale(entry.id, locale);
-  })
+const products: CollectionEntry<"products">[] = (
+  await getCollection("products", (entry: CollectionEntry<"products">) =>
+    collectionIdStartsWithLocale(entry.id, locale),
+  )
 ).sort(
   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id
+    a.data.main.id - b.data.main.id,
 );
-  
-// Define variables for page content
-const title: string = "Products";
-const subTitle: string =
-  "Explore Dawn Web's website designs and digital products, crafted for businesses that need clear UX, reliable development, and measurable online growth.";
 
-const pageTitle: string = SEO_TITLES.products;
+const pageTitle = SEO_TITLES.products;
 ---
 
 <MainLayout
@@ -44,53 +33,30 @@ const pageTitle: string = SEO_TITLES.products;
     title: pageTitle,
     description: SEO_DESCRIPTIONS.products,
     pathname: "/products",
-    locale: "en",
+    locale,
     siteUrl: SITE.url,
   })}
 >
-  <div
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-      <div class="flex items-center gap-12">
-        <h1
-          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-        >
-          {title}
-        </h1>
-        {
-          subTitle && (
-            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
-              {subTitle}
-            </p>
-          )
-        }
-      </div>
-      <PrimaryCTA title="Contact Us" url="/contact" noArrow={false} />
-    </div>
-    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
-    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-      {
-        product.map((product, index) => {
-          const position = index % 4;
-          if (position === 0 || position === 3) {
-            return <CardSmall product={product} />;
-          } else {
-            return <CardWide product={product} />;
-          }
-        })
-      }
-    </section>
-  </div>
-  <!--Features statistics section-->
-  <FeaturesStatsAlt
-    title="Why Choose Dawn Web?"
-    subTitle="Transform your ideas into a powerful online presence with Dawn Web. Whether you're a startup launching your first website or an established business looking to upgrade your digital foundation, we deliver expert solutions tailored to your goals."
-    benefits={[
-      "High-Performance Websites: We design and develop custom websites that are fast, reliable, and optimized to convert visitors into loyal customers.",
-      "Scalable Development Solutions: Our approach covers everything from simple landing pages to fully integrated platforms—built with modern frameworks, optimized for growth, and easy to maintain.",
-      " Reliable Ongoing Support: From launch to long-term success, we provide continuous maintenance, security updates, and expert assistance to ensure your website performs flawlessly every day.",
-    ]}
+  <ProductShowcaseIndex
+    products={products}
+    locale={locale}
+    eyebrow="Product portfolio"
+    title="Software products built to be understood at a glance"
+    subTitle="Explore Dawn Web's web apps, AI concepts, and digital platforms through clear product positioning, live status, screenshots, and the technical choices behind each build."
+    ctaLabel="Plan a Product"
+    ctaUrl="/contact"
+    viewLabel="View product"
   />
+
+  <div class="opacity-95">
+    <FeaturesStatsAlt
+      title="Why Choose Dawn Web?"
+      subTitle="Transform your ideas into a powerful online presence with Dawn Web. Whether you're a startup launching your first website or an established business looking to upgrade your digital foundation, we deliver expert solutions tailored to your goals."
+      benefits={[
+        "High-performance websites: We design and develop custom websites that are fast, reliable, and optimized to convert visitors into loyal customers.",
+        "Scalable development solutions: Our approach covers everything from simple landing pages to fully integrated platforms, built with modern frameworks, optimized for growth, and easy to maintain.",
+        "Reliable ongoing support: From launch to long-term success, we provide continuous maintenance, security updates, and expert assistance to ensure your website performs flawlessly every day.",
+      ]}
+    />
+  </div>
 </MainLayout>

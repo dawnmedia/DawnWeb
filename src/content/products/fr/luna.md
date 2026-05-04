@@ -8,6 +8,42 @@ main:
   imgCard: "@/images/lunaai.png"
   imgMain: "@/images/lunaai.png"
   imgAlt: "Luna AI, mascotte et assistante numérique pour Dawn Web"
+showcase:
+  eyebrow: "Ecosysteme d'assistant IA"
+  audience: "Produits Dawn Web et leurs utilisateurs"
+  status: "Deploiement progressif"
+  platforms:
+    - "Applications web"
+    - "Outils metier"
+    - "Applications creatives"
+  stack:
+    - "Luna IA"
+    - "Donnees projet"
+    - "Voix de marque"
+    - "Flux assistes"
+  primaryAction:
+    label: "Découvrir Dawn Web"
+    url: "https://dawnwebs.com"
+  secondaryAction:
+    label: "Discuter d'une couche IA"
+    url: "/fr/contact"
+  metrics:
+    - value: "1"
+      label: "Assistant unifie"
+    - value: "Multi"
+      label: "Integrations produit"
+    - value: "IA"
+      label: "Couche de guidance"
+  screenshots:
+    - image: "@/images/lunaai.png"
+      alt: "Mascotte Luna IA et identite produit"
+      label: "Identite IA conviviale pour les produits Dawn Web"
+    - image: "@/images/lunaverbo.png"
+      alt: "Concept d'assistant Luna pour Verbo"
+      label: "Couche de coaching IA pour les produits d'apprentissage"
+    - image: "@/images/lunaweb.png"
+      alt: "Concept d'assistant Luna pour les produits web"
+      label: "Experience assistant sur interfaces web"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

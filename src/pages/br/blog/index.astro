@@ -8,6 +8,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "br";
 
@@ -41,25 +42,21 @@ const secondSubTitle: string =
   "Explore perspectivas sobre estratégia digital, tecnologia e crescimento online para tomar decisões mais claras em um mercado em constante mudança.";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
+const pageDescription: string =
+  "Leia insights da Dawn Web sobre design de sites profissionais, redesign, bases tecnicas de SEO, UX e crescimento digital.";
 ---
 
-<MainLayout lang="pt-BR"
+<MainLayout
+  lang="pt-BR"
   title={pageTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/br/blog",
-    "url": "https://dawnwebs.com/br/blog",
-    "name": "Blog | Dawn Web",
-    "description": "A Dawn Web oferece desenvolvimento web e soluções digitais para empresas que querem crescer online.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://dawnwebs.com/br",
-      "name": "Dawn Web",
-      "description": "A Dawn Web cria sites e soluções digitais sob medida para empresas.",
-    },
-    "inLanguage": "pt-BR"
-  }}
+  meta={pageDescription}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/br/blog",
+    locale,
+    siteUrl: SITE.url,
+  })}
 >
   <section
     class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
@@ -85,7 +82,11 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   >
     <!--Blog posts grid-->
     <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale={locale}/>)}
+      {
+        otherPosts.map((blogEntry) => (
+          <CardBlog blogEntry={blogEntry} blogLocale={locale} />
+        ))
+      }
     </div>
   </section>
   <!--Most recent blog post-->
@@ -111,7 +112,11 @@ const pageTitle: string = `Blog | ${SITE.title}`;
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} insightLocale={locale} label="Ler mais" />
+          <CardInsight
+            insightEntry={insightEntry}
+            insightLocale={locale}
+            label="Ler mais"
+          />
         ))
       }
     </div>

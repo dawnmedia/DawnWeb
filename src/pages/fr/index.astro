@@ -18,16 +18,17 @@ import {
   buildWebSiteSchema,
 } from "@utils/seo";
 
-const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const contactUrl = "/fr/contact";
 const primaryCta = "Planifier une consultation gratuite";
-const pageTitle = "Des sites qui arrêtent de faire perdre de bons prospects | Dawn Web";
+const pageTitle =
+  "Des sites qui arrêtent de faire perdre de bons prospects | Dawn Web";
 const pageDescription =
   "Dawn Web clarifie les sites qui ne convertissent pas, refond les pages qui freinent les demandes et développe des applications web sur mesure pour les entreprises de services en croissance.";
 
 const proofPoints = [
-  "Vous parlez directement avec celui qui construit",
-  "Un périmètre clair avant de dépenser inutilement",
-  "Pensé pour expliquer, charger vite et convertir",
+  { text: "Vous parlez directement avec celui qui construit", icon: "💬" },
+  { text: "Un périmètre clair avant de dépenser inutilement", icon: "🎯" },
+  { text: "Pensé pour expliquer, charger vite et convertir", icon: "⚡" },
 ];
 
 const services = [
@@ -36,24 +37,28 @@ const services = [
     href: "/fr/services",
     description:
       "Quand un prospect ne comprend pas votre valeur en quelques secondes, il part. Obtenez un site clair qui rend votre offre évidente et mène vers la prise de contact.",
+    accent: "from-blue-400 to-blue-600",
   },
   {
     title: "Réparer un site daté ou qui ne convertit pas",
     href: "/fr/services",
     description:
       "Si votre site paraît dépassé, confus ou silencieux, retravaillez le message et le parcours pour que les visiteurs sachent pourquoi vous faire confiance et quoi faire ensuite.",
+    accent: "from-yellow-400 to-orange-500",
   },
   {
     title: "Les bases SEO avant la mise en ligne",
     href: "/fr/services",
     description:
       "Un bon site ne devrait pas être lancé avec les bases de recherche manquantes. Structure, métadonnées, schéma, sitemap et contenu explorable sont intégrés dès le départ.",
+    accent: "from-blue-300 to-blue-500",
   },
   {
     title: "Des applications web pour remplacer les tâches manuelles",
     href: "/fr/services",
     description:
       "Quand les tableurs, formulaires et outils déconnectés ralentissent l'équipe, créez un portail, tableau de bord, système de réservation ou outil interne adapté à votre façon de travailler.",
+    accent: "from-orange-400 to-yellow-400",
   },
 ];
 
@@ -153,28 +158,41 @@ const processSteps = [
     title="Repérez ce qui peut faire perdre des prospects à votre site"
     description="Recevez un avis rapide sur ce qui freine vos visiteurs avant de refaire le site, de le refondre ou de payer plus de trafic."
     btnTitle={primaryCta}
-    url={calendlyUrl}
+    url={contactUrl}
   />
 
   <HeroSection
+    slot="hero"
     title={`Votre site devrait générer des <span class="text-blue-600 dark:text-blue-300">prospects qualifiés</span>, pas laisser de bons visiteurs dans le doute`}
     subTitle="Si votre site paraît correct mais n'explique pas clairement votre offre, ne crée pas assez de confiance ou cache l'étape suivante, vous perdez probablement des demandes. Dawn Web corrige le message, la structure et le développement pour que les bons clients sachent pourquoi vous contacter."
     primaryBtn={primaryCta}
-    primaryBtnURL={calendlyUrl}
+    primaryBtnURL={contactUrl}
     withReview={false}
     src={heroImage}
     alt="Espace de travail Dawn Web pour la création de sites et le développement web"
+    badgeLabel="Studio web piloté par le fondateur"
+    trustItems={[
+      "Piloté par le fondateur",
+      "Sans relais inutiles",
+      "Prêt pour le SEO",
+    ]}
+    containedByHeroBand={true}
   />
 
   <section
-    class="mx-auto max-w-[85rem] px-4 pb-8 sm:px-6 lg:px-8 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 lg:py-10 2xl:max-w-full"
     aria-label="Points de confiance Dawn Web"
   >
-    <div class="grid gap-3 md:grid-cols-3">
+    <div class="grid gap-4 md:grid-cols-3">
       {
         proofPoints.map((point) => (
-          <div class="rounded-lg border border-neutral-300 bg-neutral-100 px-4 py-3 text-sm font-bold text-neutral-800 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
-            {point}
+          <div class="group flex items-center gap-4 rounded-xl border border-neutral-200/60 bg-white/60 px-5 py-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-blue-300/50 hover:shadow-md dark:border-neutral-700/60 dark:bg-neutral-800/60 dark:hover:border-blue-500/30">
+            <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-lg dark:bg-blue-900/30">
+              {point.icon}
+            </span>
+            <span class="text-sm font-bold text-neutral-800 dark:text-neutral-200">
+              {point.text}
+            </span>
           </div>
         ))
       }
@@ -182,12 +200,19 @@ const processSteps = [
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14 2xl:max-w-full"
+    data-reveal
   >
     <div class="max-w-3xl">
-      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-        Services
-      </p>
+      <div
+        class="mb-2 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+        <span
+          class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300"
+          >Services</span
+        >
+      </div>
       <h2
         class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
@@ -200,79 +225,147 @@ const processSteps = [
       </p>
     </div>
 
-    <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       {
-        services.map((service) => (
+        services.map((service, i) => (
           <a
             href={service.href}
-            class="group flex h-full flex-col rounded-lg border border-neutral-300 bg-neutral-100 p-5 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+            class="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/50 hover:shadow-xl dark:border-neutral-700/60 dark:bg-neutral-800/70 dark:hover:border-blue-500/30"
           >
+            <div
+              class={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${service.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
+            />
+            <span class="mb-4 text-xs font-bold text-neutral-400 dark:text-neutral-500">
+              0{i + 1}
+            </span>
             <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
               {service.title}
             </h3>
-            <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+            <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
               {service.description}
             </p>
-            <p class="mt-auto pt-5 text-sm font-bold text-blue-600 transition group-hover:translate-x-1 dark:text-blue-300">
+            <p class="mt-auto flex items-center gap-1 pt-5 text-sm font-bold text-blue-600 transition-transform duration-300 group-hover:translate-x-1 dark:text-blue-300">
               En savoir plus
+              <svg
+                class="size-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m9 18 6-6-6-6"
+                />
+              </svg>
             </p>
           </a>
         ))
       }
     </div>
 
-    <div class="mt-8">
-      <PrimaryCTA title={primaryCta} url={calendlyUrl} />
+    <div class="mt-10">
+      <PrimaryCTA title={primaryCta} url={contactUrl} />
     </div>
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="relative overflow-hidden bg-gradient-to-br from-blue-800 via-blue-900 to-[#0a1a3c] py-12 lg:py-16"
+    data-reveal
   >
-    <div class="grid gap-8 border-y border-neutral-300 py-10 dark:border-neutral-700 md:grid-cols-2 lg:py-14">
-      <div>
-        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-          Piloté par le fondateur, sans brouillard d'agence
-        </p>
-        <h2
-          class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-        >
-          Pas de relais inutiles. Pas de filtre commercial. Des décisions claires.
-        </h2>
-      </div>
-      <div>
-        <p class="text-pretty text-neutral-700 dark:text-neutral-300">
-          Beaucoup de projets d'agence ralentissent parce que la personne qui
-          écoute vos objectifs n'est pas celle qui façonne le travail. Avec Dawn
-          Web, vous travaillez directement avec Andrew Henrice, le développeur
-          full-stack qui pilote la stratégie, l'architecture et la livraison.
-        </p>
-        <p class="mt-4 text-pretty text-neutral-700 dark:text-neutral-300">
-          Résultat : moins de pertes d'information, des décisions plus rapides
-          et un site ou une application construit autour du résultat attendu,
-          pas d'un forfait générique.
-        </p>
-        <div class="mt-6 grid gap-x-6 gap-y-4 sm:grid-cols-2">
-          {
-            founderAdvantages.map((advantage) => (
-              <div class="border-t border-neutral-300 pt-4 text-sm font-bold text-neutral-800 dark:border-neutral-700 dark:text-neutral-200">
-                {advantage}
-              </div>
-            ))
-          }
+    <div
+      class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-yellow-400/5 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-blue-400/10 blur-3xl"
+    >
+    </div>
+    <div
+      class="relative mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 2xl:max-w-full"
+    >
+      <div class="relative grid gap-10 md:grid-cols-2 lg:gap-16">
+        <div>
+          <div
+            class="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-yellow-400"></span>
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-blue-100"
+              >Piloté par le fondateur, sans brouillard d'agence</span
+            >
+          </div>
+          <h2
+            class="mt-3 text-balance text-2xl font-bold tracking-tight text-white md:text-4xl md:leading-tight"
+          >
+            Pas de relais inutiles. Pas de filtre commercial. Des décisions
+            claires.
+          </h2>
+        </div>
+        <div>
+          <p class="text-pretty text-blue-100/80">
+            Beaucoup de projets d'agence ralentissent parce que la personne qui
+            écoute vos objectifs n'est pas celle qui façonne le travail. Avec
+            Dawn Web, vous travaillez directement avec Andrew Henrice, le
+            développeur full-stack qui pilote la stratégie, l'architecture et la
+            livraison.
+          </p>
+          <p class="mt-4 text-pretty text-blue-100/80">
+            Résultat : moins de pertes d'information, des décisions plus rapides
+            et un site ou une application construit autour du résultat attendu,
+            pas d'un forfait générique.
+          </p>
+          <div
+            class="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2"
+            data-stagger-parent
+          >
+            {
+              founderAdvantages.map((advantage) => (
+                <div
+                  data-stagger-child
+                  class="flex items-start gap-3 border-t border-white/10 pt-4"
+                >
+                  <svg
+                    class="mt-0.5 size-5 shrink-0 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-sm font-semibold text-white/90">
+                    {advantage}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 2xl:max-w-full"
+    data-reveal
   >
-    <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+    <div
+      class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
+    >
       <div class="max-w-3xl">
-        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-          Portfolio
-        </p>
+        <div
+          class="mb-2 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+          <span
+            class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300"
+            >Portfolio</span
+          >
+        </div>
         <h2
           class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
         >
@@ -283,34 +376,51 @@ const processSteps = [
           que le produit devait résoudre.
         </p>
       </div>
-      <PrimaryCTA title={primaryCta} url={calendlyUrl} />
+      <PrimaryCTA title={primaryCta} url={contactUrl} />
     </div>
 
-    <div class="mt-8 grid gap-5 md:grid-cols-2">
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
       {
         projects.map((project) => (
           <a
             href={project.href}
-            class="group overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+            class="group relative overflow-hidden rounded-xl border border-neutral-200/60 bg-white/70 shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl dark:border-neutral-700/60 dark:bg-neutral-800/70"
           >
-            <div class="aspect-[16/9] overflow-hidden bg-neutral-300 dark:bg-neutral-900">
+            <div class="aspect-[16/9] overflow-hidden bg-neutral-200 dark:bg-neutral-900">
               <Image
                 src={project.image}
                 alt={project.imageAlt}
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </div>
-            <div class="p-5">
+            <div class="relative p-6">
               <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
                 {project.title}
               </h3>
-              <p class="mt-3 text-sm font-bold leading-6 text-neutral-800 dark:text-neutral-200">
+              <p class="mt-2 text-sm font-semibold leading-6 text-neutral-700 dark:text-neutral-300">
                 {project.description}
               </p>
-              <p class="mt-2 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+              <p class="mt-2 text-sm leading-6 text-neutral-500 dark:text-neutral-400">
                 {project.context}
               </p>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-600 transition-transform duration-300 group-hover:translate-x-1 dark:text-blue-300">
+                Voir le projet
+                <svg
+                  class="size-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9 18 6-6-6-6"
+                  />
+                </svg>
+              </span>
             </div>
           </a>
         ))
@@ -319,12 +429,19 @@ const processSteps = [
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 2xl:max-w-full"
+    data-reveal
   >
     <div class="max-w-3xl">
-      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-        Processus
-      </p>
+      <div
+        class="mb-2 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+        <span
+          class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300"
+          >Processus</span
+        >
+      </div>
       <h2
         class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
@@ -332,43 +449,87 @@ const processSteps = [
       </h2>
     </div>
 
-    <div class="mt-8 grid gap-4 md:grid-cols-4">
-      {
-        processSteps.map((step, index) => (
-          <div class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
-            <p class="text-sm font-bold text-blue-600 dark:text-blue-300">
-              0{index + 1}
-            </p>
-            <h3 class="mt-3 text-lg font-bold text-neutral-800 dark:text-neutral-200">
-              {step.title}
-            </h3>
-            <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
-              {step.description}
-            </p>
-          </div>
-        ))
-      }
+    <div class="relative mt-12">
+      <div
+        class="absolute left-0 right-0 top-8 hidden h-0.5 bg-gradient-to-r from-blue-400 via-yellow-400 to-blue-400 opacity-20 md:block"
+        data-process-line
+      >
+      </div>
+      <div class="grid gap-6 md:grid-cols-4" data-stagger-parent>
+        {
+          processSteps.map((step, index) => (
+            <div data-stagger-child class="relative">
+              <div class="relative z-10 mb-6 hidden md:block">
+                <div
+                  data-process-dot
+                  class="mx-auto flex size-16 items-center justify-center rounded-full border-2 border-blue-400/30 bg-white shadow-lg dark:border-blue-500/30 dark:bg-neutral-800"
+                >
+                  <span class="bg-gradient-to-br from-blue-500 to-blue-700 bg-clip-text text-xl font-black text-transparent">
+                    0{index + 1}
+                  </span>
+                </div>
+              </div>
+              <div class="rounded-xl border border-neutral-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md dark:border-neutral-700/60 dark:bg-neutral-800/70">
+                <span class="mb-3 inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-600 dark:bg-blue-900/30 dark:text-blue-300 md:hidden">
+                  0{index + 1}
+                </span>
+                <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+                  {step.title}
+                </h3>
+                <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="relative overflow-hidden bg-white/50 py-12 dark:bg-neutral-900/20 lg:py-16"
+    data-reveal
   >
-    <div class="mx-auto max-w-4xl text-center">
-      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-        Confiance
-      </p>
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.03]"
+      style="background-image: url('/banner-pattern.svg'); background-size: cover;"
+    >
+    </div>
+    <div
+      class="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-blue-400/10 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-yellow-400/10 blur-3xl"
+    >
+    </div>
+    <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div
+        class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+        <span
+          class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300"
+          >Confiance</span
+        >
+      </div>
       <h2
         class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
-        Beaucoup de sites ont l'air corrects. Le problème, c'est ce qu'ils ne disent pas.
+        Beaucoup de sites ont l'air corrects. Le problème, c'est ce qu'ils ne
+        disent pas.
       </h2>
-      <p class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+      <p
+        class="mt-6 text-pretty text-lg leading-8 text-neutral-600 dark:text-neutral-400"
+      >
         Un site peut sembler professionnel et perdre quand même des prospects.
         Cela arrive quand l'offre est floue, les preuves sont faibles, le CTA
         est caché ou la page répond aux mauvaises questions.
       </p>
-      <p class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+      <p
+        class="mt-4 text-pretty text-lg leading-8 text-neutral-600 dark:text-neutral-400"
+      >
         Dawn Web construit d'abord autour de la clarté d'achat. Copywriting, UX,
         SEO, performance et fonctionnalités sur mesure ont le même rôle : aider
         le bon visiteur à se sentir compris et prêt à engager la conversation.
@@ -379,21 +540,51 @@ const processSteps = [
   <FAQ title="Questions<br />fréquentes" faqs={faqs} />
 
   <section
-    class="mx-auto max-w-[85rem] px-4 pb-24 pt-10 sm:px-6 lg:px-8 lg:pt-14"
+    class="relative overflow-hidden bg-gradient-to-br from-blue-800 via-blue-900 to-[#08162f] px-4 py-14 text-center sm:px-6 lg:px-8 lg:py-20"
+    data-reveal
   >
-    <div class="bg-neutral-900 px-6 py-12 text-center dark:bg-neutral-100 md:px-10 md:py-16">
+    <div
+      class="absolute -left-32 -top-32 h-64 w-64 rounded-full bg-blue-400/10 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute -bottom-32 -right-32 h-64 w-64 rounded-full bg-yellow-400/5 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute inset-0 opacity-[0.02]"
+      style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 24px 24px;"
+    >
+    </div>
+    <div class="relative mx-auto max-w-[85rem] 2xl:max-w-full">
       <h2
-        class="mx-auto max-w-3xl text-balance text-3xl font-bold tracking-tight text-neutral-50 dark:text-neutral-900 md:text-5xl"
+        class="mx-auto max-w-3xl text-balance text-3xl font-bold tracking-tight text-white md:text-5xl"
       >
         Ne laissez plus des pages floues faire partir de bons visiteurs.
       </h2>
-      <p class="mx-auto mt-4 max-w-2xl text-pretty text-neutral-300 dark:text-neutral-700">
+      <p class="mx-auto mt-5 max-w-2xl text-pretty text-blue-100/70">
         Planifiez une consultation gratuite et repartez avec une prochaine étape
         concrète pour votre site, votre refonte, votre build SEO-ready ou votre
         application web sur mesure.
       </p>
-      <div class="mt-8">
-        <PrimaryCTA title={primaryCta} url={calendlyUrl} />
+      <div class="mt-10">
+        <a
+          href={contactUrl}
+          class="group inline-flex items-center justify-center gap-x-2 rounded-lg bg-yellow-400 px-8 py-4 text-sm font-bold text-blue-900 transition-all duration-300 hover:bg-yellow-300 hover:shadow-lg hover:shadow-yellow-400/25"
+        >
+          {primaryCta}
+          <svg
+            class="size-4 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m9 18 6-6-6-6"></path></svg
+          >
+        </a>
       </div>
     </div>
   </section>

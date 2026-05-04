@@ -16,10 +16,13 @@ import { buildArticleSchema } from "@utils/seo";
 export async function getStaticPaths() {
   const routeLocale: Locale = "br";
   const insightPosts = await getCollection("insights", ({ id }) =>
-    collectionIdStartsWithLocale(id, routeLocale)
+    collectionIdStartsWithLocale(id, routeLocale),
   );
   return insightPosts.map((post) => {
-    const slugWithoutLang = stripLocaleFromSlug(getContentSlug(post), routeLocale);
+    const slugWithoutLang = stripLocaleFromSlug(
+      getContentSlug(post),
+      routeLocale,
+    );
     return {
       params: { slug: slugWithoutLang },
       props: { post },
@@ -33,11 +36,15 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
-const articleImage = `${SITE.url}${(await getImage({
-  src: post.data.cardImage,
-  width: 1200,
-  height: 630,
-})).src}`;
+const articleImage = `${SITE.url}${
+  (
+    await getImage({
+      src: post.data.cardImage,
+      width: 1200,
+      height: 630,
+    })
+  ).src
+}`;
 ---
 
 <MainLayout
@@ -45,12 +52,14 @@ const articleImage = `${SITE.url}${(await getImage({
   lang="pt-BR"
   meta={post.data.description}
   socialImage={post.data.cardImage}
+  ogType="article"
   structuredData={buildArticleSchema({
     title: post.data.title,
     description: post.data.description,
     pathname: Astro.url.pathname,
     image: articleImage,
     author: SITE.author,
+    locale: "br",
     siteUrl: SITE.url,
   })}
 >

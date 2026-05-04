@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import Icon from "@components/ui/icons/Icon.astro";
+import type { CollectionEntry } from "astro:content";
+import {
+  DEFAULT_LOCALE,
+  getContentSlug,
+  localizePath,
+  stripLocaleFromSlug,
+  type Locale,
+} from "@utils/locale";
+
+const {
+  product,
+  productLocale = DEFAULT_LOCALE,
+  viewLabel = "View product",
+} = Astro.props;
+const slug = stripLocaleFromSlug(getContentSlug(product), productLocale);
+const href = localizePath(`/products/${slug}/`, productLocale);
+const heroImage =
+  product.data.showcase.screenshots[0]?.image ?? product.data.main.imgCard;
+const heroAlt =
+  product.data.showcase.screenshots[0]?.alt ?? product.data.main.imgAlt;
+
+interface Props {
+  product: CollectionEntry<"products">;
+  productLocale?: Locale;
+  viewLabel?: string;
+}
+---
+
+<a
+  href={href}
+  data-astro-prefetch
+  class="group flex h-full flex-col overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 outline-none ring-zinc-500 transition duration-300 hover:border-blue-400 hover:bg-neutral-50 focus-visible:ring dark:border-neutral-700 dark:bg-neutral-800 dark:ring-zinc-200 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+>
+  <div class="aspect-[16/10] overflow-hidden bg-neutral-300 dark:bg-neutral-900">
+    <Image
+      src={heroImage}
+      alt={heroAlt}
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      format="avif"
+      loading="lazy"
+    />
+  </div>
+  <div class="flex flex-1 flex-col p-5">
+    <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
+      <span class="text-blue-600 dark:text-blue-300">
+        {product.data.showcase.eyebrow}
+      </span>
+      <span
+        class="rounded-full border border-neutral-300 px-2.5 py-1 text-neutral-700 dark:border-neutral-700 dark:text-neutral-300"
+      >
+        {product.data.showcase.status}
+      </span>
+    </div>
+
+    <h2 class="mt-4 text-xl font-bold text-neutral-800 dark:text-neutral-200">
+      {product.data.title}
+    </h2>
+    <p class="mt-2 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+      {product.data.description}
+    </p>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      {
+        product.data.showcase.platforms.slice(0, 3).map((platform) => (
+          <span class="rounded-full bg-neutral-200 px-2.5 py-1 text-xs font-bold text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+            {platform}
+          </span>
+        ))
+      }
+    </div>
+
+    <p
+      class="mt-auto inline-flex items-center gap-x-1 pt-6 text-sm font-bold text-blue-600 dark:text-blue-300"
+    >
+      {viewLabel}
+      <Icon name="arrowRight" />
+    </p>
+  </div>
+</a>

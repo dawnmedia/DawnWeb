@@ -8,6 +8,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "fr";
 
@@ -41,25 +42,21 @@ const secondSubTitle: string =
   "Plongez dans notre section analyses pour bénéficier d’expertises et de points de vue éclairés sur le secteur du développement. Des tendances du marché aux solutions innovantes, nos analyses vous offrent des perspectives précieuses pour évoluer dans un environnement en constante mutation.";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
+const pageDescription: string =
+  "Lisez les conseils de Dawn Web sur la conception de sites professionnels, la refonte, le SEO technique, l'UX et la croissance digitale.";
 ---
 
-<MainLayout lang="fr"
+<MainLayout
+  lang="fr"
   title={pageTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/fr/blog",
-    "url": "https://dawnwebs.com/fr/blog",
-    "name": "Blog | Dawn Web",
-    "description": "Dawn Web propose des services de développement web de premier ordre et des solutions expertes pour répondre à tous vos besoins de projet.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://dawnwebs.com/fr",
-      "name": "Dawn Web",
-      "description": "Dawn Web propose des services de développement web de premier ordre et des solutions expertes pour répondre à tous vos besoins de projet.",
-    },
-    "inLanguage": "fr"
-  }}
+  meta={pageDescription}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/fr/blog",
+    locale,
+    siteUrl: SITE.url,
+  })}
 >
   <section
     class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
@@ -85,7 +82,11 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   >
     <!--Blog posts grid-->
     <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale={locale}/>)}
+      {
+        otherPosts.map((blogEntry) => (
+          <CardBlog blogEntry={blogEntry} blogLocale={locale} />
+        ))
+      }
     </div>
   </section>
   <!--Most recent blog post-->

@@ -2,8 +2,13 @@
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import ContactGateway from "@components/sections/contact/ContactGateway.astro";
+import { SITE } from "@data/constants";
+import { buildWebPageSchema } from "@utils/seo";
 
 const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const pageTitle = "Contact | Dawn Web";
+const pageDescription =
+  "Contactez Dawn Web pour planifier un site web, une refonte, un site optimisé SEO ou une application web personnalisée.";
 const budgetRanges = [
   "Under $1,000",
   "$1,000-$3,000",
@@ -15,26 +20,16 @@ const budgetRanges = [
 
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
 <MainLayout
-  title="Contact | Dawn Web"
-  meta="Contactez Dawn Web pour planifier un site web, une refonte, un site optimisé SEO ou une application web personnalisée."
+  title={pageTitle}
+  meta={pageDescription}
   lang="fr"
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://dawnwebs.com/fr/contact",
-    url: "https://dawnwebs.com/fr/contact",
-    name: "Nous Contacter | Dawn Web",
-    description:
-      "Contactez Dawn Web pour planifier un site web, une refonte, un site optimisé SEO ou une application web personnalisée.",
-    isPartOf: {
-      "@type": "WebSite",
-      url: "https://dawnwebs.com/fr/",
-      name: "Dawn Web",
-      description:
-        "Dawn Web crée des sites web remarquables et propose des services experts en marketing en ligne pour aider les entreprises à prospérer.",
-    },
-    inLanguage: "fr",
-  }}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/fr/contact",
+    locale: "fr",
+    siteUrl: SITE.url,
+  })}
 >
   <ContactGateway
     eyebrow="Consultation web gratuite"

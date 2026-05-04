@@ -9,6 +9,44 @@ main:
   imgCard: "@/images/motoviagens3.jpg"
   imgMain: "@/images/motoviagens3.jpg"
   imgAlt: "Moto Viagens: rotas e passeios de moto no Brasil"
+showcase:
+  eyebrow: "Plataforma de mototurismo"
+  audience: "Motociclistas, viajantes de estrada e aventureiros"
+  status: "Plataforma no ar"
+  platforms:
+    - "Aplicativo web"
+    - "Mobile first"
+    - "Multilingue"
+  stack:
+    - "Next.js 15"
+    - "Firebase"
+    - "TypeScript"
+    - "Leaflet"
+    - "Google Maps"
+    - "Luna IA"
+  primaryAction:
+    label: "Visitar Plataforma"
+    url: "https://motoviagens.com.br"
+  secondaryAction:
+    label: "Criar plataforma de viagem"
+    url: "/br/contact"
+  metrics:
+    - value: "Live"
+      label: "Plataforma operacional"
+    - value: "5"
+      label: "Idiomas suportados"
+    - value: "IA"
+      label: "Orientacao de viagem"
+  screenshots:
+    - image: "@/images/motoviagens3.jpg"
+      alt: "Visual principal da plataforma Moto Viagens"
+      label: "Plataforma de mototurismo no ar"
+    - image: "@/images/motoviagens2.jpg"
+      alt: "Imagens de rota e destino da Moto Viagens"
+      label: "Descoberta de rotas e conteudo de destinos"
+    - image: "@/images/motoviagens1.jpg"
+      alt: "Visual de reserva de aventura da Moto Viagens"
+      label: "Fluxo de reserva de tours e hospedagens"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"

@@ -3,16 +3,26 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import type { ImageMetadata } from "astro";
+import motoViagens from "@images/motoviagens3.jpg";
+import verbo from "@images/verbo_app_card.jpg";
+import triplut from "@images/triplut6.jpg";
 
 const {
   eyebrow,
   title,
   description,
+  outcome,
+  bestFor,
   image,
   imageAlt,
   benefits,
   process,
   relatedServices,
+  proofPoints = [
+    "Direct access to the developer shaping the work.",
+    "Clear scope and tradeoffs before the build starts.",
+    "Launch-ready details handled with the main experience.",
+  ],
 } = Astro.props;
 
 interface LinkItem {
@@ -25,113 +35,273 @@ interface Props {
   eyebrow: string;
   title: string;
   description: string;
+  outcome?: string;
+  bestFor?: string;
   image: ImageMetadata;
   imageAlt: string;
   benefits: string[];
   process: string[];
   relatedServices: LinkItem[];
+  proofPoints?: string[];
 }
+
+const contactUrl = "/contact";
+const productProof = [
+  {
+    title: "Moto Viagens",
+    href: "/products/motoviagens",
+    description:
+      "A live travel platform with booking-oriented flows, route content, multilingual support, and AI-assisted discovery.",
+    image: motoViagens,
+    imageAlt: "Moto Viagens Brazilian motorcycle routes and tours",
+  },
+  {
+    title: "Verbo",
+    href: "/products/verboai",
+    description:
+      "An AI language-learning product with coaching, adaptive study flows, subscriptions, and mobile support.",
+    image: verbo,
+    imageAlt: "Verbo AI language learning platform interface",
+  },
+  {
+    title: "Triplut",
+    href: "/products/triplut",
+    description:
+      "A travel-planning concept for routes, budgets, experiences, and AI guidance in one clearer flow.",
+    image: triplut,
+    imageAlt: "Illustration of Triplut AI travel platform",
+  },
+];
 ---
 
-<section
-  class="mx-auto grid max-w-[85rem] gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center lg:px-8 2xl:max-w-full"
->
-  <div>
-    <p class="text-sm font-semibold uppercase text-blue-500">{eyebrow}</p>
-    <h1
-      class="mt-3 text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl"
-    >
-      {title}
-    </h1>
-    <p
-      class="mt-4 text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-400"
-    >
-      {description}
-    </p>
-    <div class="mt-8 grid gap-3 sm:inline-flex">
-      <PrimaryCTA
-        title="Schedule a Free Consultation"
-        url="https://calendly.com/contact-dawnwebs/30min"
-      />
-      <SecondaryCTA title="See Projects" url="/products" />
-    </div>
-  </div>
-  <Image
-    src={image}
-    alt={imageAlt}
-    class="h-80 w-full rounded-lg object-cover md:h-full md:min-h-[320px]"
-    format="avif"
-    loading="eager"
-  />
-</section>
-
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-full"
->
-  <div class="grid gap-8 lg:grid-cols-3 lg:items-start">
-    <div class="space-y-10 lg:col-span-2">
+<article>
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
       <div>
-        <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          {eyebrow}
+        </p>
+        <h1
+          class="mt-3 text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-6xl"
+        >
+          {title}
+        </h1>
+        <p class="mt-4 text-pretty text-xl leading-8 text-neutral-700 dark:text-neutral-300">
+          {description}
+        </p>
+        {
+          outcome && (
+            <p class="mt-5 rounded-lg border border-neutral-300 bg-neutral-100 p-4 text-base font-bold leading-7 text-neutral-800 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
+              {outcome}
+            </p>
+          )
+        }
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <PrimaryCTA
+            title="Book a free consultation"
+            url={contactUrl}
+          />
+          <SecondaryCTA title="See product work" url="/products" />
+        </div>
+      </div>
+
+      <div
+        class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 p-2 shadow-xl shadow-neutral-300/40 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-950/30"
+      >
+        <Image
+          src={image}
+          alt={imageAlt}
+          class="aspect-[16/11] w-full rounded-md object-cover"
+          format="avif"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    <div class="grid gap-4 rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800 md:grid-cols-4">
+      {
+        bestFor && (
+          <div class="md:col-span-1">
+            <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
+              Best for
+            </p>
+            <p class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">
+              {bestFor}
+            </p>
+          </div>
+        )
+      }
+      <div class={bestFor ? "grid gap-3 md:col-span-3 md:grid-cols-3" : "grid gap-3 md:col-span-4 md:grid-cols-3"}>
+        {
+          proofPoints.map((point) => (
+            <p class="border-t border-neutral-300 pt-3 text-sm font-bold leading-6 text-neutral-800 dark:border-neutral-700 dark:text-neutral-200 md:border-t-0 md:pt-0">
+              {point}
+            </p>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          Deliverables
+        </p>
+        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
           What we build into the service
         </h2>
-        <ul
-          class="mt-5 grid gap-4 text-neutral-700 dark:text-neutral-300 md:grid-cols-3"
-        >
-          {
-            benefits.map((benefit) => (
-              <li class="flex min-h-40 rounded-lg border border-neutral-300 bg-neutral-100 p-5 leading-7 dark:border-neutral-700 dark:bg-neutral-800">
-                {benefit}
-              </li>
-            ))
-          }
-        </ul>
+        <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
+          The work is planned around the outcome your business needs, not a generic checklist.
+        </p>
       </div>
-
-      <div class="border-t border-neutral-300 pt-8 dark:border-neutral-700">
-        <div
-          class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
-        >
-          <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-            Related services
-          </h2>
-          <SecondaryCTA title="View all services" url="/services" />
-        </div>
-        <div class="mt-5 grid gap-4 md:grid-cols-3">
-          {
-            relatedServices.map((service) => (
-              <a
-                href={service.href}
-                class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 transition hover:border-blue-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
-              >
-                <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-                  {service.title}
-                </h3>
-                <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
-                  {service.description}
-                </p>
-              </a>
-            ))
-          }
-        </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        {
+          benefits.map((benefit) => (
+            <div class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
+              <p class="text-sm leading-7 text-neutral-700 dark:text-neutral-300">
+                {benefit}
+              </p>
+            </div>
+          ))
+        }
       </div>
     </div>
+  </section>
 
-    <aside class="lg:sticky lg:top-24">
-      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-        How the project moves
-      </h2>
-      <ol class="mt-5 space-y-4 text-neutral-700 dark:text-neutral-300">
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          Process
+        </p>
+        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
+          How the project moves
+        </h2>
+      </div>
+      <ol class="grid gap-4 md:grid-cols-3">
         {
           process.map((step, index) => (
-            <li class="grid grid-cols-[2.5rem_1fr] gap-4 rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
-              <span class="flex size-10 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-neutral-50">
-                {index + 1}
-              </span>
-              <span class="pt-1 leading-7">{step}</span>
+            <li class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
+              <p class="text-sm font-bold text-blue-600 dark:text-blue-300">
+                0{index + 1}
+              </p>
+              <p class="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
+                {step}
+              </p>
             </li>
           ))
         }
       </ol>
-    </aside>
-  </div>
-</section>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="max-w-3xl">
+      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+        Proof
+      </p>
+      <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
+        Product thinking behind the service work
+      </h2>
+      <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
+        Dawn Web applies the same clarity, interface, and technical judgment used in product builds to service projects.
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-5 md:grid-cols-3">
+      {
+        productProof.map((item) => (
+          <a
+            href={item.href}
+            class="group overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 outline-none ring-zinc-500 transition duration-300 hover:border-blue-400 hover:bg-neutral-50 focus-visible:ring dark:border-neutral-700 dark:bg-neutral-800 dark:ring-zinc-200 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-neutral-300 dark:bg-neutral-900">
+              <Image
+                src={item.image}
+                alt={item.imageAlt}
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                format="avif"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-5">
+              <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+                {item.title}
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
+                {item.description}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="grid gap-8 lg:grid-cols-[1fr_2fr]">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          Related
+        </p>
+        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
+          Services that fit around this one
+        </h2>
+        <div class="mt-6">
+          <SecondaryCTA title="View all services" url="/services" />
+        </div>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        {
+          relatedServices.map((service) => (
+            <a
+              href={service.href}
+              class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 outline-none ring-zinc-500 transition hover:border-blue-400 hover:bg-neutral-50 focus-visible:ring dark:border-neutral-700 dark:bg-neutral-800 dark:ring-zinc-200 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
+            >
+              <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+                {service.title}
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                {service.description}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="rounded-lg bg-neutral-900 p-6 text-neutral-50 dark:bg-neutral-950 md:p-10">
+      <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+        <div>
+          <h2 class="text-balance text-3xl font-bold md:text-4xl">
+            Ready to make the next step clearer?
+          </h2>
+          <p class="mt-3 max-w-3xl text-pretty text-neutral-300">
+            Bring the current site, rough idea, or workflow. We will help you decide what is worth building first.
+          </p>
+        </div>
+        <PrimaryCTA title="Book a free consultation" url={contactUrl} />
+      </div>
+    </div>
+  </section>
+</article>

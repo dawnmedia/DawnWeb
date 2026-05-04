@@ -1,6 +1,6 @@
 ---
-title: "5 sinais de que está na hora de reconstruir ou redesenhar seu site"
-description: "Não deixe um site desatualizado limitar seu negócio. Veja os principais sinais de que sua presença online precisa de uma nova fase."
+title: "5 sinais de que seu site esta perdendo bons contatos"
+description: "Um guia pratico para decidir se seu site precisa de mensagem mais clara, redesign focado, bases de SEO ou uma reconstrução completa."
 author: "Andrew"
 role: "Fundador e CEO"
 authorImage: "@/images/blog/Andrew2.png"
@@ -9,20 +9,20 @@ pubDate: 2025-05-31
 cardImage: "@/images/web-dev.jpg"
 cardImageAlt: "Equipe colaborando em volta de um notebook"
 readTime: 7
-tags: ["web design", "redesign de site", "UX", "crescimento"]
+tags: ["web design", "redesign de site", "UX", "servicos"]
 contents: [
-"Seu site costuma ser a primeira impressão que clientes têm da sua marca. Se ele está desatualizado, lento ou difícil de usar, pode estar atrapalhando mais do que ajudando. Na Dawn Web, vemos como um redesign estratégico pode renovar a presença online de uma empresa e gerar resultados melhores.",
+"Um site de negocio nao precisa ser chamativo para funcionar. Ele precisa explicar a oferta, gerar confianca rapido, carregar sem atrito e deixar o proximo passo claro. Quando essas bases falham, bons visitantes saem antes de entrar em contato.",
 
-"1. O visual parece antigo\nSe o site não muda há anos, os visitantes percebem. Tendências de design evoluem rápido, e o que parecia moderno em 2018 pode parecer ultrapassado hoje. Uma interface limpa e atual transmite confiança e mantém as pessoas engajadas.",
+"1. Visitantes nao entendem o que voce faz em poucos segundos\nSe a pagina inicial abre com uma mensagem vaga, servicos espalhados ou um design que esconde a oferta principal, o visitante precisa se esforcar demais. Um bom site profissional deixa claro quem voce ajuda, o que oferece e por que isso importa.",
 
-"2. Ele não funciona bem no celular\nGrande parte do tráfego web vem de dispositivos móveis. Se seu site não se adapta bem a celulares e tablets, você perde clientes em potencial antes mesmo da primeira conversa.",
+"2. O site parece bom, mas nao gera contatos\nUm site pode parecer bonito e ainda assim nao converter. Se as pessoas visitam mas nao agendam, ligam ou enviam formulario, o problema pode estar na estrutura: pouca prova, servicos confusos, chamadas para acao escondidas ou respostas importantes ausentes.",
 
-"3. Atualizar conteúdo é difícil\nSe mudar textos, corrigir layouts ou adicionar recursos virou dor de cabeça, talvez seja hora de modernizar a base do site. Um CMS bem estruturado e componentes modulares tornam a rotina muito mais simples.",
+"3. A experiencia no celular e mais fraca\nMuitos clientes em potencial acessam primeiro pelo telefone. Se botoes quebram, paginas ficam apertadas, formularios sao dificeis ou informacoes importantes somem, voce perde confianca justamente no momento da decisao.",
 
-"4. Os resultados não acompanham suas metas\nTaxas de rejeição altas, poucos contatos, carregamento lento e baixa conversão são sinais de alerta. Um redesign não é só estética: ele melhora a forma como o site trabalha pelos objetivos do negócio.",
+"4. As bases de SEO entraram tarde demais\nSites prontos para SEO sao planejados antes do lancamento. Titulos, descricoes, hierarquia, links internos, textos alternativos, dados estruturados, sitemap e navegacao rastreavel devem fazer parte da construcao, nao de uma correcao apressada depois.",
 
-"5. Sua marca cresceu, mas o site ficou para trás\nEmpresas evoluem. Talvez você tenha lançado novos produtos, mudado o público ou ampliado serviços. Se o site já não representa quem você é e o que oferece, é hora de alinhar a presença digital à fase atual da empresa.",
+"5. A empresa mudou, mas o site conta a historia antiga\nNovos servicos, publico mais claro, melhores provas ou processo comercial diferente podem deixar um site antigo desalinhado. Um redesign deve preservar o que ainda funciona e reconstruir a mensagem em torno da fase atual do negocio.",
 
-"Na Dawn Web, ajudamos empresas em crescimento a construir sites que acompanham sua ambição. Seja uma reconstrução completa ou uma atualização estratégica, garantimos que o site trabalhe a favor do seu negócio."
+"A Dawn Web ajuda empresas de servicos a escolher o nivel certo de mudanca: novo site, redesign focado, desenvolvimento pronto para SEO ou funcionalidade web sob medida. O primeiro passo e uma conversa clara sobre o que confunde visitantes e o que realmente vale construir."
 ]
 ---

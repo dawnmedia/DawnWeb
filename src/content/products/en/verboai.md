@@ -9,6 +9,45 @@ main:
   imgCard: "@/images/verbo_app_card.jpg"
   imgMain: "@/images/verbo_app_card.jpg"
   imgAlt: "Verbo AI language learning platform interface"
+showcase:
+  eyebrow: "AI language learning"
+  audience: "Language learners from beginner to advanced"
+  status: "Beta v0.9.0"
+  platforms:
+    - "Web app"
+    - "iOS"
+    - "Android"
+    - "PWA"
+  stack:
+    - "Next.js 15"
+    - "React 19"
+    - "TypeScript"
+    - "Firebase"
+    - "Capacitor"
+    - "Stripe"
+  primaryAction:
+    label: "Start Learning for Free"
+    url: "https://learnverbo.app"
+  secondaryAction:
+    label: "Talk to Dawn Web"
+    url: "/contact"
+  metrics:
+    - value: "v0.9"
+      label: "Beta release"
+    - value: "3"
+      label: "Learning tiers"
+    - value: "FSRS"
+      label: "Spaced repetition"
+  screenshots:
+    - image: "@/images/verbo_app_card.jpg"
+      alt: "Verbo AI language learning platform dashboard"
+      label: "AI-first learning dashboard"
+    - image: "@/images/verboapp.png"
+      alt: "Verbo mobile language learning interface"
+      label: "Mobile learning flow"
+    - image: "@/images/verbodesktop.png"
+      alt: "Verbo desktop language learning interface"
+      label: "Desktop study experience"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
