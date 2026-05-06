@@ -32,6 +32,9 @@ interface Props {
       alt={blogEntry.data.cardImageAlt}
       draggable={"false"}
       format={"avif"}
+      width={520}
+      sizes="(min-width: 768px) 50vw, 100vw"
+      loading="lazy"
     />
     <!-- The title of the blog post -->
     <h3

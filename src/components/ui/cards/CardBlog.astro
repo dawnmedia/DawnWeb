@@ -39,8 +39,10 @@ interface Props {
       src={blogEntry.data.cardImage}
       alt={blogEntry.data.cardImageAlt}
       draggable={"false"}
-      loading={"eager"}
+      loading={"lazy"}
       format={"avif"}
+      width={760}
+      sizes="(min-width: 1024px) 50vw, 100vw"
     />
   </div>
   <!-- The container for the blog author's avatar and associated metadata (author name and publication date) -->

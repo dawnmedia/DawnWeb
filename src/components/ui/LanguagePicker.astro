@@ -16,16 +16,20 @@ const languageOptions = getAvailableLocalesForPath(Astro.url.pathname).map((loca
 }));
 ---
 
-<div class="hs-dropdown relative inline-flex">
+<div class="relative inline-flex" data-language-picker>
   <button
-    id="hs-dropdown-default"
+    id="language-picker-toggle"
     type="button"
     aria-label="Change language"
-    class="hs-dropdown-toggle inline-flex items-center gap-x-2 rounded-lg px-1.5 py-1.5 text-sm font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-blue-400 dark:border-neutral-700 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-blue-300 dark:focus:outline-none"
+    aria-expanded="false"
+    aria-controls="language-picker-menu"
+    class="inline-flex items-center gap-x-2 rounded-lg px-1.5 py-1.5 text-sm font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-blue-400 dark:border-neutral-700 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-blue-300 dark:focus:outline-none"
+    data-language-toggle
   >
     <Icon name="earth" />
     <svg
-      class="size-4 hs-dropdown-open:rotate-180"
+      class="size-4 transition-transform"
+      data-language-chevron
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -38,8 +42,10 @@ const languageOptions = getAvailableLocalesForPath(Astro.url.pathname).map((loca
   </button>
 
   <div
-    class="hs-dropdown-menu duration !left-[20%] !top-[98%] mt-2 hidden !transform-none rounded-lg bg-neutral-50 p-2 opacity-0 shadow-md transition-[opacity,margin] before:absolute before:-top-4 before:start-0 before:h-4 before:w-full after:absolute after:-bottom-4 after:start-0 after:h-4 after:w-full hs-dropdown-open:opacity-100 dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800 md:!left-[90%] md:!top-[80%]"
-    aria-labelledby="hs-dropdown-hover-event"
+    id="language-picker-menu"
+    class="absolute left-0 top-full z-50 mt-2 hidden min-w-44 rounded-lg bg-neutral-50 p-2 opacity-0 shadow-md transition-opacity dark:divide-neutral-700 dark:border dark:border-neutral-700 dark:bg-neutral-800 md:left-auto md:right-0"
+    aria-labelledby="language-picker-toggle"
+    data-language-menu
   >
     {
       languageOptions.map(({ label, href, current }) => (
@@ -55,8 +61,33 @@ const languageOptions = getAvailableLocalesForPath(Astro.url.pathname).map((loca
   </div>
 </div>
 
-<!--Import the necessary Dropdown plugin-->
-<!--https://preline.co/plugins/html/dropdown.html-->
-<script>
-  import "@preline/dropdown/index.js";
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-language-picker]").forEach((picker) => {
+      const toggle = picker.querySelector("[data-language-toggle]");
+      const menu = picker.querySelector("[data-language-menu]");
+      const chevron = picker.querySelector("[data-language-chevron]");
+
+      const setOpen = (open) => {
+        toggle?.setAttribute("aria-expanded", String(open));
+        menu?.classList.toggle("hidden", !open);
+        menu?.classList.toggle("opacity-0", !open);
+        menu?.classList.toggle("opacity-100", open);
+        chevron?.classList.toggle("rotate-180", open);
+      };
+
+      toggle?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        setOpen(toggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!picker.contains(event.target)) setOpen(false);
+      });
+
+      picker.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setOpen(false);
+      });
+    });
+  });
 </script>

@@ -16,6 +16,7 @@ const {
   canonicalPath,
   ogType,
   noindex,
+  noAlternateLinks,
 } = Astro.props;
 
 const hasHeroSlot = Astro.slots.has("hero");
@@ -30,6 +31,7 @@ interface Props {
   canonicalPath?: string;
   ogType?: "website" | "article";
   noindex?: boolean;
+  noAlternateLinks?: boolean;
 }
 ---
 
@@ -37,7 +39,7 @@ interface Props {
 This is the main structure for the page.
 We set the language of the page to English and add classes for scrollbar and scroll behavior.
 -->
-<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html lang={lang} class="scrollbar-hide scroll-pt-16">
   <head>
     <!-- Adding metadata to the HTML document -->
     <Meta
@@ -48,6 +50,7 @@ We set the language of the page to English and add classes for scrollbar and scr
       canonicalPath={canonicalPath}
       ogType={ogType}
       noindex={noindex}
+      noAlternateLinks={noAlternateLinks}
     />
     <!-- Define the title of the page -->
     <title>{title}</title>
@@ -62,9 +65,6 @@ We set the language of the page to English and add classes for scrollbar and scr
       } else {
         document.documentElement.classList.remove("dark");
       }
-    </script>
-    <script>
-      import "@scripts/lenisSmoothScroll.js";
     </script>
   </head>
   <body

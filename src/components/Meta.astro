@@ -35,6 +35,7 @@ const {
   canonicalPath,
   ogType = "website",
   noindex = false,
+  noAlternateLinks = false,
 } = Astro.props;
 
 interface Props {
@@ -45,6 +46,7 @@ interface Props {
   canonicalPath?: string;
   ogType?: "website" | "article";
   noindex?: boolean;
+  noAlternateLinks?: boolean;
 }
 
 // Define the metadata for your website and individual pages
@@ -64,6 +66,7 @@ const socialImage =
             src: socialImageProp,
             width: 1200,
             height: 600,
+            format: "webp",
           })
         ).src
       }`;
@@ -94,12 +97,19 @@ const structuredData = [
   ...pageStructuredData,
 ];
 
+const alternateLinks = noindex || noAlternateLinks
+  ? []
+  : createAlternateLinks(fullPath, siteUrl);
 const alternateLanguageLinks: string = [
-  ...createAlternateLinks(fullPath, siteUrl).map(
+  ...alternateLinks.map(
     ({ hreflang, href }) =>
       `<link rel="alternate" hreflang="${hreflang}" href="${href}" />`,
   ),
-  `<link rel="alternate" hreflang="x-default" href="${absoluteUrl(localizePath(fullPath, "en"), siteUrl)}" />`,
+  ...(alternateLinks.length > 0
+    ? [
+        `<link rel="alternate" hreflang="x-default" href="${absoluteUrl(localizePath(fullPath, "en"), siteUrl)}" />`,
+      ]
+    : []),
 ].join("\n");
 
 // Generate and optimize the favicon images

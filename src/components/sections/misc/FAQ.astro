@@ -43,9 +43,7 @@ const makeId = (base: string, index: number) => `${base}${index + 1}`;
     </div>
     <!-- FAQ accordion items -->
     <div class="md:col-span-3">
-      <div
-        class="hs-accordion-group divide-y divide-neutral-200 dark:divide-neutral-700"
-      >
+      <div class="divide-y divide-neutral-200 dark:divide-neutral-700">
         {
           faqs.faqs.map((question, i) => {
             // Generate ids dynamically for each FAQ accordion item.
@@ -72,8 +70,23 @@ const makeId = (base: string, index: number) => `${base}${index + 1}`;
     </div>
   </div>
 </section>
-<!--Import the necessary Accordion plugin-->
-<!--https://preline.co/plugins/html/accordion.html-->
-<script>
-  import "@preline/accordion/index.js";
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-accordion-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const panelId = button.getAttribute("aria-controls");
+        const panel = panelId ? document.getElementById(panelId) : null;
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!isOpen));
+        panel?.classList.toggle("hidden", isOpen);
+        button
+          .querySelector("[data-accordion-open-icon]")
+          ?.classList.toggle("hidden", !isOpen);
+        button
+          .querySelector("[data-accordion-close-icon]")
+          ?.classList.toggle("hidden", isOpen);
+      });
+    });
+  });
 </script>

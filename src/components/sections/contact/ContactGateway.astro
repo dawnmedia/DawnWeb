@@ -145,6 +145,10 @@ const defaultProjectType = projectTypes[projectTypes.length - 1]?.value;
           alt={imageAlt}
           class="absolute inset-0 h-full w-full object-cover"
           loading="eager"
+          format="avif"
+          width={900}
+          sizes="(min-width: 1024px) 42vw, 100vw"
+          fetchpriority="high"
         />
         <div
           class="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-950/25 to-transparent dark:from-neutral-950/90"

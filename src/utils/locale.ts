@@ -34,6 +34,8 @@ const ENGLISH_ONLY_PATHS = new Set([
   "/services/custom-web-apps",
 ]);
 
+const NO_ALTERNATE_PATHS = new Set(["/404"]);
+
 export function isLocale(value: string): value is Locale {
   return SUPPORTED_LOCALES.includes(value as Locale);
 }
@@ -79,6 +81,10 @@ export function getContentSlug(entry: { id: string }): string {
 
 export function getAvailableLocalesForPath(pathname: string): Locale[] {
   const basePath = stripLocalePrefix(pathname);
+
+  if (NO_ALTERNATE_PATHS.has(basePath)) {
+    return [];
+  }
 
   if (ENGLISH_ONLY_PATHS.has(basePath)) {
     return ["en"];

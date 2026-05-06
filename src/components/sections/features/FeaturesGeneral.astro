@@ -35,7 +35,9 @@ const { title, subTitle, src, alt, features } = Astro.props;
           class="h-full w-full object-cover object-center"
           draggable={"false"}
           format={"avif"}
-          loading={"eager"}
+          width={1280}
+          sizes="100vw"
+          loading={"lazy"}
         />
       )
     }

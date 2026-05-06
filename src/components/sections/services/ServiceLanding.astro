@@ -116,6 +116,9 @@ const productProof = [
           class="aspect-[16/11] w-full rounded-md object-cover"
           format="avif"
           loading="eager"
+          width={1000}
+          sizes="(min-width: 1024px) 52vw, 100vw"
+          fetchpriority="high"
         />
       </div>
     </div>
@@ -236,6 +239,8 @@ const productProof = [
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 format="avif"
                 loading="lazy"
+                width={640}
+                sizes="(min-width: 768px) 33vw, 100vw"
               />
             </div>
             <div class="p-5">

@@ -98,6 +98,9 @@ const labels = socialLabels[locale];
       class="aspect-[4/3] w-full object-cover object-center"
       loading="eager"
       format="avif"
+      width={900}
+      sizes="(min-width: 1024px) 46vw, 100vw"
+      fetchpriority="high"
     />
     <div class="border-t border-neutral-300 p-5 dark:border-neutral-700">
       <p

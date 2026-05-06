@@ -242,7 +242,10 @@ const imageClass = containedByHeroBand
               class={imageClass}
               draggable={"false"}
               loading={"eager"}
-              format={"png"}
+              format={"avif"}
+              width={960}
+              sizes="(min-width: 1280px) 640px, (min-width: 768px) 46vw, 88vw"
+              fetchpriority="high"
             />
           )
         }

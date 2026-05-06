@@ -54,7 +54,7 @@ const sharedMembers = {
   andrew: {
     id: "andrew",
     name: "Andrew Henrice",
-    image: `${basePath}Team/Andrew.png`,
+    image: `${basePath}team/Andrew.png`,
     portfolio: "https://www.andrewhenrice.com",
     instagram: "https://instagram.com/brenoandrew",
     github: "https://www.github.com/brenoandrew",
@@ -62,7 +62,7 @@ const sharedMembers = {
   daniel: {
     id: "daniel",
     name: "Daniel Moraes",
-    image: `${basePath}Team/DanielMoraes.png`,
+    image: `${basePath}team/DanielMoraes.png`,
     portfolio: "https://www.instagram.com/daniel.h.moraes/",
     instagram: "https://www.instagram.com/daniel.h.moraes/",
     github: "https://www.github.com/",
@@ -70,7 +70,7 @@ const sharedMembers = {
   mada: {
     id: "mada",
     name: "Mada",
-    image: `${basePath}Team/mada.png`,
+    image: `${basePath}team/mada.png`,
     portfolio: "https://www.instagram.com/madalena_bf/",
     instagram: "https://www.instagram.com/madalena_bf/",
     github: "https://www.github.com/",
