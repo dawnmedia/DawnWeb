@@ -1,4 +1,4 @@
-export const SUPPORTED_LOCALES = ["en", "fr", "br"] as const;
+export const SUPPORTED_LOCALES = ["en", "fr", "br", "ko", "ja"] as const;
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = "en";
@@ -7,27 +7,35 @@ export const LOCALE_PREFIXES: Record<Locale, string> = {
   en: "",
   fr: "fr",
   br: "br",
+  ko: "ko",
+  ja: "ja",
 };
 
 export const LOCALE_LANGUAGE_TAGS: Record<Locale, string> = {
   en: "en",
   fr: "fr",
   br: "pt-BR",
+  ko: "ko",
+  ja: "ja",
 };
 
 export const LOCALE_LABELS: Record<Locale, string> = {
   en: "English (US)",
   fr: "Français (FR)",
   br: "Português (BR)",
+  ko: "한국어",
+  ja: "日本語",
 };
 
 export const OPEN_GRAPH_LOCALES: Record<Locale, string> = {
   en: "en_US",
   fr: "fr_FR",
   br: "pt_BR",
+  ko: "ko_KR",
+  ja: "ja_JP",
 };
 
-const ENGLISH_ONLY_PATHS = new Set([
+const SERVICE_DETAIL_PATHS = new Set([
   "/services/business-website-design",
   "/services/website-redesign",
   "/services/seo-ready-websites",
@@ -86,8 +94,8 @@ export function getAvailableLocalesForPath(pathname: string): Locale[] {
     return [];
   }
 
-  if (ENGLISH_ONLY_PATHS.has(basePath)) {
-    return ["en"];
+  if (SERVICE_DETAIL_PATHS.has(basePath)) {
+    return ["en", "ko", "ja"];
   }
 
   return [...SUPPORTED_LOCALES];

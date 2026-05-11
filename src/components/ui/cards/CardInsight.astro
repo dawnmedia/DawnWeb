@@ -20,7 +20,11 @@ const {
     ? "Lire plus"
     : currentLocale === "br"
       ? "Ler mais"
-      : "Read more",
+      : currentLocale === "ko"
+        ? "자세히 보기"
+        : currentLocale === "ja"
+          ? "続きを読む"
+          : "Read more",
 } = Astro.props;
 const slug = stripLocaleFromSlug(getContentSlug(insightEntry), insightLocale);
 

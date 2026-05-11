@@ -1,0 +1,52 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ProductShowcaseDetail from "@components/sections/products/ProductShowcaseDetail.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "@data/constants";
+import {
+  collectionIdStartsWithLocale,
+  getContentSlug,
+  stripLocaleFromSlug,
+  type Locale,
+} from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
+
+export async function getStaticPaths() {
+  const routeLocale: Locale = "ja";
+  const productEntries = await getCollection("products", ({ id }) =>
+    collectionIdStartsWithLocale(id, routeLocale),
+  );
+
+  return productEntries.map((product) => {
+    const slugWithoutLang = stripLocaleFromSlug(
+      getContentSlug(product),
+      routeLocale,
+    );
+
+    return {
+      params: { slug: slugWithoutLang },
+      props: { product, slugWithoutLang },
+    };
+  });
+}
+
+const { product, slugWithoutLang } = Astro.props;
+const locale: Locale = "ja";
+const pageTitle = `${product.data.title} | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  lang="ja"
+  meta={product.data.description}
+  socialImage={product.data.main.imgCard}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: product.data.description,
+    pathname: `/ja/products/${slugWithoutLang}`,
+    locale,
+    siteUrl: SITE.url,
+  })}
+>
+  <ProductShowcaseDetail product={product} productLocale={locale} />
+</MainLayout>

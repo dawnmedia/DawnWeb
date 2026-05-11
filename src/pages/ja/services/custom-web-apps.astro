@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import software from "@images/software.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "業務フローのためのカスタムWebアプリ";
+const description =
+  "Dawn Webは、静的なWebサイトを超えて、企業が実際の業務をより進めやすくするカスタムWebアプリ、ポータル、予約ツール、ダッシュボード、連携機能を構築します。";
+const pathname = "/ja/services/custom-web-apps";
+const relatedServices = [
+  { title: "ビジネスサイト制作", href: "/ja/services/business-website-design", description: "提供価値を明確に示すビジネスサイトから始めます。" },
+  { title: "Webサイトリニューアル", href: "/ja/services/website-redesign", description: "カスタム機能を追加する前にWebサイト体験を改善します。" },
+  { title: "SEO対応サイト", href: "/ja/services/seo-ready-websites", description: "コンテンツとアプリ画面全体で技術SEOの基盤を保ちます。" },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ja"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ja", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Custom web application development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="カスタムWebアプリ"
+    title={title}
+    description={description}
+    outcome="手作業、分断されたツール、使いにくい社内フローを、チームが実際に使えるWebアプリケーションへ置き換えます。"
+    bestFor="ポータル、ダッシュボード、予約ツール、業務ソフトウェアが必要なチーム"
+    image={software}
+    imageAlt="業務ソフトウェアのインターフェースとワークフロー計画"
+    benefits={[
+      "カスタムダッシュボード、ポータル、予約フロー、コンテンツツール、管理画面。",
+      "決済、CRM、分析、メール、スケジュール、業務システムとの連携。",
+      "チームが実際に使い、保守していく方法を考慮した拡張可能な設計。",
+    ]}
+    process={[
+      "ワークフロー、ユーザー、権限、データ、運用目標を文書化します。",
+      "本格構築の前に、中心となる体験と技術アプローチをプロトタイプで確認します。",
+      "テスト、デプロイ、監視、保守計画とともにアプリケーションを公開します。",
+    ]}
+    proofPoints={[
+      "ワークフロー、ユーザー、権限、データモデルを構築前に明確にします。",
+      "インターフェースは見せるためではなく、繰り返し使う前提で設計します。",
+      "デプロイと保守の要件も技術計画に含めます。",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

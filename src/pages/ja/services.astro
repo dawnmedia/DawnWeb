@@ -1,0 +1,137 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServicesIndexShowcase from "@components/sections/services/ServicesIndexShowcase.astro";
+import { SITE } from "@data/constants";
+import webdev from "@images/web-dev.jpg";
+import webdesign from "@images/web-design.jpg";
+import software from "@images/software.jpg";
+import code from "@images/code.jpg";
+import motoViagens from "@images/motoviagens3.jpg";
+import verbo from "@images/verbo_app_card.jpg";
+import triplut from "@images/triplut6.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const contactUrl = "/ja/contact";
+const pageTitle = "Webサイト制作・ソフトウェアサービス | Dawn Web";
+const pageDescription =
+  "Dawn Webは、成長企業が質の高い問い合わせを増やせるよう、Webサイト制作、リニューアル、SEO対応構築、カスタムWebアプリを提供します。";
+
+const services = [
+  {
+    title: "ビジネスサイト制作",
+    href: "/ja/services/business-website-design",
+    description:
+      "提供価値を明確に伝え、信頼をすばやく作り、訪問者が自然に次の行動へ進めるカスタムWebサイトです。",
+    outcome: "迷っている訪問者を質の高い問い合わせへ変えます。",
+    bestFor: "新規サイトやメッセージが不明確なサイトに最適",
+    deliverables: ["明確なページ構成", "コンバージョン重視のメッセージ", "レスポンシブデザインと公開設定"],
+    image: webdesign,
+    imageAlt: "ビジネスサイトのインターフェースを計画するデザイナー",
+  },
+  {
+    title: "Webサイトリニューアル",
+    href: "/ja/services/website-redesign",
+    description:
+      "古い、使いにくい、問い合わせにつながらないサイトを、より明確なメッセージ、速いページ、分かりやすい問い合わせ導線で作り直します。",
+    outcome: "既存サイトを、より信頼され行動しやすい体験へ改善します。",
+    bestFor: "成果が出にくい既存サイトに最適",
+    deliverables: ["UXとコンテンツ監査", "現代的なレスポンシブレイアウト", "移行を考慮した公開チェック"],
+    image: webdev,
+    imageAlt: "Webサイトリニューアルを検討するチーム",
+  },
+  {
+    title: "SEO対応サイト",
+    href: "/ja/services/seo-ready-websites",
+    description:
+      "クロールしやすいページ、整理されたメタデータ、構造化データ、意味のあるコンテンツ、公開時の基本設定を整えます。",
+    outcome: "公開初日から検索の基本を押さえます。",
+    bestFor: "検索での見つけやすさを重視する構築に最適",
+    deliverables: ["メタデータとスキーマ", "クロール可能なページ構造", "サイトマップとrobots設定"],
+    image: code,
+    imageAlt: "Webサイト構築のコードを表示したエディタ",
+  },
+  {
+    title: "カスタムWebアプリ",
+    href: "/ja/services/custom-web-apps",
+    description:
+      "静的ページやスプレッドシートを超えたチームのために、ポータル、ダッシュボード、予約ツール、連携機能を目的に合わせて構築します。",
+    outcome: "手作業の流れを、使いやすいソフトウェアへ置き換えます。",
+    bestFor: "業務ツールが必要なチームに最適",
+    deliverables: ["業務フローとデータ設計", "カスタムアプリUI", "デプロイと保守の計画"],
+    image: software,
+    imageAlt: "業務ソフトウェアのインターフェースとワークフロー計画",
+  },
+];
+
+const processSteps = [
+  { title: "発見", description: "対象ユーザー、提供価値、現在の課題、事業目標、プロジェクトの成功条件を明確にします。" },
+  { title: "提案", description: "デザインや開発の前に、現実的な範囲、推奨する進め方、スケジュール、費用を提示します。" },
+  { title: "開発", description: "Webサイトやアプリを、直接のコミュニケーションと明確な判断で設計・執筆・構築・確認します。" },
+  { title: "納品", description: "プロジェクトを公開・確認し、サポートと今後の改善につながる基盤を整えて引き渡します。" },
+];
+
+const portfolioItems = [
+  {
+    title: "Moto Viagens",
+    href: "/ja/products/motoviagens",
+    description: "予約導線、ルートコンテンツ、多言語対応、AI探索支援を備えた実運用中のオートバイ旅行プラットフォームです。",
+    image: motoViagens,
+    imageAlt: "Moto Viagensのブラジルオートバイルートとツアー",
+  },
+  {
+    title: "Verbo",
+    href: "/ja/products/verboai",
+    description: "AIコーチング、適応型フラッシュカード、サブスクリプション、モバイル対応を中心に構築した語学学習プロダクトです。",
+    image: verbo,
+    imageAlt: "Verbo AI語学学習プラットフォームの画面",
+  },
+  {
+    title: "Triplut",
+    href: "/ja/products/triplut",
+    description: "ルート、予算、体験、AIガイドを分かりやすい計画フローへまとめる旅行計画コンセプトです。",
+    image: triplut,
+    imageAlt: "Triplut AI旅行プラットフォームのイラスト",
+  },
+];
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="ja"
+  structuredData={[
+    buildWebPageSchema({ title: pageTitle, description: pageDescription, pathname: "/ja/services", locale: "ja", siteUrl: SITE.url }),
+    buildServiceSchema({ name: "Webサイト制作・ソフトウェアサービス", description: pageDescription, pathname: "/ja/services", serviceType: "Web design and web development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServicesIndexShowcase
+    eyebrow="サービス"
+    title="次の行動を明確にするWebサイトとソフトウェア"
+    subTitle="Dawn Webは、サービス企業が提供価値を明確に伝え、信頼を作り、質の高い訪問者を問い合わせへ変えられるよう支援します。"
+    primaryCta="無料相談を予約"
+    primaryCtaUrl={contactUrl}
+    secondaryCta="制作実績を見る"
+    secondaryCtaUrl="/ja/products"
+    proofPoints={["作り手と直接話せます", "投資前に範囲を明確にします", "伝わりやすさ、速度、成果を基準に構築します"]}
+    services={services}
+    processEyebrow="プロセス"
+    processTitle="迷いを減らすシンプルな進行"
+    processSubTitle="すべてのサービスは、課題を理解し、適切な範囲に合意し、進行を見える化しながら構築し、必要な基盤を整えて公開する流れで進みます。"
+    processSteps={processSteps}
+    portfolioEyebrow="実績"
+    portfolioTitle="実際のデジタルプロダクトからの証明"
+    portfolioSubTitle="ポートフォリオで使っているプロダクト思考は、サービス案件にも活かされています。明確なユーザー導線、役に立つUI、実用的な技術基盤です。"
+    portfolioItems={portfolioItems}
+    faqTitle="予約前によくある質問"
+    faqs={[
+      { question: "全面的な作り直しが必要ですか？", answer: "必ずしもそうではありません。最初の相談では、新規サイト、重点的なリニューアル、技術整理、カスタム機能のうち、最も小さく有効な道筋を探します。" },
+      { question: "SEOを最初から含められますか？", answer: "はい。SEO対応構築には、明確なページ構造、メタデータ、必要なスキーマ、サイトマップ管理、クロール可能なページの公開チェックが含まれます。" },
+      { question: "マーケティングサイト以外も作れますか？", answer: "はい。静的ページではなくソフトウェアが必要な場合、ポータル、ダッシュボード、予約ツール、業務アプリも構築します。" },
+      { question: "公開後はどうなりますか？", answer: "サイトやアプリが改善し続けられるよう、保守、小さな改善、セキュリティ更新、今後のプロダクト開発を支援できます。" },
+    ]}
+    finalTitle="信頼されやすいWebサイトにしませんか？"
+    finalText="現在のサイト、アイデア、業務フローをお聞かせください。何を変え、何を最初に作る価値があるか一緒に整理します。"
+    finalCta="無料相談を予約"
+    finalCtaUrl={contactUrl}
+  />
+</MainLayout>

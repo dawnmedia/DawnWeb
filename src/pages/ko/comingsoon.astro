@@ -1,0 +1,36 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import Btn404 from "@components/ui/buttons/Btn404.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle = `곧 공개됩니다 | ${SITE.title}`;
+const subTitle = "아직 준비 중인 페이지입니다.";
+const content = "현재 페이지를 구축하고 있습니다. 곧 다시 확인해 주세요.";
+const btnTitle = "돌아가기";
+---
+
+<MainLayout title={pageTitle} lang="ko" noindex={true} noAlternateLinks={true}>
+  <section class="grid h-svh place-content-center">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <h1 class="text-dark mb-4 text-4xl font-extrabold text-blue-500 dark:text-blue-300 lg:text-6xl">
+          COMING SOON
+        </h1>
+        <p class="mb-4 text-balance text-3xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 md:text-4xl">
+          {subTitle}
+        </p>
+        <p class="mb-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400">
+          {content}
+        </p>
+        <Btn404 title={btnTitle} id="go-back" />
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  const goBackButton = document.getElementById("go-back") as HTMLButtonElement;
+  goBackButton.addEventListener("click", () => {
+    history.back();
+  });
+</script>

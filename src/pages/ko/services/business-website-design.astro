@@ -1,0 +1,65 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDesign from "@images/web-design.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "성장하는 기업을 위한 비즈니스 웹사이트 제작";
+const description =
+  "Dawn Web은 제안을 명확히 설명하고 신뢰를 빠르게 만들며 방문자가 상담이나 문의로 자연스럽게 이동하도록 맞춤형 비즈니스 웹사이트를 제작합니다.";
+const pathname = "/ko/services/business-website-design";
+const relatedServices = [
+  {
+    title: "웹사이트 리디자인",
+    href: "/ko/services/website-redesign",
+    description: "낡은 사이트를 더 나은 UX, 메시지, 성능으로 새롭게 정리합니다.",
+  },
+  {
+    title: "SEO 기반 웹사이트",
+    href: "/ko/services/seo-ready-websites",
+    description: "출시 시점부터 기술적인 검색 기반을 갖춥니다.",
+  },
+  {
+    title: "맞춤형 웹 앱",
+    href: "/ko/services/custom-web-apps",
+    description: "브로슈어형 사이트를 넘어 맞춤 업무 흐름, 포털, 도구를 구축합니다.",
+  },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ko"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ko", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Business website design", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="비즈니스 웹사이트 제작"
+    title={title}
+    description={description}
+    outcome="가치를 명확히 보여주고, 구매자의 질문에 답하며, 적합한 방문자를 상담으로 안내하는 웹사이트입니다."
+    bestFor="첫 번째 진지한 웹사이트를 출시하거나 기존 제안을 명확히 해야 하는 서비스 비즈니스"
+    image={webDesign}
+    imageAlt="비즈니스 웹사이트 인터페이스를 기획하는 디자이너"
+    benefits={[
+      "누구를 돕고, 무엇을 제공하며, 왜 신뢰할 수 있는지 명확히 보여주는 홈페이지 메시지.",
+      "데스크톱, 태블릿, 모바일에서 CTA가 묻히지 않는 반응형 레이아웃.",
+      "실제 구매자 질문을 중심으로 구성한 서비스 섹션, 근거, FAQ, 문의 경로.",
+    ]}
+    process={[
+      "제안, 대상 고객, 핵심 페이지, 상담 목표를 정리합니다.",
+      "페이지 구조, 카피 계층, 시각적 방향을 설계합니다.",
+      "사이트를 구축, 최적화, 출시하고 리드 생성 목표에 맞춰 점검합니다.",
+    ]}
+    proofPoints={[
+      "제안, 대상 고객, CTA가 카피부터 코드까지 연결됩니다.",
+      "첫 레이아웃 단계부터 데스크톱과 모바일 방문자를 함께 고려합니다.",
+      "출시 세부 사항에는 성능, 메타데이터, 문의 경로 점검이 포함됩니다.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

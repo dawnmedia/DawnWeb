@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDesign from "@images/web-design.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "成長企業のためのビジネスサイト制作";
+const description =
+  "Dawn Webは、提供価値を明確に伝え、信頼をすばやく作り、訪問者が相談や問い合わせへ自然に進めるカスタムビジネスサイトを制作します。";
+const pathname = "/ja/services/business-website-design";
+const relatedServices = [
+  { title: "Webサイトリニューアル", href: "/ja/services/website-redesign", description: "古いサイトを、より良いUX、メッセージ、パフォーマンスで刷新します。" },
+  { title: "SEO対応サイト", href: "/ja/services/seo-ready-websites", description: "公開時点から技術的な検索基盤を整えます。" },
+  { title: "カスタムWebアプリ", href: "/ja/services/custom-web-apps", description: "パンフレット型サイトを超えた業務フロー、ポータル、ツールを構築します。" },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ja"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ja", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Business website design", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="ビジネスサイト制作"
+    title={title}
+    description={description}
+    outcome="価値を分かりやすく示し、購入者の疑問に答え、適切な訪問者を相談へ導くWebサイトです。"
+    bestFor="初めて本格的なWebサイトを作る、または提供価値を明確にしたいサービス企業"
+    image={webDesign}
+    imageAlt="ビジネスサイトのインターフェースを計画するデザイナー"
+    benefits={[
+      "誰を助け、何を提供し、なぜ信頼できるのかが分かるホームページのメッセージ。",
+      "デスクトップ、タブレット、モバイルでCTAが埋もれないレスポンシブレイアウト。",
+      "実際の購入者の疑問を軸にしたサービスセクション、根拠、FAQ、問い合わせ導線。",
+    ]}
+    process={[
+      "提供価値、対象ユーザー、主要ページ、相談の目標を整理します。",
+      "ページ構成、コピーの階層、ビジュアルの方向性を設計します。",
+      "サイトを構築・最適化・公開し、リード獲得の目標に照らして確認します。",
+    ]}
+    proofPoints={[
+      "提供価値、対象ユーザー、CTAがコピーからコードまでつながります。",
+      "最初のレイアウトからデスクトップとモバイルの訪問者を考慮します。",
+      "公開時にはパフォーマンス、メタデータ、問い合わせ導線を確認します。",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

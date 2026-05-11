@@ -10,11 +10,32 @@ import { SITE } from "@data/constants";
 
 // Select the correct translation based on the page's lang prop:
 const strings = getNavigation(getLocaleFromPath(Astro.url.pathname));
+const currentLocale = getLocaleFromPath(Astro.url.pathname);
 
 // Define the variables that will be used in this component
 const sectionThreeTitle: string = strings.footerCopy.newsletterTitle;
 const sectionThreeContent: string = strings.footerCopy.newsletterContent;
 const crafted: string = strings.footerCopy.crafted;
+const hiringLabel =
+  currentLocale === "ko"
+    ? "채용 중"
+    : currentLocale === "ja"
+      ? "採用中"
+      : currentLocale === "fr"
+        ? "Nous recrutons !"
+        : currentLocale === "br"
+          ? "Estamos contratando!"
+          : "We are hiring!";
+const hiringSection =
+  currentLocale === "ko"
+    ? "회사"
+    : currentLocale === "ja"
+      ? "会社"
+      : currentLocale === "fr"
+        ? "Société"
+        : currentLocale === "br"
+          ? "Empresa"
+          : "Company";
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
@@ -42,9 +63,9 @@ const crafted: string = strings.footerCopy.crafted;
                   >
                     {link.name}
                   </a>
-                  {section.section === "Company" && index === 2 ? (
+                  {section.section === hiringSection && index === 2 ? (
                     <span class="ms-1 inline rounded-lg bg-blue-500 px-2 py-1 text-xs font-bold text-neutral-50">
-                      We are hiring!
+                      {hiringLabel}
                     </span>
                   ) : null}
                 </li>

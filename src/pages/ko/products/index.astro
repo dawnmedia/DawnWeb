@@ -1,0 +1,58 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
+
+const locale: Locale = "ko";
+
+const products: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) =>
+    collectionIdStartsWithLocale(id, locale),
+  )
+).sort((a, b) => a.data.main.id - b.data.main.id);
+
+const pageTitle = "웹사이트 포트폴리오 및 디지털 프로젝트 | Dawn Web";
+const pageDescription =
+  "Dawn Web의 웹 앱, AI 콘셉트, 디지털 플랫폼을 포지셔닝, 상태, 스크린샷, 기술 선택과 함께 살펴보세요.";
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="ko"
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/ko/products",
+    locale,
+    siteUrl: SITE.url,
+  })}
+>
+  <ProductShowcaseIndex
+    products={products}
+    locale={locale}
+    eyebrow="제품 포트폴리오"
+    title="한눈에 이해되는 소프트웨어 제품"
+    subTitle="Dawn Web의 웹 앱, AI 콘셉트, 디지털 플랫폼을 명확한 제품 포지셔닝, 실제 상태, 스크린샷, 기술적 선택을 통해 살펴보세요."
+    ctaLabel="제품 상담하기"
+    ctaUrl="/ko/contact"
+    viewLabel="제품 보기"
+  />
+
+  <div class="opacity-95">
+    <FeaturesStatsAlt
+      title="왜 Dawn Web을 선택해야 할까요?"
+      subTitle="아이디어를 강력한 온라인 기반으로 바꾸세요. 첫 웹사이트를 출시하는 스타트업이든 디지털 기반을 업그레이드하려는 기업이든, Dawn Web은 목표에 맞춘 전문 솔루션을 제공합니다."
+      benefits={[
+        "고성능 웹사이트: 빠르고 안정적이며 방문자를 충성 고객으로 전환하도록 최적화된 맞춤형 웹사이트를 설계하고 개발합니다.",
+        "확장 가능한 개발 솔루션: 단순 랜딩 페이지부터 통합 플랫폼까지, 현대적인 프레임워크로 성장과 유지보수를 고려해 구축합니다.",
+        "신뢰할 수 있는 지속 지원: 출시부터 장기적인 성공까지 유지보수, 보안 업데이트, 전문가 지원을 제공합니다.",
+      ]}
+    />
+  </div>
+</MainLayout>

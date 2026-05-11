@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import codeImage from "@images/code.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "技術基盤から整えるSEO対応サイト";
+const description =
+  "Dawn Webは、明確なページ構造、クロール可能なリンク、メタデータ、スキーマ、サイトマップ管理、高速なレスポンシブページを備えたSEO対応サイトを構築します。";
+const pathname = "/ja/services/seo-ready-websites";
+const relatedServices = [
+  { title: "ビジネスサイト制作", href: "/ja/services/business-website-design", description: "価値を伝え、問い合わせを生むビジネスサイトを設計します。" },
+  { title: "Webサイトリニューアル", href: "/ja/services/website-redesign", description: "検索での見つかりやすさを守りながら既存サイトを刷新します。" },
+  { title: "カスタムWebアプリ", href: "/ja/services/custom-web-apps", description: "整理された技術設計で業務ツールとWebアプリを構築します。" },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ja"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ja", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "SEO-ready website development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="SEO対応サイト"
+    title={title}
+    description={description}
+    outcome="検索の基本を公開後の課題にせず、構造とメタデータをWebサイトの土台に最初から組み込みます。"
+    bestFor="新しいサイトで技術的な検索基盤を早い段階から整えたい企業"
+    image={codeImage}
+    imageAlt="Webサイト構築のコードを表示したエディタ"
+    benefits={[
+      "分かりやすいタイトル、メタディスクリプション、canonical URL、Open Graphタグ、構造化データ。",
+      "クロールしやすいナビゲーション、整理された内部リンク、意味のある見出し、画像代替テキスト。",
+      "Googleにインデックスしてほしいページのためのサイトマップとrobots設定、公開チェック。",
+    ]}
+    process={[
+      "構築前に対象ページ、検索意図、技術SEOチェックリストを定義します。",
+      "メタデータ、スキーマ、内部リンク、レスポンシブ性能の改善を実装します。",
+      "デプロイ前に生成HTML、サイトマップ、構造化データを検証します。",
+    ]}
+    proofPoints={[
+      "技術SEOは後付けではなく、構築の一部として扱います。",
+      "ページはまず人のために、その次にクローラーのために構造化します。",
+      "公開チェックには生成HTML、サイトマップ、メタデータ、スキーマが含まれます。",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

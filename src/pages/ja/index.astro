@@ -1,0 +1,348 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import heroImage from "@images/hero.png";
+import motoViagens from "@images/motoviagens3.jpg";
+import verbo from "@images/verbo_app_card.jpg";
+import triplut from "@images/triplut6.jpg";
+import luna from "@images/lunaai.png";
+import faqs from "@data/ja/faqs.json";
+import { SITE } from "@data/constants";
+import {
+  buildFaqSchema,
+  buildWebPageSchema,
+  buildWebSiteSchema,
+} from "@utils/seo";
+
+const contactUrl = "/ja/contact";
+const primaryCta = "無料相談を予約";
+const pageTitle = "見込み客を逃さないWebサイト | Dawn Web";
+const pageDescription =
+  "Dawn Webは、伝わりにくいWebサイトの改善、成果が出にくいページのリニューアル、成長するサービス企業向けのカスタムWebアプリ開発を行います。";
+
+const proofPoints = [
+  { text: "作り手と直接話せます", icon: "💬" },
+  { text: "費用を使う前に範囲を明確にします", icon: "🎯" },
+  { text: "伝わりやすさ、速度、成果を基準に構築します", icon: "⚡" },
+];
+
+const services = [
+  {
+    title: "提供価値が伝わる新しいWebサイト",
+    href: "/ja/services/business-website-design",
+    description:
+      "見込み客が数秒で何をしている会社か理解できなければ、離脱します。価値が伝わり、問い合わせへ自然に進めるサイトを制作します。",
+    accent: "from-blue-400 to-blue-600",
+  },
+  {
+    title: "古い・成果が出ないサイトの改善",
+    href: "/ja/services/website-redesign",
+    description:
+      "今のサイトが古く見える、分かりにくい、問い合わせにつながらない場合は、信頼と次の行動が明確になるようメッセージと導線を再設計します。",
+    accent: "from-yellow-400 to-orange-500",
+  },
+  {
+    title: "公開前から整えるSEO基盤",
+    href: "/ja/services/seo-ready-websites",
+    description:
+      "良いサイトは検索の基本を後回しにして公開すべきではありません。構造、メタデータ、スキーマ、サイトマップ、クロールしやすいコンテンツを最初から組み込みます。",
+    accent: "from-blue-300 to-blue-500",
+  },
+  {
+    title: "手作業を減らすカスタムWebアプリ",
+    href: "/ja/services/custom-web-apps",
+    description:
+      "スプレッドシート、フォーム、分断されたツールが業務を遅らせているなら、実際の働き方に合わせたポータル、ダッシュボード、予約フロー、社内ツールを構築します。",
+    accent: "from-orange-400 to-yellow-400",
+  },
+];
+
+const founderAdvantages = [
+  "フィードバックが意思決定者に直接届きます",
+  "コピー、構成、コードが同じ方向につながります",
+  "同じ説明を繰り返す会議が減ります",
+  "デザインと開発の前に現実的な選択肢を整理します",
+];
+
+const projects = [
+  {
+    title: "Moto Viagens",
+    href: "/ja/products/motoviagens",
+    image: motoViagens,
+    imageAlt: "ブラジルのオートバイルートとツアーを扱うMoto Viagens",
+    description:
+      "ブラジル各地のルート、ツアー、宿泊を計画するライダー向けの実運用中のオートバイ旅行プラットフォームです。",
+    context:
+      "Dawn Webは、ツアーページ、宿泊検索、イベントコンテンツ、ルート中心の閲覧、多言語対応、AI支援探索を備えた予約重視の体験を開発しました。",
+  },
+  {
+    title: "Verbo",
+    href: "/ja/products/verboai",
+    image: verbo,
+    imageAlt: "Verbo AI語学学習プラットフォームの画面",
+    description:
+      "練習、記憶定着、毎日の学習習慣を中心に設計したAI語学学習プロダクトです。",
+    context:
+      "会話練習、適応型フラッシュカード、学習ジャーニー、サブスクリプション、モバイル対応をひとつの集中した体験にまとめています。",
+  },
+  {
+    title: "Triplut",
+    href: "/ja/products/triplut",
+    image: triplut,
+    imageAlt: "Triplut AI旅行プラットフォームのイラスト",
+    description:
+      "ルート、予算、旅の詳細を一か所で整理する旅行計画プロダクトのコンセプトです。",
+    context:
+      "交通、宿泊、体験、予算計画、AIガイドを、より分かりやすい計画フローにどう組み込めるかを検討しました。",
+  },
+  {
+    title: "Luna AI",
+    href: "/ja/products/luna",
+    image: luna,
+    imageAlt: "Dawn WebのLuna AIマスコットとデジタルアシスタント",
+    description:
+      "デジタルプロダクト内でより分かりやすい案内を提供する、Dawn Webの社内アシスタントコンセプトです。",
+    context:
+      "Lunaは、プロダクト内ナビゲーション、文脈に応じたヘルプ、より個別化されたユーザーフローのための実用的なアシスタント層として設計されています。",
+  },
+];
+
+const processSteps = [
+  {
+    title: "発見",
+    description:
+      "訪問者がどこで迷うのか、ビジネスがサイトに何を求めているのか、プロジェクトに価値を生む条件を確認します。",
+  },
+  {
+    title: "提案",
+    description:
+      "デザインや開発を始める前に、明確な範囲、推奨する進め方、スケジュール、費用を提示します。",
+  },
+  {
+    title: "開発",
+    description:
+      "遅い引き継ぎではなく、定期的な共有と直接の判断で、サイトやアプリを設計・ライティング・構築します。",
+  },
+  {
+    title: "納品",
+    description:
+      "プロジェクトを公開・確認し、何が変わり次に何をすべきか分かるように必要な内容を引き継ぎます。",
+  },
+];
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="ja"
+  structuredData={[
+    buildWebSiteSchema(SITE.url),
+    buildWebPageSchema({
+      title: pageTitle,
+      description: pageDescription,
+      pathname: "/ja",
+      locale: "ja",
+      siteUrl: SITE.url,
+    }),
+    buildFaqSchema({ faqs: faqs.faqs }),
+  ]}
+>
+  <AnnouncementBanner
+    btnId="dismiss-button"
+    badge="無料の明確化チェック"
+    title="Webサイトが問い合わせを逃している原因を見つけます"
+    description="作り直し、リニューアル、広告費の追加投入をする前に、訪問者を迷わせている点を素早く確認します。"
+    btnTitle={primaryCta}
+    url={contactUrl}
+  />
+
+  <HeroSection
+    slot="hero"
+    title={`Webサイトは良い訪問者を迷わせるのではなく、<span class="text-blue-600 dark:text-blue-300">質の高い問い合わせ</span>を生むべきです`}
+    subTitle="見た目は悪くなくても、提供価値が伝わらず、信頼を作れず、次の行動が分かりにくいなら、問い合わせを逃している可能性があります。Dawn Webはメッセージ、構成、実装を整え、適切な顧客がなぜ連絡すべきか分かる状態にします。"
+    primaryBtn={primaryCta}
+    primaryBtnURL={contactUrl}
+    withReview={false}
+    src={heroImage}
+    alt="Dawn WebのWebデザインとWeb開発の作業スペース"
+    badgeLabel="戦略的Webパートナー"
+    trustItems={["創業者主導", "不要な引き継ぎなし", "SEO対応"]}
+    containedByHeroBand={true}
+  />
+
+  <section class="mx-auto max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 lg:py-10 2xl:max-w-full" aria-label="Dawn Webの信頼ポイント">
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        proofPoints.map((point) => (
+          <div class="group flex items-center gap-4 rounded-xl border border-neutral-200/60 bg-white/60 px-5 py-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-blue-300/50 hover:shadow-md dark:border-neutral-700/60 dark:bg-neutral-800/60 dark:hover:border-blue-500/30">
+            <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-lg dark:bg-blue-900/30">{point.icon}</span>
+            <span class="text-sm font-bold text-neutral-800 dark:text-neutral-200">{point.text}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[85rem] px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14 2xl:max-w-full" data-reveal>
+    <div class="max-w-3xl">
+      <div class="mb-2 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">サービス</span>
+      </div>
+      <h2 class="mt-3 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+        問い合わせを失う原因になっている部分を改善します
+      </h2>
+      <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+        すべてのサービスは実際の課題から始まります。訪問者が迷う、ページが古く見える、検索の基盤が弱い、手作業が業務を遅らせているといった問題です。
+      </p>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {
+        services.map((service, i) => (
+          <a href={service.href} class="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/50 hover:shadow-xl dark:border-neutral-700/60 dark:bg-neutral-800/70 dark:hover:border-blue-500/30">
+            <div class={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${service.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`} />
+            <span class="mb-4 text-xs font-bold text-neutral-400 dark:text-neutral-500">0{i + 1}</span>
+            <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">{service.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">{service.description}</p>
+            <p class="mt-auto flex items-center gap-1 pt-5 text-sm font-bold text-blue-600 transition-transform duration-300 group-hover:translate-x-1 dark:text-blue-300">詳しく見る</p>
+          </a>
+        ))
+      }
+    </div>
+    <div class="mt-10">
+      <PrimaryCTA title={primaryCta} url={contactUrl} />
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-gradient-to-br from-blue-800 via-blue-900 to-[#0a1a3c] py-12 lg:py-16" data-reveal>
+    <div class="relative mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 2xl:max-w-full">
+      <div class="relative grid gap-10 md:grid-cols-2 lg:gap-16">
+        <div>
+          <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm">
+            <span class="h-1.5 w-1.5 rounded-full bg-yellow-400"></span>
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-100">創業者主導、代理店特有の曖昧さなし</span>
+          </div>
+          <h2 class="mt-3 text-balance text-2xl font-bold tracking-tight text-white md:text-4xl md:leading-tight">
+            引き継ぎも、担当者フィルターもありません。あるのは明確な判断です。
+          </h2>
+        </div>
+        <div>
+          <p class="text-pretty text-blue-100/80">
+            多くの代理店案件は、目標を聞く人と実際に作る人が違うことで遅くなります。Dawn Webでは、戦略、アーキテクチャ、納品を担うフルスタック開発者Andrew Henriceと直接進めます。
+          </p>
+          <p class="mt-4 text-pretty text-blue-100/80">
+            そのため認識のズレが少なく、判断が速く、一般的なパッケージではなく本当に必要な成果を中心にサイトやアプリを構築できます。
+          </p>
+          <div class="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2">
+            {
+              founderAdvantages.map((advantage) => (
+                <div class="flex items-start gap-3 border-t border-white/10 pt-4">
+                  <span class="mt-0.5 text-yellow-400">✓</span>
+                  <span class="text-sm font-semibold text-white/90">{advantage}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 2xl:max-w-full" data-reveal>
+    <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-3xl">
+        <div class="mb-2 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20">
+          <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">ポートフォリオ</span>
+        </div>
+        <h2 class="mt-3 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+          用途が明確な実際のプロダクト
+        </h2>
+        <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+          何を作り、誰のためにあり、どの課題を解決するために設計したのかを具体的に紹介します。
+        </p>
+      </div>
+      <PrimaryCTA title={primaryCta} url={contactUrl} />
+    </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      {
+        projects.map((project) => (
+          <a href={project.href} class="group relative overflow-hidden rounded-xl border border-neutral-200/60 bg-white/70 shadow-sm backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl dark:border-neutral-700/60 dark:bg-neutral-800/70">
+            <div class="aspect-[16/9] overflow-hidden bg-neutral-200 dark:bg-neutral-900">
+              <Image src={project.image} alt={project.imageAlt} class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" format="avif" width={760} sizes="(min-width: 768px) 50vw, 100vw" />
+            </div>
+            <div class="relative p-6">
+              <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">{project.title}</h3>
+              <p class="mt-2 text-sm font-semibold leading-6 text-neutral-700 dark:text-neutral-300">{project.description}</p>
+              <p class="mt-2 text-sm leading-6 text-neutral-500 dark:text-neutral-400">{project.context}</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-600 transition-transform duration-300 group-hover:translate-x-1 dark:text-blue-300">プロジェクトを見る</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 2xl:max-w-full" data-reveal>
+    <div class="max-w-3xl">
+      <div class="mb-2 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">プロセス</span>
+      </div>
+      <h2 class="mt-3 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+        迷いを減らすシンプルな進行
+      </h2>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-4">
+      {
+        processSteps.map((step, index) => (
+          <div class="rounded-xl border border-neutral-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm dark:border-neutral-700/60 dark:bg-neutral-800/70">
+            <span class="mb-3 inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-600 dark:bg-blue-900/30 dark:text-blue-300">0{index + 1}</span>
+            <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">{step.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-white/50 py-12 dark:bg-neutral-900/20 lg:py-16" data-reveal>
+    <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200/50 bg-blue-50 px-3 py-1 dark:border-blue-800/50 dark:bg-blue-900/20">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">信頼</span>
+      </div>
+      <h2 class="mt-3 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+        多くのWebサイトは見た目は悪くありません。問題は<span class="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent dark:from-blue-300 dark:to-yellow-300">伝えるべきことを伝えられていない</span>点です。
+      </h2>
+      <p class="mt-6 text-pretty text-lg leading-8 text-neutral-600 dark:text-neutral-400">
+        洗練されて見えるサイトでも、問い合わせを逃すことがあります。提供価値が曖昧で、根拠が弱く、CTAが埋もれ、購入者が本当に知りたいことに答えていない場合です。
+      </p>
+      <p class="mt-4 text-pretty text-lg leading-8 text-neutral-600 dark:text-neutral-400">
+        Dawn Webは、まず買い手にとっての分かりやすさを軸にします。コピー、UX、SEO、パフォーマンス、カスタム機能はすべて、適切な訪問者が理解され、相談を始めやすくなるために設計します。
+      </p>
+    </div>
+  </section>
+
+  <FAQ title="よくある<br />質問" faqs={faqs} />
+
+  <section class="relative overflow-hidden bg-gradient-to-br from-blue-800 via-blue-900 to-[#08162f] px-4 py-14 text-center sm:px-6 lg:px-8 lg:py-20" data-reveal>
+    <div class="relative mx-auto max-w-[85rem] 2xl:max-w-full">
+      <h2 class="mx-auto max-w-3xl text-balance text-3xl font-bold tracking-tight text-white md:text-5xl">
+        分かりにくいページで良い訪問者を逃さないでください。
+      </h2>
+      <p class="mx-auto mt-5 max-w-2xl text-pretty text-blue-100/70">
+        無料相談を予約し、Webサイト、リニューアル、SEO対応構築、カスタムWebアプリの実用的な次の一手を確認しましょう。
+      </p>
+      <div class="mt-10">
+        <a href={contactUrl} class="group inline-flex items-center justify-center gap-x-2 rounded-lg bg-yellow-400 px-8 py-4 text-sm font-bold text-blue-900 transition-all duration-300 hover:bg-yellow-300 hover:shadow-lg hover:shadow-yellow-400/25">
+          {primaryCta}
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

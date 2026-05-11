@@ -1,0 +1,67 @@
+{
+  "title": "간단하고 투명한 요금",
+  "subTitle": "현재 12개월 플랜 할인 혜택이 제공됩니다. 지금 문의하세요.",
+  "badge": "가장 좋은 선택",
+  "thirdOption": "엔터프라이즈 솔루션이 필요하신가요?",
+  "btnText": "맞춤 견적 받기",
+
+  "starterKit": {
+    "name": "스타터 플랜",
+    "description": "기본 온라인 presence, 포트폴리오, 초기 단계 비즈니스에 적합합니다.",
+    "price": "74",
+    "cents": ".99",
+    "billingFrequency": "USD / 월",
+    "features": [
+      "1-4페이지 반응형 웹사이트",
+      "빠른 호스팅 + SSL",
+      "월간 웹사이트 유지보수(보안 업데이트, 백업)",
+      "Google Analytics 연동",
+      "주 5일 채팅 및 이메일 지원"
+    ],
+    "purchaseBtnTitle": "구독하기",
+    "purchaseBtnTitle2": "연간 플랜 20% 할인",
+    "purchaseLink": "https://buy.stripe.com/bJe3cxcs2aG10AD18ubsc06?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/14AfZjbnY6pL9795oKbsc09?locale=en"
+  },
+
+  "professionalToolbox": {
+    "name": "그로스 플랜",
+    "description": "디지털 기반을 확장하고 발전시키려는 브랜드에 적합합니다.",
+    "price": "149",
+    "cents": ".99",
+    "billingFrequency": "USD / 월",
+    "features": [
+      "스타터 플랜의 모든 기능 포함",
+      "최대 8개의 맞춤 페이지",
+      "고급 SEO 설정(기술 SEO + 온페이지)",
+      "이커머스 또는 구독 플랫폼 설정",
+      "월 최대 5회 업데이트",
+      "성능 모니터링이 포함된 우선 호스팅",
+      "24/7 지원(12시간 응답 기준)"
+    ],
+    "purchaseBtnTitle": "구독하기",
+    "purchaseBtnTitle2": "연간 플랜 20% 할인",
+    "purchaseLink": "https://buy.stripe.com/bJefZjcs29BX9796sObsc07?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/fZu3cx1No7tPfvx2cybsc0a?locale=en"
+  },
+
+  "enterprise": {
+    "name": "맞춤형 웹 솔루션",
+    "description": "큰 계획이 있는 비즈니스를 위한 플랜입니다. 복잡한 요구와 높은 목표에 맞춘 솔루션을 제공합니다.",
+    "price": "499",
+    "cents": ".99",
+    "billingFrequency": "USD / 월",
+    "features": [
+      "그로스 플랜의 모든 기능 포함",
+      "페이지 또는 컴포넌트 수 제한 없음",
+      "API 연동, 사용자 포털, 예약 시스템 등",
+      "주간 개발 체크인 및 전담 계정 매니저",
+      "이커머스 연동: 완전히 통합된 온라인 스토어로 제품 또는 서비스를 판매하세요.",
+      "맞춤 기능 개발(대시보드, 로그인, API)"
+    ],
+    "purchaseBtnTitle": "구독하기",
+    "purchaseBtnTitle2": "연간 플랜 20% 할인",
+    "purchaseLink": "https://buy.stripe.com/eVqaEZ4ZAdSd0ADbN8bsc08?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/4gM4gB3Vw7tPbfh3gCbsc0b?locale=en"
+  }
+}

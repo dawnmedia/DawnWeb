@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import codeImage from "@images/code.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "기술 기반을 갖춘 SEO 기반 웹사이트";
+const description =
+  "Dawn Web은 명확한 페이지 구조, 크롤링 가능한 링크, 메타데이터, 스키마, 사이트맵 관리, 빠른 반응형 페이지를 갖춘 SEO 기반 웹사이트를 구축합니다.";
+const pathname = "/ko/services/seo-ready-websites";
+const relatedServices = [
+  { title: "비즈니스 웹사이트 제작", href: "/ko/services/business-website-design", description: "가치를 설명하고 문의를 만드는 비즈니스 웹사이트를 설계합니다." },
+  { title: "웹사이트 리디자인", href: "/ko/services/website-redesign", description: "검색 가시성을 보호하면서 기존 사이트를 현대화합니다." },
+  { title: "맞춤형 웹 앱", href: "/ko/services/custom-web-apps", description: "깔끔한 기술 아키텍처로 비즈니스 도구와 웹 앱을 구축합니다." },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ko"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ko", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "SEO-ready website development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="SEO 기반 웹사이트"
+    title={title}
+    description={description}
+    outcome="검색 기본기를 출시 후 과제로 남기지 않고, 구조와 메타데이터를 웹사이트 기반 안에 처음부터 포함합니다."
+    bestFor="새 사이트에서 기술적인 검색 기본기를 초기에 갖추고 싶은 기업"
+    image={codeImage}
+    imageAlt="웹사이트 구축 코드가 표시된 코드 편집기"
+    benefits={[
+      "설명적인 제목, 메타 설명, canonical URL, Open Graph 태그, 구조화 데이터.",
+      "크롤링 가능한 내비게이션, 깔끔한 내부 링크, 의미 있는 제목 구조, 이미지 대체 텍스트.",
+      "Google이 색인해야 할 페이지를 위한 사이트맵과 robots 설정, 출시 점검.",
+    ]}
+    process={[
+      "구축 전 목표 페이지, 검색 의도, 기술 SEO 체크리스트를 정의합니다.",
+      "메타데이터, 스키마, 내부 링크, 반응형 성능 개선을 구현합니다.",
+      "배포 전 생성된 HTML, 사이트맵, 구조화 데이터를 검증합니다.",
+    ]}
+    proofPoints={[
+      "기술 SEO는 덧붙이는 작업이 아니라 구축의 일부로 다룹니다.",
+      "페이지는 먼저 사람을 위해, 그다음 크롤러를 위해 구조화됩니다.",
+      "출시 점검에는 생성 HTML, 사이트맵, 메타데이터, 스키마가 포함됩니다.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

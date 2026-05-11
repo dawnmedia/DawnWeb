@@ -11,6 +11,16 @@ import LanguagePicker from "@components/ui/LanguagePicker.astro";
 const currentLocale = getLocaleFromPath(Astro.url.pathname);
 const strings = getNavigation(currentLocale);
 const homeUrl = localizePath("/", currentLocale);
+const navToggleLabel =
+  currentLocale === "ko"
+    ? "내비게이션 열기"
+    : currentLocale === "ja"
+      ? "ナビゲーションを切り替える"
+      : currentLocale === "fr"
+        ? "Ouvrir la navigation"
+        : currentLocale === "br"
+          ? "Alternar navegação"
+          : "Toggle navigation";
 
 // Ensure anchors use the configured base (useful for GitHub Pages subpaths)
 const BASE = import.meta.env.BASE_URL || "/";
@@ -42,7 +52,7 @@ const BASE = import.meta.env.BASE_URL || "/";
           data-nav-toggle
           aria-controls="navbar-collapse-with-animation"
           aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-label={navToggleLabel}
         >
           <svg
             class="h-5 w-5"
@@ -80,7 +90,7 @@ const BASE = import.meta.env.BASE_URL || "/";
     <!-- Collapsible navigation -->
     <div
       id="navbar-collapse-with-animation"
-      class="hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
+      class="hidden grow basis-full overflow-hidden transition-all duration-300 md:block md:overflow-visible"
       data-nav-menu
     >
       <div

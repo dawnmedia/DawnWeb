@@ -1,0 +1,74 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactGateway from "@components/sections/contact/ContactGateway.astro";
+import { SITE } from "@data/constants";
+import { buildWebPageSchema } from "@utils/seo";
+
+const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const pageTitle = "문의 | Dawn Web";
+const pageDescription =
+  "비즈니스 웹사이트, 리디자인, SEO 기반 구축, 맞춤형 웹 앱을 계획하려면 Dawn Web에 문의하세요.";
+const budgetRanges = ["$1,000 미만", "$1,000-$3,000", "$3,000-$7,000", "$7,000-$15,000", "$15,000 이상"];
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="ko"
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/ko/contact",
+    locale: "ko",
+    siteUrl: SITE.url,
+  })}
+>
+  <ContactGateway
+    eyebrow="무료 웹사이트 상담"
+    title="온라인 presence의 다음 버전을 함께 만듭니다"
+    subtitle="무엇을 만들고, 고치고, 명확히 하려는지 알려주세요. 웹사이트, 리디자인, SEO 기반 구축, 맞춤형 웹 앱에 가장 현실적인 다음 단계를 함께 선택하겠습니다."
+    primaryCta="무료 상담 예약"
+    secondaryCta="프로젝트 브리프 보내기"
+    calendlyUrl={calendlyUrl}
+    proofPoints={["무료 상담", "영업일 기준 1-2일 내 답변", "명확한 다음 단계"]}
+    imageAlt="웹사이트 프로젝트를 기획하는 Dawn Web 전략가"
+    bookingTitle="방향을 함께 논의할 준비가 된 팀을 위해"
+    bookingText="부담 없이 목표, 일정, 가장 적합한 서비스를 정리하는 상담으로 활용하세요."
+    bookingBullets={["현재 웹사이트 또는 아이디어 검토", "가장 빠른 출시 경로 파악", "명확한 추천 방향 확보"]}
+    formTitle="프로젝트 브리프 보내기"
+    formSubtitle="먼저 글로 정리하고 싶으신가요?"
+    fieldLabels={{
+      firstName: "이름",
+      lastName: "성",
+      email: "이메일",
+      phone: "전화번호",
+      company: "회사 또는 현재 웹사이트",
+      details: "개선, 구축, 명확화하려는 내용을 알려주세요.",
+    }}
+    projectTypeTitle="무엇을 찾고 계신가요?"
+    projectTypes={[
+      { label: "새 웹사이트", value: "New website" },
+      { label: "웹사이트 리디자인", value: "Website redesign" },
+      { label: "SEO 기반 구축", value: "SEO-ready build" },
+      { label: "맞춤형 웹 앱", value: "Custom web app" },
+      { label: "아직 잘 모르겠어요", value: "Not sure yet" },
+    ]}
+    budgetTitle="예상 예산"
+    budgetSubtitle="대략적인 범위면 충분합니다. 함께 범위를 더 구체화하겠습니다."
+    budgetRanges={budgetRanges}
+    submitLabel="메시지 보내기"
+    responseNote="영업일 기준 1-2일 내에 답변드리겠습니다."
+    nextStepsTitle="다음에는 무엇이 진행되나요?"
+    nextSteps={[
+      { title: "목표를 검토합니다", text: "메모, 현재 웹사이트, 필요한 지원 유형을 살펴봅니다." },
+      { title: "방향을 제안합니다", text: "확인 질문, 추천하는 다음 단계, 또는 상담 링크가 더 적합한 경우 해당 링크를 드립니다." },
+      { title: "올바른 경로를 계획합니다", text: "제작이 시작되기 전에 범위, 일정, 제안 방향을 함께 정리합니다." },
+    ]}
+    linkCards={[
+      { title: "상담 예약", text: "원하는 시간을 선택하고 프로젝트를 직접 논의하세요.", href: calendlyUrl, action: "캘린더 열기", icon: "chatBubble" },
+      { title: "서비스 살펴보기", text: "웹사이트 제작, 리디자인, SEO 기반 구축, 맞춤형 앱을 비교해 보세요.", href: "/ko/services", action: "서비스 보기", icon: "tools" },
+      { title: "이메일로 문의", text: "전체 브리프를 작성하기 전 간단한 질문을 보내셔도 됩니다.", href: "mailto:contact@dawnwebs.com", action: "contact@dawnwebs.com", icon: "envelopeOpen" },
+      { title: "블로그와 FAQ 읽기", text: "웹사이트, 성장, 성능, 다음 단계에 대한 Dawn Web의 관점을 확인하세요.", href: "/ko/blog", action: "블로그 방문", icon: "question" },
+    ]}
+  />
+</MainLayout>

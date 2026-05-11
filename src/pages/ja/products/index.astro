@@ -1,0 +1,58 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
+
+const locale: Locale = "ja";
+
+const products: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) =>
+    collectionIdStartsWithLocale(id, locale),
+  )
+).sort((a, b) => a.data.main.id - b.data.main.id);
+
+const pageTitle = "Web制作実績・デジタルプロジェクト | Dawn Web";
+const pageDescription =
+  "Dawn WebのWebアプリ、AIコンセプト、デジタルプラットフォームを、ポジショニング、ステータス、スクリーンショット、技術選定とともにご覧ください。";
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="ja"
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/ja/products",
+    locale,
+    siteUrl: SITE.url,
+  })}
+>
+  <ProductShowcaseIndex
+    products={products}
+    locale={locale}
+    eyebrow="プロダクトポートフォリオ"
+    title="ひと目で理解できるソフトウェアプロダクト"
+    subTitle="Dawn WebのWebアプリ、AIコンセプト、デジタルプラットフォームを、明確なポジショニング、公開状況、スクリーンショット、技術的な選択からご覧いただけます。"
+    ctaLabel="プロダクトを相談"
+    ctaUrl="/ja/contact"
+    viewLabel="プロダクトを見る"
+  />
+
+  <div class="opacity-95">
+    <FeaturesStatsAlt
+      title="Dawn Webを選ぶ理由"
+      subTitle="アイデアを強いオンライン基盤へ変えます。初めてのWebサイトを立ち上げるスタートアップでも、デジタル基盤を改善したい既存企業でも、目標に合わせた専門的なソリューションを提供します。"
+      benefits={[
+        "高性能なWebサイト: 速く、信頼性が高く、訪問者を顧客へ変えることを意識したカスタムWebサイトを設計・開発します。",
+        "拡張しやすい開発: シンプルなランディングページから統合プラットフォームまで、成長と保守性を見据えてモダンな技術で構築します。",
+        "継続的なサポート: 公開から長期的な成功まで、保守、セキュリティ更新、専門的な支援を提供します。",
+      ]}
+    />
+  </div>
+</MainLayout>

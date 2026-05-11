@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDev from "@images/web-dev.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "더 많은 방문자를 문의로 바꾸는 웹사이트 리디자인";
+const description =
+  "Dawn Web은 낡은 비즈니스 웹사이트를 더 선명한 메시지, 현대적인 UX, 빠른 페이지, 검색 유입에서 문의까지 이어지는 깔끔한 경로로 다시 구축합니다.";
+const pathname = "/ko/services/website-redesign";
+const relatedServices = [
+  { title: "비즈니스 웹사이트 제작", href: "/ko/services/business-website-design", description: "신뢰, 명확성, 전환을 중심으로 새 웹사이트를 만듭니다." },
+  { title: "SEO 기반 웹사이트", href: "/ko/services/seo-ready-websites", description: "출시 과정에서 기술 SEO, 메타데이터, 페이지 구조가 흐트러지지 않게 합니다." },
+  { title: "맞춤형 웹 앱", href: "/ko/services/custom-web-apps", description: "사이트가 운영까지 지원해야 할 때 맞춤 기능을 추가합니다." },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ko"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ko", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Website redesign", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="웹사이트 리디자인"
+    title={title}
+    description={description}
+    outcome="기존 사이트의 유효한 자산은 살리면서 혼란, 마찰, 오래된 표현을 제거한 더 명확한 웹사이트 경험입니다."
+    bestFor="기존 사이트가 더 이상 설명력, 신뢰, 전환을 만들어내지 못하는 기업"
+    image={webDev}
+    imageAlt="웹사이트 리디자인을 함께 검토하는 팀"
+    benefits={[
+      "방문자가 큰 노력 없이 서비스를 이해할 수 있는 명확한 정보 구조.",
+      "더 신뢰감을 주는 첫인상을 위한 최신 디자인 패턴, 모바일 레이아웃, 페이지 성능.",
+      "페이지 제목, 설명, 리디렉션, 내부 링크를 고려한 마이그레이션 계획.",
+    ]}
+    process={[
+      "현재 사이트, 콘텐츠, 검색 순위, 전환 경로, 기술 위험을 진단합니다.",
+      "중요한 서비스와 질문을 중심으로 우선 페이지를 재구성합니다.",
+      "메타데이터, 스키마, 사이트맵, 출시 후 점검까지 포함해 리디자인을 공개합니다.",
+    ]}
+    proofPoints={[
+      "리디자인 결정을 내리기 전에 콘텐츠, UX, 기술 위험을 검토합니다.",
+      "우선 페이지는 명확성과 문의 경로를 중심으로 다시 만듭니다.",
+      "출시 계획은 메타데이터, 리디렉션, 검색 가시성을 고려합니다.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

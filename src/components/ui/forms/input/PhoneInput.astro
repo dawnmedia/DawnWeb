@@ -1,5 +1,5 @@
 ---
-const { label= Astro.currentLocale === "fr" ? "Numéro de téléphone" : "Phone Number", id } = Astro.props;
+const { label= Astro.currentLocale === "ko" ? "전화번호" : Astro.currentLocale === "ja" ? "電話番号" : Astro.currentLocale === "fr" ? "Numéro de téléphone" : "Phone Number", id } = Astro.props;
 
 interface Props {
   label?: string;

@@ -8,6 +8,7 @@ import {
   DEFAULT_LOCALE,
   getContentSlug,
   localizePath,
+  LOCALE_LANGUAGE_TAGS,
   stripLocaleFromSlug,
   type Locale,
 } from "@utils/locale";
@@ -56,7 +57,7 @@ interface Props {
             {blogEntry.data.author}
           </h4>
           <p class="text-xs text-neutral-50/[.8]">
-            {formatDate(blogEntry.data.pubDate)}
+            {formatDate(blogEntry.data.pubDate, LOCALE_LANGUAGE_TAGS[blogLocale])}
           </p>
         </div>
       </div>

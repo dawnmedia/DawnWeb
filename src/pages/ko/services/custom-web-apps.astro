@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import software from "@images/software.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "비즈니스 업무 흐름을 위한 맞춤형 웹 앱";
+const description =
+  "Dawn Web은 정적인 웹사이트를 넘어 기업이 실제 업무를 더 잘 처리하도록 맞춤형 웹 앱, 포털, 예약 도구, 대시보드, 통합 기능을 구축합니다.";
+const pathname = "/ko/services/custom-web-apps";
+const relatedServices = [
+  { title: "비즈니스 웹사이트 제작", href: "/ko/services/business-website-design", description: "제안을 명확히 보여주는 비즈니스 웹사이트부터 시작합니다." },
+  { title: "웹사이트 리디자인", href: "/ko/services/website-redesign", description: "맞춤 기능을 추가하기 전에 웹사이트 경험을 개선합니다." },
+  { title: "SEO 기반 웹사이트", href: "/ko/services/seo-ready-websites", description: "콘텐츠와 앱 화면 전반에서 기술 SEO 기반을 유지합니다." },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ko"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ko", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Custom web application development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="맞춤형 웹 앱"
+    title={title}
+    description={description}
+    outcome="수작업, 분리된 도구, 불편한 내부 업무 흐름을 팀이 실제로 사용할 수 있는 집중된 웹 애플리케이션으로 대체합니다."
+    bestFor="포털, 대시보드, 예약 도구, 업무 소프트웨어가 필요한 팀"
+    image={software}
+    imageAlt="비즈니스 소프트웨어 인터페이스와 업무 흐름 계획"
+    benefits={[
+      "맞춤형 대시보드, 포털, 예약 흐름, 콘텐츠 도구, 관리자 경험.",
+      "결제, CRM, 분석, 이메일, 일정, 비즈니스 시스템과의 통합.",
+      "팀이 실제로 사용하고 유지보수할 방식을 고려한 확장 가능한 아키텍처.",
+    ]}
+    process={[
+      "업무 흐름, 사용자, 권한, 데이터, 운영 목표를 문서화합니다.",
+      "전체 구축 전에 핵심 경험과 기술 접근 방식을 프로토타입으로 확인합니다.",
+      "테스트, 배포, 모니터링, 유지보수 계획과 함께 애플리케이션을 출시합니다.",
+    ]}
+    proofPoints={[
+      "업무 흐름, 사용자, 권한, 데이터 모델을 구축 전에 명확히 합니다.",
+      "인터페이스는 보여주기보다 반복 사용을 기준으로 설계합니다.",
+      "배포와 유지보수 요구 사항도 기술 계획에 포함합니다.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

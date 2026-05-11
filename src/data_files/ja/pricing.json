@@ -1,0 +1,67 @@
+{
+  "title": "シンプルで分かりやすい料金",
+  "subTitle": "現在、12か月プランの割引をご利用いただけます。お気軽にお問い合わせください。",
+  "badge": "おすすめ",
+  "thirdOption": "エンタープライズ向けですか？",
+  "btnText": "カスタム見積もりを依頼",
+
+  "starterKit": {
+    "name": "スタータープラン",
+    "description": "基本的なWebプレゼンス、ポートフォリオ、初期段階のビジネスに最適です。",
+    "price": "74",
+    "cents": ".99",
+    "billingFrequency": "USD / 月",
+    "features": [
+      "1-4ページのレスポンシブWebサイト",
+      "高速ホスティング + SSL",
+      "月次Webサイト保守（セキュリティ更新、バックアップ）",
+      "Google Analytics連携",
+      "週5日のチャット・メールサポート"
+    ],
+    "purchaseBtnTitle": "今すぐ登録",
+    "purchaseBtnTitle2": "年間プラン20%OFF",
+    "purchaseLink": "https://buy.stripe.com/bJe3cxcs2aG10AD18ubsc06?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/14AfZjbnY6pL9795oKbsc09?locale=en"
+  },
+
+  "professionalToolbox": {
+    "name": "グロースプラン",
+    "description": "デジタル基盤を拡張し、成長させたいブランドに適しています。",
+    "price": "149",
+    "cents": ".99",
+    "billingFrequency": "USD / 月",
+    "features": [
+      "スタータープランの全機能に加えて",
+      "最大8ページのカスタムページ",
+      "高度なSEO設定（技術SEO + オンページ）",
+      "ECまたはサブスクリプション基盤の設定",
+      "月最大5回の更新",
+      "パフォーマンス監視付き優先ホスティング",
+      "24時間サポート（12時間以内の返信目安）"
+    ],
+    "purchaseBtnTitle": "今すぐ登録",
+    "purchaseBtnTitle2": "年間プラン20%OFF",
+    "purchaseLink": "https://buy.stripe.com/bJefZjcs29BX9796sObsc07?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/fZu3cx1No7tPfvx2cybsc0a?locale=en"
+  },
+
+  "enterprise": {
+    "name": "カスタムWebソリューション",
+    "description": "大きな計画を持つビジネス向け。複雑な要件と意欲的な目標に合わせたソリューションです。",
+    "price": "499",
+    "cents": ".99",
+    "billingFrequency": "USD / 月",
+    "features": [
+      "グロースプランの全機能に加えて",
+      "ページまたはコンポーネント数の制限なし",
+      "API連携、ユーザーポータル、予約システムなど",
+      "週次の開発チェックインと専任アカウントマネージャー",
+      "EC連携：完全に統合されたオンラインストアで商品やサービスを販売できます。",
+      "カスタム機能開発（ダッシュボード、ログイン、API）"
+    ],
+    "purchaseBtnTitle": "今すぐ登録",
+    "purchaseBtnTitle2": "年間プラン20%OFF",
+    "purchaseLink": "https://buy.stripe.com/eVqaEZ4ZAdSd0ADbN8bsc08?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/4gM4gB3Vw7tPbfh3gCbsc0b?locale=en"
+  }
+}

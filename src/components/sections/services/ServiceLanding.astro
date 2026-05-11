@@ -6,6 +6,7 @@ import type { ImageMetadata } from "astro";
 import motoViagens from "@images/motoviagens3.jpg";
 import verbo from "@images/verbo_app_card.jpg";
 import triplut from "@images/triplut6.jpg";
+import { getLocaleFromPath, localizePath } from "@utils/locale";
 
 const {
   eyebrow,
@@ -45,29 +46,148 @@ interface Props {
   proofPoints?: string[];
 }
 
-const contactUrl = "/contact";
+const currentLocale = getLocaleFromPath(Astro.url.pathname);
+const contactUrl = localizePath("/contact", currentLocale);
+const productsUrl = localizePath("/products", currentLocale);
+const servicesUrl = localizePath("/services", currentLocale);
+const labels = {
+  en: {
+    primaryCta: "Book a free consultation",
+    secondaryCta: "See product work",
+    bestFor: "Best for",
+    deliverables: "Deliverables",
+    deliverablesTitle: "What we build into the service",
+    deliverablesText:
+      "The work is planned around the outcome your business needs, not a generic checklist.",
+    process: "Process",
+    processTitle: "How the project moves",
+    proof: "Proof",
+    proofTitle: "Product thinking behind the service work",
+    proofText:
+      "Dawn Web applies the same clarity, interface, and technical judgment used in product builds to service projects.",
+    related: "Related",
+    relatedTitle: "Services that fit around this one",
+    viewAllServices: "View all services",
+    finalTitle: "Ready to make the next step clearer?",
+    finalText:
+      "Bring the current site, rough idea, or workflow. We will help you decide what is worth building first.",
+  },
+  fr: {
+    primaryCta: "Planifier une consultation",
+    secondaryCta: "Voir les produits",
+    bestFor: "Idéal pour",
+    deliverables: "Livrables",
+    deliverablesTitle: "Ce que nous intégrons au service",
+    deliverablesText:
+      "Le travail est planifié autour du résultat dont votre entreprise a besoin, pas autour d'une liste générique.",
+    process: "Processus",
+    processTitle: "Comment le projet avance",
+    proof: "Preuves",
+    proofTitle: "La logique produit derrière nos services",
+    proofText:
+      "Dawn Web applique aux services la même clarté, le même sens de l'interface et le même jugement technique que dans les produits.",
+    related: "Lié",
+    relatedTitle: "Services qui complètent celui-ci",
+    viewAllServices: "Voir tous les services",
+    finalTitle: "Prêt à rendre la prochaine étape plus claire ?",
+    finalText:
+      "Apportez votre site actuel, votre idée ou votre flux de travail. Nous vous aiderons à décider quoi construire en premier.",
+  },
+  br: {
+    primaryCta: "Agendar uma consulta",
+    secondaryCta: "Ver produtos",
+    bestFor: "Ideal para",
+    deliverables: "Entregáveis",
+    deliverablesTitle: "O que incluímos no serviço",
+    deliverablesText:
+      "O trabalho é planejado em torno do resultado que sua empresa precisa, não de uma lista genérica.",
+    process: "Processo",
+    processTitle: "Como o projeto avança",
+    proof: "Prova",
+    proofTitle: "Pensamento de produto por trás dos serviços",
+    proofText:
+      "A Dawn Web aplica aos serviços a mesma clareza, interface e critério técnico usados em produtos.",
+    related: "Relacionados",
+    relatedTitle: "Serviços que combinam com este",
+    viewAllServices: "Ver todos os serviços",
+    finalTitle: "Pronto para deixar o próximo passo mais claro?",
+    finalText:
+      "Traga o site atual, uma ideia inicial ou um fluxo de trabalho. Vamos ajudar você a decidir o que vale construir primeiro.",
+  },
+  ko: {
+    primaryCta: "무료 상담 예약",
+    secondaryCta: "제품 작업 보기",
+    bestFor: "추천 대상",
+    deliverables: "제공 범위",
+    deliverablesTitle: "서비스에 포함해 설계하는 것",
+    deliverablesText:
+      "일반적인 체크리스트가 아니라 비즈니스에 필요한 결과를 기준으로 작업을 설계합니다.",
+    process: "프로세스",
+    processTitle: "프로젝트 진행 방식",
+    proof: "실제 사례",
+    proofTitle: "서비스 작업에 담긴 제품적 사고",
+    proofText:
+      "Dawn Web은 제품을 만들 때 쓰는 명확한 구조, 인터페이스 감각, 기술적 판단을 서비스 프로젝트에도 그대로 적용합니다.",
+    related: "관련 서비스",
+    relatedTitle: "이 서비스와 함께 고려할 수 있는 서비스",
+    viewAllServices: "전체 서비스 보기",
+    finalTitle: "다음 단계를 더 명확하게 만들 준비가 되셨나요?",
+    finalText:
+      "현재 사이트, 초기 아이디어, 업무 흐름을 가져오세요. 무엇부터 만들 가치가 있는지 함께 판단해 드립니다.",
+  },
+  ja: {
+    primaryCta: "無料相談を予約",
+    secondaryCta: "制作実績を見る",
+    bestFor: "おすすめ",
+    deliverables: "提供内容",
+    deliverablesTitle: "サービスに組み込むもの",
+    deliverablesText:
+      "一般的なチェックリストではなく、ビジネスに必要な成果から逆算して設計します。",
+    process: "プロセス",
+    processTitle: "プロジェクトの進め方",
+    proof: "実績",
+    proofTitle: "サービスにも活きるプロダクト思考",
+    proofText:
+      "Dawn Webは、プロダクト開発で培った明確な構成、UIの判断、技術的な見極めをサービス案件にも活かします。",
+    related: "関連サービス",
+    relatedTitle: "このサービスと相性のよいサービス",
+    viewAllServices: "すべてのサービスを見る",
+    finalTitle: "次の一歩をもっと明確にしませんか？",
+    finalText:
+      "現在のサイト、まだ粗いアイデア、業務フローをお聞かせください。最初に何を作るべきか一緒に整理します。",
+  },
+}[currentLocale];
 const productProof = [
   {
     title: "Moto Viagens",
-    href: "/products/motoviagens",
-    description:
-      "A live travel platform with booking-oriented flows, route content, multilingual support, and AI-assisted discovery.",
+    href: localizePath("/products/motoviagens", currentLocale),
+    description: currentLocale === "ko"
+      ? "예약 중심 흐름, 경로 콘텐츠, 다국어 지원, AI 기반 탐색을 갖춘 실제 여행 플랫폼입니다."
+      : currentLocale === "ja"
+        ? "予約導線、ルートコンテンツ、多言語対応、AIによる探索支援を備えた実運用中の旅行プラットフォームです。"
+        : "A live travel platform with booking-oriented flows, route content, multilingual support, and AI-assisted discovery.",
     image: motoViagens,
     imageAlt: "Moto Viagens Brazilian motorcycle routes and tours",
   },
   {
     title: "Verbo",
-    href: "/products/verboai",
-    description:
-      "An AI language-learning product with coaching, adaptive study flows, subscriptions, and mobile support.",
+    href: localizePath("/products/verboai", currentLocale),
+    description: currentLocale === "ko"
+      ? "AI 코칭, 적응형 학습 흐름, 구독, 모바일 지원을 갖춘 언어 학습 제품입니다."
+      : currentLocale === "ja"
+        ? "AIコーチング、適応型の学習フロー、サブスクリプション、モバイル対応を備えた語学学習プロダクトです。"
+        : "An AI language-learning product with coaching, adaptive study flows, subscriptions, and mobile support.",
     image: verbo,
     imageAlt: "Verbo AI language learning platform interface",
   },
   {
     title: "Triplut",
-    href: "/products/triplut",
-    description:
-      "A travel-planning concept for routes, budgets, experiences, and AI guidance in one clearer flow.",
+    href: localizePath("/products/triplut", currentLocale),
+    description: currentLocale === "ko"
+      ? "경로, 예산, 경험, AI 안내를 하나의 더 명확한 흐름으로 묶는 여행 계획 콘셉트입니다."
+      : currentLocale === "ja"
+        ? "ルート、予算、体験、AIガイドをひとつの分かりやすい流れにまとめる旅行計画コンセプトです。"
+        : "A travel-planning concept for routes, budgets, experiences, and AI guidance in one clearer flow.",
     image: triplut,
     imageAlt: "Illustration of Triplut AI travel platform",
   },
@@ -100,10 +220,10 @@ const productProof = [
         }
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <PrimaryCTA
-            title="Book a free consultation"
+            title={labels.primaryCta}
             url={contactUrl}
           />
-          <SecondaryCTA title="See product work" url="/products" />
+          <SecondaryCTA title={labels.secondaryCta} url={productsUrl} />
         </div>
       </div>
 
@@ -132,7 +252,7 @@ const productProof = [
         bestFor && (
           <div class="md:col-span-1">
             <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
-              Best for
+              {labels.bestFor}
             </p>
             <p class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">
               {bestFor}
@@ -158,13 +278,13 @@ const productProof = [
     <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
         <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-          Deliverables
+          {labels.deliverables}
         </p>
         <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-          What we build into the service
+          {labels.deliverablesTitle}
         </h2>
         <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
-          The work is planned around the outcome your business needs, not a generic checklist.
+          {labels.deliverablesText}
         </p>
       </div>
       <div class="grid gap-4 md:grid-cols-3">
@@ -187,10 +307,10 @@ const productProof = [
     <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
         <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-          Process
+          {labels.process}
         </p>
         <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-          How the project moves
+          {labels.processTitle}
         </h2>
       </div>
       <ol class="grid gap-4 md:grid-cols-3">
@@ -215,13 +335,13 @@ const productProof = [
   >
     <div class="max-w-3xl">
       <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-        Proof
+        {labels.proof}
       </p>
       <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-        Product thinking behind the service work
+        {labels.proofTitle}
       </h2>
       <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
-        Dawn Web applies the same clarity, interface, and technical judgment used in product builds to service projects.
+        {labels.proofText}
       </p>
     </div>
 
@@ -263,13 +383,13 @@ const productProof = [
     <div class="grid gap-8 lg:grid-cols-[1fr_2fr]">
       <div>
         <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-          Related
+          {labels.related}
         </p>
         <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-          Services that fit around this one
+          {labels.relatedTitle}
         </h2>
         <div class="mt-6">
-          <SecondaryCTA title="View all services" url="/services" />
+          <SecondaryCTA title={labels.viewAllServices} url={servicesUrl} />
         </div>
       </div>
       <div class="grid gap-4 md:grid-cols-3">
@@ -299,13 +419,13 @@ const productProof = [
       <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
         <div>
           <h2 class="text-balance text-3xl font-bold md:text-4xl">
-            Ready to make the next step clearer?
+            {labels.finalTitle}
           </h2>
           <p class="mt-3 max-w-3xl text-pretty text-neutral-300">
-            Bring the current site, rough idea, or workflow. We will help you decide what is worth building first.
+            {labels.finalText}
           </p>
         </div>
-        <PrimaryCTA title="Book a free consultation" url={contactUrl} />
+        <PrimaryCTA title={labels.primaryCta} url={contactUrl} />
       </div>
     </div>
   </section>

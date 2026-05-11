@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDev from "@images/web-dev.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "訪問者を問い合わせへ変えるWebサイトリニューアル";
+const description =
+  "Dawn Webは、古くなったビジネスサイトを、より明確なメッセージ、現代的なUX、速いページ、検索流入から問い合わせまでの分かりやすい導線で作り直します。";
+const pathname = "/ja/services/website-redesign";
+const relatedServices = [
+  { title: "ビジネスサイト制作", href: "/ja/services/business-website-design", description: "信頼、分かりやすさ、成果を中心に新しいWebサイトを作ります。" },
+  { title: "SEO対応サイト", href: "/ja/services/seo-ready-websites", description: "公開時に技術SEO、メタデータ、ページ構造を整えたまま進めます。" },
+  { title: "カスタムWebアプリ", href: "/ja/services/custom-web-apps", description: "サイトが業務まで支える必要がある場合にカスタム機能を追加します。" },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="ja"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "ja", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Website redesign", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Webサイトリニューアル"
+    title={title}
+    description={description}
+    outcome="既存サイトの有効な資産を活かしながら、摩擦、分かりにくさ、古い見せ方を取り除いた明確なWeb体験です。"
+    bestFor="既存サイトが説明力、信頼、問い合わせにつながらなくなっている企業"
+    image={webDev}
+    imageAlt="Webサイトリニューアルを検討するチーム"
+    benefits={[
+      "訪問者が余計な努力なくサービスを理解できる明確な情報設計。",
+      "第一印象の信頼感を高める新しいデザインパターン、モバイルレイアウト、ページ速度。",
+      "ページタイトル、説明、リダイレクト、内部リンクを考慮した移行計画。",
+    ]}
+    process={[
+      "現在のサイト、コンテンツ、検索順位、コンバージョン導線、技術リスクを監査します。",
+      "重要なサービスと疑問を中心に優先ページを再構成します。",
+      "メタデータ、スキーマ、サイトマップ、公開後チェックまで含めてリニューアルを公開します。",
+    ]}
+    proofPoints={[
+      "リニューアル判断の前に、現在のコンテンツ、UX、技術リスクを確認します。",
+      "優先ページは分かりやすさと問い合わせ導線を中心に作り直します。",
+      "公開計画ではメタデータ、リダイレクト、検索での見つかりやすさを考慮します。",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>
