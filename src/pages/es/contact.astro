@@ -1,0 +1,68 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactGateway from "@components/sections/contact/ContactGateway.astro";
+import { SITE } from "@data/constants";
+import { buildWebPageSchema } from "@utils/seo";
+
+const calendlyUrl = "https://calendly.com/contact-dawnwebs/30min";
+const pageTitle = "Contacto | Dawn Web";
+const pageDescription =
+  "Contacta a Dawn Web para planificar un sitio web empresarial, rediseño, base SEO o aplicación web a medida.";
+const budgetRanges = ["Menos de $1,000", "$1,000-$3,000", "$3,000-$7,000", "$7,000-$15,000", "$15,000+"];
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="es"
+  structuredData={buildWebPageSchema({ title: pageTitle, description: pageDescription, pathname: "/es/contact", locale: "es", siteUrl: SITE.url })}
+>
+  <ContactGateway
+    eyebrow="Consulta web gratuita"
+    title="Construyamos la próxima versión de tu presencia online"
+    subtitle="Cuéntanos qué estás construyendo, corrigiendo o intentando aclarar. Te ayudaremos a elegir el siguiente paso más práctico para tu sitio web, rediseño, base SEO o aplicación web a medida."
+    primaryCta="Reservar una consulta gratuita"
+    secondaryCta="Enviar un brief de proyecto"
+    calendlyUrl={calendlyUrl}
+    proofPoints={["Consulta gratuita", "Respuesta en 1-2 días hábiles", "Siguientes pasos claros"]}
+    imageAlt="Estratega de Dawn Web planificando un proyecto web"
+    bookingTitle="Para equipos listos para hablar del camino correcto"
+    bookingText="Usa la llamada para mapear objetivos, calendario y el servicio más adecuado, sin presión."
+    bookingBullets={["Revisar tu sitio actual o idea", "Identificar la ruta más rápida hacia el lanzamiento", "Salir con recomendaciones claras"]}
+    formTitle="Enviar un brief de proyecto"
+    formSubtitle="¿Prefieres escribir primero?"
+    fieldLabels={{
+      firstName: "Nombre",
+      lastName: "Apellido",
+      email: "Correo electrónico",
+      phone: "Teléfono",
+      company: "Empresa o sitio web actual",
+      details: "Cuéntanos qué intentas mejorar, construir o aclarar.",
+    }}
+    projectTypeTitle="¿Qué estás buscando?"
+    projectTypes={[
+      { label: "Nuevo sitio web", value: "New website" },
+      { label: "Rediseño de sitio web", value: "Website redesign" },
+      { label: "Construcción preparada para SEO", value: "SEO-ready build" },
+      { label: "Aplicación web a medida", value: "Custom web app" },
+      { label: "Aún no estoy seguro", value: "Not sure yet" },
+    ]}
+    budgetTitle="Presupuesto estimado"
+    budgetSubtitle="Un rango es suficiente. Afinaremos el alcance juntos."
+    budgetRanges={budgetRanges}
+    submitLabel="Enviar mensaje"
+    responseNote="Responderemos en 1-2 días hábiles."
+    nextStepsTitle="¿Qué sucede después?"
+    nextSteps={[
+      { title: "Revisamos tus objetivos", text: "Analizamos tus notas, tu sitio actual y el tipo de ayuda que necesitas." },
+      { title: "Respondemos con dirección", text: "Recibes preguntas aclaratorias, un siguiente paso recomendado o un enlace de llamada si conviene." },
+      { title: "Planificamos el camino correcto", text: "Juntos definimos alcance, calendario y propuesta antes de iniciar cualquier construcción." },
+    ]}
+    linkCards={[
+      { title: "Reservar una consulta", text: "Elige un horario y conversa directamente con nosotros sobre el proyecto.", href: calendlyUrl, action: "Abrir calendario", icon: "chatBubble" },
+      { title: "Explorar servicios", text: "Compara diseño web, rediseño, bases SEO y aplicaciones a medida.", href: "/es/services", action: "Ver servicios", icon: "tools" },
+      { title: "Preguntar por correo", text: "Envía una nota rápida si aún no estás listo para un brief completo.", href: "mailto:contact@dawnwebs.com", action: "contact@dawnwebs.com", icon: "envelopeOpen" },
+      { title: "Leer blog y FAQ", text: "Conoce cómo pensamos sobre sitios web, crecimiento, rendimiento y próximos pasos.", href: "/es/blog", action: "Visitar blog", icon: "question" },
+    ]}
+  />
+</MainLayout>

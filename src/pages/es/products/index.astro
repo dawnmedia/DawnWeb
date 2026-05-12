@@ -1,0 +1,48 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
+
+const locale: Locale = "es";
+const products: CollectionEntry<"products">[] = (
+  await getCollection("products", ({ id }) => collectionIdStartsWithLocale(id, locale))
+).sort((a, b) => a.data.main.id - b.data.main.id);
+
+const pageTitle = "Portafolio de sitios web y proyectos digitales | Dawn Web";
+const pageDescription =
+  "Explora las aplicaciones web, conceptos de IA y plataformas digitales de Dawn Web con posicionamiento, estado, capturas y decisiones técnicas.";
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="es"
+  structuredData={buildWebPageSchema({ title: pageTitle, description: pageDescription, pathname: "/es/products", locale, siteUrl: SITE.url })}
+>
+  <ProductShowcaseIndex
+    products={products}
+    locale={locale}
+    eyebrow="Portafolio de productos"
+    title="Productos de software que se entienden de un vistazo"
+    subTitle="Explora las aplicaciones web, conceptos de IA y plataformas digitales de Dawn Web mediante posicionamiento claro, estado real, capturas y decisiones técnicas."
+    ctaLabel="Planificar un producto"
+    ctaUrl="/es/contact"
+    viewLabel="Ver producto"
+  />
+  <div class="opacity-95">
+    <FeaturesStatsAlt
+      title="¿Por qué elegir Dawn Web?"
+      subTitle="Convierte tus ideas en una presencia online sólida. Ya seas una startup lanzando su primer sitio o una empresa que busca mejorar su base digital, entregamos soluciones expertas adaptadas a tus objetivos."
+      benefits={[
+        "Sitios web de alto rendimiento: diseñamos y desarrollamos sitios rápidos, confiables y optimizados para convertir visitantes en clientes.",
+        "Soluciones escalables: desde landing pages simples hasta plataformas integradas, construidas con frameworks modernos y preparadas para crecer.",
+        "Soporte continuo confiable: desde el lanzamiento hasta el éxito a largo plazo, ofrecemos mantenimiento, seguridad y asistencia experta.",
+      ]}
+    />
+  </div>
+</MainLayout>

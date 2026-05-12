@@ -1,0 +1,25 @@
+{
+  "subTitle": "Respuestas claras antes de reservar una llamada.",
+  "faqs": [
+    {
+      "question": "¿Solo crean sitios web?",
+      "answer": "No. Dawn Web crea sitios web empresariales, rediseña sitios confusos o de bajo rendimiento, desarrolla páginas preparadas para SEO y construye aplicaciones web a medida como dashboards, herramientas de reserva, portales y sistemas de flujo de trabajo."
+    },
+    {
+      "question": "¿Pueden mejorar mi sitio web actual?",
+      "answer": "Sí. Si tu sitio se ve bien pero no explica tu oferta, no genera confianza o no consigue suficientes consultas, podemos mejorar el copy, la estructura, la UX, el rendimiento y la base técnica."
+    },
+    {
+      "question": "¿Mi sitio quedará preparado para SEO?",
+      "answer": "Sí. Las construcciones preparadas para SEO incluyen fundamentos técnicos que suelen pasarse por alto: metadatos, estructura de páginas, enlaces rastreables, schema, sitemap y desarrollo orientado al rendimiento."
+    },
+    {
+      "question": "¿Con quién me comunicaré?",
+      "answer": "Te comunicas directamente con el fundador durante la planificación y la entrega, para que tus comentarios no se diluyan entre capas de gestión."
+    },
+    {
+      "question": "¿Qué sucede después de la consulta gratuita?",
+      "answer": "Revisamos tus objetivos, tu sitio actual o idea, tu calendario y el mejor siguiente paso. Si hay encaje, recibes una propuesta clara antes de iniciar cualquier desarrollo."
+    }
+  ]
+}

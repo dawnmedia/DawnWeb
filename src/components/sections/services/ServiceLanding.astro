@@ -156,6 +156,27 @@ const labels = {
     finalText:
       "現在のサイト、まだ粗いアイデア、業務フローをお聞かせください。最初に何を作るべきか一緒に整理します。",
   },
+  es: {
+    primaryCta: "Reservar una consulta gratuita",
+    secondaryCta: "Ver trabajos de producto",
+    bestFor: "Ideal para",
+    deliverables: "Entregables",
+    deliverablesTitle: "Lo que incorporamos al servicio",
+    deliverablesText:
+      "El trabajo se planifica en torno al resultado que necesita tu negocio, no a una lista genérica.",
+    process: "Proceso",
+    processTitle: "Cómo avanza el proyecto",
+    proof: "Prueba",
+    proofTitle: "Pensamiento de producto detrás del trabajo de servicios",
+    proofText:
+      "Dawn Web aplica a los proyectos de servicio la misma claridad, criterio de interfaz y juicio técnico que usa al crear productos.",
+    related: "Relacionado",
+    relatedTitle: "Servicios que encajan con este",
+    viewAllServices: "Ver todos los servicios",
+    finalTitle: "¿Listo para aclarar el siguiente paso?",
+    finalText:
+      "Trae tu sitio actual, una idea inicial o un flujo de trabajo. Te ayudaremos a decidir qué vale la pena construir primero.",
+  },
 }[currentLocale];
 const productProof = [
   {
@@ -165,6 +186,8 @@ const productProof = [
       ? "예약 중심 흐름, 경로 콘텐츠, 다국어 지원, AI 기반 탐색을 갖춘 실제 여행 플랫폼입니다."
       : currentLocale === "ja"
         ? "予約導線、ルートコンテンツ、多言語対応、AIによる探索支援を備えた実運用中の旅行プラットフォームです。"
+        : currentLocale === "es"
+          ? "Una plataforma de viajes en operación con flujos orientados a reservas, contenido de rutas, soporte multilingüe y descubrimiento asistido por IA."
         : "A live travel platform with booking-oriented flows, route content, multilingual support, and AI-assisted discovery.",
     image: motoViagens,
     imageAlt: "Moto Viagens Brazilian motorcycle routes and tours",
@@ -176,6 +199,8 @@ const productProof = [
       ? "AI 코칭, 적응형 학습 흐름, 구독, 모바일 지원을 갖춘 언어 학습 제품입니다."
       : currentLocale === "ja"
         ? "AIコーチング、適応型の学習フロー、サブスクリプション、モバイル対応を備えた語学学習プロダクトです。"
+        : currentLocale === "es"
+          ? "Un producto de aprendizaje de idiomas con coaching de IA, flujos adaptativos, suscripciones y soporte móvil."
         : "An AI language-learning product with coaching, adaptive study flows, subscriptions, and mobile support.",
     image: verbo,
     imageAlt: "Verbo AI language learning platform interface",
@@ -187,6 +212,8 @@ const productProof = [
       ? "경로, 예산, 경험, AI 안내를 하나의 더 명확한 흐름으로 묶는 여행 계획 콘셉트입니다."
       : currentLocale === "ja"
         ? "ルート、予算、体験、AIガイドをひとつの分かりやすい流れにまとめる旅行計画コンセプトです。"
+        : currentLocale === "es"
+          ? "Un concepto de planificación de viajes que reúne rutas, presupuestos, experiencias y guía de IA en un flujo más claro."
         : "A travel-planning concept for routes, budgets, experiences, and AI guidance in one clearer flow.",
     image: triplut,
     imageAlt: "Illustration of Triplut AI travel platform",

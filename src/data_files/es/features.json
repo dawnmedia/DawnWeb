@@ -1,0 +1,22 @@
+[
+  {
+    "heading": "Desarrollo web",
+    "content": "Creamos sitios web responsivos adaptados a las necesidades de tu negocio.",
+    "svg": "groups"
+  },
+  {
+    "heading": "Hosting y soporte 24/7",
+    "content": "Mantén tu sitio siempre disponible y seguro con hosting confiable y soporte experto.",
+    "svg": "verified"
+  },
+  {
+    "heading": "Soluciones de software a medida",
+    "content": "Creamos software y aplicaciones a medida, desde sistemas de gestión hotelera hasta kioscos de pedidos para restaurantes y más.",
+    "svg": "books"
+  },
+  {
+    "heading": "Optimización SEO",
+    "content": "Implementamos buenas prácticas de SEO para mejorar tu visibilidad y atraer tráfico orgánico.",
+    "svg": "frame"
+  }
+]

@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import codeImage from "@images/code.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "Sitios web preparados para SEO con una base técnica sólida";
+const description =
+  "Dawn Web crea sitios web preparados para SEO con estructura clara, enlaces rastreables, metadatos, schema, gestión de sitemap y páginas rápidas y responsivas.";
+const pathname = "/es/services/seo-ready-websites";
+const relatedServices = [
+  { title: "Diseño de sitios web empresariales", href: "/es/services/business-website-design", description: "Diseñamos sitios que explican tu valor y generan consultas." },
+  { title: "Rediseño de sitios web", href: "/es/services/website-redesign", description: "Modernizamos tu sitio actual protegiendo la visibilidad en buscadores." },
+  { title: "Aplicaciones web a medida", href: "/es/services/custom-web-apps", description: "Construimos herramientas de negocio y aplicaciones web con arquitectura técnica limpia." },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="es"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "es", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "SEO-ready website development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Sitios preparados para SEO"
+    title={title}
+    description={description}
+    outcome="La base de búsqueda no queda como una tarea posterior al lanzamiento: la estructura y los metadatos se integran desde el inicio."
+    bestFor="Empresas que quieren una base técnica de búsqueda sólida desde el primer día del nuevo sitio"
+    image={codeImage}
+    imageAlt="Editor de código mostrando la construcción de un sitio web"
+    benefits={[
+      "Títulos descriptivos, metadescripciones, URL canónicas, etiquetas Open Graph y datos estructurados.",
+      "Navegación rastreable, enlaces internos limpios, jerarquía de encabezados significativa y textos alternativos de imagen.",
+      "Sitemap, configuración de robots y revisión de lanzamiento para las páginas que Google debe indexar.",
+    ]}
+    process={[
+      "Definimos páginas objetivo, intención de búsqueda y checklist técnico de SEO antes de construir.",
+      "Implementamos metadatos, schema, enlaces internos y mejoras de rendimiento responsivo.",
+      "Validamos el HTML generado, el sitemap y los datos estructurados antes del despliegue.",
+    ]}
+    proofPoints={[
+      "El SEO técnico se trata como parte de la construcción, no como un añadido.",
+      "Las páginas se estructuran primero para personas y después para rastreadores.",
+      "La revisión de lanzamiento incluye HTML generado, sitemap, metadatos y schema.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

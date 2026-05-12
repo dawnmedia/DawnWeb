@@ -1,0 +1,74 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import CardBlog from "@components/ui/cards/CardBlog.astro";
+import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
+import CardInsight from "@components/ui/cards/CardInsight.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
+
+const locale: Locale = "es";
+const blogEntries = await getCollection("blog", ({ id }) =>
+  collectionIdStartsWithLocale(id, locale),
+);
+const insightsEntries = await getCollection("insights", ({ id }) =>
+  collectionIdStartsWithLocale(id, locale),
+);
+
+const blogPosts: CollectionEntry<"blog">[] = blogEntries.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const insightPosts: CollectionEntry<"insights">[] = insightsEntries;
+const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
+const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
+
+const title = "Blog de Dawn Web";
+const subTitle =
+  "Ideas prácticas sobre estrategia web, rediseños, bases SEO, UX y crecimiento digital.";
+const secondTitle = "Ideas y análisis";
+const secondSubTitle =
+  "Análisis de Dawn Web para tomar decisiones digitales más claras, desde tendencias hasta mejoras aplicables.";
+const pageTitle = `Blog | ${SITE.title}`;
+const pageDescription =
+  "Lee ideas de Dawn Web sobre diseño web empresarial, rediseño, desarrollo preparado para SEO, UX y crecimiento digital.";
+---
+
+<MainLayout
+  lang="es"
+  title={pageTitle}
+  meta={pageDescription}
+  structuredData={buildWebPageSchema({
+    title: pageTitle,
+    description: pageDescription,
+    pathname: "/es/blog",
+    locale,
+    siteUrl: SITE.url,
+  })}
+>
+  <section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full">
+    <div class="mx-auto max-w-3xl text-left sm:text-center">
+      <h1 class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl">{title}</h1>
+      <p class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400">{subTitle}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="grid gap-6 lg:grid-cols-2">
+      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} blogLocale={locale} />)}
+    </div>
+  </section>
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <CardBlogRecent blogEntry={mostRecentPost} recentBlogLocale={locale} />
+  </section>
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">{secondTitle}</h2>
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">{secondSubTitle}</p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {insightPosts.map((insightEntry) => <CardInsight insightEntry={insightEntry} insightLocale={locale} />)}
+    </div>
+  </section>
+</MainLayout>

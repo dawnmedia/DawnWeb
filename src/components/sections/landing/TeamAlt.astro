@@ -10,6 +10,8 @@ const btnTitle =
     ? "지원하기"
     : Astro.currentLocale === "ja"
       ? "応募する"
+      : Astro.currentLocale === "es"
+        ? "Postularse"
       : Astro.currentLocale === "fr"
         ? "Rejoindre l'équipe"
         : "Apply Now";

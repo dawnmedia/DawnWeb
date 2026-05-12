@@ -1,0 +1,115 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServicesIndexShowcase from "@components/sections/services/ServicesIndexShowcase.astro";
+import { SITE } from "@data/constants";
+import webdev from "@images/web-dev.jpg";
+import webdesign from "@images/web-design.jpg";
+import software from "@images/software.jpg";
+import code from "@images/code.jpg";
+import motoViagens from "@images/motoviagens3.jpg";
+import verbo from "@images/verbo_app_card.jpg";
+import triplut from "@images/triplut6.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const contactUrl = "/es/contact";
+const pageTitle = "Servicios de diseño web y software | Dawn Web";
+const pageDescription =
+  "Dawn Web crea sitios web, rediseños, bases SEO y aplicaciones web a medida para ayudar a las empresas a conseguir más consultas calificadas.";
+
+const services = [
+  {
+    title: "Diseño de sitios web empresariales",
+    href: "/es/services/business-website-design",
+    description: "Un sitio a medida que explica tu oferta, genera confianza rápido y guía a los visitantes hacia el siguiente paso.",
+    outcome: "Convierte visitantes confundidos en consultas calificadas.",
+    bestFor: "Ideal para sitios nuevos o poco claros",
+    deliverables: ["Estructura clara de páginas", "Mensaje orientado a conversión", "Diseño responsivo y configuración de lanzamiento"],
+    image: webdesign,
+    imageAlt: "Diseñador planificando una interfaz de sitio web empresarial",
+  },
+  {
+    title: "Rediseño de sitios web",
+    href: "/es/services/website-redesign",
+    description: "Una reconstrucción para sitios viejos, silenciosos o difíciles de usar, con mensaje más claro, páginas más rápidas y mejores rutas de contacto.",
+    outcome: "Haz que un sitio existente se sienta más creíble y fácil de usar.",
+    bestFor: "Ideal para sitios de bajo rendimiento",
+    deliverables: ["Auditoría UX y de contenido", "Layouts modernos y responsivos", "Revisión de lanzamiento con migración en mente"],
+    image: webdev,
+    imageAlt: "Equipo colaborando en el rediseño de un sitio web",
+  },
+  {
+    title: "Sitios web preparados para SEO",
+    href: "/es/services/seo-ready-websites",
+    description: "Una base técnica para páginas rastreables, metadatos limpios, datos estructurados, contenido semántico e higiene de lanzamiento.",
+    outcome: "Lanza con lo básico de búsqueda resuelto desde el primer día.",
+    bestFor: "Ideal para proyectos enfocados en visibilidad",
+    deliverables: ["Metadatos y schema", "Estructura de páginas rastreable", "Sitemap y robots"],
+    image: code,
+    imageAlt: "Editor de código mostrando la construcción de un sitio web",
+  },
+  {
+    title: "Aplicaciones web a medida",
+    href: "/es/services/custom-web-apps",
+    description: "Portales, dashboards, herramientas de reserva e integraciones para equipos que ya superaron las páginas estáticas y las hojas de cálculo.",
+    outcome: "Reemplaza flujos manuales con software enfocado.",
+    bestFor: "Ideal para herramientas operativas",
+    deliverables: ["Planificación de flujo y datos", "Interfaz de aplicación a medida", "Ruta de despliegue y mantenimiento"],
+    image: software,
+    imageAlt: "Interfaz de software empresarial y planificación de flujo",
+  },
+];
+
+const processSteps = [
+  { title: "Descubrimiento", description: "Aclaramos tu audiencia, oferta, bloqueos actuales, objetivos de negocio y qué haría que el proyecto valga la pena." },
+  { title: "Propuesta", description: "Recibes alcance práctico, camino recomendado, calendario y costo antes de empezar diseño o desarrollo." },
+  { title: "Desarrollo", description: "El sitio o app se diseña, escribe, construye y revisa con comunicación directa y decisiones claras." },
+  { title: "Entrega", description: "El proyecto se lanza, se revisa y se entrega con bases listas para soporte y mejoras futuras." },
+];
+
+const portfolioItems = [
+  { title: "Moto Viagens", href: "/es/products/motoviagens", description: "Una plataforma real de viajes en moto con flujos de reserva, contenido de rutas, soporte multilingüe y descubrimiento asistido por IA.", image: motoViagens, imageAlt: "Rutas y tours en moto por Brasil con Moto Viagens" },
+  { title: "Verbo", href: "/es/products/verboai", description: "Un producto de aprendizaje de idiomas con IA basado en coaching, flashcards adaptativas, suscripciones y soporte móvil.", image: verbo, imageAlt: "Interfaz de la plataforma Verbo AI" },
+  { title: "Triplut", href: "/es/products/triplut", description: "Un concepto de planificación de viajes que conecta rutas, presupuestos, experiencias y guía de IA en un flujo claro.", image: triplut, imageAlt: "Ilustración de Triplut AI" },
+];
+---
+
+<MainLayout
+  title={pageTitle}
+  meta={pageDescription}
+  lang="es"
+  structuredData={[
+    buildWebPageSchema({ title: pageTitle, description: pageDescription, pathname: "/es/services", locale: "es", siteUrl: SITE.url }),
+    buildServiceSchema({ name: "Servicios de diseño web y software", description: pageDescription, pathname: "/es/services", serviceType: "Web design and web development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServicesIndexShowcase
+    eyebrow="Servicios"
+    title="Sitios web y software que hacen evidente el siguiente paso"
+    subTitle="Dawn Web ayuda a empresas de servicios a explicar su oferta, ganar confianza y convertir más visitantes calificados en consultas."
+    primaryCta="Reservar una consulta gratuita"
+    primaryCtaUrl={contactUrl}
+    secondaryCta="Ver trabajos de producto"
+    secondaryCtaUrl="/es/products"
+    proofPoints={["Hablas directamente con quien construye", "Alcance claro antes de invertir", "Creado para explicar, cargar rápido y convertir"]}
+    services={services}
+    processEyebrow="Proceso"
+    processTitle="Un proceso simple que elimina las suposiciones"
+    processSubTitle="Cada servicio sigue una ruta tranquila: entender el problema, acordar el alcance correcto, construir con progreso visible y lanzar con lo esencial resuelto."
+    processSteps={processSteps}
+    portfolioEyebrow="Prueba"
+    portfolioTitle="Prueba desde productos digitales reales"
+    portfolioSubTitle="El mismo pensamiento de producto del portafolio guía el trabajo de servicios: rutas claras, interfaces útiles y bases técnicas prácticas."
+    portfolioItems={portfolioItems}
+    faqTitle="Preguntas antes de reservar"
+    faqs={[
+      { question: "¿Necesito una reconstrucción completa?", answer: "No siempre. La primera conversación busca el camino útil más pequeño: un sitio nuevo, un rediseño enfocado, una limpieza técnica o una función a medida." },
+      { question: "¿Se puede incluir SEO desde el inicio?", answer: "Sí. Las construcciones preparadas para SEO incluyen estructura limpia, metadatos, schema cuando aporta valor, sitemap y revisiones de lanzamiento." },
+      { question: "¿Construyen algo más que sitios de marketing?", answer: "Sí. Dawn Web también crea portales, dashboards, herramientas de reserva y apps de flujo de trabajo cuando el negocio necesita software." },
+      { question: "¿Qué pasa después del lanzamiento?", answer: "Podemos apoyar mantenimiento, mejoras pequeñas, actualizaciones de seguridad y trabajo de producto futuro." },
+    ]}
+    finalTitle="¿Listo para que tu sitio sea más fácil de confiar?"
+    finalText="Trae tu sitio actual, idea o flujo de trabajo. Te ayudaremos a aclarar qué debe cambiar y qué conviene construir primero."
+    finalCta="Reservar una consulta gratuita"
+    finalCtaUrl={contactUrl}
+  />
+</MainLayout>

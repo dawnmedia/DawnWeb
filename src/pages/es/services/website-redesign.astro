@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDev from "@images/web-dev.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "Rediseño de sitios web que convierte más visitantes en consultas";
+const description =
+  "Dawn Web reconstruye sitios web empresariales antiguos con mensajes más claros, UX moderna, páginas rápidas y una ruta limpia desde la búsqueda hasta la consulta.";
+const pathname = "/es/services/website-redesign";
+const relatedServices = [
+  { title: "Diseño de sitios web empresariales", href: "/es/services/business-website-design", description: "Creamos sitios nuevos centrados en confianza, claridad y conversión." },
+  { title: "Sitios web preparados para SEO", href: "/es/services/seo-ready-websites", description: "Protegemos el SEO técnico, los metadatos y la estructura de páginas durante el lanzamiento." },
+  { title: "Aplicaciones web a medida", href: "/es/services/custom-web-apps", description: "Añadimos funciones personalizadas cuando el sitio también debe apoyar la operación." },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="es"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "es", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Website redesign", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Rediseño web"
+    title={title}
+    description={description}
+    outcome="Una experiencia web más clara que conserva lo que todavía funciona y elimina confusión, fricción y mensajes desactualizados."
+    bestFor="Empresas cuyo sitio actual ya no explica bien, no genera confianza o no convierte lo suficiente"
+    image={webDev}
+    imageAlt="Equipo revisando juntos el rediseño de un sitio web"
+    benefits={[
+      "Una arquitectura de información clara para que los visitantes entiendan tus servicios sin esfuerzo.",
+      "Patrones de diseño actuales, layouts móviles y rendimiento que crean una primera impresión más confiable.",
+      "Plan de migración que considera títulos, descripciones, redirecciones y enlaces internos.",
+    ]}
+    process={[
+      "Auditamos el sitio actual, el contenido, las posiciones de búsqueda, las rutas de conversión y los riesgos técnicos.",
+      "Reorganizamos las páginas prioritarias alrededor de los servicios y preguntas más importantes.",
+      "Publicamos el rediseño con metadatos, schema, sitemap y revisión posterior al lanzamiento.",
+    ]}
+    proofPoints={[
+      "Revisamos contenido, UX y riesgos técnicos antes de tomar decisiones de rediseño.",
+      "Las páginas prioritarias se reconstruyen alrededor de la claridad y las rutas de consulta.",
+      "El plan de lanzamiento contempla metadatos, redirecciones y visibilidad en buscadores.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

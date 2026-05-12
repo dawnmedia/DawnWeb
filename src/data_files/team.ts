@@ -148,6 +148,20 @@ const localizedMembers = {
       bio: "複雑なアイデアを、洗練され、役に立ち、迷わず使える体験へ変える直感的なインターフェースとビジュアルシステムを設計します。",
     },
   },
+  es: {
+    andrew: {
+      role: "CEO y desarrollador web full stack",
+      bio: "Lidera la estrategia, la arquitectura y la dirección con clientes para que cada proyecto conecte objetivos de negocio con un camino técnico claro.",
+    },
+    daniel: {
+      role: "CTO y desarrollador back-end",
+      bio: "Construye bases estables y escalables detrás de escena, desde flujos de datos hasta integraciones y confiabilidad a largo plazo.",
+    },
+    mada: {
+      role: "Diseñadora UX y artista visual",
+      bio: "Diseña interfaces intuitivas y sistemas visuales que convierten ideas complejas en experiencias claras, útiles y fáciles de navegar.",
+    },
+  },
 } satisfies Record<
   Locale,
   Record<keyof typeof sharedMembers, Pick<TeamMember, "role" | "bio">>
@@ -175,6 +189,10 @@ export const teamMembersByLocale: Record<Locale, TeamMember[]> = {
   ja: memberOrder.map((id) => ({
     ...sharedMembers[id],
     ...localizedMembers.ja[id],
+  })),
+  es: memberOrder.map((id) => ({
+    ...sharedMembers[id],
+    ...localizedMembers.es[id],
   })),
 };
 
@@ -550,5 +568,79 @@ export const teamPageContent: Record<Locale, TeamPageContent> = {
       "作りたいものをお聞かせください。Webサイト、リニューアル、カスタムWebアプリのための明確な計画に落とし込みます。",
     ctaLabel: "プロジェクトを始める",
     ctaUrl: "/ja/contact",
+  },
+  es: {
+    seoTitle: "Equipo de Dawn Web | Expertos en diseño web",
+    seoDescription:
+      "Conoce al equipo de Dawn Web detrás de sitios web empresariales, desarrollo web, diseño UX y estrategia digital para empresas en crecimiento.",
+    eyebrow: "Equipo de Dawn Web",
+    title: "Un equipo senior que crea impulso digital real.",
+    description:
+      "Combinamos estrategia, UX, ingeniería y apoyo de lanzamiento para que las empresas en crecimiento tengan sitios web y aplicaciones web claros, rápidos y preparados para seguir mejorando.",
+    heroImageAlt: "Portátil mostrando un espacio de trabajo de diseño web",
+    primaryCta: "Trabaja con el equipo",
+    primaryCtaUrl: "/es/contact",
+    secondaryCta: "Ver servicios",
+    secondaryCtaUrl: "/es/services",
+    stats: [
+      { value: "3", label: "Disciplinas clave" },
+      { value: "1", label: "Equipo de entrega dedicado" },
+      { value: "100%", label: "Centrado en objetivos de negocio" },
+    ],
+    proofTitle: "Lo que aporta un equipo enfocado",
+    proofDescription:
+      "Cada proyecto lo guían personas que entienden tanto el resultado de negocio como los detalles de implementación.",
+    proofPoints: [
+      {
+        title: "Estrategia antes que pantallas",
+        description:
+          "Definimos la oferta, la audiencia y el camino de conversión antes de pulir la interfaz.",
+      },
+      {
+        title: "UX con propósito",
+        description:
+          "Los layouts, contenidos e interacciones se diseñan para aportar claridad, no decoración.",
+      },
+      {
+        title: "Ingeniería confiable",
+        description:
+          "Construimos bases mantenibles, rápidas y preparadas para futuras mejoras.",
+      },
+      {
+        title: "Soporte de lanzamiento",
+        description:
+          "Desde el despliegue hasta la entrega, cuidamos los detalles que hacen más fluido el día del lanzamiento.",
+      },
+    ],
+    teamEyebrow: "Las personas",
+    teamTitle: "Especialistas cerca del trabajo",
+    teamDescription:
+      "Dawn Web mantiene estrategia, diseño y desarrollo estrechamente conectados para que las decisiones avancen con claridad desde la planificación hasta el lanzamiento.",
+    processEyebrow: "Cómo trabajamos",
+    processTitle: "Comunicación clara, decisiones prácticas y entrega pulida.",
+    processDescription:
+      "Esta página no trata solo de nombres. Muestra cómo el equipo colabora contigo desde la primera idea hasta el lanzamiento final.",
+    processItems: [
+      {
+        title: "Descubrir la necesidad real",
+        description:
+          "Empezamos por los objetivos, las limitaciones y las decisiones que tus clientes deben tomar.",
+      },
+      {
+        title: "Diseñar para generar confianza",
+        description:
+          "Hacemos que cada página sea más fácil de escanear, entender y usar.",
+      },
+      {
+        title: "Construir para el siguiente paso",
+        description:
+          "Entregamos bases limpias para el lanzamiento, la medición y la mejora continua.",
+      },
+    ],
+    ctaTitle: "¿Quieres a este equipo en tu próximo proyecto?",
+    ctaDescription:
+      "Cuéntanos qué estás construyendo y lo convertiremos en un plan claro para tu sitio web, rediseño o aplicación web a medida.",
+    ctaLabel: "Iniciar un proyecto",
+    ctaUrl: "/es/contact",
   },
 };

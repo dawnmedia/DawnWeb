@@ -1,0 +1,53 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import software from "@images/software.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "Aplicaciones web a medida para flujos de trabajo empresariales";
+const description =
+  "Dawn Web va más allá de los sitios estáticos y construye aplicaciones web, portales, herramientas de reserva, paneles e integraciones que ayudan a las empresas a trabajar mejor.";
+const pathname = "/es/services/custom-web-apps";
+const relatedServices = [
+  { title: "Diseño de sitios web empresariales", href: "/es/services/business-website-design", description: "Empieza con un sitio empresarial que explique tu oferta con claridad." },
+  { title: "Rediseño de sitios web", href: "/es/services/website-redesign", description: "Mejora la experiencia del sitio antes de añadir funciones personalizadas." },
+  { title: "Sitios web preparados para SEO", href: "/es/services/seo-ready-websites", description: "Mantén una base técnica de SEO sólida en contenidos y pantallas de aplicación." },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="es"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "es", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Custom web application development", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Aplicaciones web a medida"
+    title={title}
+    description={description}
+    outcome="Reemplazamos trabajo manual, herramientas desconectadas y flujos internos incómodos por aplicaciones web enfocadas que tu equipo puede usar de verdad."
+    bestFor="Equipos que necesitan portales, paneles, herramientas de reserva o software operativo"
+    image={software}
+    imageAlt="Interfaz de software empresarial y planificación de flujos de trabajo"
+    benefits={[
+      "Paneles, portales, flujos de reserva, herramientas de contenido y experiencias de administración a medida.",
+      "Integraciones con pagos, CRM, analítica, correo, calendarios y sistemas de negocio.",
+      "Arquitectura escalable pensada para cómo tu equipo realmente usará y mantendrá la herramienta.",
+    ]}
+    process={[
+      "Documentamos flujos de trabajo, usuarios, permisos, datos y objetivos operativos.",
+      "Validamos la experiencia central y el enfoque técnico con un prototipo antes de construir todo.",
+      "Lanzamos la aplicación con pruebas, despliegue, monitoreo y plan de mantenimiento.",
+    ]}
+    proofPoints={[
+      "Aclaramos flujos, usuarios, permisos y modelos de datos antes de construir.",
+      "Las interfaces se diseñan para uso repetido, no solo para verse bien.",
+      "Los requisitos de despliegue y mantenimiento forman parte del plan técnico.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

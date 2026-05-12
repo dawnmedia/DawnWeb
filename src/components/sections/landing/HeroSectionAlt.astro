@@ -10,6 +10,8 @@ const btnTitle =
     ? "무료 상담"
     : Astro.currentLocale === "ja"
       ? "無料相談"
+      : Astro.currentLocale === "es"
+        ? "Consulta gratuita"
       : Astro.currentLocale === "fr"
         ? "Prise de rendez-vous"
         : "Free consultation";

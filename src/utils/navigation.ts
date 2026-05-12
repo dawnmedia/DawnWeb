@@ -216,6 +216,44 @@ const navigation: Record<Locale, NavigationStrings> = {
       crafted: "制作",
     },
   },
+  es: {
+    navBarLinks: [
+      { name: "Inicio", url: "/es" },
+      { name: "Productos", url: "/es/products" },
+      { name: "Servicios", url: "/es/services" },
+      { name: "Blog", url: "/es/blog" },
+      { name: "Equipo", url: "/es/team" },
+      { name: "Contacto", url: "/es/contact" },
+    ],
+    footerLinks: [
+      {
+        section: "Servicios",
+        links: [
+          { name: "Diseño de sitios web empresariales", url: "/es/services/business-website-design" },
+          { name: "Rediseño de sitios web", url: "/es/services/website-redesign" },
+          { name: "Sitios web preparados para SEO", url: "/es/services/seo-ready-websites" },
+          { name: "Aplicaciones web a medida", url: "/es/services/custom-web-apps" },
+          { name: "Portafolio de proyectos", url: "/es/products" },
+        ],
+      },
+      {
+        section: "Empresa",
+        links: [
+          { name: "Sobre nosotros", url: "/es/team" },
+          { name: "Blog", url: "/es/blog" },
+          { name: "Nuestro equipo", url: "/es/team" },
+          { name: "Trabaja con nosotros", url: "/es/contact" },
+        ],
+      },
+    ],
+    socialLinks,
+    footerCopy: {
+      newsletterTitle: "Mantente al día",
+      newsletterContent:
+        "Recibe novedades sobre servicios, proyectos e ideas de crecimiento digital.",
+      crafted: "Creado por",
+    },
+  },
 };
 
 export function getNavigation(locale: Locale = DEFAULT_LOCALE): NavigationStrings {

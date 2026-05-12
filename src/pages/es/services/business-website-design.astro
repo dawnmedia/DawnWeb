@@ -1,0 +1,65 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceLanding from "@components/sections/services/ServiceLanding.astro";
+import { SITE } from "@data/constants";
+import webDesign from "@images/web-design.jpg";
+import { buildServiceSchema, buildWebPageSchema } from "@utils/seo";
+
+const title = "Diseño de sitios web empresariales para empresas en crecimiento";
+const description =
+  "Dawn Web crea sitios web empresariales a medida que explican tu oferta con claridad, generan confianza rápido y guían a los visitantes hacia una consulta o una solicitud.";
+const pathname = "/es/services/business-website-design";
+const relatedServices = [
+  {
+    title: "Rediseño de sitios web",
+    href: "/es/services/website-redesign",
+    description: "Modernizamos sitios antiguos con mejor UX, mensajes más claros y mayor rendimiento.",
+  },
+  {
+    title: "Sitios web preparados para SEO",
+    href: "/es/services/seo-ready-websites",
+    description: "Lanzamos con una base técnica sólida para la visibilidad en buscadores.",
+  },
+  {
+    title: "Aplicaciones web a medida",
+    href: "/es/services/custom-web-apps",
+    description: "Creamos flujos de trabajo, portales y herramientas a medida más allá de un sitio informativo.",
+  },
+];
+---
+
+<MainLayout
+  title={`${title} | Dawn Web`}
+  meta={description}
+  lang="es"
+  structuredData={[
+    buildWebPageSchema({ title: `${title} | Dawn Web`, description, pathname, locale: "es", siteUrl: SITE.url }),
+    buildServiceSchema({ name: title, description, pathname, serviceType: "Business website design", siteUrl: SITE.url }),
+  ]}
+>
+  <ServiceLanding
+    eyebrow="Diseño web empresarial"
+    title={title}
+    description={description}
+    outcome="Un sitio web que muestra tu valor con claridad, responde las preguntas del comprador y lleva a los visitantes adecuados hacia una consulta."
+    bestFor="Empresas de servicios que van a lanzar su primer sitio profesional o necesitan explicar mejor su oferta actual"
+    image={webDesign}
+    imageAlt="Diseñador planificando una interfaz para un sitio web empresarial"
+    benefits={[
+      "Mensajes de inicio que dejan claro a quién ayudas, qué ofreces y por qué pueden confiar en ti.",
+      "Layouts responsivos donde las llamadas a la acción siguen visibles en escritorio, tablet y móvil.",
+      "Secciones de servicio, pruebas, preguntas frecuentes y rutas de contacto construidas alrededor de dudas reales de compra.",
+    ]}
+    process={[
+      "Aclaramos tu oferta, audiencia, páginas clave y objetivos de consulta.",
+      "Diseñamos la estructura de páginas, la jerarquía del copy y la dirección visual.",
+      "Construimos, optimizamos y lanzamos el sitio revisándolo contra tus objetivos de generación de leads.",
+    ]}
+    proofPoints={[
+      "La oferta, la audiencia y las CTA se conectan desde el copy hasta el código.",
+      "Pensamos en visitantes de escritorio y móvil desde los primeros layouts.",
+      "Los detalles de lanzamiento incluyen rendimiento, metadatos y revisión de las rutas de contacto.",
+    ]}
+    relatedServices={relatedServices}
+  />
+</MainLayout>

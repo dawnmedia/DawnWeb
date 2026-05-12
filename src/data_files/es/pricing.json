@@ -1,0 +1,67 @@
+{
+  "title": "Precios simples y transparentes",
+  "subTitle": "Ya está disponible el descuento en nuestro plan de 12 meses. Contáctanos ahora.",
+  "badge": "Mejor valor",
+  "thirdOption": "¿Necesitas una solución empresarial?",
+  "btnText": "Solicitar cotización a medida",
+
+  "starterKit": {
+    "name": "Plan Starter",
+    "description": "Ideal para presencia web básica, portafolios o negocios en etapa inicial.",
+    "price": "74",
+    "cents": ".99",
+    "billingFrequency": "USD / mensual",
+    "features": [
+      "Sitio web responsivo de 1 a 4 páginas",
+      "Hosting rápido + SSL",
+      "Mantenimiento mensual del sitio (actualizaciones de seguridad, copias de seguridad)",
+      "Integración con Google Analytics",
+      "Soporte por chat y correo 24/5"
+    ],
+    "purchaseBtnTitle": "Suscribirse",
+    "purchaseBtnTitle2": "Plan anual con 20% de descuento",
+    "purchaseLink": "https://buy.stripe.com/bJe3cxcs2aG10AD18ubsc06?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/14AfZjbnY6pL9795oKbsc09?locale=en"
+  },
+
+  "professionalToolbox": {
+    "name": "Plan Growth",
+    "description": "Ideal para marcas que quieren escalar y fortalecer su presencia digital.",
+    "price": "149",
+    "cents": ".99",
+    "billingFrequency": "USD / mensual",
+    "features": [
+      "Todo lo incluido en Starter, más:",
+      "Hasta 8 páginas personalizadas",
+      "Configuración SEO avanzada (técnica + on-page)",
+      "Configuración de ecommerce o plataforma de suscripción",
+      "Hasta 5 actualizaciones por mes",
+      "Hosting prioritario con monitoreo de rendimiento",
+      "Soporte 24/7 con ventana de respuesta de 12 horas"
+    ],
+    "purchaseBtnTitle": "Suscribirse",
+    "purchaseBtnTitle2": "Plan anual con 20% de descuento",
+    "purchaseLink": "https://buy.stripe.com/bJefZjcs29BX9796sObsc07?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/fZu3cx1No7tPfvx2cybsc0a?locale=en"
+  },
+
+  "enterprise": {
+    "name": "Soluciones web a medida",
+    "description": "Para empresas con planes ambiciosos: soluciones adaptadas a necesidades complejas y objetivos exigentes.",
+    "price": "499",
+    "cents": ".99",
+    "billingFrequency": "USD / mensual",
+    "features": [
+      "Todo lo incluido en Growth, más:",
+      "Páginas o componentes ilimitados",
+      "Integraciones API, portales de usuario, sistemas de reserva, etc.",
+      "Reuniones semanales de desarrollo y gestor de cuenta dedicado",
+      "Integración ecommerce para vender productos o servicios en una tienda online completa.",
+      "Desarrollo de funciones a medida (dashboards, inicios de sesión, APIs)"
+    ],
+    "purchaseBtnTitle": "Suscribirse",
+    "purchaseBtnTitle2": "Plan anual con 20% de descuento",
+    "purchaseLink": "https://buy.stripe.com/eVqaEZ4ZAdSd0ADbN8bsc08?locale=en",
+    "purchaseLink2": "https://buy.stripe.com/4gM4gB3Vw7tPbfh3gCbsc0b?locale=en"
+  }
+}
