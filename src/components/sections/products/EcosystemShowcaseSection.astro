@@ -1,0 +1,64 @@
+---
+import EcosystemShowcaseCard from "./EcosystemShowcaseCard.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Locale } from "@utils/locale";
+
+const {
+  products,
+  locale,
+  eyebrow,
+  title,
+  description,
+  supportingLine,
+  builtByLabel,
+} = Astro.props;
+
+interface Props {
+  products: CollectionEntry<"products">[];
+  locale: Locale;
+  eyebrow: string;
+  title: string;
+  description: string;
+  supportingLine?: string;
+  builtByLabel: string;
+}
+---
+
+{
+  products.length > 0 && (
+    <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+      <div class="border-t border-neutral-300 pt-10 dark:border-neutral-700">
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)] lg:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+              {eyebrow}
+            </p>
+            <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl">
+              {title}
+            </h2>
+          </div>
+          <div>
+            <p class="text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300">
+              {description}
+            </p>
+            {supportingLine && (
+              <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                {supportingLine}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          {products.map((product) => (
+            <EcosystemShowcaseCard
+              product={product}
+              productLocale={locale}
+              builtByLabel={builtByLabel}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,20 +1,33 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import EcosystemShowcaseSection from "@components/sections/products/EcosystemShowcaseSection.astro";
 import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import {
+  isEcosystemProduct,
+  sortProductsByMainId,
+} from "@utils/products";
 import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "ko";
 
-const products: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) =>
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id }) =>
     collectionIdStartsWithLocale(id, locale),
-  )
-).sort((a, b) => a.data.main.id - b.data.main.id);
+);
+
+const products = allProducts
+  .filter((product) => !isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
+
+const ecosystemProducts = allProducts
+  .filter((product) => isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
 
 const pageTitle = "웹사이트 포트폴리오 및 디지털 프로젝트 | Dawn Web";
 const pageDescription =
@@ -42,6 +55,16 @@ const pageDescription =
     ctaLabel="제품 상담하기"
     ctaUrl="/ko/contact"
     viewLabel="제품 보기"
+  />
+
+  <EcosystemShowcaseSection
+    products={ecosystemProducts}
+    locale={locale}
+    eyebrow="DAWN LABS 생태계"
+    title="Dawn Labs 안에서 만들어진 것들"
+    description="Dawn Web이 설계하고 개발한 내부 브랜드, 실험적 부문, 미래 벤처의 모음입니다."
+    supportingLine="이 프로젝트들은 Dawn Web이 고객 웹사이트뿐 아니라 완성도 있는 디지털 아이덴티티, 제품 콘셉트, 장기적인 브랜드 시스템도 구축한다는 것을 보여줍니다."
+    builtByLabel="Dawn Web 제작"
   />
 
   <div class="opacity-95">

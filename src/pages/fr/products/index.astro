@@ -1,23 +1,33 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import EcosystemShowcaseSection from "@components/sections/products/EcosystemShowcaseSection.astro";
 import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import {
+  isEcosystemProduct,
+  sortProductsByMainId,
+} from "@utils/products";
 import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "fr";
 
-const products: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) =>
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id }) =>
     collectionIdStartsWithLocale(id, locale),
-  )
-).sort(
-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id,
 );
+
+const products = allProducts
+  .filter((product) => !isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
+
+const ecosystemProducts = allProducts
+  .filter((product) => isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
 
 const pageTitle = "Produits logiciels & projets digitaux | Dawn Web";
 const pageDescription =
@@ -45,6 +55,16 @@ const pageDescription =
     ctaLabel="Planifier un produit"
     ctaUrl="/fr/contact"
     viewLabel="Voir le produit"
+  />
+
+  <EcosystemShowcaseSection
+    products={ecosystemProducts}
+    locale={locale}
+    eyebrow="ECOSYSTEME DAWN LABS"
+    title="Cree au sein de Dawn Labs"
+    description="Une collection de marques internes, de divisions experimentales et de futures initiatives concues et developpees par Dawn Web."
+    supportingLine="Ces projets montrent comment Dawn Web construit non seulement des sites clients, mais aussi des identites digitales completes, des concepts produit et des systemes de marque durables."
+    builtByLabel="Cree par Dawn Web"
   />
 
   <div class="opacity-95">

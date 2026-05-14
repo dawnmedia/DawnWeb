@@ -1,20 +1,33 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import EcosystemShowcaseSection from "@components/sections/products/EcosystemShowcaseSection.astro";
 import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import {
+  isEcosystemProduct,
+  sortProductsByMainId,
+} from "@utils/products";
 import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "ja";
 
-const products: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) =>
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id }) =>
     collectionIdStartsWithLocale(id, locale),
-  )
-).sort((a, b) => a.data.main.id - b.data.main.id);
+);
+
+const products = allProducts
+  .filter((product) => !isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
+
+const ecosystemProducts = allProducts
+  .filter((product) => isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
 
 const pageTitle = "Web制作実績・デジタルプロジェクト | Dawn Web";
 const pageDescription =
@@ -42,6 +55,16 @@ const pageDescription =
     ctaLabel="プロダクトを相談"
     ctaUrl="/ja/contact"
     viewLabel="プロダクトを見る"
+  />
+
+  <EcosystemShowcaseSection
+    products={ecosystemProducts}
+    locale={locale}
+    eyebrow="DAWN LABSエコシステム"
+    title="Dawn Labsの中で生まれたもの"
+    description="Dawn Webが設計・開発する内部ブランド、実験的な部門、将来の事業コンセプトのコレクションです。"
+    supportingLine="これらのプロジェクトは、Dawn Webがクライアント向けWebサイトだけでなく、デジタルアイデンティティ、プロダクトコンセプト、長期的なブランドシステムまで構築できることを示しています。"
+    builtByLabel="Dawn Web制作"
   />
 
   <div class="opacity-95">

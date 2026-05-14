@@ -1,17 +1,29 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import EcosystemShowcaseSection from "@components/sections/products/EcosystemShowcaseSection.astro";
 import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import {
+  isEcosystemProduct,
+  sortProductsByMainId,
+} from "@utils/products";
 import { buildWebPageSchema } from "@utils/seo";
 
 const locale: Locale = "es";
-const products: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => collectionIdStartsWithLocale(id, locale))
-).sort((a, b) => a.data.main.id - b.data.main.id);
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  ({ id }) => collectionIdStartsWithLocale(id, locale),
+);
+const products = allProducts
+  .filter((product) => !isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
+const ecosystemProducts = allProducts
+  .filter((product) => isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
 
 const pageTitle = "Portafolio de sitios web y proyectos digitales | Dawn Web";
 const pageDescription =
@@ -33,6 +45,15 @@ const pageDescription =
     ctaLabel="Planificar un producto"
     ctaUrl="/es/contact"
     viewLabel="Ver producto"
+  />
+  <EcosystemShowcaseSection
+    products={ecosystemProducts}
+    locale={locale}
+    eyebrow="ECOSISTEMA DAWN LABS"
+    title="Creado dentro de Dawn Labs"
+    description="Una coleccion de marcas internas, divisiones experimentales y futuros proyectos disenados y desarrollados por Dawn Web."
+    supportingLine="Estos proyectos muestran como Dawn Web construye no solo sitios para clientes, sino identidades digitales completas, conceptos de producto y sistemas de marca a largo plazo."
+    builtByLabel="Creado por Dawn Web"
   />
   <div class="opacity-95">
     <FeaturesStatsAlt

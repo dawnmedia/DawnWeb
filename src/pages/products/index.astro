@@ -1,11 +1,16 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import EcosystemShowcaseSection from "@components/sections/products/EcosystemShowcaseSection.astro";
 import ProductShowcaseIndex from "@components/sections/products/ProductShowcaseIndex.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import {
+  isEcosystemProduct,
+  sortProductsByMainId,
+} from "@utils/products";
 import {
   SEO_DESCRIPTIONS,
   SEO_TITLES,
@@ -14,14 +19,19 @@ import {
 
 const locale: Locale = "en";
 
-const products: CollectionEntry<"products">[] = (
-  await getCollection("products", (entry: CollectionEntry<"products">) =>
+const allProducts: CollectionEntry<"products">[] = await getCollection(
+  "products",
+  (entry: CollectionEntry<"products">) =>
     collectionIdStartsWithLocale(entry.id, locale),
-  )
-).sort(
-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id,
 );
+
+const products = allProducts
+  .filter((product) => !isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
+
+const ecosystemProducts = allProducts
+  .filter((product) => isEcosystemProduct(product, locale))
+  .sort(sortProductsByMainId);
 
 const pageTitle = SEO_TITLES.products;
 ---
@@ -46,6 +56,16 @@ const pageTitle = SEO_TITLES.products;
     ctaLabel="Plan a Product"
     ctaUrl="/contact"
     viewLabel="View product"
+  />
+
+  <EcosystemShowcaseSection
+    products={ecosystemProducts}
+    locale={locale}
+    eyebrow="DAWN LABS ECOSYSTEM"
+    title="Built Inside Dawn Labs"
+    description="A collection of internal brands, experimental divisions, and future ventures designed and developed by Dawn Web."
+    supportingLine="These projects show how Dawn Web builds not only client websites, but complete digital identities, product concepts, and long-term brand systems."
+    builtByLabel="Built by Dawn Web"
   />
 
   <div class="opacity-95">
