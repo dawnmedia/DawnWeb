@@ -1,7 +1,7 @@
 ---
 title: "Escolhas de design que transformam visitantes em contatos"
 description: "Mensagem clara, chamadas objetivas e navegação simples ajudam visitantes a saber qual é o próximo passo."
-cardImage: "@/images/web-design.jpg"
+cardImage: "@/images/services/web-design.jpg"
 cardImageAlt: "Desenvolvimento web"
 ---
 

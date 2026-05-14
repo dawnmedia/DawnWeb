@@ -6,8 +6,8 @@ main:
   content: |
     Verboは、AIコーチングと科学的に実証された間隔反復を組み合わせた次世代の語学学習プラットフォームです。AI語学コーチLunaと自然に会話しながら学び、進捗に合わせて調整されるスマートフラッシュカードで各レッスンを定着させます。Web、iOS、Androidで利用できます。
     ゲーム化された連続学習、構造化された学習ジャーニー、ネイティブ音声発音、クロスプラットフォーム対応により、Verboは語学学習を続けたくなる習慣に変えます。
-  imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/verbo_app_card.jpg"
+  imgCard: "@/images/products/verbo/verbo_app_card.jpg"
+  imgMain: "@/images/products/verbo/verbo_app_card.jpg"
   imgAlt: "Verbo AI語学学習プラットフォームの画面"
 showcase:
   eyebrow: "AI語学学習"
@@ -29,13 +29,13 @@ showcase:
     - value: "FSRS"
       label: "間隔反復"
   screenshots:
-    - image: "@/images/verbo_app_card.jpg"
+    - image: "@/images/products/verbo/verbo_app_card.jpg"
       alt: "Verbo AI語学学習プラットフォームのダッシュボード"
       label: "AIファーストの学習ダッシュボード"
-    - image: "@/images/verboapp.png"
+    - image: "@/images/products/verbo/verboapp.png"
       alt: "Verboモバイル語学学習画面"
       label: "モバイル学習フロー"
-    - image: "@/images/verbodesktop.png"
+    - image: "@/images/products/verbo/verbodesktop.png"
       alt: "Verboデスクトップ語学学習画面"
       label: "デスクトップ学習体験"
 tabs:
@@ -80,6 +80,6 @@ specificationsRight:
   - title: "次の展開"
     subTitle: "iOS/Androidアプリストア申請、PostHog分析連携、より深いAIパーソナライズによる言語対応拡大。"
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/verbodesktop.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/verbo/verbodesktop.png"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Decisiones de diseño que convierten visitantes en consultas"
 description: "Mensajes claros, CTA enfocadas y navegación sin fricción ayudan al visitante a saber exactamente qué hacer después."
-cardImage: "@/images/web-design.jpg"
+cardImage: "@/images/services/web-design.jpg"
 cardImageAlt: "Desarrollo web"
 ---
 

@@ -3,10 +3,10 @@ title: "When a Website Needs to Become a Web App"
 description: "How education platforms, portals, dashboards, and workflow tools show when a business has outgrown a static website."
 author: "Andrew"
 role: "Founder, Dawn Web"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Avatar of Andrew, founder of Dawn Web"
 pubDate: 2025-05-30
-cardImage: "@/images/blog/studying.jpg"
+cardImage: "@/images/blog/cards/studying.jpg"
 cardImageAlt: "Young adult using a laptop in a modern learning environment"
 readTime: 4
 tags: ["web apps", "education", "software", "services"]

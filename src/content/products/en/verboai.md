@@ -6,8 +6,8 @@ main:
   content: |
     Verbo is a next-generation language learning platform that combines AI-powered coaching with scientifically-proven spaced repetition. Learn naturally through conversations with Luna, our AI language coach, and reinforce every lesson with smart flashcards that adapt to your progress — all on Web, iOS, and Android.
     With gamified streaks, structured learning journeys, native audio pronunciation, and seamless cross-platform access, Verbo turns language learning into a habit you actually want to keep.
-  imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/verbo_app_card.jpg"
+  imgCard: "@/images/products/verbo/verbo_app_card.jpg"
+  imgMain: "@/images/products/verbo/verbo_app_card.jpg"
   imgAlt: "Verbo AI language learning platform interface"
 showcase:
   eyebrow: "AI language learning"
@@ -39,13 +39,13 @@ showcase:
     - value: "FSRS"
       label: "Spaced repetition"
   screenshots:
-    - image: "@/images/verbo_app_card.jpg"
+    - image: "@/images/products/verbo/verbo_app_card.jpg"
       alt: "Verbo AI language learning platform dashboard"
       label: "AI-first learning dashboard"
-    - image: "@/images/verboapp.png"
+    - image: "@/images/products/verbo/verboapp.png"
       alt: "Verbo mobile language learning interface"
       label: "Mobile learning flow"
-    - image: "@/images/verbodesktop.png"
+    - image: "@/images/products/verbo/verbodesktop.png"
       alt: "Verbo desktop language learning interface"
       label: "Desktop study experience"
 tabs:
@@ -90,6 +90,6 @@ specificationsRight:
   - title: "What's Next"
     subTitle: "iOS and Android App Store submissions, PostHog analytics integration, and expanded language support with deeper AI personalization."
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/verbodesktop.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/verbo/verbodesktop.png"
 ---

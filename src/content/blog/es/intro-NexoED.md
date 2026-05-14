@@ -3,10 +3,10 @@ title: "Cuándo un sitio web debe convertirse en una aplicación web"
 description: "Cómo plataformas educativas, portales, paneles y herramientas operativas muestran el momento en que un sitio estático deja de ser suficiente."
 author: "Andrew"
 role: "Fundador de Dawn Web"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Avatar de Andrew, fundador de Dawn Web"
 pubDate: 2025-05-30
-cardImage: "@/images/blog/studying.jpg"
+cardImage: "@/images/blog/cards/studying.jpg"
 cardImageAlt: "Joven adulto usando un portátil en un entorno moderno de estudio"
 readTime: 4
 tags: ["aplicación web", "educación", "software", "servicios"]

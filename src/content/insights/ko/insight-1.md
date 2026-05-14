@@ -1,7 +1,7 @@
 ---
 title: "모든 작은 비즈니스에 빠른 웹사이트가 필요한 이유"
 description: "빠른 웹사이트는 신뢰를 만들고 방문자의 관심을 유지하며 모든 마케팅 채널의 성과를 높입니다."
-cardImage: "@/images/code.jpg"
+cardImage: "@/images/services/code.jpg"
 cardImageAlt: "노트북의 코드 편집기"
 ---
 

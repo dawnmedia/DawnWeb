@@ -1,7 +1,7 @@
 ---
 title: "Connecting Your Website With Daily Operations"
 description: "A website can do more than present information when it connects to booking, payments, CRM, and support workflows."
-cardImage: "@/images/business.jpg"
+cardImage: "@/images/insights/cards/business.jpg"
 cardImageAlt: "Business workspace with planning notes"
 ---
 

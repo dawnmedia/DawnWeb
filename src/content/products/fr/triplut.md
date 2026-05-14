@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Triplut est votre plateforme de planification de voyage nouvelle génération, optimisée par l'intelligence artificielle et conçue pour de vraies personnes en quête de voyages plus intelligents, plus simples et plus inspirants. Que votre voyage de rêve soit à travers le Brésil ou le monde entier, Triplut rassemble tous les types de transport, l'expertise locale et une technologie intuitive pour que vous puissiez planifier, réserver et vivre votre aventure en toute confiance.
-  imgCard: "@/images/triplut6.jpg"
-  imgMain: "@/images/triplut5.jpg"
+  imgCard: "@/images/products/triplut/triplut6.jpg"
+  imgMain: "@/images/products/triplut/triplut5.jpg"
   imgAlt: "Illustration de la plateforme de voyage IA Triplut"
 showcase:
   eyebrow: "Planification de voyage IA"
@@ -35,10 +35,10 @@ showcase:
     - value: "24/7"
       label: "Support assistant"
   screenshots:
-    - image: "@/images/triplut5.jpg"
+    - image: "@/images/products/triplut/triplut5.jpg"
       alt: "Apercu de la planification de destination Triplut"
       label: "Experience de decouverte et de planification"
-    - image: "@/images/triplut2.jpg"
+    - image: "@/images/products/triplut/triplut2.jpg"
       alt: "Visuel de route et d'experience Triplut"
       label: "Narration produit orientee aventure"
 tabs:
@@ -83,6 +83,6 @@ specificationsRight:
   - title: "Tarifs Transparents"
     subTitle: "Frais de service forfaitaires, sans frais cachés. Vous savez toujours ce que vous payez."
 blueprints:
-  first: "@/images/triplut5.jpg"
-  second: "@/images/triplut2.jpg"
+  first: "@/images/products/triplut/triplut5.jpg"
+  second: "@/images/products/triplut/triplut2.jpg"
 ---

@@ -1,13 +1,15 @@
+import type { ImageMetadata } from "astro";
 import type { Locale } from "@utils/locale";
-
-const basePath = import.meta.env.BASE_URL || "/";
+import andrewImage from "@images/team/Andrew.png";
+import danielImage from "@images/team/DanielMoraes.png";
+import madaImage from "@images/team/mada.png";
 
 export interface TeamMember {
   id: string;
   name: string;
   role: string;
   bio: string;
-  image: string;
+  image: ImageMetadata;
   portfolio: string;
   instagram: string;
   github: string;
@@ -54,7 +56,7 @@ const sharedMembers = {
   andrew: {
     id: "andrew",
     name: "Andrew Henrice",
-    image: `${basePath}team/Andrew.png`,
+    image: andrewImage,
     portfolio: "https://www.andrewhenrice.com",
     instagram: "https://instagram.com/brenoandrew",
     github: "https://www.github.com/brenoandrew",
@@ -62,7 +64,7 @@ const sharedMembers = {
   daniel: {
     id: "daniel",
     name: "Daniel Moraes",
-    image: `${basePath}team/DanielMoraes.png`,
+    image: danielImage,
     portfolio: "https://www.instagram.com/daniel.h.moraes/",
     instagram: "https://www.instagram.com/daniel.h.moraes/",
     github: "https://www.github.com/",
@@ -70,7 +72,7 @@ const sharedMembers = {
   mada: {
     id: "mada",
     name: "Mada",
-    image: `${basePath}team/mada.png`,
+    image: madaImage,
     portfolio: "https://www.instagram.com/madalena_bf/",
     instagram: "https://www.instagram.com/madalena_bf/",
     github: "https://www.github.com/",

@@ -3,10 +3,10 @@ title: "5 Signs Your Website Is Losing Good Leads"
 description: "A practical guide to deciding whether your site needs clearer messaging, a focused redesign, SEO-ready foundations, or a full rebuild."
 author: "Andrew"
 role: "CEO & Founder"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Portrait of Andrew"
 pubDate: 2025-05-31
-cardImage: "@/images/web-dev.jpg"
+cardImage: "@/images/services/web-dev.jpg"
 cardImageAlt: "Team collaborating around laptop"
 readTime: 7
 tags: ["web design", "website redesign", "UX", "services"]

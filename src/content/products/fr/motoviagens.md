@@ -6,8 +6,8 @@ main:
   content: |
     Moto Viagens est bien plus qu'une simple agence de voyages — c'est une plateforme complète de tourisme moto conçue pour ceux qui vivent pour la route. Disponible sur motoviagens.com.br, la plateforme met en relation les motards avec des circuits sélectionnés, des hébergements de confiance et des événements à travers le Brésil et au-delà.
     Propulsée par notre assistant IA maison Luna, Moto Viagens aide chaque motard à trouver le voyage idéal — de la découverte d'itinéraires à la réservation d'hébergements, jusqu'à l'achat de billets pour des événements, le tout dans une expérience fluide et optimisée pour mobile.
-  imgCard: "@/images/motoviagens3.jpg"
-  imgMain: "@/images/motoviagens3.jpg"
+  imgCard: "@/images/products/motoviagens/motoviagens3.jpg"
+  imgMain: "@/images/products/motoviagens/motoviagens3.jpg"
   imgAlt: "Moto Viagens itinéraires et circuits à moto au Brésil"
 showcase:
   eyebrow: "Plateforme de tourisme moto"
@@ -38,13 +38,13 @@ showcase:
     - value: "IA"
       label: "Guidance voyage"
   screenshots:
-    - image: "@/images/motoviagens3.jpg"
+    - image: "@/images/products/motoviagens/motoviagens3.jpg"
       alt: "Visuel principal de la plateforme Moto Viagens"
       label: "Plateforme de tourisme moto en ligne"
-    - image: "@/images/motoviagens2.jpg"
+    - image: "@/images/products/motoviagens/motoviagens2.jpg"
       alt: "Imagerie de route et destination Moto Viagens"
       label: "Decouverte de routes et contenus destinations"
-    - image: "@/images/motoviagens1.jpg"
+    - image: "@/images/products/motoviagens/motoviagens1.jpg"
       alt: "Visuel de reservation aventure Moto Viagens"
       label: "Parcours de reservation tours et hebergements"
 tabs:
@@ -89,6 +89,6 @@ specificationsRight:
   - title: "Prochaines Étapes"
     subTitle: "Extension de la couverture des circuits, ajout du partage d'itinéraires communautaires et amélioration de Luna IA avec des recommandations de voyage plus personnalisées."
 blueprints:
-  first: "@/images/motoviagens2.jpg"
-  second: "@/images/motoviagens1.jpg"
+  first: "@/images/products/motoviagens/motoviagens2.jpg"
+  second: "@/images/products/motoviagens/motoviagens1.jpg"
 ---

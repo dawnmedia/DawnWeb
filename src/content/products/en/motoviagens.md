@@ -6,8 +6,8 @@ main:
   content: |
     Moto Viagens is more than just a travel agency — it's a full-featured motorcycle travel platform built for riders who live for the road. Live at motoviagens.com.br, the platform connects riders to curated tours, trusted accommodations, and events across Brazil and beyond.
     Powered by our in-house Luna AI assistant, Moto Viagens helps every rider find the perfect journey — from route discovery and accommodation booking to event ticket purchases, all in a seamless, mobile-first experience.
-  imgCard: "@/images/motoviagens3.jpg"
-  imgMain: "@/images/motoviagens3.jpg"
+  imgCard: "@/images/products/motoviagens/motoviagens3.jpg"
+  imgMain: "@/images/products/motoviagens/motoviagens3.jpg"
   imgAlt: "Moto Viagens Brazilian motorcycle routes and tours"
 showcase:
   eyebrow: "Motorcycle travel platform"
@@ -38,13 +38,13 @@ showcase:
     - value: "AI"
       label: "Travel guidance"
   screenshots:
-    - image: "@/images/motoviagens3.jpg"
+    - image: "@/images/products/motoviagens/motoviagens3.jpg"
       alt: "Moto Viagens motorcycle travel platform hero visual"
       label: "Live motorcycle tourism platform"
-    - image: "@/images/motoviagens2.jpg"
+    - image: "@/images/products/motoviagens/motoviagens2.jpg"
       alt: "Moto Viagens route and destination imagery"
       label: "Route discovery and destination content"
-    - image: "@/images/motoviagens1.jpg"
+    - image: "@/images/products/motoviagens/motoviagens1.jpg"
       alt: "Moto Viagens adventure booking visual"
       label: "Tour and accommodation booking flow"
 tabs:
@@ -89,6 +89,6 @@ specificationsRight:
   - title: "What's Next"
     subTitle: "Expanding tour coverage, adding community route sharing, and enhancing Luna AI with deeper personalized travel recommendations."
 blueprints:
-  first: "@/images/motoviagens2.jpg"
-  second: "@/images/motoviagens1.jpg"
+  first: "@/images/products/motoviagens/motoviagens2.jpg"
+  second: "@/images/products/motoviagens/motoviagens1.jpg"
 ---

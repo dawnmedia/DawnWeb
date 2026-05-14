@@ -6,8 +6,8 @@ main:
   content: |
     A Moto Viagens é mais do que uma agência de viagens — é uma plataforma completa de mototurismo criada para quem vive pelas estradas. Disponível em motoviagens.com.br, a plataforma conecta motociclistas a tours selecionados, acomodações de confiança e eventos pelo Brasil e além.
     Com o suporte da nossa assistente de IA Luna, a Moto Viagens ajuda cada motociclista a encontrar a jornada perfeita — desde a descoberta de rotas e reserva de acomodações até a compra de ingressos para eventos, tudo em uma experiência fluida e otimizada para mobile.
-  imgCard: "@/images/motoviagens3.jpg"
-  imgMain: "@/images/motoviagens3.jpg"
+  imgCard: "@/images/products/motoviagens/motoviagens3.jpg"
+  imgMain: "@/images/products/motoviagens/motoviagens3.jpg"
   imgAlt: "Moto Viagens: rotas e passeios de moto no Brasil"
 showcase:
   eyebrow: "Plataforma de mototurismo"
@@ -38,13 +38,13 @@ showcase:
     - value: "IA"
       label: "Orientacao de viagem"
   screenshots:
-    - image: "@/images/motoviagens3.jpg"
+    - image: "@/images/products/motoviagens/motoviagens3.jpg"
       alt: "Visual principal da plataforma Moto Viagens"
       label: "Plataforma de mototurismo no ar"
-    - image: "@/images/motoviagens2.jpg"
+    - image: "@/images/products/motoviagens/motoviagens2.jpg"
       alt: "Imagens de rota e destino da Moto Viagens"
       label: "Descoberta de rotas e conteudo de destinos"
-    - image: "@/images/motoviagens1.jpg"
+    - image: "@/images/products/motoviagens/motoviagens1.jpg"
       alt: "Visual de reserva de aventura da Moto Viagens"
       label: "Fluxo de reserva de tours e hospedagens"
 tabs:
@@ -89,6 +89,6 @@ specificationsRight:
   - title: "Próximos Passos"
     subTitle: "Expansão da cobertura de tours, adição de compartilhamento de rotas pela comunidade e aprimoramento da Luna IA com recomendações de viagens mais personalizadas."
 blueprints:
-  first: "@/images/motoviagens2.jpg"
-  second: "@/images/motoviagens1.jpg"
+  first: "@/images/products/motoviagens/motoviagens2.jpg"
+  second: "@/images/products/motoviagens/motoviagens1.jpg"
 ---

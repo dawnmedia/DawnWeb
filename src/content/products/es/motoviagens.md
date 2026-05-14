@@ -6,8 +6,8 @@ main:
   content: |
     Moto Viagens no es una agencia de viajes más: es una plataforma completa para motociclistas que aman la carretera. Activa en motoviagens.com.br, conecta a riders con tours seleccionados, alojamientos confiables y eventos en Brasil y más allá.
     Luna AI, el asistente propio de Dawn Web, ayuda a cada rider a encontrar la ruta adecuada, reservar alojamiento y comprar entradas para eventos. Toda la experiencia está diseñada de forma fluida y mobile-first.
-  imgCard: "@/images/motoviagens3.jpg"
-  imgMain: "@/images/motoviagens3.jpg"
+  imgCard: "@/images/products/motoviagens/motoviagens3.jpg"
+  imgMain: "@/images/products/motoviagens/motoviagens3.jpg"
   imgAlt: "Rutas y tours en moto por Brasil en Moto Viagens"
 showcase:
   eyebrow: "Plataforma de viajes en moto"
@@ -38,13 +38,13 @@ showcase:
     - value: "AI"
       label: "Guía de viaje"
   screenshots:
-    - image: "@/images/motoviagens3.jpg"
+    - image: "@/images/products/motoviagens/motoviagens3.jpg"
       alt: "Pantalla principal de la plataforma de viajes en moto Moto Viagens"
       label: "Plataforma real de turismo en moto"
-    - image: "@/images/motoviagens2.jpg"
+    - image: "@/images/products/motoviagens/motoviagens2.jpg"
       alt: "Imágenes de rutas y destinos en Moto Viagens"
       label: "Exploración de rutas y contenido de destinos"
-    - image: "@/images/motoviagens1.jpg"
+    - image: "@/images/products/motoviagens/motoviagens1.jpg"
       alt: "Imagen de reservas de aventura en Moto Viagens"
       label: "Flujo de reserva de tours y alojamientos"
 tabs:
@@ -89,6 +89,6 @@ specificationsRight:
   - title: "Próximos pasos"
     subTitle: "Ampliar la oferta de tours, sumar rutas compartidas por la comunidad y mejorar la personalización de recomendaciones de Luna AI."
 blueprints:
-  first: "@/images/motoviagens2.jpg"
-  second: "@/images/motoviagens1.jpg"
+  first: "@/images/products/motoviagens/motoviagens2.jpg"
+  second: "@/images/products/motoviagens/motoviagens1.jpg"
 ---

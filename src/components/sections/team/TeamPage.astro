@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import Icon from "@components/ui/icons/Icon.astro";
-import heroVisual from "@images/web-design.jpg";
+import heroVisual from "@images/services/web-design.jpg";
 import type { Locale } from "@utils/locale";
 import type { TeamMember, TeamPageContent } from "@data/team";
 
@@ -182,11 +182,14 @@ const labels = socialLabels[locale];
     {
       members.map((member) => (
         <article class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
-          <img
+          <Image
             src={member.image}
             alt={`${labels.photo} ${member.name}`}
             class="aspect-[5/4] w-full object-cover object-center"
             loading="lazy"
+            format="avif"
+            width={640}
+            sizes="(min-width: 1024px) 33vw, 100vw"
           />
           <div class="p-5">
             <h3 class="text-xl font-extrabold text-neutral-800 dark:text-neutral-200">

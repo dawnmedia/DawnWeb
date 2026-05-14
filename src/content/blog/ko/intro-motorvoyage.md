@@ -3,10 +3,10 @@ title: "서비스 비즈니스가 Moto Viagens에서 배울 수 있는 것"
 description: "실제 여행 플랫폼이 명확한 UX, 제품적 사고, 예약 흐름, 기술 기반의 가치를 보여주는 방식."
 author: "Andrew"
 role: "창업자 & CEO"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Dawn Web 창업자이자 CEO인 Andrew의 아바타"
 pubDate: 2025-05-10
-cardImage: "@/images/blog/motorvoyage.jpg"
+cardImage: "@/images/blog/cards/motorvoyage.jpg"
 cardImageAlt: "산악 계곡을 따라 이어지는 경치를 위에서 촬영한 도로"
 readTime: 5
 tags: ["여행", "프로젝트", "웹 앱", "서비스"]

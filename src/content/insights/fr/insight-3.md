@@ -1,7 +1,7 @@
 ---
 title: "Connecter votre site à vos opérations quotidiennes"
 description: "Un site peut aller plus loin qu’une vitrine lorsqu’il se connecte aux réservations, paiements, CRM et workflows de support."
-cardImage: "@/images/business.jpg"
+cardImage: "@/images/insights/cards/business.jpg"
 cardImageAlt: "Espace de travail avec notes de planification"
 ---
 

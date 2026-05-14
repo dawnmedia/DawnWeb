@@ -5,8 +5,8 @@ main:
   id: 4
   content: |
     Luna는 단일 기능 그 이상입니다. Dawn Web의 지능적이고 도움을 주는 핵심을 나타냅니다. 다양한 기업 및 개인 프로젝트 전반에서 일관된 안내 역할을 하도록 생태계 안에 점진적으로 통합되고 있습니다.
-  imgCard: "@/images/lunaai.png"
-  imgMain: "@/images/lunaai.png"
+  imgCard: "@/images/products/luna/lunaai.png"
+  imgMain: "@/images/products/luna/lunaai.png"
   imgAlt: "Dawn Web의 Luna AI 마스코트와 디지털 어시스턴트"
 showcase:
   eyebrow: "AI 어시스턴트 생태계"
@@ -28,13 +28,13 @@ showcase:
     - value: "AI"
       label: "안내 레이어"
   screenshots:
-    - image: "@/images/lunaai.png"
+    - image: "@/images/products/luna/lunaai.png"
       alt: "Luna AI 어시스턴트 마스코트와 제품 아이덴티티"
       label: "Dawn Web 제품을 위한 친근한 AI 아이덴티티"
-    - image: "@/images/lunaverbo.png"
+    - image: "@/images/products/luna/lunaverbo.png"
       alt: "Verbo를 위한 Luna 어시스턴트 콘셉트"
       label: "학습 제품을 위한 AI 코칭 레이어"
-    - image: "@/images/lunaweb.png"
+    - image: "@/images/products/luna/lunaweb.png"
       alt: "웹 제품을 위한 Luna 어시스턴트 콘셉트"
       label: "웹 인터페이스 전반의 어시스턴트 경험"
 tabs:
@@ -79,6 +79,6 @@ specificationsRight:
   - title: "다음 단계"
     subTitle: "Luna의 기능을 확장하고 향후 및 기존 Dawn Web 제품 전체로 통합을 완료합니다."
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/lunaai.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/luna/lunaai.png"
 ---

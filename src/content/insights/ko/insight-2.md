@@ -1,7 +1,7 @@
 ---
 title: "방문자를 문의로 바꾸는 디자인 선택"
 description: "명확한 메시지, 집중된 CTA, 마찰 없는 내비게이션은 방문자가 다음에 무엇을 해야 하는지 알게 합니다."
-cardImage: "@/images/web-design.jpg"
+cardImage: "@/images/services/web-design.jpg"
 cardImageAlt: "웹 개발"
 ---
 

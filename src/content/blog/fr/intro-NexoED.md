@@ -3,10 +3,10 @@ title: "Quand un site web doit devenir une application web"
 description: "Comment les plateformes educatives, portails, tableaux de bord et outils de flux montrent qu'une entreprise a depasse le simple site statique."
 author: "Andrew"
 role: "Fondateur, Dawn Web"
-authorImage: "@/images/blog/Andrew.png"
+authorImage: "@/images/team/Andrew.png"
 authorImageAlt: "Avatar d'Andrew, fondateur de Dawn Web"
 pubDate: 2025-05-30
-cardImage: "@/images/blog/studying.jpg"
+cardImage: "@/images/blog/cards/studying.jpg"
 cardImageAlt: "Jeune adulte utilisant un ordinateur portable dans un environnement d'apprentissage moderne"
 readTime: 4
 tags: ["applications web", "education", "logiciel", "services"]

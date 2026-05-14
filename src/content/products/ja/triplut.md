@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Triplutは、人工知能を活用した次世代の旅行計画プラットフォームです。もっと賢く、シンプルで、刺激のある旅を求める人のために設計されています。ブラジル国内でも世界でも、交通手段、地域の知見、直感的な技術をひとつにまとめ、自信を持って計画・予約・体験できるようにします。
-  imgCard: "@/images/triplut6.jpg"
-  imgMain: "@/images/triplut5.jpg"
+  imgCard: "@/images/products/triplut/triplut6.jpg"
+  imgMain: "@/images/products/triplut/triplut5.jpg"
   imgAlt: "Triplut AI旅行プラットフォームのイラスト"
 showcase:
   eyebrow: "AI旅行計画"
@@ -28,10 +28,10 @@ showcase:
     - value: "24/7"
       label: "アシスタント支援"
   screenshots:
-    - image: "@/images/triplut5.jpg"
+    - image: "@/images/products/triplut/triplut5.jpg"
       alt: "Triplut旅行プラットフォームの目的地計画プレビュー"
       label: "旅の発見と計画体験"
-    - image: "@/images/triplut2.jpg"
+    - image: "@/images/products/triplut/triplut2.jpg"
       alt: "Triplutの旅行ルートと体験ビジュアル"
       label: "冒険を軸にしたプロダクトストーリー"
 tabs:
@@ -76,6 +76,6 @@ specificationsRight:
   - title: "透明な価格"
     subTitle: "固定サービス料金と隠れた費用のない明確な支払い。"
 blueprints:
-  first: "@/images/triplut5.jpg"
-  second: "@/images/triplut2.jpg"
+  first: "@/images/products/triplut/triplut5.jpg"
+  second: "@/images/products/triplut/triplut2.jpg"
 ---

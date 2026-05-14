@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Triplut is your next-generation travel planning platform, powered by artificial intelligence and built for real humans craving smarter, simpler, and more inspiring journeys. Whether your dream trip is across Brazil or the world, Triplut brings all transport types, local expertise, and intuitive technology together so you can plan, book, and experience your adventure with absolute confidence.
-  imgCard: "@/images/triplut6.jpg"
-  imgMain: "@/images/triplut5.jpg"
+  imgCard: "@/images/products/triplut/triplut6.jpg"
+  imgMain: "@/images/products/triplut/triplut5.jpg"
   imgAlt: "Illustration of Triplut AI travel platform"
 showcase:
   eyebrow: "AI travel planning"
@@ -35,10 +35,10 @@ showcase:
     - value: "24/7"
       label: "Assistant support"
   screenshots:
-    - image: "@/images/triplut5.jpg"
+    - image: "@/images/products/triplut/triplut5.jpg"
       alt: "Triplut travel platform destination planning preview"
       label: "Trip discovery and planning experience"
-    - image: "@/images/triplut2.jpg"
+    - image: "@/images/products/triplut/triplut2.jpg"
       alt: "Triplut travel route and experience visual"
       label: "Adventure-focused product storytelling"
 tabs:
@@ -83,7 +83,7 @@ specificationsRight:
   - title: "Transparent Pricing"
     subTitle: "Flat service fees, no hidden charges. You always know what you pay for."
 blueprints:
-  first: "@/images/triplut5.jpg"
-  second: "@/images/triplut2.jpg"
+  first: "@/images/products/triplut/triplut5.jpg"
+  second: "@/images/products/triplut/triplut2.jpg"
 
 ---

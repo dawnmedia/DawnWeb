@@ -3,10 +3,10 @@ title: "サービス企業がMoto Viagensから学べること"
 description: "実際の旅行プラットフォームが、明確なUX、プロダクト思考、予約導線、技術基盤の価値を示す方法。"
 author: "Andrew"
 role: "創業者・CEO"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Dawn Web創業者兼CEO Andrewのアバター"
 pubDate: 2025-05-10
-cardImage: "@/images/blog/motorvoyage.jpg"
+cardImage: "@/images/blog/cards/motorvoyage.jpg"
 cardImageAlt: "山あいの谷を抜ける美しい道路を上空から撮影した写真"
 readTime: 5
 tags: ["旅行", "プロジェクト", "Webアプリ", "サービス"]

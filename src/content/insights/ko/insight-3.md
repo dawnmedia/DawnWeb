@@ -1,7 +1,7 @@
 ---
 title: "웹사이트와 일상 운영을 연결하기"
 description: "웹사이트는 예약, 결제, CRM, 지원 업무 흐름과 연결될 때 정보를 보여주는 것 이상을 할 수 있습니다."
-cardImage: "@/images/business.jpg"
+cardImage: "@/images/insights/cards/business.jpg"
 cardImageAlt: "기획 메모가 있는 비즈니스 작업 공간"
 ---
 

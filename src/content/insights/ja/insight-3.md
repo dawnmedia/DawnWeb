@@ -1,7 +1,7 @@
 ---
 title: "Webサイトを日々の業務につなげる"
 description: "Webサイトは予約、決済、CRM、サポート業務と連携すると、情報を見せる以上の役割を果たせます。"
-cardImage: "@/images/business.jpg"
+cardImage: "@/images/insights/cards/business.jpg"
 cardImageAlt: "計画メモが置かれたビジネスワークスペース"
 ---
 

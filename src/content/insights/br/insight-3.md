@@ -1,7 +1,7 @@
 ---
 title: "Conectando seu site às operações do dia a dia"
 description: "Um site pode ir além da apresentação quando se conecta a agendamentos, pagamentos, CRM e atendimento."
-cardImage: "@/images/business.jpg"
+cardImage: "@/images/insights/cards/business.jpg"
 cardImageAlt: "Área de trabalho com notas de planejamento"
 ---
 

@@ -3,10 +3,10 @@ title: "웹사이트가 웹 앱이 되어야 할 때"
 description: "교육 플랫폼, 포털, 대시보드, 업무 도구가 정적인 웹사이트를 넘어설 시점을 보여주는 방식."
 author: "Andrew"
 role: "Dawn Web 창업자"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Dawn Web 창업자 Andrew의 아바타"
 pubDate: 2025-05-30
-cardImage: "@/images/blog/studying.jpg"
+cardImage: "@/images/blog/cards/studying.jpg"
 cardImageAlt: "현대적인 학습 환경에서 노트북을 사용하는 젊은 성인"
 readTime: 4
 tags: ["웹 앱", "교육", "소프트웨어", "서비스"]

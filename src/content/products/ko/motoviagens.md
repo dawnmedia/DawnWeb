@@ -6,8 +6,8 @@ main:
   content: |
     Moto Viagens는 단순한 여행사가 아니라 도로를 사랑하는 라이더를 위해 만든 완성도 높은 오토바이 여행 플랫폼입니다. motoviagens.com.br에서 운영 중이며, 엄선된 투어, 신뢰할 수 있는 숙소, 브라질과 그 너머의 이벤트를 라이더와 연결합니다.
     Dawn Web의 자체 Luna AI 어시스턴트가 경로 탐색, 숙소 예약, 이벤트 티켓 구매까지 모든 라이더가 자신에게 맞는 여정을 찾도록 돕습니다. 전체 경험은 모바일 우선으로 매끄럽게 설계되었습니다.
-  imgCard: "@/images/motoviagens3.jpg"
-  imgMain: "@/images/motoviagens3.jpg"
+  imgCard: "@/images/products/motoviagens/motoviagens3.jpg"
+  imgMain: "@/images/products/motoviagens/motoviagens3.jpg"
   imgAlt: "Moto Viagens 브라질 오토바이 경로와 투어"
 showcase:
   eyebrow: "오토바이 여행 플랫폼"
@@ -38,13 +38,13 @@ showcase:
     - value: "AI"
       label: "여행 안내"
   screenshots:
-    - image: "@/images/motoviagens3.jpg"
+    - image: "@/images/products/motoviagens/motoviagens3.jpg"
       alt: "Moto Viagens 오토바이 여행 플랫폼 히어로 화면"
       label: "실제 오토바이 관광 플랫폼"
-    - image: "@/images/motoviagens2.jpg"
+    - image: "@/images/products/motoviagens/motoviagens2.jpg"
       alt: "Moto Viagens 경로와 목적지 이미지"
       label: "경로 탐색과 목적지 콘텐츠"
-    - image: "@/images/motoviagens1.jpg"
+    - image: "@/images/products/motoviagens/motoviagens1.jpg"
       alt: "Moto Viagens 모험 예약 이미지"
       label: "투어 및 숙소 예약 흐름"
 tabs:
@@ -89,6 +89,6 @@ specificationsRight:
   - title: "다음 단계"
     subTitle: "투어 범위 확장, 커뮤니티 경로 공유 추가, Luna AI의 개인화 여행 추천 고도화."
 blueprints:
-  first: "@/images/motoviagens2.jpg"
-  second: "@/images/motoviagens1.jpg"
+  first: "@/images/products/motoviagens/motoviagens2.jpg"
+  second: "@/images/products/motoviagens/motoviagens1.jpg"
 ---

@@ -6,8 +6,8 @@ main:
   content: |
     O Verbo é uma plataforma de aprendizado de idiomas de próxima geração que combina coaching baseado em IA com repetição espaçada cientificamente comprovada. Aprenda de forma natural através de conversas com Luna, nossa coach de idiomas com IA, e reforce cada lição com flashcards inteligentes que se adaptam ao seu progresso — tudo no Web, iOS e Android.
     Com sequências gamificadas, jornadas de aprendizado estruturadas, pronúncia com áudio nativo e acesso multiplataforma, o Verbo transforma o aprendizado de idiomas em um hábito que você realmente quer manter.
-  imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/lunaai.png"
+  imgCard: "@/images/products/verbo/verbo_app_card.jpg"
+  imgMain: "@/images/products/luna/lunaai.png"
   imgAlt: "Interface da plataforma de aprendizado de idiomas Verbo AI"
 showcase:
   eyebrow: "Aprendizado de idiomas com IA"
@@ -39,13 +39,13 @@ showcase:
     - value: "FSRS"
       label: "Repeticao espacada"
   screenshots:
-    - image: "@/images/verbo_app_card.jpg"
+    - image: "@/images/products/verbo/verbo_app_card.jpg"
       alt: "Painel Verbo para aprendizado de idiomas com IA"
       label: "Painel de aprendizado com IA"
-    - image: "@/images/verboapp.png"
+    - image: "@/images/products/verbo/verboapp.png"
       alt: "Interface mobile do Verbo para idiomas"
       label: "Fluxo de aprendizado mobile"
-    - image: "@/images/verbodesktop.png"
+    - image: "@/images/products/verbo/verbodesktop.png"
       alt: "Interface desktop do Verbo para idiomas"
       label: "Experiencia de estudo desktop"
 tabs:
@@ -90,6 +90,6 @@ specificationsRight:
   - title: "Próximos Passos"
     subTitle: "Submissões para App Store iOS e Android, integração com analytics PostHog e suporte expandido a idiomas com personalização de IA mais aprofundada."
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/verbodesktop.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/verbo/verbodesktop.png"
 ---

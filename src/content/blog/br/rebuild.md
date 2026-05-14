@@ -3,10 +3,10 @@ title: "5 sinais de que seu site esta perdendo bons contatos"
 description: "Um guia pratico para decidir se seu site precisa de mensagem mais clara, redesign focado, bases de SEO ou uma reconstrução completa."
 author: "Andrew"
 role: "Fundador e CEO"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Retrato de Andrew"
 pubDate: 2025-05-31
-cardImage: "@/images/web-dev.jpg"
+cardImage: "@/images/services/web-dev.jpg"
 cardImageAlt: "Equipe colaborando em volta de um notebook"
 readTime: 7
 tags: ["web design", "redesign de site", "UX", "servicos"]

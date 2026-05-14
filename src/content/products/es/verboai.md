@@ -6,8 +6,8 @@ main:
   content: |
     Verbo es una plataforma de aprendizaje de idiomas de nueva generación que combina coaching con IA y repetición espaciada basada en ciencia. Aprendes conversando de forma natural con Luna, tu coach de idiomas con IA, y refuerzas cada lección con tarjetas inteligentes que se ajustan a tu progreso. Está disponible en web, iOS y Android.
     Con rachas gamificadas, recorridos de aprendizaje estructurados, pronunciación con audio nativo y acceso fluido entre plataformas, Verbo convierte estudiar un idioma en un hábito que de verdad quieres mantener.
-  imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/verbo_app_card.jpg"
+  imgCard: "@/images/products/verbo/verbo_app_card.jpg"
+  imgMain: "@/images/products/verbo/verbo_app_card.jpg"
   imgAlt: "Interfaz de la plataforma de aprendizaje de idiomas Verbo AI"
 showcase:
   eyebrow: "Aprendizaje de idiomas con IA"
@@ -39,13 +39,13 @@ showcase:
     - value: "FSRS"
       label: "Repetición espaciada"
   screenshots:
-    - image: "@/images/verbo_app_card.jpg"
+    - image: "@/images/products/verbo/verbo_app_card.jpg"
       alt: "Panel de la plataforma de aprendizaje de idiomas Verbo AI"
       label: "Panel de aprendizaje centrado en IA"
-    - image: "@/images/verboapp.png"
+    - image: "@/images/products/verbo/verboapp.png"
       alt: "Interfaz móvil de aprendizaje de idiomas de Verbo"
       label: "Flujo de aprendizaje móvil"
-    - image: "@/images/verbodesktop.png"
+    - image: "@/images/products/verbo/verbodesktop.png"
       alt: "Interfaz de escritorio de aprendizaje de idiomas de Verbo"
       label: "Experiencia de aprendizaje en escritorio"
 tabs:
@@ -90,6 +90,6 @@ specificationsRight:
   - title: "Próximos pasos"
     subTitle: "Enviar las apps a iOS y Android, integrar analítica con PostHog y ampliar idiomas con personalización de IA más profunda."
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/verbodesktop.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/verbo/verbodesktop.png"
 ---

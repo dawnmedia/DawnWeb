@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Triplut은 인공지능을 기반으로 한 차세대 여행 계획 플랫폼입니다. 더 똑똑하고 단순하며 영감을 주는 여정을 원하는 실제 사람들을 위해 설계했습니다. 브라질 안팎 어디로 떠나든 교통수단, 현지 전문성, 직관적인 기술을 한곳에 모아 자신 있게 계획하고 예약하고 경험할 수 있게 합니다.
-  imgCard: "@/images/triplut6.jpg"
-  imgMain: "@/images/triplut5.jpg"
+  imgCard: "@/images/products/triplut/triplut6.jpg"
+  imgMain: "@/images/products/triplut/triplut5.jpg"
   imgAlt: "Triplut AI 여행 플랫폼 일러스트레이션"
 showcase:
   eyebrow: "AI 여행 계획"
@@ -28,10 +28,10 @@ showcase:
     - value: "24/7"
       label: "어시스턴트 지원"
   screenshots:
-    - image: "@/images/triplut5.jpg"
+    - image: "@/images/products/triplut/triplut5.jpg"
       alt: "Triplut 여행 플랫폼 목적지 계획 미리보기"
       label: "여행 발견 및 계획 경험"
-    - image: "@/images/triplut2.jpg"
+    - image: "@/images/products/triplut/triplut2.jpg"
       alt: "Triplut 여행 경로와 경험 비주얼"
       label: "모험 중심 제품 스토리텔링"
 tabs:
@@ -76,6 +76,6 @@ specificationsRight:
   - title: "투명한 가격"
     subTitle: "고정 서비스 수수료와 숨은 비용 없는 명확한 결제."
 blueprints:
-  first: "@/images/triplut5.jpg"
-  second: "@/images/triplut2.jpg"
+  first: "@/images/products/triplut/triplut5.jpg"
+  second: "@/images/products/triplut/triplut2.jpg"
 ---

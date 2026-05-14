@@ -5,8 +5,8 @@ main:
   id: 4
   content: |
     Luna is more than just a single feature, She represents the intelligent, helpful core of Dawn Web. She is being woven into the fabric of our ecosystem, designed to be a consistent, guiding presence across our diverse lineup of corporate and personal projects.
-  imgCard: "@/images/lunaai.png"
-  imgMain: "@/images/lunaai.png"
+  imgCard: "@/images/products/luna/lunaai.png"
+  imgMain: "@/images/products/luna/lunaai.png"
   imgAlt: "Luna AI mascot and digital assistant for Dawn Web"
 showcase:
   eyebrow: "AI assistant ecosystem"
@@ -35,13 +35,13 @@ showcase:
     - value: "AI"
       label: "Guidance layer"
   screenshots:
-    - image: "@/images/lunaai.png"
+    - image: "@/images/products/luna/lunaai.png"
       alt: "Luna AI assistant mascot and product identity"
       label: "Friendly AI identity for Dawn Web products"
-    - image: "@/images/lunaverbo.png"
+    - image: "@/images/products/luna/lunaverbo.png"
       alt: "Luna assistant concept for Verbo"
       label: "AI coaching layer for learning products"
-    - image: "@/images/lunaweb.png"
+    - image: "@/images/products/luna/lunaweb.png"
       alt: "Luna assistant concept for web products"
       label: "Assistant experience across web interfaces"
 tabs:
@@ -86,7 +86,7 @@ specificationsRight:
   - title: "Next Steps"
     subTitle: "Expand Luna's capabilities and complete her integration into all upcoming and existing Dawn Web products."
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/lunaai.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/luna/lunaai.png"
 
 ---

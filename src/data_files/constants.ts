@@ -1,5 +1,3 @@
-import ogImageSrc from "@images/social.png";
-
 export const SITE = {
   title: "Dawn Web",
   tagline: "Websites that stop losing good leads",
@@ -35,5 +33,5 @@ export const OG = {
   url: SITE.url,
   title: `${SITE.title}: Websites that stop losing good leads`,
   description: SITE.description,
-  image: ogImageSrc,
+  image: "/social.png",
 };

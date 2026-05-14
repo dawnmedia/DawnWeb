@@ -3,10 +3,10 @@ title: "What a Service Business Can Learn From Moto Viagens"
 description: "How a real travel platform shows the value of clear UX, product thinking, booking flows, and technical foundations."
 author: "Andrew"
 role: "Founder & CEO"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Avatar of Andrew, Dawn Web founder & CEO"
 pubDate: 2025-05-10
-cardImage: "@/images/blog/motorvoyage.jpg"
+cardImage: "@/images/blog/cards/motorvoyage.jpg"
 cardImageAlt: "A scenic road winding through mountain valleys, shot from above"
 readTime: 5
 tags: ["travel", "projects", "web apps", "services"]

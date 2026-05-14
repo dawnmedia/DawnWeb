@@ -1,7 +1,7 @@
 ---
 title: "Why Every Small Business Needs a Fast Website"
 description: "A fast website builds trust, keeps visitors engaged, and makes every marketing channel work harder."
-cardImage: "@/images/code.jpg"
+cardImage: "@/images/services/code.jpg"
 cardImageAlt: "Code editor on a laptop"
 ---
 

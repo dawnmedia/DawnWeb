@@ -1,7 +1,7 @@
 ---
 title: "訪問者を問い合わせへ変えるデザイン判断"
 description: "明確なメッセージ、集中したCTA、迷わないナビゲーションは、訪問者に次の行動を分かりやすく示します。"
-cardImage: "@/images/web-design.jpg"
+cardImage: "@/images/services/web-design.jpg"
 cardImageAlt: "Web開発"
 ---
 

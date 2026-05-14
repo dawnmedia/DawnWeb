@@ -1,7 +1,7 @@
 ---
 title: "小規模ビジネスに速いWebサイトが必要な理由"
 description: "速いWebサイトは信頼を作り、訪問者の関心を保ち、すべてのマーケティングチャネルをより有効にします。"
-cardImage: "@/images/code.jpg"
+cardImage: "@/images/services/code.jpg"
 cardImageAlt: "ノートパソコン上のコードエディタ"
 ---
 

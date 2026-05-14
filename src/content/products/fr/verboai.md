@@ -6,8 +6,8 @@ main:
   content: |
     Verbo est une plateforme d'apprentissage des langues nouvelle génération qui combine un coaching propulsé par l'IA avec la répétition espacée scientifiquement prouvée. Apprenez naturellement en conversant avec Luna, notre coach linguistique IA, et renforcez chaque leçon avec des flashcards intelligentes qui s'adaptent à votre progression — sur Web, iOS et Android.
     Avec des séries gamifiées, des parcours d'apprentissage structurés, une prononciation en audio natif et un accès multiplateforme transparent, Verbo transforme l'apprentissage des langues en une habitude que vous aurez envie de maintenir.
-  imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/lunaai.png"
+  imgCard: "@/images/products/verbo/verbo_app_card.jpg"
+  imgMain: "@/images/products/luna/lunaai.png"
   imgAlt: "Interface de la plateforme d'apprentissage Verbo AI"
 showcase:
   eyebrow: "Apprentissage des langues par IA"
@@ -39,13 +39,13 @@ showcase:
     - value: "FSRS"
       label: "Repetition espacee"
   screenshots:
-    - image: "@/images/verbo_app_card.jpg"
+    - image: "@/images/products/verbo/verbo_app_card.jpg"
       alt: "Tableau de bord Verbo pour l'apprentissage par IA"
       label: "Tableau de bord d'apprentissage IA"
-    - image: "@/images/verboapp.png"
+    - image: "@/images/products/verbo/verboapp.png"
       alt: "Interface mobile Verbo d'apprentissage des langues"
       label: "Flux d'apprentissage mobile"
-    - image: "@/images/verbodesktop.png"
+    - image: "@/images/products/verbo/verbodesktop.png"
       alt: "Interface desktop Verbo d'apprentissage des langues"
       label: "Experience d'etude desktop"
 tabs:
@@ -90,6 +90,6 @@ specificationsRight:
   - title: "Prochaines Étapes"
     subTitle: "Soumissions sur l'App Store iOS et Android, intégration des analytics PostHog et support étendu des langues avec une personnalisation IA plus poussée."
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/verbodesktop.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/verbo/verbodesktop.png"
 ---

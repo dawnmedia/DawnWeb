@@ -3,10 +3,10 @@ title: "5 señales de que tu sitio web está perdiendo buenas consultas"
 description: "Una guía práctica para decidir si tu sitio necesita mensajes más claros, un rediseño enfocado, una base SEO o una reconstrucción completa."
 author: "Andrew"
 role: "CEO y fundador"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Retrato de Andrew"
 pubDate: 2025-05-31
-cardImage: "@/images/web-dev.jpg"
+cardImage: "@/images/services/web-dev.jpg"
 cardImageAlt: "Equipo colaborando alrededor de un portátil"
 readTime: 7
 tags: ["diseño web", "rediseño web", "UX", "servicios"]

@@ -1,7 +1,7 @@
 ---
 title: "Des choix de design qui transforment les visiteurs en prospects"
 description: "Un message clair, des appels à l’action ciblés et une navigation fluide aident les visiteurs à passer à l’étape suivante."
-cardImage: "@/images/web-design.jpg"
+cardImage: "@/images/services/web-design.jpg"
 cardImageAlt: "Développement web"
 ---
 

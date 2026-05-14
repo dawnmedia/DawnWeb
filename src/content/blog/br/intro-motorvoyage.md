@@ -3,10 +3,10 @@ title: "O que uma empresa de servicos pode aprender com a Moto Viagens"
 description: "Como uma plataforma real de viagem mostra o valor de UX clara, pensamento de produto, fluxos de reserva e boas bases tecnicas."
 author: "Andrew"
 role: "Fundador & CEO"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Avatar de Andrew, fundador e CEO da Dawn Web"
 pubDate: 2025-05-10
-cardImage: "@/images/blog/motorvoyage.jpg"
+cardImage: "@/images/blog/cards/motorvoyage.jpg"
 cardImageAlt: "Uma estrada cenica serpenteando por vales montanhosos, fotografada de cima"
 readTime: 5
 tags: ["viagem", "projetos", "apps web", "servicos"]

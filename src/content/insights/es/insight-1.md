@@ -1,7 +1,7 @@
 ---
 title: "Por qué todo pequeño negocio necesita un sitio web rápido"
 description: "Un sitio web rápido genera confianza, mantiene la atención del visitante y mejora el rendimiento de todos los canales de marketing."
-cardImage: "@/images/code.jpg"
+cardImage: "@/images/services/code.jpg"
 cardImageAlt: "Editor de código en un portátil"
 ---
 

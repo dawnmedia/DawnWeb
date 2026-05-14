@@ -3,10 +3,10 @@ title: "Webサイトが良い問い合わせを逃している5つのサイン"
 description: "サイトに明確なメッセージ、重点的なリニューアル、SEO基盤、全面的な作り直しが必要か判断するための実用ガイド。"
 author: "Andrew"
 role: "CEO・創業者"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Andrewのポートレート"
 pubDate: 2025-05-31
-cardImage: "@/images/web-dev.jpg"
+cardImage: "@/images/services/web-dev.jpg"
 cardImageAlt: "ノートパソコンを囲んで協力するチーム"
 readTime: 7
 tags: ["Webデザイン", "サイトリニューアル", "UX", "サービス"]

@@ -3,10 +3,10 @@ title: "WebサイトがWebアプリになるべきタイミング"
 description: "教育プラットフォーム、ポータル、ダッシュボード、業務ツールが、静的サイトを超えるタイミングを示す方法。"
 author: "Andrew"
 role: "Dawn Web創業者"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Dawn Web創業者Andrewのアバター"
 pubDate: 2025-05-30
-cardImage: "@/images/blog/studying.jpg"
+cardImage: "@/images/blog/cards/studying.jpg"
 cardImageAlt: "現代的な学習環境でノートパソコンを使う若い大人"
 readTime: 4
 tags: ["Webアプリ", "教育", "ソフトウェア", "サービス"]

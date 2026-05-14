@@ -3,10 +3,10 @@ title: "5 signes que votre site fait perdre de bons prospects"
 description: "Un guide pratique pour savoir si votre site a besoin d'un message plus clair, d'une refonte ciblee, de bases SEO ou d'une reconstruction complete."
 author: "Andrew"
 role: "PDG & Fondateur"
-authorImage: "@/images/blog/Andrew.png"
+authorImage: "@/images/team/Andrew.png"
 authorImageAlt: "Portrait d'Andrew"
 pubDate: 2025-05-31
-cardImage: "@/images/web-dev.jpg"
+cardImage: "@/images/services/web-dev.jpg"
 cardImageAlt: "Equipe collaborant autour d'un ordinateur portable"
 readTime: 7
 tags: ["web design", "refonte de site", "UX", "services"]

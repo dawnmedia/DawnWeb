@@ -1,7 +1,7 @@
 ---
 title: "Design Choices That Turn Visitors Into Leads"
 description: "Clear messaging, focused calls to action, and frictionless navigation help visitors know what to do next."
-cardImage: "@/images/web-design.jpg"
+cardImage: "@/images/services/web-design.jpg"
 cardImageAlt: "Web Development"
 ---
 

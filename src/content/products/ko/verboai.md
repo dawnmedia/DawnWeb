@@ -6,8 +6,8 @@ main:
   content: |
     Verbo는 AI 기반 코칭과 과학적으로 검증된 간격 반복을 결합한 차세대 언어 학습 플랫폼입니다. AI 언어 코치 Luna와 자연스럽게 대화하며 배우고, 진도에 맞춰 조정되는 스마트 플래시카드로 모든 수업을 강화합니다. Web, iOS, Android에서 사용할 수 있습니다.
     게임화된 연속 학습, 구조화된 학습 여정, 원어민 오디오 발음, 끊김 없는 크로스 플랫폼 접근으로 Verbo는 언어 학습을 실제로 유지하고 싶은 습관으로 바꿉니다.
-  imgCard: "@/images/verbo_app_card.jpg"
-  imgMain: "@/images/verbo_app_card.jpg"
+  imgCard: "@/images/products/verbo/verbo_app_card.jpg"
+  imgMain: "@/images/products/verbo/verbo_app_card.jpg"
   imgAlt: "Verbo AI 언어 학습 플랫폼 인터페이스"
 showcase:
   eyebrow: "AI 언어 학습"
@@ -39,13 +39,13 @@ showcase:
     - value: "FSRS"
       label: "간격 반복"
   screenshots:
-    - image: "@/images/verbo_app_card.jpg"
+    - image: "@/images/products/verbo/verbo_app_card.jpg"
       alt: "Verbo AI 언어 학습 플랫폼 대시보드"
       label: "AI 우선 학습 대시보드"
-    - image: "@/images/verboapp.png"
+    - image: "@/images/products/verbo/verboapp.png"
       alt: "Verbo 모바일 언어 학습 인터페이스"
       label: "모바일 학습 흐름"
-    - image: "@/images/verbodesktop.png"
+    - image: "@/images/products/verbo/verbodesktop.png"
       alt: "Verbo 데스크톱 언어 학습 인터페이스"
       label: "데스크톱 학습 경험"
 tabs:
@@ -90,6 +90,6 @@ specificationsRight:
   - title: "다음 단계"
     subTitle: "iOS 및 Android 앱스토어 제출, PostHog 분석 통합, 더 깊은 AI 개인화를 갖춘 언어 지원 확장."
 blueprints:
-  first: "@/images/verboapp.png"
-  second: "@/images/verbodesktop.png"
+  first: "@/images/products/verbo/verboapp.png"
+  second: "@/images/products/verbo/verbodesktop.png"
 ---

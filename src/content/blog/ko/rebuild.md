@@ -3,10 +3,10 @@ title: "웹사이트가 좋은 문의를 놓치고 있다는 5가지 신호"
 description: "사이트에 더 명확한 메시지, 집중된 리디자인, SEO 기반, 또는 전체 재구축이 필요한지 판단하는 실용 가이드."
 author: "Andrew"
 role: "CEO & 창업자"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Andrew의 초상"
 pubDate: 2025-05-31
-cardImage: "@/images/web-dev.jpg"
+cardImage: "@/images/services/web-dev.jpg"
 cardImageAlt: "노트북을 중심으로 협업하는 팀"
 readTime: 7
 tags: ["웹 디자인", "웹사이트 리디자인", "UX", "서비스"]

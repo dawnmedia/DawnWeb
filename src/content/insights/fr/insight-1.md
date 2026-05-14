@@ -1,7 +1,7 @@
 ---
 title: "Pourquoi chaque petite entreprise a besoin d’un site rapide"
 description: "Un site rapide renforce la confiance, retient les visiteurs et améliore l’impact de chaque canal marketing."
-cardImage: "@/images/code.jpg"
+cardImage: "@/images/services/code.jpg"
 cardImageAlt: "Éditeur de code sur un ordinateur portable"
 ---
 

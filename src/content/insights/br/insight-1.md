@@ -1,7 +1,7 @@
 ---
 title: "Por que toda pequena empresa precisa de um site rápido"
 description: "Um site rápido transmite confiança, mantém visitantes engajados e melhora o resultado de cada canal de marketing."
-cardImage: "@/images/code.jpg"
+cardImage: "@/images/services/code.jpg"
 cardImageAlt: "Editor de código em um notebook"
 ---
 

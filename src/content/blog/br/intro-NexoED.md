@@ -3,10 +3,10 @@ title: "Quando um site precisa virar um aplicativo web"
 description: "Como plataformas educacionais, portais, paineis e ferramentas de fluxo mostram que uma empresa passou do site estatico."
 author: "Andrew"
 role: "Fundador, Dawn Web"
-authorImage: "@/images/blog/Andrew2.png"
+authorImage: "@/images/blog/authors/Andrew2.png"
 authorImageAlt: "Avatar de Andrew, fundador da Dawn Web"
 pubDate: 2025-05-30
-cardImage: "@/images/blog/studying.jpg"
+cardImage: "@/images/blog/cards/studying.jpg"
 cardImageAlt: "Pessoa jovem usando um notebook em um ambiente moderno de aprendizado"
 readTime: 4
 tags: ["apps web", "educacao", "software", "servicos"]

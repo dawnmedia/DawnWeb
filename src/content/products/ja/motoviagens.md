@@ -6,8 +6,8 @@ main:
   content: |
     Moto Viagensは単なる旅行代理店ではありません。道を愛するライダーのために作られた、本格的なオートバイ旅行プラットフォームです。motoviagens.com.brで公開されており、厳選されたツアー、信頼できる宿泊施設、ブラジル各地とその先のイベントをライダーにつなげます。
     Dawn WebのLuna AIアシスタントにより、ルート探索、宿泊予約、イベントチケット購入まで、すべてのライダーが自分に合う旅を見つけられます。体験全体はモバイルファーストで滑らかに設計されています。
-  imgCard: "@/images/motoviagens3.jpg"
-  imgMain: "@/images/motoviagens3.jpg"
+  imgCard: "@/images/products/motoviagens/motoviagens3.jpg"
+  imgMain: "@/images/products/motoviagens/motoviagens3.jpg"
   imgAlt: "Moto Viagensのブラジルオートバイルートとツアー"
 showcase:
   eyebrow: "オートバイ旅行プラットフォーム"
@@ -29,13 +29,13 @@ showcase:
     - value: "AI"
       label: "旅行ガイド"
   screenshots:
-    - image: "@/images/motoviagens3.jpg"
+    - image: "@/images/products/motoviagens/motoviagens3.jpg"
       alt: "Moto Viagensオートバイ旅行プラットフォームのヒーロービジュアル"
       label: "実運用中のオートバイ観光プラットフォーム"
-    - image: "@/images/motoviagens2.jpg"
+    - image: "@/images/products/motoviagens/motoviagens2.jpg"
       alt: "Moto Viagensのルートと目的地イメージ"
       label: "ルート探索と目的地コンテンツ"
-    - image: "@/images/motoviagens1.jpg"
+    - image: "@/images/products/motoviagens/motoviagens1.jpg"
       alt: "Moto Viagensの冒険予約ビジュアル"
       label: "ツアーと宿泊の予約フロー"
 tabs:
@@ -80,6 +80,6 @@ specificationsRight:
   - title: "次の展開"
     subTitle: "ツアー範囲の拡大、コミュニティルート共有、Luna AIの個別旅行提案の強化。"
 blueprints:
-  first: "@/images/motoviagens2.jpg"
-  second: "@/images/motoviagens1.jpg"
+  first: "@/images/products/motoviagens/motoviagens2.jpg"
+  second: "@/images/products/motoviagens/motoviagens1.jpg"
 ---
