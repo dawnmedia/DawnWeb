@@ -96,6 +96,18 @@ export default {
           '33%': { transform: 'translate(-40px, 30px) scale(0.9)' },
           '66%': { transform: 'translate(50px, -30px) scale(1.1)' },
         },
+        'underline-reveal': {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+        'glow-ring': {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(250, 204, 21, 0.4)' },
+          '50%': { boxShadow: '0 0 0 12px rgba(250, 204, 21, 0)' },
+        },
+        'draw-line': {
+          '0%': { strokeDashoffset: '100' },
+          '100%': { strokeDashoffset: '0' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
@@ -108,6 +120,9 @@ export default {
         gradient: 'gradient 8s ease infinite',
         'orb-1': 'orb-move-1 20s ease-in-out infinite',
         'orb-2': 'orb-move-2 25s ease-in-out infinite',
+        'underline-reveal': 'underline-reveal 0.6s ease-out forwards',
+        'glow-ring': 'glow-ring 2s ease-in-out infinite',
+        'draw-line': 'draw-line 1s ease-out forwards',
       },
     },
   },

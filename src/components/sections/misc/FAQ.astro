@@ -25,9 +25,7 @@ const makeId = (base: string, index: number) => `${base}${index + 1}`;
 ---
 
 <!-- Main container that holds all content. Customized for different viewport sizes. -->
-<section
- id="faq" class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
+<section id="faq" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="grid gap-10 md:grid-cols-5">
     <div class="md:col-span-2">
       <div class="max-w-xs">
@@ -49,11 +47,11 @@ const makeId = (base: string, index: number) => `${base}${index + 1}`;
             // Generate ids dynamically for each FAQ accordion item.
             let id = makeId(
               "hs-basic-with-title-and-arrow-stretched-heading-",
-              i
+              i,
             );
             let collapseId = makeId(
               "hs-basic-with-title-and-arrow-stretched-collapse",
-              i
+              i,
             );
 
             return (
