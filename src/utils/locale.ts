@@ -39,6 +39,68 @@ export const OPEN_GRAPH_LOCALES: Record<Locale, string> = {
   es: "es_ES",
 };
 
+export const LOCALE_COOKIE_NAME = "dawn_locale";
+
+const SPANISH_LANGUAGE_COUNTRIES = new Set([
+  "AR",
+  "BO",
+  "CL",
+  "CO",
+  "CR",
+  "CU",
+  "DO",
+  "EC",
+  "ES",
+  "GQ",
+  "GT",
+  "HN",
+  "MX",
+  "NI",
+  "PA",
+  "PE",
+  "PR",
+  "PY",
+  "SV",
+  "UY",
+  "VE",
+]);
+
+const FRENCH_LANGUAGE_COUNTRIES = new Set([
+  "BJ",
+  "BF",
+  "BI",
+  "BL",
+  "CD",
+  "CF",
+  "CG",
+  "CI",
+  "CM",
+  "DJ",
+  "FR",
+  "GA",
+  "GF",
+  "GN",
+  "GP",
+  "HT",
+  "KM",
+  "MC",
+  "MF",
+  "MG",
+  "ML",
+  "MQ",
+  "NC",
+  "NE",
+  "PF",
+  "PM",
+  "RE",
+  "SC",
+  "SN",
+  "TD",
+  "TG",
+  "WF",
+  "YT",
+]);
+
 const SERVICE_DETAIL_PATHS = new Set([
   "/services/business-website-design",
   "/services/website-redesign",
@@ -50,6 +112,78 @@ const NO_ALTERNATE_PATHS = new Set(["/404"]);
 
 export function isLocale(value: string): value is Locale {
   return SUPPORTED_LOCALES.includes(value as Locale);
+}
+
+export function getLocaleFromCountry(
+  countryCode: string | null | undefined,
+): Locale {
+  const country = (countryCode ?? "").trim().toUpperCase();
+
+  if (country === "BR") {
+    return "br";
+  }
+
+  if (country === "JP") {
+    return "ja";
+  }
+
+  if (country === "KR") {
+    return "ko";
+  }
+
+  if (SPANISH_LANGUAGE_COUNTRIES.has(country)) {
+    return "es";
+  }
+
+  if (FRENCH_LANGUAGE_COUNTRIES.has(country)) {
+    return "fr";
+  }
+
+  return DEFAULT_LOCALE;
+}
+
+function getCookieValue(
+  cookieHeader: string | null | undefined,
+  cookieName: string,
+): string | undefined {
+  if (!cookieHeader) {
+    return undefined;
+  }
+
+  for (const cookie of cookieHeader.split(";")) {
+    const separatorIndex = cookie.indexOf("=");
+
+    if (separatorIndex === -1) {
+      continue;
+    }
+
+    const name = cookie.slice(0, separatorIndex).trim();
+
+    if (name !== cookieName) {
+      continue;
+    }
+
+    const rawValue = cookie.slice(separatorIndex + 1).trim();
+
+    try {
+      return decodeURIComponent(rawValue);
+    } catch {
+      return rawValue;
+    }
+  }
+
+  return undefined;
+}
+
+export function getLocalePreferenceFromCookieHeader(
+  cookieHeader: string | null | undefined,
+): Locale | undefined {
+  const locale = getCookieValue(
+    cookieHeader,
+    LOCALE_COOKIE_NAME,
+  )?.toLowerCase();
+
+  return locale && isLocale(locale) ? locale : undefined;
 }
 
 export function getLocaleFromPath(pathname: string): Locale {
@@ -79,7 +213,10 @@ export function localizePath(pathname: string, locale: Locale): string {
   return `/${prefix}${basePath === "/" ? "" : basePath}`;
 }
 
-export function collectionIdStartsWithLocale(id: string, locale: Locale): boolean {
+export function collectionIdStartsWithLocale(
+  id: string,
+  locale: Locale,
+): boolean {
   return id.startsWith(`${locale}/`);
 }
 

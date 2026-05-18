@@ -9,9 +9,14 @@
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check",
+    "test": "vitest run",
     "build": "rm -rf dist && astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "worker:dev": "wrangler dev",
+    "worker:deploy": "wrangler deploy",
+    "worker:dry-run": "wrangler deploy --dry-run",
+    "worker:types": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -24,10 +29,13 @@
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260518.1",
     "@tailwindcss/forms": "^0.5.9",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vitest": "^4.1.6",
+    "wrangler": "^4.92.0"
   }
 }

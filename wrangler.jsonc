@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "dawnweb-language-redirect",
+  "main": "workers/language-redirect.ts",
+  "compatibility_date": "2026-05-18",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "dawnwebs.com/*",
+      "zone_name": "dawnwebs.com",
+    },
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+}

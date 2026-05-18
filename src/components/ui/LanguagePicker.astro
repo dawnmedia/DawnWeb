@@ -11,7 +11,9 @@ import {
 const currentLocale = getLocaleFromPath(Astro.url.pathname);
 const availableLocales = getAvailableLocalesForPath(Astro.url.pathname);
 const languagePickerOrder: Locale[] = ["en", "br", "es", "fr", "ko", "ja"];
-const visibleLocales = (availableLocales.length > 0 ? availableLocales : [currentLocale]).toSorted(
+const visibleLocales = (
+  availableLocales.length > 0 ? availableLocales : [currentLocale]
+).toSorted(
   (a, b) => languagePickerOrder.indexOf(a) - languagePickerOrder.indexOf(b),
 );
 const shortLabels: Record<Locale, string> = {
@@ -31,11 +33,11 @@ const changeLanguageLabel =
       ? "言語を変更"
       : currentLocale === "es"
         ? "Cambiar idioma"
-      : currentLocale === "fr"
-        ? "Changer de langue"
-        : currentLocale === "br"
-          ? "Alterar idioma"
-          : "Change language";
+        : currentLocale === "fr"
+          ? "Changer de langue"
+          : currentLocale === "br"
+            ? "Alterar idioma"
+            : "Change language";
 const languageOptions = visibleLocales.map((locale) => ({
   locale,
   label: LOCALE_LABELS[locale],
@@ -78,7 +80,7 @@ const languageOptions = visibleLocales.map((locale) => ({
     data-language-menu
   >
     {
-      languageOptions.map(({ label, shortLabel, href, current }) => (
+      languageOptions.map(({ locale, label, shortLabel, href, current }) => (
         <a
           class:list={[
             "flex items-center gap-x-3 rounded-lg px-3 py-2 text-sm focus:bg-neutral-100 focus:outline-none dark:focus:bg-neutral-700",
@@ -87,6 +89,8 @@ const languageOptions = visibleLocales.map((locale) => ({
               : "text-neutral-800 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-neutral-100",
           ]}
           href={href}
+          data-language-option
+          data-locale={locale}
           aria-current={current ? "page" : undefined}
         >
           <span class="w-7 shrink-0 text-xs font-bold uppercase text-neutral-500 dark:text-neutral-400">
@@ -117,6 +121,19 @@ const languageOptions = visibleLocales.map((locale) => ({
       toggle?.addEventListener("click", (event) => {
         event.stopPropagation();
         setOpen(toggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      picker.querySelectorAll("[data-language-option]").forEach((option) => {
+        option.addEventListener("click", () => {
+          const locale = option.getAttribute("data-locale");
+
+          if (!/^(en|br|es|fr|ko|ja)$/.test(locale || "")) return;
+
+          const maxAge = 60 * 60 * 24 * 365;
+          const secure =
+            window.location.protocol === "https:" ? "; Secure" : "";
+          document.cookie = `dawn_locale=${encodeURIComponent(locale)}; Max-Age=${maxAge}; Path=/; SameSite=Lax${secure}`;
+        });
       });
 
       document.addEventListener("click", (event) => {
