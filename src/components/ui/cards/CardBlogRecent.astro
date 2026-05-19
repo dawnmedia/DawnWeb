@@ -32,57 +32,60 @@ interface Props {
 }
 ---
 
-<!-- Root container, which is divided into 2 grid column layout for larger screens -->
-<div class="grid gap-8 sm:grid-cols-2 sm:items-center">
-  <!-- Container for the blog post's cover image -->
-  <div class="sm:order-2">
-    <div class="relative rounded-lg pt-[50%] sm:pt-[100%]">
-      <Image
-        class="absolute start-0 top-0 size-full rounded-xl object-cover"
-        src={blogEntry.data.cardImage}
-        alt={blogEntry.data.cardImageAlt}
-        draggable={"false"}
-        loading={"eager"}
-        format={"avif"}
-        width={760}
-        sizes="(min-width: 1024px) 50vw, 100vw"
-        fetchpriority="high"
-      />
-    </div>
-  </div>
-  <!-- Container for the blog post heading, author avatar, role, and CTA -->
-  <div class="sm:order-1">
-    <!-- Blog title which is also a hyperlink to the blog detail page  -->
-    <h2
-      class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
-    >
-      <a
-        class="outline-none ring-zinc-500 transition duration-300 hover:text-blue-400 focus-visible:ring dark:text-neutral-300 dark:ring-zinc-200 dark:hover:text-neutral-50 dark:focus:outline-none"
-        href={href}
-      >
-        {blogEntry.data.description}
-      </a>
-    </h2>
-    <!-- Container for the author's avatar and metadata -->
-    <div class="mt-6 flex items-center sm:mt-10">
-      <AvatarBlogLarge blogEntry={blogEntry} />
-
-      <div class="ms-3 sm:ms-4">
-        <p class="font-bold text-neutral-800 dark:text-neutral-200 sm:mb-1">
-          {blogEntry.data.author}
-        </p>
-        <p class="text-xs text-neutral-500">
-          {blogEntry.data.role}
-        </p>
+<!-- Root container with glassmorphic styling, divided into 2 grid column layout for larger screens -->
+<div class="group relative rounded-3xl border border-neutral-200 bg-white/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-900/5 dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:border-blue-500/50 dark:hover:shadow-blue-900/20 md:p-10">
+  <div class="grid gap-8 sm:grid-cols-2 sm:items-center">
+    <!-- Container for the blog post's cover image -->
+    <div class="sm:order-2">
+      <div class="relative overflow-hidden rounded-2xl bg-neutral-200 pt-[50%] dark:bg-neutral-900 sm:pt-[100%]">
+        <Image
+          class="absolute start-0 top-0 size-full object-cover transition duration-700 group-hover:scale-105"
+          src={blogEntry.data.cardImage}
+          alt={blogEntry.data.cardImageAlt}
+          draggable={"false"}
+          loading={"eager"}
+          format={"avif"}
+          width={760}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
       </div>
     </div>
-    <!-- CTA linking to the full blog post -->
-    <div class="mt-5">
-      <PrimaryCTA
-        url={href}
-        title={readMoreLabel}
-        data-astro-prefetch
-      />
+    <!-- Container for the blog post heading, author avatar, role, and CTA -->
+    <div class="sm:order-1">
+      <!-- Blog title which is also a hyperlink to the blog detail page  -->
+      <h2
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-50 dark:group-hover:text-blue-400 md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight"
+      >
+        <a
+          class="outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+          href={href}
+        >
+          {blogEntry.data.description}
+        </a>
+      </h2>
+      <!-- Container for the author's avatar and metadata -->
+      <div class="mt-6 flex items-center sm:mt-10">
+        <AvatarBlogLarge blogEntry={blogEntry} />
+
+        <div class="ms-3 sm:ms-4">
+          <p class="font-bold text-neutral-900 dark:text-neutral-100 sm:mb-1">
+            {blogEntry.data.author}
+          </p>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400">
+            {blogEntry.data.role}
+          </p>
+        </div>
+      </div>
+      <!-- CTA linking to the full blog post -->
+      <div class="mt-8">
+        <PrimaryCTA
+          url={href}
+          title={readMoreLabel}
+          data-astro-prefetch
+        />
+      </div>
     </div>
   </div>
 </div>

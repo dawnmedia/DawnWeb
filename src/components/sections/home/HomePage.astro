@@ -196,7 +196,7 @@ const structuredData = [
       <div class="relative lg:ml-auto lg:w-full lg:max-w-md">
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl"></div>
         <div class="relative flex flex-col gap-4">
-          {content.founder.points.map((point, index) => (
+          {content.founder.points.map((point) => (
             <div class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md transition-transform hover:scale-105">
               <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-yellow-400 text-blue-900">
                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -237,7 +237,7 @@ const structuredData = [
 
       <div class="mt-12 -mx-4 flex overflow-x-auto px-4 pb-12 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-neutral-300 dark:scrollbar-thumb-neutral-700 scrollbar-track-transparent">
         <div class="flex gap-6 lg:gap-8">
-          {content.portfolio.items.map((project, index) => (
+          {content.portfolio.items.map((project) => (
             <a
               href={project.href}
               class="group relative flex w-80 shrink-0 snap-center flex-col overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-neutral-900 sm:w-[400px]"

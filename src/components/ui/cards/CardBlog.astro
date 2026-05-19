@@ -27,16 +27,13 @@ interface Props {
      The data-astro-prefetch is an Astro specific Dynamic HTML feature,
      which automatically prefetches the linked page to speed up navigation. -->
 <a
-  class="group relative block rounded-xl outline-none ring-zinc-500 transition duration-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+  class="group relative block flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white/40 p-2 backdrop-blur-sm outline-none transition-all duration-500 hover:-translate-y-1 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-900/10 focus-visible:ring focus-visible:ring-blue-500 dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:border-blue-500/50 dark:hover:shadow-blue-900/20"
   href={localizePath(`/blog/${slug}/`, blogLocale)}
   data-astro-prefetch
 >
-  <!-- The container for the blog post's cover image. Uses astro:assets' Image for image source -->
-  <div
-    class="relative h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-neutral-900/[.7]"
-  >
+  <div class="relative h-[300px] sm:h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl">
     <Image
-      class="absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
+      class="absolute start-0 top-0 size-full object-cover transition duration-700 group-hover:scale-105"
       src={blogEntry.data.cardImage}
       alt={blogEntry.data.cardImageAlt}
       draggable={"false"}
@@ -45,35 +42,35 @@ interface Props {
       width={760}
       sizes="(min-width: 1024px) 50vw, 100vw"
     />
-  </div>
-  <!-- The container for the blog author's avatar and associated metadata (author name and publication date) -->
-  <div class="absolute inset-x-0 top-0 z-10">
-    <div class="flex h-full flex-col p-4 sm:p-6">
-      <div class="flex items-center">
-        <AvatarBlog blogEntry={blogEntry} />
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
-        <div class="ms-2.5 sm:ms-4">
-          <h4 class="font-bold text-neutral-50">
-            {blogEntry.data.author}
-          </h4>
-          <p class="text-xs text-neutral-50/[.8]">
-            {formatDate(blogEntry.data.pubDate, LOCALE_LANGUAGE_TAGS[blogLocale])}
-          </p>
+    <div class="absolute inset-x-0 top-0 z-10">
+      <div class="flex h-full flex-col p-4 sm:p-6">
+        <div class="flex items-center">
+          <AvatarBlog blogEntry={blogEntry} />
+
+          <div class="ms-2.5 sm:ms-4">
+            <h4 class="font-bold text-neutral-50 transition-colors group-hover:text-blue-200">
+              {blogEntry.data.author}
+            </h4>
+            <p class="text-xs text-neutral-300">
+              {formatDate(blogEntry.data.pubDate, LOCALE_LANGUAGE_TAGS[blogLocale])}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- The container for the blog post's title and description -->
-  <div class="absolute inset-x-0 bottom-0 z-10">
-    <div class="flex h-full flex-col p-4 sm:p-6">
-      <h3
-        class="text-balance text-lg font-bold text-neutral-50 group-hover:text-neutral-50/[.8] sm:text-3xl"
-      >
-        {blogEntry.data.title}
-      </h3>
-      <p class="mt-2 text-pretty text-neutral-50/[.8]">
-        {blogEntry.data.description}
-      </p>
+
+    <div class="absolute inset-x-0 bottom-0 z-10">
+      <div class="flex h-full flex-col p-4 sm:p-6">
+        <h3 class="text-balance text-lg font-bold text-neutral-50 transition-colors group-hover:text-blue-400 sm:text-2xl lg:text-3xl">
+          {blogEntry.data.title}
+        </h3>
+        <p class="mt-2 line-clamp-2 text-pretty text-sm text-neutral-300">
+          {blogEntry.data.description}
+        </p>
+      </div>
     </div>
   </div>
 </a>

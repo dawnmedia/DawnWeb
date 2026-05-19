@@ -39,13 +39,13 @@ interface Props {
 
 <!-- The anchor tag is the root container for the "Insight" card. It links to the insight detail page. -->
 <a
-  class="group rounded-xl outline-none ring-zinc-500 transition duration-300 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+  class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white/40 p-4 backdrop-blur-sm outline-none transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-900/5 focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:border-blue-500/50 dark:hover:shadow-blue-900/20"
   href={localizePath(`/insights/${slug}/`, insightLocale)}
 >
   <!-- This is the container for the insight's cover image. -->
-  <div class="relative overflow-hidden rounded-xl pt-[50%] sm:pt-[70%]">
+  <div class="relative overflow-hidden rounded-xl bg-neutral-200 pt-[50%] dark:bg-neutral-900 sm:pt-[70%]">
     <Image
-      class="absolute start-0 top-0 size-full rounded-xl object-cover transition duration-500 ease-in-out group-hover:scale-105"
+      class="absolute start-0 top-0 size-full object-cover transition duration-700 ease-in-out group-hover:scale-105"
       src={insightEntry.data.cardImage}
       alt={insightEntry.data.cardImageAlt}
       draggable={"false"}
@@ -54,25 +54,28 @@ interface Props {
       width={520}
       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
     />
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-neutral-900/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
   </div>
   <!-- This is the container for the insight's title and description. -->
-  <div class="mt-7">
+  <div class="flex flex-1 flex-col mt-6 px-2">
     <!-- The title of the insight -->
     <h3
-      class="text-xl font-bold text-neutral-800 group-hover:text-neutral-600 dark:text-neutral-200 dark:group-hover:text-neutral-400"
+      class="text-xl font-bold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400"
     >
       {insightEntry.data.title}
     </h3>
     <!-- The description of the insight -->
-    <p class="mt-3 text-neutral-600 dark:text-neutral-400">
+    <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
       {insightEntry.data.description}
     </p>
     <!-- CTA linking to the full insight. -->
-    <p
-      class="mt-5 inline-flex items-center gap-x-1 font-medium text-blue-400 decoration-2 group-hover:underline dark:text-blue-300"
-    >
-      {label}
-      <Icon name="arrowRightStatic" />
-    </p>
+    <div class="mt-auto pt-6">
+      <p
+        class="inline-flex items-center gap-x-2 text-sm font-semibold text-blue-600 transition-colors group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300"
+      >
+        {label}
+        <Icon name="arrowRightStatic" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+      </p>
+    </div>
   </div>
 </a>

@@ -59,59 +59,51 @@ const pageTitle: string = SEO_TITLES.blog;
     siteUrl: SITE.url,
   })}
 >
-  <section
-    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
-  >
-    <!--Page header-->
-    <div class="mx-auto max-w-3xl text-left sm:text-center">
-      <h1
-        class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
-      >
-        {title}
-      </h1>
+  <div class="relative isolate -mt-28 flex min-h-[calc(100vh+3rem)] flex-col overflow-hidden bg-neutral-50 pt-28 text-neutral-900 dark:bg-neutral-950 dark:text-white sm:-mt-32 sm:pt-32">
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#f8fafc_0%,#f1f5f9_54%,#e2e8f0_100%)] dark:bg-[linear-gradient(135deg,#0f172a_0%,#111111_54%,#050505_100%)]"></div>
 
-      <p
-        class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
-      >
-        {subTitle}
-      </p>
-    </div>
-  </section>
+    <section class="mx-auto w-full max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 mt-8">
+      <!--Page header-->
+      <div class="mx-auto max-w-3xl text-left sm:text-center">
+        <h1 class="block text-balance text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-5xl lg:text-6xl">
+          {title}
+        </h1>
 
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <!--Blog posts grid-->
-    <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
-    </div>
-  </section>
-  <!--Most recent blog post-->
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <CardBlogRecent blogEntry={mostRecentPost} />
-  </section>
-  <!--Insights section-->
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <h2
-        class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-      >
-        {secondTitle}
-      </h2>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {secondSubTitle}
-      </p>
-    </div>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} />
-        ))
-      }
-    </div>
-  </section>
+        <p class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-300">
+          {subTitle}
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+      <!--Blog posts grid-->
+      <div class="grid gap-6 lg:grid-cols-2">
+        {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
+      </div>
+    </section>
+    
+    <!--Most recent blog post-->
+    <section class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+      <CardBlogRecent blogEntry={mostRecentPost} />
+    </section>
+    
+    <!--Insights section-->
+    <section class="mx-auto w-full max-w-[85rem] px-4 py-10 pb-24 sm:px-6 lg:px-8 lg:py-14 lg:pb-32">
+      <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl md:leading-tight">
+          {secondTitle}
+        </h2>
+        <p class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-300">
+          {secondSubTitle}
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          insightPosts.map((insightEntry) => (
+            <CardInsight insightEntry={insightEntry} />
+          ))
+        }
+      </div>
+    </section>
+  </div>
 </MainLayout>
