@@ -143,8 +143,10 @@ const appleTouchIcon = await getImage({
 <meta name="web_author" content={author} />
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
+  content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, viewport-fit=cover"
 />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <link rel="canonical" href={canonical} />
 <Fragment set:html={alternateLanguageLinks} />
