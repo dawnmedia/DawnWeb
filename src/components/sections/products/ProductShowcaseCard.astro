@@ -32,53 +32,66 @@ interface Props {
 <a
   href={href}
   data-astro-prefetch
-  class="group relative flex aspect-[4/5] min-h-[360px] flex-col overflow-hidden rounded-3xl border border-white/10 outline-none transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/40 focus-visible:ring focus-visible:ring-blue-400"
+  class="group relative flex min-h-[390px] min-w-0 flex-col overflow-hidden rounded-lg border border-neutral-200/80 bg-neutral-900 outline-none shadow-lg shadow-neutral-300/40 ring-1 ring-inset ring-black/5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/50 hover:shadow-blue-200/30 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-white/10 dark:bg-neutral-950 dark:shadow-2xl dark:shadow-black/30 dark:ring-white/5 dark:hover:border-blue-300/50 dark:hover:shadow-blue-950/50 dark:focus-visible:ring-blue-300 dark:focus-visible:ring-offset-neutral-950 sm:min-h-[430px]"
 >
   <div class="absolute inset-0 z-0">
     <Image
       src={heroImage}
       alt={heroAlt}
-      class="h-full w-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-80"
+      class="h-full w-full object-cover opacity-85 brightness-105 contrast-105 saturate-110 transition duration-700 group-hover:scale-105 group-hover:opacity-95 dark:opacity-75 dark:brightness-75 dark:contrast-110 dark:saturate-110 dark:group-hover:opacity-90"
       format="avif"
       loading="lazy"
       width={640}
       sizes="(min-width: 1024px) 50vw, 100vw"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/80 to-transparent"></div>
+    <div
+      class="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.35)_0%,rgba(10,10,10,0.1)_38%,rgba(10,10,10,0.92)_100%)] dark:bg-[linear-gradient(180deg,rgba(10,10,10,0.45)_0%,rgba(10,10,10,0.18)_38%,rgba(10,10,10,0.96)_100%)]"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[linear-gradient(90deg,rgba(37,99,235,0.15)_0%,rgba(10,10,10,0)_48%)] dark:bg-[linear-gradient(90deg,rgba(37,99,235,0.22)_0%,rgba(10,10,10,0)_48%)]"
+    >
+    </div>
   </div>
-  
-  <div class="relative z-10 flex flex-1 flex-col p-8">
-    <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
-      <span class="text-blue-300">
+
+  <div class="relative z-10 flex min-w-0 flex-1 flex-col p-5 sm:p-6">
+    <div class="flex min-w-0 flex-col gap-2 text-xs font-bold">
+      <span class="min-w-0 max-w-full break-words text-blue-200">
         {product.data.showcase.eyebrow}
       </span>
-      <span
-        class="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-white backdrop-blur-md"
-      >
-        {product.data.showcase.status}
-      </span>
+      <div>
+        <span
+          class="inline-block rounded-full border border-white/20 bg-white/10 px-2.5 py-1 leading-tight text-white shadow-sm shadow-black/20 backdrop-blur-md"
+        >
+          {product.data.showcase.status}
+        </span>
+      </div>
     </div>
 
-    <div class="mt-auto">
-      <h2 class="text-3xl font-bold tracking-tight text-white">
+    <div class="mt-auto min-w-0">
+      <h2
+        class="break-words text-2xl font-bold tracking-tight text-white sm:text-3xl"
+      >
         {product.data.title}
       </h2>
-      <p class="mt-3 text-sm leading-6 text-neutral-300">
+      <p class="mt-3 break-words text-sm leading-6 text-neutral-200 dark:text-neutral-200">
         {product.data.description}
       </p>
 
-      <div class="mt-4 flex flex-wrap gap-2">
+      <div class="mt-4 flex min-w-0 flex-wrap gap-2">
         {
-          product.data.showcase.platforms.slice(0, 3).map((platform) => (
-            <span class="rounded-full bg-neutral-800/80 px-3 py-1 text-xs font-bold text-neutral-300 border border-neutral-700">
-              {platform}
-            </span>
-          ))
+          product.data.showcase.platforms
+            .slice(0, 3)
+            .map((platform) => (
+              <span class="min-w-0 max-w-full rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold leading-tight text-neutral-100 backdrop-blur dark:border-white/15 dark:bg-white/10 dark:text-neutral-100">
+                {platform}
+              </span>
+            ))
         }
       </div>
 
       <div
-        class="mt-6 inline-flex items-center gap-x-2 text-sm font-bold text-blue-400 transition-colors group-hover:text-blue-300"
+        class="mt-6 inline-flex items-center gap-x-2 text-sm font-bold text-blue-300 transition-colors group-hover:text-blue-200 dark:text-blue-300 dark:group-hover:text-blue-200"
       >
         {viewLabel}
         <Icon name="arrowRight" />

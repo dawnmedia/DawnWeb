@@ -10,7 +10,6 @@ const {
   title,
   description,
   supportingLine,
-  builtByLabel,
 } = Astro.props;
 
 interface Props {
@@ -20,45 +19,40 @@ interface Props {
   title: string;
   description: string;
   supportingLine?: string;
-  builtByLabel: string;
 }
 ---
 
 {
   products.length > 0 && (
-    <section class="bg-[#0c1322] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="mx-auto max-w-[85rem]">
-        <div class="border-t border-white/10 pt-16">
-          <div class="grid gap-6 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)] lg:items-end">
-            <div>
-              <p class="text-sm font-bold uppercase tracking-widest text-blue-400">
-                {eyebrow}
-              </p>
-              <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-white md:text-5xl">
-                {title}
-              </h2>
-            </div>
-            <div>
-              <p class="text-pretty text-lg leading-8 text-neutral-300">
-                {description}
-              </p>
-              {supportingLine && (
-                <p class="mt-3 text-sm leading-6 text-neutral-400">
-                  {supportingLine}
-                </p>
-              )}
-            </div>
-          </div>
+    <section class="relative isolate overflow-hidden bg-neutral-50 px-4 py-20 text-neutral-900 dark:bg-neutral-950 dark:text-white sm:px-6 lg:px-8 lg:py-28">
+      <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#f8fafc_0%,#f1f5f9_50%,#f8fafc_100%)] dark:bg-[linear-gradient(180deg,#050505_0%,#0a0f1a_50%,#050505_100%)]" />
+      <div class="absolute inset-0 -z-10 bg-[linear-gradient(115deg,rgba(59,130,246,0.04)_0%,rgba(248,250,252,0)_40%,rgba(241,245,249,0.6)_100%)] dark:bg-[linear-gradient(115deg,rgba(59,130,246,0.08)_0%,rgba(5,5,5,0)_40%,rgba(15,23,42,0.15)_100%)]" />
 
-          <div class="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {products.map((product) => (
-              <EcosystemShowcaseCard
-                product={product}
-                productLocale={locale}
-                builtByLabel={builtByLabel}
-              />
-            ))}
-          </div>
+      <div class="mx-auto flex w-full max-w-[85rem] flex-col">
+        <div class="text-center">
+          <p class="text-sm font-bold uppercase tracking-widest text-blue-600/80 dark:text-blue-300/80">
+            {eyebrow}
+          </p>
+          <h2 class="mt-4 text-balance text-4xl font-bold tracking-tight text-neutral-900 dark:text-white md:text-6xl">
+            {title}
+          </h2>
+          <p class="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-neutral-500 dark:text-neutral-400">
+            {description}
+          </p>
+          {supportingLine && (
+            <p class="mx-auto mt-3 max-w-xl text-sm leading-6 text-neutral-400 dark:text-neutral-500">
+              {supportingLine}
+            </p>
+          )}
+        </div>
+
+        <div class="mt-16 grid min-w-0 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {products.map((product) => (
+            <EcosystemShowcaseCard
+              product={product}
+              productLocale={locale}
+            />
+          ))}
         </div>
       </div>
     </section>

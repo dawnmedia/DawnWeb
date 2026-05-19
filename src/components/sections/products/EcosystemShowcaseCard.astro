@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import Icon from "@components/ui/icons/Icon.astro";
 import type { CollectionEntry } from "astro:content";
 import { DEFAULT_LOCALE, localizePath, type Locale } from "@utils/locale";
 import { getProductSlug } from "@utils/products";
@@ -8,7 +7,6 @@ import { getProductSlug } from "@utils/products";
 const {
   product,
   productLocale = DEFAULT_LOCALE,
-  builtByLabel = "Built by Dawn Web",
 } = Astro.props;
 
 const slug = getProductSlug(product, productLocale);
@@ -20,125 +18,163 @@ const cardAlt =
 
 const accents: Record<
   string,
-  { color: string; glow: string; badgeBackground: string; badgeColor: string }
+  { color: string; glow: string; badgeBg: string; badgeText: string; logoBg: string }
 > = {
   "dawn-web": {
-    color: "#405991",
-    glow: "rgba(64, 89, 145, 0.32)",
-    badgeBackground: "#405991",
-    badgeColor: "#ffffff",
+    color: "#6b8cce",
+    glow: "rgba(64, 89, 145, 0.35)",
+    badgeBg: "rgba(64, 89, 145, 0.25)",
+    badgeText: "#8fb3f5",
+    logoBg: "linear-gradient(145deg, #0c1225 0%, #111827 50%, #0c1225 100%)",
   },
   "dawn-media": {
-    color: "#a855f7",
-    glow: "rgba(168, 85, 247, 0.28)",
-    badgeBackground: "#a855f7",
-    badgeColor: "#ffffff",
+    color: "#c084fc",
+    glow: "rgba(168, 85, 247, 0.35)",
+    badgeBg: "rgba(168, 85, 247, 0.2)",
+    badgeText: "#d8b4fe",
+    logoBg: "linear-gradient(145deg, #150a22 0%, #1e1033 50%, #150a22 100%)",
   },
   "dawn-studios": {
-    color: "#ef4444",
-    glow: "rgba(239, 68, 68, 0.28)",
-    badgeBackground: "#ef4444",
-    badgeColor: "#ffffff",
+    color: "#f87171",
+    glow: "rgba(239, 68, 68, 0.35)",
+    badgeBg: "rgba(239, 68, 68, 0.2)",
+    badgeText: "#fca5a5",
+    logoBg: "linear-gradient(145deg, #1a0808 0%, #2a1010 50%, #1a0808 100%)",
   },
   "dawn-town": {
-    color: "#eab308",
-    glow: "rgba(234, 179, 8, 0.26)",
-    badgeBackground: "#eab308",
-    badgeColor: "#171717",
+    color: "#facc15",
+    glow: "rgba(234, 179, 8, 0.3)",
+    badgeBg: "rgba(234, 179, 8, 0.15)",
+    badgeText: "#fde68a",
+    logoBg: "linear-gradient(145deg, #1a1505 0%, #262010 50%, #1a1505 100%)",
   },
   "dawn-labs": {
-    color: "#596f9e",
-    glow: "rgba(148, 163, 184, 0.26)",
-    badgeBackground: "#e5e5e5",
-    badgeColor: "#171717",
+    color: "#94a3b8",
+    glow: "rgba(148, 163, 184, 0.3)",
+    badgeBg: "rgba(148, 163, 184, 0.15)",
+    badgeText: "#cbd5e1",
+    logoBg: "linear-gradient(145deg, #0a0c10 0%, #141820 50%, #0a0c10 100%)",
   },
 };
 
 const accent = accents[slug] ?? accents["dawn-labs"];
-const logoScale = slug === "dawn-town" ? 1.28 : 1.35;
+const logoScale = slug === "dawn-town" ? 2.1 : 2.3;
 
 interface Props {
   product: CollectionEntry<"products">;
   productLocale?: Locale;
-  builtByLabel?: string;
 }
 ---
 
 <a
   href={href}
   data-astro-prefetch
-  class="ecosystem-card group flex h-full flex-col overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 outline-none ring-zinc-500 transition duration-300 focus-visible:ring dark:border-neutral-700 dark:bg-neutral-900 dark:ring-zinc-200"
+  class="ecosystem-card group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-neutral-200 text-neutral-900 outline-none transition-all duration-500 hover:-translate-y-2 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-white/[0.06] dark:text-white dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-neutral-950"
   style={`--ecosystem-accent: ${accent.color}; --ecosystem-glow: ${accent.glow}; --ecosystem-logo-scale: ${logoScale};`}
 >
-  <div class="relative aspect-[16/9] overflow-hidden bg-neutral-200 dark:bg-neutral-950">
+  <!-- Ambient glow on hover -->
+  <div class="card-glow absolute -inset-px -z-10 rounded-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+
+  <!-- Logo showcase area — dark background to highlight logos -->
+  <div
+    class="logo-area relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden px-6 py-8"
+    style={`background: ${accent.logoBg};`}
+  >
+    <!-- Status badge — top left -->
+    <span
+      class="absolute left-3 top-3 z-30 rounded-full border px-2.5 py-1 text-[10px] font-semibold leading-tight"
+      style={`background: ${accent.badgeBg}; color: ${accent.badgeText}; border-color: ${accent.color}33; backdrop-filter: blur(8px);`}
+    >
+      {product.data.showcase.status}
+    </span>
+
+    <!-- Subtle radial spotlight behind the logo -->
+    <div
+      class="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+      style={`background: radial-gradient(ellipse 60% 50% at 50% 50%, ${accent.glow}, transparent);`}
+    ></div>
+
     <Image
       src={cardImage}
       alt={cardAlt}
-      class="ecosystem-logo h-full w-full object-cover transition duration-500"
+      class="ecosystem-logo relative z-10 h-full w-full object-contain drop-shadow-2xl transition-all duration-700"
       format="avif"
-      loading="lazy"
-      width={640}
+      loading="eager"
+      width={780}
       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
     />
-    <div
-      class="absolute inset-x-0 bottom-0 h-1"
-      style={`background: ${accent.color};`}
-    >
-    </div>
+
+    <!-- Fine grain noise texture overlay for depth -->
+    <div class="absolute inset-0 z-20 opacity-[0.03]" style="background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg viewBox=%220 0 512 512%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.7%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22512%22 height=%22512%22 filter=%22url(%23n)%22 opacity=%221%22/%3E%3C/svg%3E'); background-size: 128px;"></div>
   </div>
 
-  <div class="flex flex-1 flex-col p-5">
-    <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
-      <span style={`color: ${accent.color};`}>
-        {product.data.showcase.eyebrow}
-      </span>
-      <span
-        class="rounded-full px-2.5 py-1"
-        style={`background: ${accent.badgeBackground}; color: ${accent.badgeColor};`}
-      >
-        {product.data.showcase.status}
-      </span>
-    </div>
+  <!-- Card info — clean, minimal -->
+  <div class="relative flex min-w-0 flex-1 flex-col bg-white px-5 py-5 dark:bg-[#08080a]">
+    <!-- Top accent line -->
+    <div
+      class="absolute inset-x-0 top-0 h-px opacity-40 transition-opacity duration-500 group-hover:opacity-80"
+      style={`background: linear-gradient(90deg, transparent, ${accent.color}, transparent);`}
+    ></div>
 
-    <h2 class="mt-4 text-xl font-bold text-neutral-800 dark:text-neutral-200">
+    <span
+      class="text-[11px] font-medium tracking-wide"
+      style={`color: ${accent.color};`}
+    >
+      {product.data.showcase.eyebrow}
+    </span>
+
+    <h2 class="mt-3 text-base font-bold tracking-tight text-neutral-900 dark:text-white/95 sm:text-lg">
       {product.data.title}
     </h2>
-    <p class="mt-1 text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
+    <p class="mt-1 text-[10px] font-semibold uppercase tracking-widest text-neutral-400 transition-colors duration-300 group-hover:text-neutral-500 dark:text-neutral-500 dark:group-hover:text-neutral-400">
       {product.data.showcase.audience}
     </p>
-    <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
-      {product.data.description}
-    </p>
-
-    <div class="mt-4 flex flex-wrap gap-2">
-      {
-        product.data.showcase.platforms.slice(0, 3).map((platform) => (
-          <span class="rounded-full bg-neutral-200 px-2.5 py-1 text-xs font-bold text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
-            {platform}
-          </span>
-        ))
-      }
-    </div>
-
-    <div class="mt-auto pt-6">
-      <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
-        {builtByLabel}
-      </p>
-      <p
-        class="mt-2 inline-flex items-center gap-x-1 text-sm font-bold"
-        style={`color: ${accent.color};`}
-      >
-        {product.data.showcase.primaryAction.label}
-        <Icon name="arrowRight" />
-      </p>
-    </div>
   </div>
 </a>
 
 <style>
+  /* Light mode */
+  .ecosystem-card {
+    background: white;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.06),
+      0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  }
+
   .ecosystem-card:hover {
-    border-color: var(--ecosystem-accent);
-    box-shadow: 0 0 28px var(--ecosystem-glow);
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow:
+      0 20px 50px -12px rgba(0, 0, 0, 0.15),
+      0 8px 24px -8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Dark mode */
+  :global(html.dark) .ecosystem-card {
+    background: linear-gradient(180deg, #0d0d10 0%, #08080a 100%);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.03) inset,
+      0 4px 32px -8px rgba(0, 0, 0, 0.6);
+  }
+
+  :global(html.dark) .ecosystem-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+      0 32px 80px -20px var(--ecosystem-glow),
+      0 8px 32px -8px rgba(0, 0, 0, 0.9);
+  }
+
+  .card-glow {
+    display: none;
+  }
+
+  :global(html.dark) .card-glow {
+    display: block;
+    background: radial-gradient(
+      600px circle at 50% 0%,
+      var(--ecosystem-glow),
+      transparent 50%
+    );
   }
 
   .ecosystem-logo {
@@ -146,6 +182,10 @@ interface Props {
   }
 
   .ecosystem-card:hover .ecosystem-logo {
-    transform: scale(calc(var(--ecosystem-logo-scale) * 1.04));
+    transform: scale(calc(var(--ecosystem-logo-scale) * 1.08));
+  }
+
+  :global(html.dark) .ecosystem-card:hover .ecosystem-logo {
+    filter: drop-shadow(0 0 30px var(--ecosystem-glow));
   }
 </style>

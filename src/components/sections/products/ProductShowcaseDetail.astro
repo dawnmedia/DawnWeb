@@ -3,11 +3,7 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import type { CollectionEntry } from "astro:content";
-import {
-  DEFAULT_LOCALE,
-  localizePath,
-  type Locale,
-} from "@utils/locale";
+import { DEFAULT_LOCALE, localizePath, type Locale } from "@utils/locale";
 
 const { product, productLocale = DEFAULT_LOCALE } = Astro.props;
 const showcase = product.data.showcase;
@@ -120,160 +116,182 @@ interface Props {
 }
 ---
 
-<article>
+<article class="overflow-hidden">
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="relative isolate -mt-28 overflow-hidden bg-neutral-950 pt-28 text-white sm:-mt-32 sm:pt-32"
   >
-    <a
-      href={localizePath("/products", productLocale)}
-      class="inline-flex items-center rounded-lg text-sm font-bold text-blue-600 outline-none ring-zinc-500 transition hover:text-blue-500 focus-visible:ring dark:text-blue-300 dark:ring-zinc-200"
+    <div
+      class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#0f172a_0%,#111111_52%,#050505_100%)]"
     >
-      {labels.back}
-    </a>
+    </div>
+    <div class="absolute inset-x-0 bottom-0 h-px bg-white/10"></div>
 
-    <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
-      <div>
-        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-          {showcase.eyebrow}
-        </p>
-        <h1
-          class="mt-3 text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-6xl"
-        >
-          {product.data.title}
-        </h1>
-        <p class="mt-4 text-pretty text-xl leading-8 text-neutral-700 dark:text-neutral-300">
-          {product.data.description}
-        </p>
-        <p class="mt-5 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
-          {product.data.main.content}
-        </p>
+    <div
+      class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 2xl:max-w-full"
+    >
+      <a
+        href={localizePath("/products", productLocale)}
+        class="inline-flex items-center rounded-lg text-sm font-bold text-blue-200 outline-none ring-zinc-500 transition hover:text-blue-100 focus-visible:ring dark:ring-zinc-200"
+      >
+        {labels.back}
+      </a>
 
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span
-            class="rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-bold text-neutral-700 dark:border-neutral-700 dark:text-neutral-300"
+      <div
+        class="mt-8 grid min-w-0 gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center"
+      >
+        <div class="min-w-0">
+          <p
+            class="break-words text-sm font-bold uppercase tracking-normal text-blue-200"
           >
-            {labels.builtFor}: {showcase.audience}
-          </span>
-          <span
-            class="rounded-full bg-blue-600 px-3 py-1.5 text-sm font-bold text-white dark:bg-blue-400 dark:text-neutral-950"
+            {showcase.eyebrow}
+          </p>
+          <h1
+            class="mt-3 break-words text-balance text-4xl font-bold tracking-tight text-white md:text-6xl"
           >
-            {labels.status}: {showcase.status}
-          </span>
+            {product.data.title}
+          </h1>
+          <p
+            class="mt-4 break-words text-pretty text-xl leading-8 text-neutral-200"
+          >
+            {product.data.description}
+          </p>
+          <p class="mt-5 break-words text-pretty leading-7 text-neutral-300">
+            {product.data.main.content}
+          </p>
+
+          <div class="mt-6 flex min-w-0 flex-wrap gap-2">
+            <span
+              class="min-w-0 max-w-full rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-sm font-bold leading-tight text-neutral-200"
+            >
+              {labels.builtFor}: {showcase.audience}
+            </span>
+            <span
+              class="min-w-0 max-w-full rounded-full bg-blue-400 px-3 py-1.5 text-sm font-bold leading-tight text-neutral-950"
+            >
+              {labels.status}: {showcase.status}
+            </span>
+          </div>
+
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <PrimaryCTA
+              title={showcase.primaryAction.label}
+              url={showcase.primaryAction.url}
+            />
+            {
+              showcase.secondaryAction && (
+                <SecondaryCTA
+                  title={showcase.secondaryAction.label}
+                  url={showcase.secondaryAction.url}
+                />
+              )
+            }
+          </div>
         </div>
 
-        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-          <PrimaryCTA
-            title={showcase.primaryAction.label}
-            url={showcase.primaryAction.url}
-          />
-          {
-            showcase.secondaryAction && (
-              <SecondaryCTA
-                title={showcase.secondaryAction.label}
-                url={showcase.secondaryAction.url}
-              />
-            )
-          }
+        <div
+          class="min-w-0 overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] p-2 shadow-2xl shadow-black/40"
+        >
+          <div class="flex gap-1.5 border-b border-white/10 px-2 py-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-blue-400"></span>
+          </div>
+          <div class="aspect-[16/10] bg-neutral-950 p-2">
+            <Image
+              src={primaryScreenshot.image}
+              alt={primaryScreenshot.alt}
+              class="h-full w-full rounded-sm object-contain"
+              format="avif"
+              loading="eager"
+              width={1000}
+              sizes="(min-width: 1024px) 54vw, 100vw"
+              fetchpriority="high"
+            />
+          </div>
         </div>
       </div>
 
       <div
-        class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 p-2 shadow-xl shadow-neutral-300/40 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-950/30"
+        class="mt-10 grid min-w-0 gap-5 rounded-lg border border-white/10 bg-white/[0.05] p-5 shadow-2xl shadow-black/20 md:grid-cols-3"
       >
-        <div class="flex gap-1.5 border-b border-neutral-300 px-2 py-2 dark:border-neutral-700">
-          <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-          <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-          <span class="h-2.5 w-2.5 rounded-full bg-blue-400"></span>
+        <div class="min-w-0">
+          <p
+            class="text-xs font-bold uppercase tracking-normal text-neutral-400"
+          >
+            {labels.platforms}
+          </p>
+          <div class="mt-3 flex min-w-0 flex-wrap gap-2">
+            {
+              showcase.platforms.map((platform) => (
+                <span class="min-w-0 max-w-full rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm font-bold leading-tight text-neutral-100">
+                  {platform}
+                </span>
+              ))
+            }
+          </div>
         </div>
-        <div class="aspect-[16/10] bg-neutral-200 dark:bg-neutral-800">
-          <Image
-            src={primaryScreenshot.image}
-            alt={primaryScreenshot.alt}
-            class="h-full w-full object-contain"
-            format="avif"
-            loading="eager"
-            width={1000}
-            sizes="(min-width: 1024px) 54vw, 100vw"
-            fetchpriority="high"
-          />
+        <div class="min-w-0">
+          <p
+            class="text-xs font-bold uppercase tracking-normal text-neutral-400"
+          >
+            {labels.stack}
+          </p>
+          <div class="mt-3 flex min-w-0 flex-wrap gap-2">
+            {
+              showcase.stack.map((item) => (
+                <span class="min-w-0 max-w-full rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm font-bold leading-tight text-neutral-100">
+                  {item}
+                </span>
+              ))
+            }
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8 2xl:max-w-full"
-  >
-    <div class="grid gap-4 rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800 md:grid-cols-3">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
-          {labels.platforms}
-        </p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          {
-            showcase.platforms.map((platform) => (
-              <span class="rounded-full bg-neutral-200 px-3 py-1 text-sm font-bold text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
-                {platform}
-              </span>
-            ))
-          }
-        </div>
-      </div>
-      <div>
-        <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
-          {labels.stack}
-        </p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          {
-            showcase.stack.map((item) => (
-              <span class="rounded-full bg-neutral-200 px-3 py-1 text-sm font-bold text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
-                {item}
-              </span>
-            ))
-          }
-        </div>
-      </div>
-      <div>
-        <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
-          {labels.metrics}
-        </p>
-        <div class="mt-3 grid grid-cols-2 gap-3">
-          {
-            showcase.metrics.slice(0, 2).map((metric) => (
-              <div>
-                <p class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-                  {metric.value}
-                </p>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                  {metric.label}
-                </p>
-              </div>
-            ))
-          }
+        <div class="min-w-0">
+          <p
+            class="text-xs font-bold uppercase tracking-normal text-neutral-400"
+          >
+            {labels.metrics}
+          </p>
+          <div class="mt-3 grid grid-cols-2 gap-3">
+            {
+              showcase.metrics.slice(0, 2).map((metric) => (
+                <div>
+                  <p class="text-2xl font-bold text-white">{metric.value}</p>
+                  <p class="text-sm text-neutral-300">{metric.label}</p>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 lg:py-20 2xl:max-w-full"
   >
-    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+    <div class="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
       <div>
-        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+        <p
+          class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300"
+        >
           {labels.capabilities}
         </p>
-        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
+        <h2
+          class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl"
+        >
           {product.data.longDescription.title}
         </h2>
-        <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
+        <p
+          class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400"
+        >
           {product.data.longDescription.subTitle}
         </p>
       </div>
       <div class="grid gap-4 md:grid-cols-3">
         {
           product.data.descriptionList.map((item) => (
-            <div class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
+            <div class="h-full rounded-lg border border-neutral-300 bg-neutral-100 p-5 shadow-sm shadow-neutral-300/20 transition hover:border-blue-400 dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-neutral-950/20 dark:hover:border-blue-300">
               <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
                 {item.title}
               </h3>
@@ -288,53 +306,59 @@ interface Props {
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="bg-neutral-950 px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-20"
   >
-    <div class="flex items-end justify-between gap-6">
-      <div>
-        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-          {labels.gallery}
-        </p>
-        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-          {primaryScreenshot.label}
-        </h2>
+    <div class="mx-auto max-w-[85rem] 2xl:max-w-full">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-normal text-blue-300">
+            {labels.gallery}
+          </p>
+          <h2
+            class="mt-3 text-balance text-3xl font-bold tracking-tight text-white md:text-4xl"
+          >
+            {primaryScreenshot.label}
+          </h2>
+        </div>
       </div>
-    </div>
 
-    <div class="mt-8 grid gap-5 lg:grid-cols-2">
-      {
-        showcase.screenshots.map((screenshot) => (
-          <figure class="overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
-            <div class="aspect-[16/10] bg-neutral-200 dark:bg-neutral-900">
-              <Image
-                src={screenshot.image}
-                alt={screenshot.alt}
-                class="h-full w-full object-contain"
-                format="avif"
-                loading="lazy"
-                width={760}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-            </div>
-            <figcaption class="border-t border-neutral-300 px-5 py-4 text-sm font-bold text-neutral-700 dark:border-neutral-700 dark:text-neutral-300">
-              {screenshot.label}
-            </figcaption>
-          </figure>
-        ))
-      }
+      <div class="mt-8 grid gap-5 lg:grid-cols-2">
+        {
+          showcase.screenshots.map((screenshot) => (
+            <figure class="overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/25">
+              <div class="aspect-[16/10] bg-neutral-950 p-3">
+                <Image
+                  src={screenshot.image}
+                  alt={screenshot.alt}
+                  class="h-full w-full rounded-sm object-contain"
+                  format="avif"
+                  loading="eager"
+                  width={760}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
+              <figcaption class="border-t border-white/10 px-5 py-4 text-sm font-bold text-neutral-200">
+                {screenshot.label}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
     </div>
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 lg:py-20 2xl:max-w-full"
   >
-    <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+    <p
+      class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300"
+    >
       {labels.snapshot}
     </p>
-    <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       {
         specs.slice(0, 8).map((spec) => (
-          <div class="border-t border-neutral-300 pt-5 dark:border-neutral-700">
+          <div class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
             <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
               {spec.title}
             </h3>
@@ -348,9 +372,11 @@ interface Props {
   </section>
 
   <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 2xl:max-w-full"
   >
-    <div class="rounded-lg bg-neutral-900 p-6 text-neutral-50 dark:bg-neutral-950 md:p-10">
+    <div
+      class="overflow-hidden rounded-lg border border-white/10 bg-neutral-950 bg-[linear-gradient(135deg,#111827_0%,#111111_58%,#050505_100%)] p-6 text-neutral-50 shadow-2xl shadow-neutral-400/20 dark:shadow-neutral-950/30 md:p-10"
+    >
       <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
         <div>
           <h2 class="text-balance text-3xl font-bold md:text-4xl">
