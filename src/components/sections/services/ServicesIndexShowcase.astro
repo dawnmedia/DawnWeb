@@ -86,212 +86,223 @@ interface Props {
 }
 ---
 
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
-    <div class="max-w-4xl">
-      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-        {eyebrow}
-      </p>
-      <h1
-        class="mt-3 text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-6xl"
-      >
-        {title}
-      </h1>
-      <p class="mt-4 max-w-3xl text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300">
-        {subTitle}
-      </p>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <PrimaryCTA title={primaryCta} url={primaryCtaUrl} />
-        <SecondaryCTA title={secondaryCta} url={secondaryCtaUrl} />
+<div class="relative isolate -mt-28 flex min-h-[calc(100vh+3rem)] flex-col overflow-hidden bg-neutral-50 pt-28 text-neutral-900 dark:bg-neutral-950 dark:text-white sm:-mt-32 sm:pt-32">
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#f8fafc_0%,#f1f5f9_54%,#e2e8f0_100%)] dark:bg-[linear-gradient(135deg,#0f172a_0%,#111111_54%,#050505_100%)]"></div>
+
+  <!-- Hero Section -->
+  <section class="mx-auto w-full max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 mt-8">
+    <div class="grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-end">
+      <div class="min-w-0 max-w-4xl">
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
+          {eyebrow}
+        </p>
+        <h1 class="mt-3 break-words text-balance text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-6xl">
+          {title}
+        </h1>
+        <p class="mt-5 max-w-3xl break-words text-pretty text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+          {subTitle}
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <PrimaryCTA title={primaryCta} url={primaryCtaUrl} />
+          <SecondaryCTA title={secondaryCta} url={secondaryCtaUrl} />
+        </div>
+      </div>
+
+      <div class="grid gap-3 min-w-0 shrink-0 lg:justify-self-end w-full">
+        {
+          proofPoints.map((point) => (
+            <div class="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white/50 px-4 py-3 text-sm font-bold text-neutral-800 backdrop-blur-sm transition hover:bg-white/80 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-200 dark:hover:bg-neutral-900/80">
+              <svg class="h-5 w-5 shrink-0 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+              {point}
+            </div>
+          ))
+        }
       </div>
     </div>
+  </section>
 
-    <div class="grid gap-3">
+  <!-- Services Grid -->
+  <section class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
       {
-        proofPoints.map((point) => (
-          <div class="rounded-lg border border-neutral-300 bg-neutral-100 px-4 py-3 text-sm font-bold text-neutral-800 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
-            {point}
-          </div>
-        ))
-      }
-    </div>
-  </div>
-</section>
-
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-    {
-      services.map((service) => (
-        <a
-          href={service.href}
-          class="group flex h-full flex-col overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 outline-none ring-zinc-500 transition duration-300 hover:border-blue-400 hover:bg-neutral-50 focus-visible:ring dark:border-neutral-700 dark:bg-neutral-800 dark:ring-zinc-200 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
-        >
-          <div class="aspect-[4/3] overflow-hidden bg-neutral-300 dark:bg-neutral-900">
-            <Image
-              src={service.image}
-              alt={service.imageAlt}
-              class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-              format="avif"
-              loading="lazy"
-              width={520}
-              sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-            />
-          </div>
-          <div class="flex flex-1 flex-col p-5">
-            <h2 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
-              {service.title}
-            </h2>
-            <p class="mt-3 text-sm font-bold leading-6 text-blue-600 dark:text-blue-300">
-              {service.outcome}
-            </p>
-            <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
-              {service.description}
-            </p>
-            <div class="mt-5 border-t border-neutral-300 pt-4 dark:border-neutral-700">
-              <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-400">
-                {service.bestFor}
-              </p>
-              <ul class="mt-3 space-y-2">
-                {
-                  service.deliverables.slice(0, 3).map((deliverable) => (
-                    <li class="text-sm leading-6 text-neutral-700 dark:text-neutral-300">
-                      {deliverable}
-                    </li>
-                  ))
-                }
-              </ul>
+        services.map((service) => (
+          <a
+            href={service.href}
+            class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white/40 outline-none backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-900/10 focus-visible:ring dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:border-blue-500/50 dark:hover:shadow-blue-900/20"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden bg-neutral-200 dark:bg-neutral-900">
+              <Image
+                src={service.image}
+                alt={service.imageAlt}
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                format="avif"
+                loading="lazy"
+                width={520}
+                sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </div>
-          </div>
-        </a>
-      ))
-    }
-  </div>
-</section>
-
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-    <div>
-      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-        {processEyebrow}
-      </p>
-      <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-        {processTitle}
-      </h2>
-      <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
-        {processSubTitle}
-      </p>
-    </div>
-    <div class="grid gap-4 md:grid-cols-2">
-      {
-        processSteps.map((step, index) => (
-          <div class="rounded-lg border border-neutral-300 bg-neutral-100 p-5 dark:border-neutral-700 dark:bg-neutral-800">
-            <p class="text-sm font-bold text-blue-600 dark:text-blue-300">
-              0{index + 1}
-            </p>
-            <h3 class="mt-3 text-lg font-bold text-neutral-800 dark:text-neutral-200">
-              {step.title}
-            </h3>
-            <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
-              {step.description}
-            </p>
-          </div>
+            <div class="flex flex-1 flex-col p-6">
+              <h2 class="text-xl font-bold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400">
+                {service.title}
+              </h2>
+              <p class="mt-2 text-sm font-bold leading-6 text-blue-600 dark:text-blue-400">
+                {service.outcome}
+              </p>
+              <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                {service.description}
+              </p>
+              <div class="mt-auto pt-6">
+                <div class="border-t border-neutral-200 pt-4 dark:border-neutral-800">
+                  <p class="text-xs font-bold uppercase tracking-normal text-neutral-500 dark:text-neutral-500">
+                    {service.bestFor}
+                  </p>
+                  <ul class="mt-3 flex flex-col gap-2">
+                    {
+                      service.deliverables.slice(0, 3).map((deliverable) => (
+                        <li class="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+                          <svg class="mt-0.5 h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          {deliverable}
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>
         ))
       }
     </div>
-  </div>
-</section>
+  </section>
 
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <div class="max-w-3xl">
-    <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-300">
-      {portfolioEyebrow}
-    </p>
-    <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-      {portfolioTitle}
-    </h2>
-    <p class="mt-4 text-pretty leading-7 text-neutral-700 dark:text-neutral-400">
-      {portfolioSubTitle}
-    </p>
-  </div>
-
-  <div class="mt-8 grid gap-5 md:grid-cols-3">
-    {
-      portfolioItems.map((item) => (
-        <a
-          href={item.href}
-          class="group overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 outline-none ring-zinc-500 transition duration-300 hover:border-blue-400 hover:bg-neutral-50 focus-visible:ring dark:border-neutral-700 dark:bg-neutral-800 dark:ring-zinc-200 dark:hover:border-blue-400 dark:hover:bg-neutral-800/70"
-        >
-          <div class="aspect-[16/10] overflow-hidden bg-neutral-300 dark:bg-neutral-900">
-            <Image
-              src={item.image}
-              alt={item.imageAlt}
-              class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-              format="avif"
-              loading="lazy"
-              width={640}
-              sizes="(min-width: 768px) 33vw, 100vw"
-            />
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
-              {item.title}
-            </h3>
-            <p class="mt-3 text-sm leading-6 text-neutral-700 dark:text-neutral-400">
-              {item.description}
-            </p>
-          </div>
-        </a>
-      ))
-    }
-  </div>
-</section>
-
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-    <h2 class="text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl">
-      {faqTitle}
-    </h2>
-    <div class="divide-y divide-neutral-300 border-y border-neutral-300 dark:divide-neutral-700 dark:border-neutral-700">
-      {
-        faqs.map((faq) => (
-          <section class="py-5">
-            <h3 class="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-              {faq.question}
-            </h3>
-            <p class="mt-2 leading-7 text-neutral-700 dark:text-neutral-400">
-              {faq.answer}
-            </p>
-          </section>
-        ))
-      }
-    </div>
-  </div>
-</section>
-
-<section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
-  <div class="rounded-lg bg-neutral-900 p-6 text-neutral-50 dark:bg-neutral-950 md:p-10">
-    <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+  <!-- Process -->
+  <section class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
-        <h2 class="text-balance text-3xl font-bold md:text-4xl">
-          {finalTitle}
+        <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-400">
+          {processEyebrow}
+        </p>
+        <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-4xl">
+          {processTitle}
         </h2>
-        <p class="mt-3 max-w-3xl text-pretty text-neutral-300">
-          {finalText}
+        <p class="mt-4 text-pretty leading-7 text-neutral-600 dark:text-neutral-400">
+          {processSubTitle}
         </p>
       </div>
-      <PrimaryCTA title={finalCta} url={finalCtaUrl} />
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          processSteps.map((step, index) => (
+            <div class="relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white/40 p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-900/5 dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:shadow-blue-900/20">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                0{index + 1}
+              </div>
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">
+                {step.title}
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                {step.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="max-w-3xl">
+      <p class="text-sm font-bold uppercase tracking-normal text-blue-600 dark:text-blue-400">
+        {portfolioEyebrow}
+      </p>
+      <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-4xl">
+        {portfolioTitle}
+      </h2>
+      <p class="mt-4 text-pretty leading-7 text-neutral-600 dark:text-neutral-400">
+        {portfolioSubTitle}
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      {
+        portfolioItems.map((item) => (
+          <a
+            href={item.href}
+            class="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white/40 outline-none backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-900/10 focus-visible:ring dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:border-blue-500/50 dark:hover:shadow-blue-900/20"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-neutral-200 dark:bg-neutral-900">
+              <Image
+                src={item.image}
+                alt={item.imageAlt}
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                format="avif"
+                loading="lazy"
+                width={640}
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400">
+                {item.title}
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                {item.description}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <h2 class="text-balance text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-4xl">
+        {faqTitle}
+      </h2>
+      <div class="flex flex-col gap-4">
+        {
+          faqs.map((faq) => (
+            <div class="rounded-2xl border border-neutral-200 bg-white/40 p-6 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/40">
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100">
+                {faq.question}
+              </h3>
+              <p class="mt-2 leading-7 text-neutral-600 dark:text-neutral-400">
+                {faq.answer}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="mx-auto w-full max-w-[85rem] px-4 py-10 pb-24 sm:px-6 lg:px-8 lg:py-14 lg:pb-32">
+    <div class="relative overflow-hidden rounded-3xl bg-neutral-900 p-8 text-neutral-50 shadow-2xl border border-neutral-800 dark:bg-neutral-950 md:p-12">
+      <div class="absolute inset-0 opacity-40">
+        <div class="absolute -left-1/4 -top-1/4 h-full w-full rounded-full bg-blue-600/30 blur-[120px]"></div>
+        <div class="absolute -bottom-1/4 -right-1/4 h-full w-full rounded-full bg-yellow-400/20 blur-[120px]"></div>
+      </div>
+      <div class="relative z-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+        <div>
+          <h2 class="text-balance text-3xl font-bold md:text-4xl">
+            {finalTitle}
+          </h2>
+          <p class="mt-4 max-w-2xl text-pretty text-lg text-neutral-300">
+            {finalText}
+          </p>
+        </div>
+        <div class="shrink-0">
+          <PrimaryCTA title={finalCta} url={finalCtaUrl} />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
