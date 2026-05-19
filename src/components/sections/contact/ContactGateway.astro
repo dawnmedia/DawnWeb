@@ -88,360 +88,364 @@ const defaultBudgetIndex = Math.min(2, budgetRanges.length - 1);
 const defaultProjectType = projectTypes[projectTypes.length - 1]?.value;
 ---
 
-<section class="mx-auto max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
-  <div
-    class="overflow-hidden rounded-[1.75rem] border border-neutral-300/70 bg-neutral-100 shadow-xl shadow-zinc-300/40 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-black/20"
-  >
-    <div class="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-      <div class="p-6 sm:p-8 lg:p-12">
-        <p
-          class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-600 dark:text-orange-400"
-        >
-          {eyebrow}
-        </p>
-        <h1
-          class="mt-4 max-w-4xl text-balance text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-5xl lg:text-6xl lg:leading-tight"
-        >
-          {title}
-        </h1>
-        <p
-          class="mt-5 max-w-2xl text-pretty text-lg leading-8 text-neutral-700 dark:text-neutral-300"
-        >
-          {subtitle}
-        </p>
+<div class="relative isolate -mt-28 flex min-h-[calc(100vh+3rem)] flex-col overflow-hidden bg-neutral-50 pt-28 text-neutral-900 dark:bg-neutral-950 dark:text-white sm:-mt-32 sm:pt-32">
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#f8fafc_0%,#f1f5f9_54%,#e2e8f0_100%)] dark:bg-[linear-gradient(135deg,#0f172a_0%,#111111_54%,#050505_100%)]"></div>
 
-        <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
-          <a
-            href={calendlyUrl}
-            class="group inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:bg-blue-400 dark:text-white dark:hover:bg-blue-300"
+  <section class="mx-auto w-full max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 lg:py-10 mt-8">
+    <div
+      class="overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-white/40 shadow-xl shadow-zinc-300/40 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/40 dark:shadow-black/20"
+    >
+      <div class="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="p-6 sm:p-8 lg:p-12">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400"
           >
-            {primaryCta}
-            <Icon name="arrowRight" />
-          </a>
-          <a
-            href="#project-brief"
-            class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 py-3 text-center text-sm font-bold text-neutral-800 transition hover:border-blue-300 hover:text-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-blue-400 dark:hover:text-blue-300"
+            {eyebrow}
+          </p>
+          <h1
+            class="mt-4 max-w-4xl text-balance text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-5xl lg:text-6xl lg:leading-tight"
           >
-            {secondaryCta}
-          </a>
+            {title}
+          </h1>
+          <p
+            class="mt-5 max-w-2xl text-pretty text-lg leading-8 text-neutral-600 dark:text-neutral-300"
+          >
+            {subtitle}
+          </p>
+
+          <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+            <a
+              href={calendlyUrl}
+              class="group inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:bg-blue-400 dark:text-white dark:hover:bg-blue-300"
+            >
+              {primaryCta}
+              <Icon name="arrowRight" />
+            </a>
+            <a
+              href="#project-brief"
+              class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white/50 px-5 py-3 text-center text-sm font-bold text-neutral-800 transition hover:border-blue-300 hover:text-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-200 dark:hover:border-blue-400 dark:hover:text-blue-300"
+            >
+              {secondaryCta}
+            </a>
+          </div>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-3">
+            {
+              proofPoints.map((point) => (
+                <div class="rounded-xl border border-neutral-200 bg-white/70 px-4 py-3 text-sm font-semibold text-neutral-700 backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-800/60 dark:text-neutral-200">
+                  {point}
+                </div>
+              ))
+            }
+          </div>
         </div>
 
-        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+        <div
+          class="relative min-h-[28rem] overflow-hidden bg-blue-900 dark:bg-neutral-950 lg:min-h-0"
+        >
+          <Image
+            src={personWorking}
+            alt={imageAlt}
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            format="avif"
+            width={900}
+            sizes="(min-width: 1024px) 42vw, 100vw"
+            fetchpriority="high"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-950/25 to-transparent dark:from-neutral-950/90"
+          >
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+            <div
+              class="max-w-md rounded-2xl border border-white/20 bg-white/90 p-5 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-neutral-900/90"
+            >
+              <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-50">
+                {bookingTitle}
+              </h2>
+              <p
+                class="mt-2 text-sm leading-6 text-neutral-700 dark:text-neutral-300"
+              >
+                {bookingText}
+              </p>
+              <ul class="mt-4 space-y-2">
+                {
+                  bookingBullets.map((bullet) => (
+                    <li class="flex gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-200">
+                      <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">
+                        <Icon name="checkCircle" />
+                      </span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="project-brief"
+    class="mx-auto grid w-full max-w-[85rem] scroll-mt-28 gap-6 px-4 pb-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8 lg:pb-14"
+  >
+    <aside class="space-y-6">
+      <div
+        class="rounded-2xl border border-neutral-200 bg-white/40 p-6 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/40 sm:p-8"
+      >
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          {nextStepsTitle}
+        </h2>
+        <div class="mt-6 space-y-5">
           {
-            proofPoints.map((point) => (
-              <div class="rounded-xl border border-neutral-300 bg-white/75 px-4 py-3 text-sm font-semibold text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800/70 dark:text-neutral-200">
-                {point}
+            nextSteps.map((step, index) => (
+              <div class="flex gap-4">
+                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 class="font-bold text-neutral-900 dark:text-neutral-50">
+                    {step.title}
+                  </h3>
+                  <p class="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                    {step.text}
+                  </p>
+                </div>
               </div>
             ))
           }
         </div>
       </div>
 
-      <div
-        class="relative min-h-[28rem] overflow-hidden bg-blue-900 dark:bg-neutral-950 lg:min-h-0"
-      >
-        <Image
-          src={personWorking}
-          alt={imageAlt}
-          class="absolute inset-0 h-full w-full object-cover"
-          loading="eager"
-          format="avif"
-          width={900}
-          sizes="(min-width: 1024px) 42vw, 100vw"
-          fetchpriority="high"
-        />
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-950/25 to-transparent dark:from-neutral-950/90"
-        >
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-          <div
-            class="max-w-md rounded-2xl border border-white/20 bg-white/90 p-5 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-neutral-900/90"
-          >
-            <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-50">
-              {bookingTitle}
-            </h2>
-            <p
-              class="mt-2 text-sm leading-6 text-neutral-700 dark:text-neutral-300"
-            >
-              {bookingText}
-            </p>
-            <ul class="mt-4 space-y-2">
-              {
-                bookingBullets.map((bullet) => (
-                  <li class="flex gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-200">
-                    <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-300">
-                      <Icon name="checkCircle" />
-                    </span>
-                    <span>{bullet}</span>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section
-  id="project-brief"
-  class="mx-auto grid max-w-[85rem] scroll-mt-28 gap-6 px-4 pb-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8 lg:pb-14"
->
-  <aside class="space-y-6">
-    <div
-      class="rounded-2xl border border-neutral-300 bg-neutral-100 p-6 dark:border-neutral-700 dark:bg-neutral-900 sm:p-8"
-    >
-      <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-        {nextStepsTitle}
-      </h2>
-      <div class="mt-6 space-y-5">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {
-          nextSteps.map((step, index) => (
-            <div class="flex gap-4">
-              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white dark:bg-blue-400 dark:text-white">
-                {index + 1}
+          linkCards.map((card) => (
+            <a
+              href={card.href}
+              class="group rounded-2xl border border-neutral-200 bg-white/40 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-900/5 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:border-blue-500/50 dark:hover:shadow-blue-900/20"
+            >
+              <div class="flex gap-4">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700 transition-colors group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-900/30 dark:text-blue-400 dark:group-hover:bg-blue-500 dark:group-hover:text-white">
+                  <Icon name={card.icon} class="h-5 w-5 fill-current" />
+                </div>
+                <div>
+                  <h3 class="font-bold text-neutral-900 dark:text-neutral-50">
+                    {card.title}
+                  </h3>
+                  <p class="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+                    {card.text}
+                  </p>
+                  <span class="mt-3 inline-flex items-center gap-1 text-sm font-bold text-blue-600 dark:text-blue-400">
+                    {card.action}
+                    <Icon name="arrowRightStatic" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </div>
               </div>
-              <div>
-                <h3 class="font-bold text-neutral-900 dark:text-neutral-50">
-                  {step.title}
-                </h3>
-                <p class="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
-                  {step.text}
-                </p>
-              </div>
-            </div>
+            </a>
           ))
         }
       </div>
-    </div>
+    </aside>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-      {
-        linkCards.map((card) => (
-          <a
-            href={card.href}
-            class="group rounded-2xl border border-neutral-300 bg-white p-5 transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-zinc-300/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-blue-400 dark:hover:shadow-black/20"
-          >
-            <div class="flex gap-4">
-              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 dark:bg-blue-400/10 dark:text-blue-300">
-                <Icon name={card.icon} class="h-5 w-5 fill-current" />
-              </div>
-              <div>
-                <h3 class="font-bold text-neutral-900 dark:text-neutral-50">
-                  {card.title}
-                </h3>
-                <p class="mt-1 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
-                  {card.text}
-                </p>
-                <span class="mt-3 inline-flex items-center gap-1 text-sm font-bold text-blue-600 dark:text-blue-300">
-                  {card.action}
-                  <Icon name="arrowRightStatic" />
-                </span>
-              </div>
-            </div>
-          </a>
-        ))
-      }
-    </div>
-  </aside>
-
-  <div
-    class="rounded-2xl border border-neutral-300 bg-white p-5 shadow-xl shadow-zinc-300/40 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-black/20 sm:p-8"
-  >
-    <div>
-      <p
-        class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600 dark:text-orange-400"
-      >
-        {formSubtitle}
-      </p>
-      <h2 class="mt-2 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
-        {formTitle}
-      </h2>
-    </div>
-
-    <form
-      action="https://formspree.io/f/manbopjv"
-      method="POST"
-      class="mt-8 space-y-6"
+    <div
+      class="rounded-2xl border border-neutral-200 bg-white/40 p-5 shadow-xl shadow-zinc-300/40 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/40 dark:shadow-black/20 sm:p-8"
     >
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label for="hs-firstname-contacts" class="sr-only"
-            >{fieldLabels.firstName}</label
-          >
-          <input
-            type="text"
-            name="hs-firstname-contacts"
-            id="hs-firstname-contacts"
-            autocomplete="given-name"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-blue-500/40"
-            placeholder={fieldLabels.firstName}
-          />
-        </div>
-        <div>
-          <label for="hs-lastname-contacts" class="sr-only"
-            >{fieldLabels.lastName}</label
-          >
-          <input
-            type="text"
-            name="hs-lastname-contacts"
-            id="hs-lastname-contacts"
-            autocomplete="family-name"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-blue-500/40"
-            placeholder={fieldLabels.lastName}
-          />
-        </div>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label for="hs-email-contacts" class="sr-only"
-            >{fieldLabels.email}</label
-          >
-          <input
-            type="email"
-            name="hs-email-contacts"
-            id="hs-email-contacts"
-            autocomplete="email"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-blue-500/40"
-            placeholder={fieldLabels.email}
-          />
-        </div>
-        <div>
-          <label for="hs-phone-number" class="sr-only"
-            >{fieldLabels.phone}</label
-          >
-          <input
-            type="tel"
-            name="hs-phone-number"
-            id="hs-phone-number"
-            autocomplete="tel"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-blue-500/40"
-            placeholder={fieldLabels.phone}
-          />
-        </div>
-      </div>
-
       <div>
-        <label for="hs-company-contacts" class="sr-only"
-          >{fieldLabels.company}</label
-        >
-        <input
-          type="text"
-          name="company-or-website"
-          id="hs-company-contacts"
-          autocomplete="organization"
-          class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-blue-500/40"
-          placeholder={fieldLabels.company}
-        />
-      </div>
-
-      <fieldset>
-        <legend class="text-sm font-bold text-neutral-900 dark:text-neutral-50">
-          {projectTypeTitle}
-        </legend>
-        <div class="mt-3 grid gap-3 sm:grid-cols-2">
-          {
-            projectTypes.map((type) => (
-              <label class="group relative cursor-pointer rounded-xl border border-neutral-200 bg-neutral-50 p-4 pr-11 transition hover:border-blue-300 dark:border-neutral-700 dark:bg-neutral-800">
-                <input
-                  class="peer sr-only"
-                  type="radio"
-                  name="project-type"
-                  value={type.value}
-                  checked={type.value === defaultProjectType}
-                />
-                <span class="block text-sm font-bold text-neutral-800 peer-checked:text-blue-700 dark:text-neutral-200 dark:peer-checked:text-blue-300">
-                  {type.label}
-                </span>
-                <span class="absolute right-4 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border border-neutral-400 transition peer-checked:border-blue-600 peer-checked:bg-blue-600 dark:border-neutral-500" />
-                <span class="pointer-events-none absolute inset-0 rounded-xl ring-0 ring-blue-500 transition peer-checked:ring-2" />
-              </label>
-            ))
-          }
-        </div>
-      </fieldset>
-
-      <div
-        class="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-700 dark:bg-neutral-800"
-      >
-        <div
-          class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
-        >
-          <div>
-            <label
-              for="contact-budget-slider"
-              class="text-sm font-bold text-neutral-900 dark:text-neutral-50"
-            >
-              {budgetTitle}
-            </label>
-            <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-              {budgetSubtitle}
-            </p>
-          </div>
-          <output
-            data-contact-budget-label
-            for="contact-budget-slider"
-            class="rounded-full bg-orange-100 px-3 py-1 text-sm font-bold text-orange-800 dark:bg-orange-500/20 dark:text-orange-300"
-          >
-            {budgetRanges[defaultBudgetIndex]}
-          </output>
-        </div>
-        <input
-          id="contact-budget-slider"
-          data-contact-budget-slider
-          data-budget-ranges={JSON.stringify(budgetRanges)}
-          type="range"
-          min="0"
-          max={budgetRanges.length - 1}
-          step="1"
-          value={defaultBudgetIndex}
-          class="mt-6 h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-300 accent-blue-500 dark:bg-neutral-700"
-        />
-        <input
-          data-contact-budget-input
-          type="hidden"
-          name="budget-range"
-          value={budgetRanges[defaultBudgetIndex]}
-        />
-        <div
-          class="mt-3 flex justify-between text-xs font-medium text-neutral-500 dark:text-neutral-400"
-        >
-          <span>{budgetRanges[0]}</span>
-          <span>{budgetRanges[budgetRanges.length - 1]}</span>
-        </div>
-      </div>
-
-      <div>
-        <label for="hs-about-contacts" class="sr-only"
-          >{fieldLabels.details}</label
-        >
-        <textarea
-          id="hs-about-contacts"
-          name="hs-about-contacts"
-          rows="5"
-          class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-blue-500/40"
-          placeholder={fieldLabels.details}></textarea>
-      </div>
-
-      <div>
-        <button
-          type="submit"
-          class="inline-flex w-full items-center justify-center rounded-lg bg-blue-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500 dark:bg-blue-400 dark:text-white dark:hover:bg-blue-300"
-        >
-          {submitLabel}
-        </button>
         <p
-          class="mt-3 text-center text-sm text-neutral-600 dark:text-neutral-400"
+          class="text-sm font-semibold uppercase tracking-[0.16em] text-blue-600 dark:text-blue-400"
         >
-          {responseNote}
+          {formSubtitle}
         </p>
+        <h2 class="mt-2 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+          {formTitle}
+        </h2>
       </div>
-    </form>
-  </div>
-</section>
+
+      <form
+        action="https://formspree.io/f/manbopjv"
+        method="POST"
+        class="mt-8 space-y-6"
+      >
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="hs-firstname-contacts" class="sr-only"
+              >{fieldLabels.firstName}</label
+            >
+            <input
+              type="text"
+              name="hs-firstname-contacts"
+              id="hs-firstname-contacts"
+              autocomplete="given-name"
+              class="block w-full rounded-xl border border-neutral-200 bg-white/50 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-950/50 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+              placeholder={fieldLabels.firstName}
+            />
+          </div>
+          <div>
+            <label for="hs-lastname-contacts" class="sr-only"
+              >{fieldLabels.lastName}</label
+            >
+            <input
+              type="text"
+              name="hs-lastname-contacts"
+              id="hs-lastname-contacts"
+              autocomplete="family-name"
+              class="block w-full rounded-xl border border-neutral-200 bg-white/50 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-950/50 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+              placeholder={fieldLabels.lastName}
+            />
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="hs-email-contacts" class="sr-only"
+              >{fieldLabels.email}</label
+            >
+            <input
+              type="email"
+              name="hs-email-contacts"
+              id="hs-email-contacts"
+              autocomplete="email"
+              class="block w-full rounded-xl border border-neutral-200 bg-white/50 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-950/50 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+              placeholder={fieldLabels.email}
+            />
+          </div>
+          <div>
+            <label for="hs-phone-number" class="sr-only"
+              >{fieldLabels.phone}</label
+            >
+            <input
+              type="tel"
+              name="hs-phone-number"
+              id="hs-phone-number"
+              autocomplete="tel"
+              class="block w-full rounded-xl border border-neutral-200 bg-white/50 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-950/50 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+              placeholder={fieldLabels.phone}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="hs-company-contacts" class="sr-only"
+            >{fieldLabels.company}</label
+          >
+          <input
+            type="text"
+            name="company-or-website"
+            id="hs-company-contacts"
+            autocomplete="organization"
+            class="block w-full rounded-xl border border-neutral-200 bg-white/50 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-950/50 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+            placeholder={fieldLabels.company}
+          />
+        </div>
+
+        <fieldset>
+          <legend class="text-sm font-bold text-neutral-900 dark:text-neutral-50">
+            {projectTypeTitle}
+          </legend>
+          <div class="mt-3 grid gap-3 sm:grid-cols-2">
+            {
+              projectTypes.map((type) => (
+                <label class="group relative cursor-pointer rounded-xl border border-neutral-200 bg-white/50 p-4 pr-11 transition-all hover:border-blue-400 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-950/50 dark:hover:border-blue-500/50">
+                  <input
+                    class="peer sr-only"
+                    type="radio"
+                    name="project-type"
+                    value={type.value}
+                    checked={type.value === defaultProjectType}
+                  />
+                  <span class="block text-sm font-bold text-neutral-800 peer-checked:text-blue-600 dark:text-neutral-200 dark:peer-checked:text-blue-400">
+                    {type.label}
+                  </span>
+                  <span class="absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border border-neutral-300 transition peer-checked:border-[4px] peer-checked:border-blue-600 dark:border-neutral-600 dark:peer-checked:border-blue-500" />
+                  <span class="pointer-events-none absolute inset-0 rounded-xl ring-0 ring-blue-500/20 transition peer-checked:ring-2" />
+                </label>
+              ))
+            }
+          </div>
+        </fieldset>
+
+        <div
+          class="rounded-xl border border-neutral-200 bg-white/50 p-5 dark:border-neutral-700 dark:bg-neutral-950/50"
+        >
+          <div
+            class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+          >
+            <div>
+              <label
+                for="contact-budget-slider"
+                class="text-sm font-bold text-neutral-900 dark:text-neutral-50"
+              >
+                {budgetTitle}
+              </label>
+              <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                {budgetSubtitle}
+              </p>
+            </div>
+            <output
+              data-contact-budget-label
+              for="contact-budget-slider"
+              class="rounded-full bg-blue-100 px-3 py-1 text-sm font-bold text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+            >
+              {budgetRanges[defaultBudgetIndex]}
+            </output>
+          </div>
+          <input
+            id="contact-budget-slider"
+            data-contact-budget-slider
+            data-budget-ranges={JSON.stringify(budgetRanges)}
+            type="range"
+            min="0"
+            max={budgetRanges.length - 1}
+            step="1"
+            value={defaultBudgetIndex}
+            class="mt-6 h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-blue-600 dark:bg-neutral-800 dark:accent-blue-500"
+          />
+          <input
+            data-contact-budget-input
+            type="hidden"
+            name="budget-range"
+            value={budgetRanges[defaultBudgetIndex]}
+          />
+          <div
+            class="mt-3 flex justify-between text-xs font-medium text-neutral-500 dark:text-neutral-400"
+          >
+            <span>{budgetRanges[0]}</span>
+            <span>{budgetRanges[budgetRanges.length - 1]}</span>
+          </div>
+        </div>
+
+        <div>
+          <label for="hs-about-contacts" class="sr-only"
+            >{fieldLabels.details}</label
+          >
+          <textarea
+            id="hs-about-contacts"
+            name="hs-about-contacts"
+            rows="5"
+            class="block w-full rounded-xl border border-neutral-200 bg-white/50 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-950/50 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+            placeholder={fieldLabels.details}></textarea>
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition-all hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-900/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:ring-offset-neutral-900"
+          >
+            {submitLabel}
+          </button>
+          <p
+            class="mt-4 text-center text-sm font-medium text-neutral-500 dark:text-neutral-400"
+          >
+            {responseNote}
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
 
 <script is:inline>
   document
