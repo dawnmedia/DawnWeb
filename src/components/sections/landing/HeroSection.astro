@@ -94,15 +94,16 @@ const sectionClass = containedByHeroBand
         {
           headline ? (
             <>
-              <span>{headline.before}</span>
+              <span data-hero-phrase>{headline.before}</span>
               <span
                 data-hero-accent
+                data-hero-phrase
                 class="relative inline-block max-w-full whitespace-nowrap text-yellow-400"
               >
                 {headline.accent}
                 <span class="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-yellow-400/40" />
               </span>
-              <span>{headline.after}</span>
+              <span data-hero-phrase>{headline.after}</span>
             </>
           ) : (
             <Fragment set:html={title ?? ""} />
@@ -227,6 +228,27 @@ const sectionClass = containedByHeroBand
   [data-hero-title] :global(.text-blue-600),
   [data-hero-title] :global(.dark\:text-blue-300) {
     color: #fde047 !important;
+  }
+
+  [data-hero-phrase] {
+    display: inline;
+  }
+
+  :global(html[lang="ja"]) [data-hero-title] {
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  :global(html[lang="ja"]) [data-hero-phrase] {
+    display: inline-block;
+    line-height: inherit;
+    max-width: 100%;
+    vertical-align: baseline;
+    word-break: keep-all;
+  }
+
+  :global(html[lang="ja"]) [data-hero-accent] {
+    white-space: normal;
   }
 
   .hero-image-float {

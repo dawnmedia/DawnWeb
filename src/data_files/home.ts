@@ -819,8 +819,8 @@ export const homeContent: Record<Locale, HomeContent> = {
       badgeLabel: "創業者主導のWeb戦略",
       headline: {
         before: "伝わるサイトは",
-        accent: "良い問い合わせ",
-        after: "を増やします。",
+        accent: "良い問い合わせを",
+        after: "増やします。",
       },
       subTitle:
         "Dawn Webは分かりにくいページを、価値が伝わり、信頼を作り、相談へ進みやすい高速で洗練された体験に整えます。",
@@ -1109,6 +1109,6 @@ export const homeContent: Record<Locale, HomeContent> = {
       description:
         "무료 상담에서 웹사이트, 리디자인, SEO, 맞춤형 웹 앱의 다음 단계를 정리해보세요.",
     },
-    faqTitle: "자주 묻는<br />질문",
+    faqTitle: "자주 묻는 질문",
   },
 };

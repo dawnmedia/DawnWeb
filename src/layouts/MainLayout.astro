@@ -88,7 +88,7 @@ We set the language of the page to English and add classes for scrollbar and scr
       <slot />
     </main>
     <FooterSection />
-    <style>
+    <style is:global>
       /* CSS rules for the page scrollbar */
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
@@ -97,6 +97,87 @@ We set the language of the page to English and add classes for scrollbar and scr
       .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
+      }
+
+      html[lang="ja"] {
+        line-break: strict;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+
+      html[lang="ko"] {
+        line-break: strict;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+      }
+
+      html[lang="ja"] h1,
+      html[lang="ja"] h2,
+      html[lang="ja"] h3,
+      html[lang="ja"] h4,
+      html[lang="ja"] h5,
+      html[lang="ja"] h6,
+      html[lang="ko"] h1,
+      html[lang="ko"] h2,
+      html[lang="ko"] h3,
+      html[lang="ko"] h4,
+      html[lang="ko"] h5,
+      html[lang="ko"] h6 {
+        line-height: 1.18;
+        overflow-wrap: break-word;
+        text-wrap: balance;
+      }
+
+      html[lang="ja"] h1,
+      html[lang="ja"] h2,
+      html[lang="ja"] h3,
+      html[lang="ja"] h4,
+      html[lang="ja"] h5,
+      html[lang="ja"] h6 {
+        word-break: normal;
+      }
+
+      html[lang="ko"] h1,
+      html[lang="ko"] h2,
+      html[lang="ko"] h3,
+      html[lang="ko"] h4,
+      html[lang="ko"] h5,
+      html[lang="ko"] h6 {
+        word-break: keep-all;
+      }
+
+      html[lang="ja"] p,
+      html[lang="ja"] li,
+      html[lang="ko"] p,
+      html[lang="ko"] li {
+        line-height: 1.75;
+      }
+
+      html[lang="ja"] .break-words,
+      html[lang="ko"] .break-words {
+        overflow-wrap: break-word;
+      }
+
+      html[lang="ja"] .break-words {
+        word-break: normal;
+      }
+
+      html[lang="ko"] .break-words {
+        word-break: keep-all;
+      }
+
+      @supports (word-break: auto-phrase) {
+        html[lang="ja"] p,
+        html[lang="ja"] li,
+        html[lang="ja"] a,
+        html[lang="ja"] span,
+        html[lang="ja"] button {
+          word-break: auto-phrase;
+        }
+
+        html[lang="ja"] .break-words {
+          word-break: auto-phrase;
+        }
       }
     </style>
   </body>

@@ -1,0 +1,120 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import CardBlog from "@components/ui/cards/CardBlog.astro";
+import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
+import CardInsight from "@components/ui/cards/CardInsight.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+import { BLOG_LOCALE_COPY } from "@data/blog";
+import { collectionIdStartsWithLocale, type Locale } from "@utils/locale";
+import { buildWebPageSchema } from "@utils/seo";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = BLOG_LOCALE_COPY[locale];
+
+const blogEntries = await getCollection("blog", ({ id }) =>
+  collectionIdStartsWithLocale(id, locale),
+);
+const insightsEntries = await getCollection("insights", ({ id }) =>
+  collectionIdStartsWithLocale(id, locale),
+);
+
+const blogPosts: CollectionEntry<"blog">[] = blogEntries.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const insightPosts: CollectionEntry<"insights">[] = insightsEntries;
+const mostRecentPost = blogPosts[0];
+const otherPosts = blogPosts.slice(1);
+---
+
+<MainLayout
+  lang={copy.htmlLang}
+  title={copy.index.pageTitle}
+  meta={copy.index.pageDescription}
+  structuredData={buildWebPageSchema({
+    title: copy.index.pageTitle,
+    description: copy.index.pageDescription,
+    pathname: copy.index.pathname,
+    locale,
+    siteUrl: SITE.url,
+  })}
+>
+  <div
+    class="relative isolate -mt-28 flex min-h-[calc(100vh+3rem)] flex-col overflow-hidden bg-neutral-50 pt-28 text-neutral-900 dark:bg-neutral-950 dark:text-white sm:-mt-32 sm:pt-32"
+  >
+    <div
+      class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#f8fafc_0%,#f1f5f9_54%,#e2e8f0_100%)] dark:bg-[linear-gradient(135deg,#0f172a_0%,#111111_54%,#050505_100%)]"
+    >
+    </div>
+
+    <section
+      class="mx-auto mt-8 w-full max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8"
+    >
+      <div class="mx-auto max-w-3xl text-left sm:text-center">
+        <h1
+          class="block text-balance text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 md:text-5xl lg:text-6xl"
+        >
+          {copy.index.title}
+        </h1>
+
+        <p
+          class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-300"
+        >
+          {copy.index.subTitle}
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
+    >
+      <div class="grid gap-6 lg:grid-cols-2">
+        {
+          otherPosts.map((blogEntry) => (
+            <CardBlog blogEntry={blogEntry} blogLocale={locale} />
+          ))
+        }
+      </div>
+    </section>
+
+    {
+      mostRecentPost && (
+        <section class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+          <CardBlogRecent
+            blogEntry={mostRecentPost}
+            recentBlogLocale={locale}
+          />
+        </section>
+      )
+    }
+
+    <section
+      class="mx-auto w-full max-w-[85rem] px-4 py-10 pb-24 sm:px-6 lg:px-8 lg:py-14 lg:pb-32"
+    >
+      <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+        <h2
+          class="text-2xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl md:leading-tight"
+        >
+          {copy.index.secondTitle}
+        </h2>
+        <p
+          class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-300"
+        >
+          {copy.index.secondSubTitle}
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          insightPosts.map((insightEntry) => (
+            <CardInsight insightEntry={insightEntry} insightLocale={locale} />
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</MainLayout>
